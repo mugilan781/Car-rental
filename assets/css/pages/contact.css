@@ -13,7 +13,7 @@
 }
 .cont-hero__overlay {
   position: absolute; inset: 0;
-  background: radial-gradient(circle at 75% 25%, rgba(37,99,235,0.08) 0%, transparent 50%),
+  background: radial-gradient(circle at 75% 25%, rgba(245,185,66,0.08) 0%, transparent 50%),
               radial-gradient(circle at 15% 75%, rgba(239,68,68,0.03) 0%, transparent 50%);
 }
 .cont-hero .container { position: relative; z-index: 2; }
@@ -34,7 +34,7 @@
   box-shadow: var(--shadow-sm);
 }
 [data-theme="dark"] .cont-card {
-  background: var(--dm-card); border-color: var(--dm-border);
+  background: var(--color-card); border-color: var(--color-border);
 }
 
 /* Contact Form Specifics */
@@ -63,11 +63,11 @@
   transition: all var(--transition-base);
 }
 [data-theme="dark"] .cont-field input, [data-theme="dark"] .cont-field select, [data-theme="dark"] .cont-field textarea {
-  background: var(--dm-bg); border-color: var(--dm-border); color: var(--dm-text);
+  background: var(--color-bg); border-color: var(--color-border); color: var(--color-dark-text);
 }
 .cont-field input:focus, .cont-field select:focus, .cont-field textarea:focus {
   outline: none; border-color: var(--color-secondary);
-  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+  box-shadow: 0 0 0 3px rgba(245,185,66,0.1);
 }
 
 .cont-file-placeholder {
@@ -83,7 +83,7 @@
   cursor: pointer;
 }
 [data-theme="dark"] .cont-file-placeholder {
-  border-color: var(--dm-border); background: var(--dm-bg);
+  border-color: var(--color-border); background: var(--color-bg);
 }
 
 /* ============================================================
@@ -118,7 +118,7 @@
   border-color: var(--color-secondary);
 }
 [data-theme="dark"] .info-card {
-  background: var(--dm-card); border-color: var(--dm-border);
+  background: var(--color-card); border-color: var(--color-border);
 }
 .info-card__icon {
   font-size: 2.25rem;
@@ -158,7 +158,7 @@
   border-bottom: 1px dashed var(--color-border-light);
   padding-bottom: var(--space-1);
 }
-[data-theme="dark"] .hours-item { border-color: var(--dm-border); }
+[data-theme="dark"] .hours-item { border-color: var(--color-border); }
 .hours-item:last-child { border-bottom: none; }
 
 /* ============================================================
@@ -168,7 +168,7 @@
   width: 100%; height: 320px;
   border-radius: var(--radius-2xl);
   overflow: hidden;
-  background: #1e293b;
+  background: #F9FAFB;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -177,7 +177,7 @@
   gap: var(--space-3);
   border: 1px solid var(--color-border-light);
 }
-[data-theme="dark"] .map-placeholder { border-color: var(--dm-border); }
+[data-theme="dark"] .map-placeholder { border-color: var(--color-border); }
 
 /* ============================================================
    5. EMERGENCY SUPPORT CARD
@@ -242,7 +242,7 @@
   transition: all var(--transition-smooth);
 }
 [data-theme="dark"] .social-icon-btn {
-  background: var(--dm-bg); border-color: var(--dm-border);
+  background: var(--color-bg); border-color: var(--color-border);
 }
 .social-icon-btn:hover {
   border-color: var(--color-secondary); color: var(--color-secondary);
@@ -264,7 +264,7 @@
   background: var(--color-border-light);
   z-index: 1;
 }
-[data-theme="dark"] .support-timeline::before { background: var(--dm-border); }
+[data-theme="dark"] .support-timeline::before { background: var(--color-border); }
 .support-step {
   position: relative;
   z-index: 2;
@@ -286,7 +286,7 @@
   transition: all var(--transition-base);
 }
 [data-theme="dark"] .support-step__dot {
-  background: var(--dm-card); border-color: var(--dm-border);
+  background: var(--color-card); border-color: var(--color-border);
 }
 .support-step:hover .support-step__dot {
   border-color: var(--color-secondary); color: var(--color-secondary);

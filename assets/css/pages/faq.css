@@ -13,8 +13,8 @@
 }
 .faq-hero__overlay {
   position: absolute; inset: 0;
-  background: radial-gradient(circle at 75% 25%, rgba(37,99,235,0.08) 0%, transparent 50%),
-              radial-gradient(circle at 15% 75%, rgba(245,158,11,0.04) 0%, transparent 50%);
+  background: radial-gradient(circle at 75% 25%, rgba(245,185,66,0.08) 0%, transparent 50%),
+              radial-gradient(circle at 15% 75%, rgba(245,185,66,0.04) 0%, transparent 50%);
 }
 .faq-hero .container { position: relative; z-index: 2; }
 
@@ -44,11 +44,11 @@
   transition: all var(--transition-base);
 }
 [data-theme="dark"] .faq-search-input-box input {
-  background: var(--dm-card); border-color: var(--dm-border); color: var(--dm-text);
+  background: var(--color-card); border-color: var(--color-border); color: var(--color-dark-text);
 }
 .faq-search-input-box input:focus {
   outline: none; border-color: var(--color-secondary);
-  box-shadow: 0 0 0 4px rgba(37,99,235,0.15);
+  box-shadow: 0 0 0 4px rgba(245,185,66,0.15);
 }
 .faq-search-icon {
   position: absolute; left: var(--space-5); top: 50%;
@@ -57,7 +57,7 @@
 }
 .popular-searches {
   display: flex; gap: var(--space-2); flex-wrap: wrap;
-  font-size: var(--fs-xs); color: rgba(255,255,255,0.55);
+  font-size: var(--fs-xs); color: var(--color-light-text);
   align-items: center;
 }
 .popular-searches a {
@@ -97,7 +97,7 @@
   border-color: var(--color-secondary);
 }
 [data-theme="dark"] .faq-cat-card {
-  background: var(--dm-card); border-color: var(--dm-border);
+  background: var(--color-card); border-color: var(--color-border);
 }
 .faq-cat-card__icon {
   font-size: 2rem; margin-bottom: var(--space-3);
@@ -124,7 +124,7 @@
   box-shadow: var(--shadow-sm);
 }
 [data-theme="dark"] .faq-sec {
-  background: var(--dm-card); border-color: var(--dm-border);
+  background: var(--color-card); border-color: var(--color-border);
 }
 .faq-sec__title {
   font-family: var(--font-heading);
@@ -135,7 +135,7 @@
   border-bottom: 1px solid var(--color-border-light);
   display: flex; align-items: center; gap: var(--space-2);
 }
-[data-theme="dark"] .faq-sec__title { border-color: var(--dm-border); }
+[data-theme="dark"] .faq-sec__title { border-color: var(--color-border); }
 
 /* ============================================================
    4. ARTICLE & VIDEO CARDS
@@ -162,7 +162,7 @@
   box-shadow: var(--shadow-sm);
 }
 [data-theme="dark"] .art-card {
-  background: var(--dm-card); border-color: var(--dm-border);
+  background: var(--color-card); border-color: var(--color-border);
 }
 .art-card__icon { font-size: 1.75rem; flex-shrink: 0; }
 .art-card__body { display: flex; flex-direction: column; gap: var(--space-1); }
@@ -182,11 +182,11 @@
   transform: translateY(-3px); border-color: var(--color-secondary);
 }
 [data-theme="dark"] .video-card {
-  background: var(--dm-card); border-color: var(--dm-border);
+  background: var(--color-card); border-color: var(--color-border);
 }
 .video-card__thumb {
   width: 100%; aspect-ratio: 16/9;
-  background: linear-gradient(135deg, #1e293b, #0f172a);
+  background: linear-gradient(135deg, #F9FAFB, #0f172a);
   display: flex; align-items: center; justify-content: center;
   font-size: 3rem; position: relative;
 }
@@ -212,7 +212,7 @@
   padding: var(--space-5);
 }
 [data-theme="dark"] .pop-card {
-  background: var(--dm-card); border-color: var(--dm-border);
+  background: var(--color-card); border-color: var(--color-border);
 }
 .pop-card__title {
   font-family: var(--font-heading);
@@ -222,7 +222,7 @@
   padding-bottom: var(--space-2);
   border-bottom: 1px solid var(--color-border-light);
 }
-[data-theme="dark"] .pop-card__title { border-color: var(--dm-border); }
+[data-theme="dark"] .pop-card__title { border-color: var(--color-border); }
 
 .pop-list { display: flex; flex-direction: column; gap: var(--space-3); }
 .pop-item {
@@ -240,7 +240,7 @@
 .satisfaction-card {
   background: var(--color-bg); border-radius: var(--radius-lg); padding: var(--space-3); text-align: center;
 }
-[data-theme="dark"] .satisfaction-card { background: var(--dm-bg); }
+[data-theme="dark"] .satisfaction-card { background: var(--color-bg); }
 .satisfaction-card__val { font-size: var(--fs-small); font-weight: var(--fw-bold); color: var(--color-secondary); }
 
 /* ============================================================

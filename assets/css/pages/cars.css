@@ -10,15 +10,15 @@
 .cars-hero {
   position: relative;
   padding: 140px 0 80px;
-  background: linear-gradient(135deg, #0a0f1e 0%, #111827 40%, #0d1526 100%);
+  background: var(--color-bg);
   overflow: hidden;
 }
 
 .cars-hero__overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 70% 30%, rgba(37,99,235,0.1) 0%, transparent 50%),
-              radial-gradient(circle at 20% 80%, rgba(245,158,11,0.06) 0%, transparent 50%);
+  background: radial-gradient(circle at 70% 30%, rgba(245,185,66,0.1) 0%, transparent 50%),
+              radial-gradient(circle at 20% 80%, rgba(245,185,66,0.06) 0%, transparent 50%);
 }
 
 .cars-hero .container {
@@ -35,8 +35,8 @@
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-2) var(--space-4);
-  background: rgba(37,99,235,0.15);
-  border: 1px solid rgba(37,99,235,0.25);
+  background: rgba(245,185,66,0.15);
+  border: 1px solid rgba(245,185,66,0.25);
   border-radius: var(--radius-full);
   font-size: var(--fs-xs);
   font-weight: var(--fw-semibold);
@@ -73,7 +73,7 @@
 
 .cars-hero__desc {
   font-size: var(--fs-body);
-  color: rgba(255,255,255,0.55);
+  color: var(--color-light-text);
   line-height: var(--lh-relaxed);
 }
 
@@ -96,8 +96,8 @@
 }
 
 [data-theme="dark"] .cars-search__card {
-  background: var(--dm-card);
-  border-color: var(--dm-border);
+  background: var(--color-card);
+  border-color: var(--color-border);
   box-shadow: 0 20px 60px rgba(0,0,0,0.3);
 }
 
@@ -154,8 +154,8 @@
 }
 
 [data-theme="dark"] .filter-sidebar {
-  background: var(--dm-card);
-  border-color: var(--dm-border);
+  background: var(--color-card);
+  border-color: var(--color-border);
 }
 
 .filter-sidebar::-webkit-scrollbar {
@@ -177,7 +177,7 @@
 }
 
 [data-theme="dark"] .filter-sidebar__header {
-  border-color: var(--dm-border);
+  border-color: var(--color-border);
 }
 
 .filter-sidebar__title {
@@ -214,7 +214,7 @@
 }
 
 [data-theme="dark"] .filter-group {
-  border-color: var(--dm-border);
+  border-color: var(--color-border);
 }
 
 .filter-group__title {
@@ -255,7 +255,7 @@
 }
 
 [data-theme="dark"] .filter-checkbox {
-  color: var(--dm-text);
+  color: var(--color-dark-text);
 }
 
 .filter-checkbox:hover {
@@ -301,7 +301,7 @@
 }
 
 [data-theme="dark"] .filter-checkbox__count {
-  background: var(--dm-bg);
+  background: var(--color-bg);
 }
 
 /* Price Range Slider */
@@ -332,9 +332,9 @@
 }
 
 [data-theme="dark"] .filter-range__input input {
-  background: var(--dm-bg);
-  border-color: var(--dm-border);
-  color: var(--dm-text);
+  background: var(--color-bg);
+  border-color: var(--color-border);
+  color: var(--color-dark-text);
 }
 
 .filter-range__slider {
@@ -381,7 +381,7 @@
 }
 
 [data-theme="dark"] .filter-rating__option:hover {
-  background: var(--dm-bg);
+  background: var(--color-bg);
 }
 
 .filter-rating__stars {
@@ -459,9 +459,9 @@
 }
 
 [data-theme="dark"] .cars-toolbar__sort select {
-  background: var(--dm-card);
-  border-color: var(--dm-border);
-  color: var(--dm-text);
+  background: var(--color-card);
+  border-color: var(--color-border);
+  color: var(--color-dark-text);
 }
 
 /* View Toggle */
@@ -474,7 +474,7 @@
 }
 
 [data-theme="dark"] .cars-toolbar__view {
-  background: var(--dm-bg);
+  background: var(--color-bg);
 }
 
 .view-btn {
@@ -495,7 +495,7 @@
 .view-btn.active {
   background: var(--color-secondary);
   color: #fff;
-  box-shadow: 0 2px 8px rgba(37,99,235,0.3);
+  box-shadow: 0 2px 8px rgba(245,185,66,0.3);
 }
 
 /* ============================================================
@@ -529,8 +529,8 @@
 }
 
 [data-theme="dark"] .v-card {
-  background: var(--dm-card);
-  border-color: var(--dm-border);
+  background: var(--color-card);
+  border-color: var(--color-border);
 }
 
 [data-theme="dark"] .v-card:hover {
@@ -668,7 +668,7 @@
 }
 
 [data-theme="dark"] .v-card__specs {
-  border-color: var(--dm-border);
+  border-color: var(--color-border);
 }
 
 .v-card__spec {
@@ -683,7 +683,7 @@
 }
 
 [data-theme="dark"] .v-card__spec {
-  background: var(--dm-bg);
+  background: var(--color-bg);
 }
 
 .v-card__spec-icon {
@@ -855,9 +855,9 @@
 }
 
 [data-theme="dark"] .pagination__btn {
-  background: var(--dm-card);
-  border-color: var(--dm-border);
-  color: var(--dm-text);
+  background: var(--color-card);
+  border-color: var(--color-border);
+  color: var(--color-dark-text);
 }
 
 .pagination__btn:hover {
@@ -867,14 +867,14 @@
 }
 
 [data-theme="dark"] .pagination__btn:hover {
-  background: rgba(37,99,235,0.15);
+  background: rgba(245,185,66,0.15);
 }
 
 .pagination__btn.active {
   background: var(--color-secondary);
   border-color: var(--color-secondary);
   color: #fff;
-  box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+  box-shadow: 0 4px 12px rgba(245,185,66,0.3);
 }
 
 .pagination__btn:disabled,
@@ -949,8 +949,8 @@
 }
 
 [data-theme="dark"] .why-rent-card {
-  background: var(--dm-card);
-  border-color: var(--dm-border);
+  background: var(--color-card);
+  border-color: var(--color-border);
 }
 
 .why-rent-card__icon {
@@ -967,7 +967,7 @@
 }
 
 [data-theme="dark"] .why-rent-card__icon {
-  background: rgba(37,99,235,0.12);
+  background: rgba(245,185,66,0.12);
 }
 
 .why-rent-card:hover .why-rent-card__icon {
@@ -1011,8 +1011,8 @@
 }
 
 [data-theme="dark"] .mini-review {
-  background: var(--dm-card);
-  border-color: var(--dm-border);
+  background: var(--color-card);
+  border-color: var(--color-border);
 }
 
 .mini-review__header {
@@ -1115,9 +1115,9 @@
 }
 
 [data-theme="dark"] .filter-toggle-mobile {
-  background: var(--dm-card);
-  border-color: var(--dm-border);
-  color: var(--dm-text);
+  background: var(--color-card);
+  border-color: var(--color-border);
+  color: var(--color-dark-text);
 }
 
 .filter-toggle-mobile:hover {

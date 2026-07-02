@@ -13,7 +13,7 @@
 }
 .notif-hero__overlay {
   position: absolute; inset: 0;
-  background: radial-gradient(circle at 75% 25%, rgba(37,99,235,0.08) 0%, transparent 50%),
+  background: radial-gradient(circle at 75% 25%, rgba(245,185,66,0.08) 0%, transparent 50%),
               radial-gradient(circle at 15% 75%, rgba(239,68,68,0.03) 0%, transparent 50%);
 }
 .notif-hero .container { position: relative; z-index: 2; }
@@ -54,7 +54,7 @@
   border-color: var(--color-secondary);
 }
 [data-theme="dark"] .notif-overview-card {
-  background: var(--dm-card); border-color: var(--dm-border);
+  background: var(--color-card); border-color: var(--color-border);
 }
 .notif-overview-card__val {
   font-size: var(--fs-h3);
@@ -81,7 +81,7 @@
   gap: var(--space-4);
 }
 [data-theme="dark"] .notif-toolbar {
-  background: var(--dm-card); border-color: var(--dm-border);
+  background: var(--color-card); border-color: var(--color-border);
 }
 
 /* Search bar */
@@ -107,11 +107,11 @@
   transition: all var(--transition-base);
 }
 [data-theme="dark"] .notif-search-input-wrap input {
-  background: var(--dm-bg); border-color: var(--dm-border); color: var(--dm-text);
+  background: var(--color-bg); border-color: var(--color-border); color: var(--color-dark-text);
 }
 .notif-search-input-wrap input:focus {
   outline: none; border-color: var(--color-secondary);
-  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+  box-shadow: 0 0 0 3px rgba(245,185,66,0.1);
 }
 .notif-search-icon {
   position: absolute; left: var(--space-4);
@@ -147,7 +147,7 @@
   transition: all var(--transition-base);
 }
 [data-theme="dark"] .notif-filter-chip {
-  background: var(--dm-bg); border-color: var(--dm-border); color: var(--dm-text);
+  background: var(--color-bg); border-color: var(--color-border); color: var(--color-dark-text);
 }
 .notif-filter-chip:hover {
   border-color: var(--color-secondary);
@@ -168,7 +168,7 @@
   border-top: 1px solid var(--color-border-light);
 }
 [data-theme="dark"] .notif-bulk-bar {
-  border-color: var(--dm-border);
+  border-color: var(--color-border);
 }
 .notif-bulk-actions {
   display: flex;
@@ -201,7 +201,7 @@
   border-color: var(--color-secondary);
 }
 [data-theme="dark"] .notif-card {
-  background: var(--dm-card); border-color: var(--dm-border);
+  background: var(--color-card); border-color: var(--color-border);
 }
 
 /* Unread highlighted status */
@@ -229,7 +229,7 @@
   font-size: 1.25rem; flex-shrink: 0;
 }
 [data-theme="dark"] .notif-card__icon-wrap {
-  background: var(--dm-bg);
+  background: var(--color-bg);
 }
 
 .notif-card__body {
@@ -250,7 +250,7 @@
   color: var(--color-dark-text);
 }
 [data-theme="dark"] .notif-card__title {
-  color: var(--dm-text);
+  color: var(--color-dark-text);
 }
 .notif-card__desc {
   font-size: var(--fs-xs);
@@ -296,7 +296,7 @@
   border: 1px solid var(--color-border-light);
 }
 [data-theme="dark"] .category-badge {
-  background: var(--dm-bg); border-color: var(--dm-border);
+  background: var(--color-bg); border-color: var(--color-border);
 }
 
 /* ============================================================
@@ -314,7 +314,7 @@
   justify-content: center;
 }
 [data-theme="dark"] .notif-empty-state {
-  background: var(--dm-card); border-color: var(--dm-border);
+  background: var(--color-card); border-color: var(--color-border);
 }
 .notif-empty-state__icon {
   font-size: 4rem;
@@ -344,7 +344,7 @@
   padding: var(--space-5);
 }
 [data-theme="dark"] .notif-side-card {
-  background: var(--dm-card); border-color: var(--dm-border);
+  background: var(--color-card); border-color: var(--color-border);
 }
 .notif-side-card__title {
   font-family: var(--font-heading);
@@ -355,7 +355,7 @@
   border-bottom: 1px solid var(--color-border-light);
 }
 [data-theme="dark"] .notif-side-card__title {
-  border-color: var(--dm-border);
+  border-color: var(--color-border);
 }
 .notif-side-card__list {
   display: flex;
@@ -385,7 +385,7 @@
   transition: all var(--transition-base);
 }
 [data-theme="dark"] .notif-quick-btn {
-  background: var(--dm-bg); border-color: var(--dm-border);
+  background: var(--color-bg); border-color: var(--color-border);
 }
 .notif-quick-btn:hover {
   border-color: var(--color-secondary);

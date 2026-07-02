@@ -13,8 +13,8 @@
 }
 .rh-hero__overlay {
   position: absolute; inset: 0;
-  background: radial-gradient(circle at 75% 25%, rgba(37,99,235,0.08) 0%, transparent 50%),
-              radial-gradient(circle at 15% 75%, rgba(245,158,11,0.04) 0%, transparent 50%);
+  background: radial-gradient(circle at 75% 25%, rgba(245,185,66,0.08) 0%, transparent 50%),
+              radial-gradient(circle at 15% 75%, rgba(245,185,66,0.04) 0%, transparent 50%);
 }
 .rh-hero .container { position: relative; z-index: 2; }
 
@@ -52,7 +52,7 @@
   border-color: var(--color-secondary);
 }
 [data-theme="dark"] .rh-stat-card {
-  background: var(--dm-card); border-color: var(--dm-border);
+  background: var(--color-card); border-color: var(--color-border);
 }
 .rh-stat-card__val {
   font-size: var(--fs-h3);
@@ -79,7 +79,7 @@
   gap: var(--space-4);
 }
 [data-theme="dark"] .rh-toolbar {
-  background: var(--dm-card); border-color: var(--dm-border);
+  background: var(--color-card); border-color: var(--color-border);
 }
 
 /* Search Row */
@@ -105,11 +105,11 @@
   transition: all var(--transition-base);
 }
 [data-theme="dark"] .rh-input-wrap input {
-  background: var(--dm-bg); border-color: var(--dm-border); color: var(--dm-text);
+  background: var(--color-bg); border-color: var(--color-border); color: var(--color-dark-text);
 }
 .rh-input-wrap input:focus {
   outline: none; border-color: var(--color-secondary);
-  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+  box-shadow: 0 0 0 3px rgba(245,185,66,0.1);
 }
 .rh-input-icon {
   position: absolute; left: var(--space-4);
@@ -132,7 +132,7 @@
   border: 1px solid var(--color-border-light);
 }
 [data-theme="dark"] .rh-view-toggles {
-  background: var(--dm-bg); border-color: var(--dm-border);
+  background: var(--color-bg); border-color: var(--color-border);
 }
 .rh-toggle-btn {
   padding: 6px 12px;
@@ -150,7 +150,7 @@
   box-shadow: var(--shadow-sm);
 }
 [data-theme="dark"] .rh-toggle-btn.active {
-  background: var(--dm-card);
+  background: var(--color-card);
 }
 
 /* Filter chips */
@@ -174,7 +174,7 @@
   transition: all var(--transition-base);
 }
 [data-theme="dark"] .rh-chip {
-  background: var(--dm-bg); border-color: var(--dm-border); color: var(--dm-text);
+  background: var(--color-bg); border-color: var(--color-border); color: var(--color-dark-text);
 }
 .rh-chip:hover { border-color: var(--color-secondary); color: var(--color-secondary); }
 .rh-chip.active { background: var(--color-secondary); border-color: var(--color-secondary); color: #fff; }
@@ -187,7 +187,7 @@
   padding-top: var(--space-3);
   border-top: 1px solid var(--color-border-light);
 }
-[data-theme="dark"] .rh-sub-bar { border-color: var(--dm-border); }
+[data-theme="dark"] .rh-sub-bar { border-color: var(--color-border); }
 
 /* ============================================================
    3. TABLE VIEW
@@ -201,7 +201,7 @@
   overflow-x: auto;
 }
 [data-theme="dark"] .rh-table-wrap {
-  background: var(--dm-card); border-color: var(--dm-border);
+  background: var(--color-card); border-color: var(--color-border);
 }
 .rh-table {
   width: 100%;
@@ -214,7 +214,7 @@
   border-bottom: 1px solid var(--color-border-light);
 }
 [data-theme="dark"] .rh-table th, [data-theme="dark"] .rh-table td {
-  border-color: var(--dm-border);
+  border-color: var(--color-border);
 }
 .rh-table th {
   font-family: var(--font-heading);
@@ -245,10 +245,10 @@
   font-weight: var(--fw-bold);
   text-transform: uppercase;
 }
-.rh-status--pending { background: rgba(245,158,11,0.1); color: var(--color-accent); }
+.rh-status--pending { background: rgba(245,185,66,0.1); color: var(--color-accent); }
 .rh-status--approved { background: rgba(34,197,94,0.1); color: var(--color-success); }
 .rh-status--rejected { background: rgba(239,68,68,0.1); color: var(--color-danger); }
-.rh-status--active { background: rgba(37,99,235,0.1); color: var(--color-secondary); }
+.rh-status--active { background: rgba(245,185,66,0.1); color: var(--color-secondary); }
 .rh-status--completed { background: rgba(107,114,128,0.1); color: var(--color-light-text); }
 .rh-status--cancelled { background: rgba(239,68,68,0.15); color: var(--color-danger); }
 .rh-status--extended { background: rgba(139,92,246,0.1); color: #8b5cf6; }
@@ -278,7 +278,7 @@
   border-color: var(--color-secondary);
 }
 [data-theme="dark"] .rh-car-card {
-  background: var(--dm-card); border-color: var(--dm-border);
+  background: var(--color-card); border-color: var(--color-border);
 }
 .rh-car-card__visual {
   width: 100%; aspect-ratio: 16/9;
@@ -305,7 +305,7 @@
 .rh-car-card__meta-item strong {
   color: var(--color-dark-text);
 }
-[data-theme="dark"] .rh-car-card__meta-item strong { color: var(--dm-text); }
+[data-theme="dark"] .rh-car-card__meta-item strong { color: var(--color-dark-text); }
 .rh-car-card__footer {
   display: flex;
   align-items: center;
@@ -313,7 +313,7 @@
   padding-top: var(--space-3);
   border-top: 1px solid var(--color-border-light);
 }
-[data-theme="dark"] .rh-car-card__footer { border-color: var(--dm-border); }
+[data-theme="dark"] .rh-car-card__footer { border-color: var(--color-border); }
 
 /* ============================================================
    5. TIMELINE VIEW
@@ -326,7 +326,7 @@
   box-shadow: var(--shadow-sm);
 }
 [data-theme="dark"] .rh-timeline-card {
-  background: var(--dm-card); border-color: var(--dm-border);
+  background: var(--color-card); border-color: var(--color-border);
 }
 .rh-timeline {
   display: flex;
@@ -343,7 +343,7 @@
   width: 2px;
   background: var(--color-border-light);
 }
-[data-theme="dark"] .rh-timeline::before { background: var(--dm-border); }
+[data-theme="dark"] .rh-timeline::before { background: var(--color-border); }
 
 .rh-timeline-node {
   position: relative;
@@ -360,7 +360,7 @@
   transition: all var(--transition-base);
 }
 [data-theme="dark"] .rh-timeline-node::before {
-  background: var(--dm-card); border-color: var(--dm-border);
+  background: var(--color-card); border-color: var(--color-border);
 }
 .rh-timeline-node.active::before {
   border-color: var(--color-secondary);
@@ -405,7 +405,7 @@
   gap: var(--space-5);
 }
 [data-theme="dark"] .rh-details-card {
-  background: var(--dm-card); border-color: var(--dm-border);
+  background: var(--color-card); border-color: var(--color-border);
 }
 .rh-details-sec-title {
   font-family: var(--font-heading);
@@ -414,7 +414,7 @@
   padding-bottom: var(--space-2);
   border-bottom: 1px solid var(--color-border-light);
 }
-[data-theme="dark"] .rh-details-sec-title { border-color: var(--dm-border); }
+[data-theme="dark"] .rh-details-sec-title { border-color: var(--color-border); }
 
 /* Details row key-val */
 .rh-kv-list { display: flex; flex-direction: column; gap: var(--space-2); }
@@ -426,7 +426,7 @@
 }
 .rh-kv-item span { color: var(--color-light-text); }
 .rh-kv-item strong { color: var(--color-dark-text); }
-[data-theme="dark"] .rh-kv-item strong { color: var(--dm-text); }
+[data-theme="dark"] .rh-kv-item strong { color: var(--color-dark-text); }
 
 /* Payment widget breakdown */
 .payment-breakdown {
@@ -437,7 +437,7 @@
   flex-direction: column;
   gap: var(--space-2);
 }
-[data-theme="dark"] .payment-breakdown { background: var(--dm-bg); }
+[data-theme="dark"] .payment-breakdown { background: var(--color-bg); }
 
 /* Experience Rating Form */
 .rating-section {
@@ -449,7 +449,7 @@
   text-align: center;
 }
 [data-theme="dark"] .rating-section {
-  background: var(--dm-card); border-color: var(--dm-border);
+  background: var(--color-card); border-color: var(--color-border);
 }
 .rating-stars {
   display: flex; justify-content: center; gap: var(--space-2);
@@ -471,7 +471,7 @@
   align-items: center;
   justify-content: center;
 }
-[data-theme="dark"] .rh-empty-state { background: var(--dm-card); border-color: var(--dm-border); }
+[data-theme="dark"] .rh-empty-state { background: var(--color-card); border-color: var(--color-border); }
 
 /* Sidebar Support list */
 .rh-support-list {
@@ -506,7 +506,7 @@
   font-weight: var(--fw-medium);
   transition: all var(--transition-base);
 }
-[data-theme="dark"] .rh-quick-btn { background: var(--dm-bg); border-color: var(--dm-border); }
+[data-theme="dark"] .rh-quick-btn { background: var(--color-bg); border-color: var(--color-border); }
 .rh-quick-btn:hover {
   border-color: var(--color-secondary); color: var(--color-secondary);
   transform: translateY(-2px);
