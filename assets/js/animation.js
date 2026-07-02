@@ -189,12 +189,129 @@ const Anim = (() => {
   }
 
   /* ============================================================
+     5. ADVANCED LUXURY EFFECTS
+     ============================================================ */
+
+  // Immersive cursor backlight trailer
+  function initAmbientCursorGlow() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const glow = document.createElement('div');
+    glow.className = 'ambient-cursor-glow';
+    document.body.appendChild(glow);
+
+    let mouseX = 0, mouseY = 0;
+    let glowX = 0, glowY = 0;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (!glow.classList.contains('active')) {
+        glow.classList.add('active');
+      }
+    });
+
+    document.addEventListener('mouseleave', () => {
+      glow.classList.remove('active');
+    });
+
+    // Smooth lerp animation for the mouse spotlight trailer
+    function tick() {
+      const speed = 0.08; // smooth trailing speed
+      glowX += (mouseX - glowX) * speed;
+      glowY += (mouseY - glowY) * speed;
+      
+      glow.style.left = `${glowX}px`;
+      glow.style.top = `${glowY}px`;
+      
+      requestAnimationFrame(tick);
+    }
+    tick();
+  }
+
+  // Radial highlight spotlight shine following cursor on cards
+  function initSpotlightCards() {
+    const cards = document.querySelectorAll(
+      '.car-card, .feature-card, .category-card, .dashboard-stat-card, .dashboard-card, .about-team-card, .about-values-card'
+    );
+
+    cards.forEach(card => {
+      card.classList.add('spotlight-card');
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+  }
+
+  // Magnetic hover pull effect on primary links and controls
+  function initMagneticButtons() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const magneticElements = document.querySelectorAll(
+      '.btn, .navbar__logo, .navbar__search-btn, .testimonials-btn, .back-to-top'
+    );
+
+    magneticElements.forEach(el => {
+      el.addEventListener('mousemove', (e) => {
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        // pull offset 20% max
+        el.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px) scale(1.03)`;
+        if (el.classList.contains('btn--primary')) {
+          el.style.boxShadow = `0 10px 25px rgba(245, 158, 11, 0.4)`;
+        }
+      });
+
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = '';
+        el.style.boxShadow = '';
+      });
+    });
+  }
+
+  // Immersive 3D Tilt perspective parallax on Hero car image
+  function initHero3DTilt() {
+    const visual = document.querySelector('.home-hero__visual');
+    const carImg = document.querySelector('.home-hero__car-img');
+    if (!visual || !carImg) return;
+
+    visual.addEventListener('mousemove', (e) => {
+      const rect = visual.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const px = (x / rect.width) * 2 - 1; // -1 to 1
+      const py = (y / rect.height) * 2 - 1; // -1 to 1
+      
+      // tilt scale
+      const tiltX = -py * 12; // max 12 deg tilt
+      const tiltY = px * 12;
+      
+      carImg.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.05)`;
+    });
+
+    visual.addEventListener('mouseleave', () => {
+      carImg.style.transform = 'rotateX(0) rotateY(0) scale(1)';
+    });
+  }
+
+  /* ============================================================
      INITIALIZATION
      ============================================================ */
   function init() {
     initScrollReveal();
     initCounters();
     initParallax();
+    initAmbientCursorGlow();
+    initSpotlightCards();
+    initMagneticButtons();
+    initHero3DTilt();
   }
 
   if (document.readyState === 'loading') {
@@ -212,6 +329,10 @@ const Anim = (() => {
     animateCounter,
     initCounters,
     initParallax,
+    initAmbientCursorGlow,
+    initSpotlightCards,
+    initMagneticButtons,
+    initHero3DTilt,
   };
 
 })();

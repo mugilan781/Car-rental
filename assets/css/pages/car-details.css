@@ -72,8 +72,7 @@
   align-items: start;
 }
 
-/* --- Gallery (Left) --- */
-.showcase__gallery {}
+
 
 .showcase__main-img {
   width: 100%;
@@ -134,8 +133,7 @@
   font-size: 1.5rem;
 }
 
-/* --- Info (Right) --- */
-.showcase__info {}
+
 
 .showcase__brand {
   font-size: var(--fs-small);
