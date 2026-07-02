@@ -1,0 +1,217 @@
+/* ============================================================
+   CAR RENTAL SYSTEM — ANIMATION.JS
+   Scroll Reveal (IntersectionObserver), Stagger, Counter
+   ============================================================ */
+
+'use strict';
+
+const Anim = (() => {
+
+  /* ============================================================
+     1. SCROLL REVEAL
+     ============================================================ */
+  function initScrollReveal() {
+    const elements = document.querySelectorAll(
+      '.scroll-reveal, .scroll-reveal--left, .scroll-reveal--right, .scroll-reveal--scale'
+    );
+
+    if (!elements.length) return;
+
+    // Respect reduced motion preference
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      elements.forEach(el => {
+        el.classList.add('revealed');
+      });
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target); // Only animate once
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    elements.forEach(el => observer.observe(el));
+  }
+
+  /* ============================================================
+     2. STAGGER ANIMATION
+     ============================================================ */
+
+  /**
+   * Apply stagger animation delays to children of a container
+   * @param {string} selector - Parent container selector
+   * @param {number} baseDelay - Starting delay in ms (default: 0)
+   * @param {number} increment - Delay increment per child in ms (default: 100)
+   */
+  function staggerChildren(selector, baseDelay = 0, increment = 100) {
+    const containers = document.querySelectorAll(selector);
+
+    containers.forEach(container => {
+      const children = container.children;
+      Array.from(children).forEach((child, index) => {
+        child.style.transitionDelay = `${baseDelay + (index * increment)}ms`;
+        child.style.animationDelay = `${baseDelay + (index * increment)}ms`;
+      });
+    });
+  }
+
+  /**
+   * Stagger reveal — observe a container and stagger-reveal its children
+   * @param {string} containerSelector
+   * @param {number} increment - Delay between each child (ms)
+   */
+  function initStaggerReveal(containerSelector, increment = 100) {
+    const containers = document.querySelectorAll(containerSelector);
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      containers.forEach(container => {
+        Array.from(container.children).forEach(child => {
+          child.classList.add('revealed');
+        });
+      });
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const children = entry.target.children;
+          Array.from(children).forEach((child, index) => {
+            setTimeout(() => {
+              child.classList.add('revealed');
+            }, index * increment);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -20px 0px'
+    });
+
+    containers.forEach(container => observer.observe(container));
+  }
+
+  /* ============================================================
+     3. COUNTER ANIMATION
+     ============================================================ */
+
+  /**
+   * Animate a number counting up
+   * @param {HTMLElement} element - Element to display the count
+   * @param {number} target - Target number
+   * @param {number} duration - Animation duration in ms (default: 2000)
+   * @param {string} suffix - Text to append after number (e.g., '+', '%')
+   */
+  function animateCounter(element, target, duration = 2000, suffix = '') {
+    if (!element) return;
+
+    const start = 0;
+    const startTime = performance.now();
+
+    function update(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Ease out quad
+      const easeOut = 1 - (1 - progress) * (1 - progress);
+      const current = Math.floor(easeOut * (target - start) + start);
+
+      element.textContent = current.toLocaleString() + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        element.textContent = target.toLocaleString() + suffix;
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  /**
+   * Auto-init counter animations on elements with data-count attribute
+   * Usage: <span data-count="1500" data-count-suffix="+">0</span>
+   */
+  function initCounters() {
+    const counters = document.querySelectorAll('[data-count]');
+    if (!counters.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.getAttribute('data-count'), 10);
+          const suffix = el.getAttribute('data-count-suffix') || '';
+          const duration = parseInt(el.getAttribute('data-count-duration') || '2000', 10);
+
+          animateCounter(el, target, duration, suffix);
+          observer.unobserve(el);
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    counters.forEach(el => observer.observe(el));
+  }
+
+  /* ============================================================
+     4. PARALLAX (lightweight)
+     ============================================================ */
+  function initParallax() {
+    const elements = document.querySelectorAll('[data-parallax]');
+    if (!elements.length) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    function onScroll() {
+      const scrollY = window.scrollY;
+
+      elements.forEach(el => {
+        const speed = parseFloat(el.getAttribute('data-parallax')) || 0.3;
+        const rect = el.getBoundingClientRect();
+        const offsetTop = rect.top + scrollY;
+        const offset = (scrollY - offsetTop) * speed;
+
+        el.style.transform = `translateY(${offset}px)`;
+      });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  /* ============================================================
+     INITIALIZATION
+     ============================================================ */
+  function init() {
+    initScrollReveal();
+    initCounters();
+    initParallax();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  // Public API
+  return {
+    init,
+    initScrollReveal,
+    staggerChildren,
+    initStaggerReveal,
+    animateCounter,
+    initCounters,
+    initParallax,
+  };
+
+})();

@@ -1,0 +1,325 @@
+/* ============================================================
+   CONTACT & SUPPORT PAGE — STYLES
+   ============================================================ */
+
+/* ============================================================
+   1. HERO
+   ============================================================ */
+.cont-hero {
+  position: relative;
+  padding: 140px 0 80px;
+  background: linear-gradient(135deg, #090e1c 0%, #111827 50%, #0d1322 100%);
+  overflow: hidden;
+}
+.cont-hero__overlay {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 75% 25%, rgba(37,99,235,0.08) 0%, transparent 50%),
+              radial-gradient(circle at 15% 75%, rgba(239,68,68,0.03) 0%, transparent 50%);
+}
+.cont-hero .container { position: relative; z-index: 2; }
+
+/* ============================================================
+   2. CONTACT SPLIT & FORM
+   ============================================================ */
+.cont-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+}
+.cont-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+[data-theme="dark"] .cont-card {
+  background: var(--dm-card); border-color: var(--dm-border);
+}
+
+/* Contact Form Specifics */
+.cont-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+.cont-form-grid--full { grid-column: span 2; }
+
+.cont-field { display: flex; flex-direction: column; gap: var(--space-2); }
+.cont-field label {
+  font-size: 11px;
+  font-weight: var(--fw-semibold);
+  color: var(--color-light-text);
+  text-transform: uppercase;
+}
+.cont-field input, .cont-field select, .cont-field textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  font-size: var(--fs-small);
+  background: var(--color-bg);
+  color: var(--color-dark-text);
+  transition: all var(--transition-base);
+}
+[data-theme="dark"] .cont-field input, [data-theme="dark"] .cont-field select, [data-theme="dark"] .cont-field textarea {
+  background: var(--dm-bg); border-color: var(--dm-border); color: var(--dm-text);
+}
+.cont-field input:focus, .cont-field select:focus, .cont-field textarea:focus {
+  outline: none; border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+}
+
+.cont-file-placeholder {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 2px dashed var(--color-border-light);
+  border-radius: var(--radius-lg);
+  font-size: var(--fs-xs);
+  color: var(--color-light-text);
+  background: var(--color-bg);
+  cursor: pointer;
+}
+[data-theme="dark"] .cont-file-placeholder {
+  border-color: var(--dm-border); background: var(--dm-bg);
+}
+
+/* ============================================================
+   3. CONTACT INFO & CARDS
+   ============================================================ */
+.cont-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+.cont-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+}
+.cont-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-4);
+}
+
+.info-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-6);
+  transition: all var(--transition-smooth);
+}
+.info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-secondary);
+}
+[data-theme="dark"] .info-card {
+  background: var(--dm-card); border-color: var(--dm-border);
+}
+.info-card__icon {
+  font-size: 2.25rem;
+  margin-bottom: var(--space-4);
+}
+.info-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--space-2);
+}
+.info-card__desc {
+  font-size: var(--fs-xs);
+  color: var(--color-light-text);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-4);
+}
+.info-card__value {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  word-break: break-all;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+/* Business Hours list */
+.hours-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: var(--fs-xs);
+}
+.hours-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed var(--color-border-light);
+  padding-bottom: var(--space-1);
+}
+[data-theme="dark"] .hours-item { border-color: var(--dm-border); }
+.hours-item:last-child { border-bottom: none; }
+
+/* ============================================================
+   4. MAPS & BRANCHES
+   ============================================================ */
+.map-placeholder {
+  width: 100%; height: 320px;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  background: #1e293b;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  border: 1px solid var(--color-border-light);
+}
+[data-theme="dark"] .map-placeholder { border-color: var(--dm-border); }
+
+/* ============================================================
+   5. EMERGENCY SUPPORT CARD
+   ============================================================ */
+.emergency-strip {
+  background: linear-gradient(135deg, var(--color-danger), #b91c1c);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+.emergency-strip__content { max-width: 600px; }
+.emergency-strip__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--space-2);
+}
+.emergency-strip__desc {
+  font-size: var(--fs-xs);
+  opacity: 0.9;
+  line-height: var(--lh-relaxed);
+}
+
+/* ============================================================
+   6. WHATSAPP & PHONE SUPPORT CARDS
+   ============================================================ */
+.wa-card {
+  background: rgba(34, 197, 94, 0.05);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-6);
+  text-align: center;
+  transition: all var(--transition-smooth);
+}
+.wa-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.1);
+}
+.wa-card__icon {
+  font-size: 3rem; color: #22c55e;
+  margin-bottom: var(--space-3);
+}
+
+/* Social icons list */
+.socials-row {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  font-size: 1.5rem;
+}
+.social-icon-btn {
+  width: 46px; height: 46px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-light);
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none; color: inherit;
+  transition: all var(--transition-smooth);
+}
+[data-theme="dark"] .social-icon-btn {
+  background: var(--dm-bg); border-color: var(--dm-border);
+}
+.social-icon-btn:hover {
+  border-color: var(--color-secondary); color: var(--color-secondary);
+  transform: translateY(-3px);
+}
+
+/* Timeline Process support */
+.support-timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: var(--space-8);
+}
+.support-timeline::before {
+  content: '';
+  position: absolute;
+  top: 18px; left: 0; right: 0;
+  height: 2px;
+  background: var(--color-border-light);
+  z-index: 1;
+}
+[data-theme="dark"] .support-timeline::before { background: var(--dm-border); }
+.support-step {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+}
+.support-step__dot {
+  width: 38px; height: 38px;
+  border-radius: var(--radius-full);
+  background: var(--color-card);
+  border: 3px solid var(--color-border-light);
+  display: flex; align-items: center; justify-content: center;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  color: var(--color-light-text);
+  transition: all var(--transition-base);
+}
+[data-theme="dark"] .support-step__dot {
+  background: var(--dm-card); border-color: var(--dm-border);
+}
+.support-step:hover .support-step__dot {
+  border-color: var(--color-secondary); color: var(--color-secondary);
+}
+.support-step__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  margin-top: var(--space-3);
+}
+
+/* ============================================================
+   7. RESPONSIVE BREAKPOINTS
+   ============================================================ */
+@media (max-width: 1200px) {
+  .cont-grid-5 { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 992px) {
+  .cont-split { grid-template-columns: 1fr; }
+  .cont-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .cont-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .emergency-strip { flex-direction: column; text-align: center; }
+}
+@media (max-width: 768px) {
+  .cont-grid-5 { grid-template-columns: repeat(2, 1fr); }
+  .support-timeline { flex-direction: column; gap: var(--space-4); }
+  .support-timeline::before { display: none; }
+  .support-step { flex: none; }
+}
+@media (max-width: 576px) {
+  .cont-form-grid { grid-template-columns: 1fr; }
+  .cont-form-grid--full { grid-column: span 1; }
+  .cont-grid-3 { grid-template-columns: 1fr; }
+  .cont-grid-4 { grid-template-columns: 1fr; }
+  .cont-grid-5 { grid-template-columns: 1fr; }
+}

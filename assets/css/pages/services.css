@@ -1,0 +1,376 @@
+/* ============================================================
+   SERVICES PAGE — STYLES
+   ============================================================ */
+
+/* ============================================================
+   1. HERO & GENERAL SPLITS
+   ============================================================ */
+.serv-hero {
+  position: relative;
+  padding: 140px 0 80px;
+  background: linear-gradient(135deg, #090e1c 0%, #111827 50%, #0d1322 100%);
+  overflow: hidden;
+}
+.serv-hero__overlay {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 75% 25%, rgba(37,99,235,0.08) 0%, transparent 50%),
+              radial-gradient(circle at 15% 75%, rgba(245,158,11,0.04) 0%, transparent 50%);
+}
+.serv-hero .container { position: relative; z-index: 2; }
+
+/* Introduction / Split Section */
+.serv-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-10);
+  align-items: center;
+}
+.serv-split__visual {
+  width: 100%; aspect-ratio: 4/3;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #111827, #1e293b);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 5rem;
+}
+.serv-split__visual::after {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 60% 40%, rgba(37,99,235,0.1) 0%, transparent 60%);
+}
+
+/* ============================================================
+   2. CORE SERVICES CARDS & HIGHLIGHTS
+   ============================================================ */
+.serv-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+.serv-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+.serv-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+/* Premium Reusable Service Card */
+.serv-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-6);
+  transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.serv-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-secondary);
+}
+[data-theme="dark"] .serv-card {
+  background: var(--dm-card); border-color: var(--dm-border);
+}
+.serv-card__visual {
+  width: 100%; aspect-ratio: 16/10;
+  border-radius: var(--radius-xl);
+  background: #111827;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.5rem;
+  margin-bottom: var(--space-4);
+  overflow: hidden;
+}
+.serv-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--space-2);
+}
+.serv-card__desc {
+  font-size: var(--fs-xs);
+  color: var(--color-light-text);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-4);
+}
+.serv-card__features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+.serv-card__feature-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-xs);
+}
+
+/* Feature/Value Added Cards Grid */
+.serv-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+}
+.serv-feature-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  text-align: center;
+  transition: all var(--transition-smooth);
+}
+.serv-feature-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-secondary);
+}
+[data-theme="dark"] .serv-feature-card {
+  background: var(--dm-card); border-color: var(--dm-border);
+}
+.serv-feature-card__icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-3);
+}
+.serv-feature-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+}
+
+/* ============================================================
+   3. HOW OUR PROCESS WORKS (8 Steps Timeline)
+   ============================================================ */
+.process-grid-8 {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: var(--space-3);
+  position: relative;
+  margin-top: var(--space-8);
+}
+.process-grid-8::before {
+  content: '';
+  position: absolute;
+  top: 18px; left: var(--space-4); right: var(--space-4);
+  height: 2px;
+  background: var(--color-border-light);
+  z-index: 1;
+}
+[data-theme="dark"] .process-grid-8::before { background: var(--dm-border); }
+
+.process-node {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.process-node__circle {
+  width: 38px; height: 38px;
+  border-radius: var(--radius-full);
+  background: var(--color-card);
+  border: 3px solid var(--color-border-light);
+  display: flex; align-items: center; justify-content: center;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  color: var(--color-light-text);
+  transition: all var(--transition-base);
+}
+[data-theme="dark"] .process-node__circle {
+  background: var(--dm-card); border-color: var(--dm-border);
+}
+.process-node:hover .process-node__circle {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+  transform: scale(1.05);
+}
+.process-node__title {
+  font-family: var(--font-heading);
+  font-size: 10px;
+  font-weight: var(--fw-bold);
+  margin-top: var(--space-3);
+  line-height: var(--lh-tight);
+}
+
+/* ============================================================
+   4. SERVICE COMPARISON LAYOUT
+   ============================================================ */
+.comp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+.comp-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition: all var(--transition-smooth);
+}
+.comp-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-secondary);
+}
+[data-theme="dark"] .comp-card {
+  background: var(--dm-card); border-color: var(--dm-border);
+}
+.comp-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
+  color: var(--color-secondary);
+  border-bottom: 1px solid var(--color-border-light);
+  padding-bottom: var(--space-2);
+}
+[data-theme="dark"] .comp-card__title { border-color: var(--dm-border); }
+
+.comp-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  font-size: var(--fs-xs);
+}
+.comp-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.comp-item__label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--color-light-text);
+  font-weight: var(--fw-semibold);
+}
+.comp-item__val {
+  font-weight: var(--fw-bold);
+}
+
+/* ============================================================
+   5. PRICING HIGHLIGHTS & CATEGORIES
+   ============================================================ */
+.price-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+.price-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  transition: all var(--transition-smooth);
+}
+.price-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-secondary);
+}
+[data-theme="dark"] .price-card {
+  background: var(--dm-card); border-color: var(--dm-border);
+}
+.price-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--space-2);
+}
+.price-card__val {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  color: var(--color-secondary);
+  margin: var(--space-2) 0;
+}
+.price-card__desc {
+  font-size: var(--fs-xs);
+  color: var(--color-light-text);
+  margin-bottom: var(--space-4);
+  line-height: var(--lh-relaxed);
+}
+
+/* Category cards */
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-4);
+}
+.cat-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4);
+  text-align: center;
+  transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+}
+.cat-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-secondary);
+}
+[data-theme="dark"] .cat-card {
+  background: var(--dm-card); border-color: var(--dm-border);
+}
+.cat-card__visual {
+  width: 100%; aspect-ratio: 16/10;
+  border-radius: var(--radius-md);
+  background: #111827;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem;
+  margin-bottom: var(--space-3);
+}
+.cat-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+}
+.cat-card__desc {
+  font-size: 10px;
+  color: var(--color-light-text);
+  margin: var(--space-1) 0 var(--space-3);
+  line-height: var(--lh-tight);
+}
+
+/* ============================================================
+   6. RESPONSIVE BREAKPOINTS
+   ============================================================ */
+@media (max-width: 1200px) {
+  .serv-split { gap: var(--space-6); }
+  .comp-grid { grid-template-columns: repeat(2, 1fr); }
+  .price-highlights-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-grid-8 { grid-template-columns: repeat(4, 1fr); gap: var(--space-4); }
+  .process-grid-8::before { display: none; }
+}
+@media (max-width: 992px) {
+  .serv-split { grid-template-columns: 1fr; }
+  .serv-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .serv-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .serv-features-grid { grid-template-columns: repeat(2, 1fr); }
+  .cat-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .serv-grid-4 { grid-template-columns: 1fr; }
+  .serv-grid-3 { grid-template-columns: 1fr; }
+  .serv-grid-2 { grid-template-columns: 1fr; }
+  .comp-grid { grid-template-columns: 1fr; }
+  .price-highlights-grid { grid-template-columns: 1fr; }
+  .process-grid-8 { grid-template-columns: repeat(2, 1fr); }
+  .cat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .serv-features-grid { grid-template-columns: 1fr; }
+  .process-grid-8 { grid-template-columns: 1fr; }
+  .cat-grid { grid-template-columns: 1fr; }
+}

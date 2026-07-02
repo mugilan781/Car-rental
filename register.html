@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create your DriveElite account to access our premium fleet, manage bookings, and enjoy exclusive member benefits.">
+  <title>Create Account — DriveElite</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/pages/auth.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar__logo"><div class="navbar__logo-icon">DE</div>Drive<span>Elite</span></a>
+      <div class="navbar__links">
+        <a href="index.html" class="navbar__link">Home</a><a href="cars.html" class="navbar__link">Cars</a><a href="services.html" class="navbar__link">Services</a><a href="about.html" class="navbar__link">About</a><a href="faq.html" class="navbar__link">FAQ</a><a href="contact.html" class="navbar__link">Contact</a>
+      </div>
+      <div class="navbar__actions">
+        <button class="navbar__search-btn" aria-label="Search" title="Search (Ctrl+K)"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+        <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <a href="login.html" class="btn btn--ghost btn--sm">Login</a>
+        <a href="register.html" class="btn btn--primary btn--sm">Register</a>
+      </div>
+      <button class="navbar__toggle" aria-label="Toggle mobile menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="navbar__mobile-overlay"></div>
+  <div class="navbar__mobile">
+    <a href="index.html" class="navbar__link">Home</a><a href="cars.html" class="navbar__link">Cars</a><a href="services.html" class="navbar__link">Services</a><a href="about.html" class="navbar__link">About</a><a href="faq.html" class="navbar__link">FAQ</a><a href="contact.html" class="navbar__link">Contact</a>
+    <div class="navbar__actions"><a href="login.html" class="btn btn--ghost btn--sm">Login</a><a href="register.html" class="btn btn--primary btn--sm">Register</a></div>
+  </div>
+
+  <!-- HERO -->
+  <section class="auth-hero">
+    <div class="auth-hero__overlay"></div>
+    <div class="container">
+      <div class="auth-hero__content scroll-reveal">
+        <div class="auth-hero__badge">✨ Join DriveElite</div>
+        <h1 class="auth-hero__title">Create Your <span class="highlight">Account</span></h1>
+        <p class="auth-hero__desc">Join thousands of satisfied customers and gain access to our exclusive fleet of premium rental vehicles.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><ol class="breadcrumb__list"><li class="breadcrumb__item"><a href="index.html">Home</a></li><li class="breadcrumb__separator">›</li><li class="breadcrumb__item active">Register</li></ol></div></nav>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+         MAIN REGISTER SECTION
+         ============================================================ -->
+    <section class="section">
+      <div class="container">
+        <div class="auth-layout scroll-reveal">
+
+          <!-- LEFT — BRANDING -->
+          <div class="auth-branding">
+            <div class="auth-branding__visual">
+              <div class="auth-branding__placeholder">🚗</div>
+            </div>
+            <h2 class="auth-branding__tagline">Start Your Premium Journey Today</h2>
+            <p class="auth-branding__text">Create your free account in minutes and unlock the full DriveElite experience — from luxury sedans to high-performance supercars.</p>
+            <div class="auth-branding__features">
+              <div class="auth-branding__feature"><div class="auth-branding__feature-icon">⚡</div> Easy registration — takes less than 2 minutes</div>
+              <div class="auth-branding__feature"><div class="auth-branding__feature-icon">🚗</div> Access 200+ luxury & premium vehicles</div>
+              <div class="auth-branding__feature"><div class="auth-branding__feature-icon">💰</div> Exclusive member pricing & seasonal deals</div>
+              <div class="auth-branding__feature"><div class="auth-branding__feature-icon">📅</div> Flexible hourly, daily & weekly rentals</div>
+              <div class="auth-branding__feature"><div class="auth-branding__feature-icon">🛡️</div> Verified vehicles & secure platform</div>
+              <div class="auth-branding__feature"><div class="auth-branding__feature-icon">🕐</div> 24/7 customer support</div>
+            </div>
+          </div>
+
+          <!-- RIGHT — REGISTER CARD -->
+          <div>
+            <div class="auth-card">
+              <div class="auth-card__header">
+                <div class="auth-card__logo">DE</div>
+                <h2 class="auth-card__title">Create Account</h2>
+                <p class="auth-card__subtitle">Fill in your details to get started</p>
+              </div>
+
+              <form class="auth-form" id="register-form" novalidate>
+
+                <!-- Name Row -->
+                <div class="auth-form-grid">
+                  <div class="auth-field">
+                    <label for="first-name">First Name <span class="required">*</span></label>
+                    <div class="auth-input-wrap">
+                      <span class="auth-input-wrap__icon">👤</span>
+                      <input type="text" id="first-name" class="form-input" placeholder="John" required autocomplete="given-name">
+                    </div>
+                  </div>
+                  <div class="auth-field">
+                    <label for="last-name">Last Name <span class="required">*</span></label>
+                    <div class="auth-input-wrap">
+                      <span class="auth-input-wrap__icon">👤</span>
+                      <input type="text" id="last-name" class="form-input" placeholder="Doe" required autocomplete="family-name">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Email -->
+                <div class="auth-field">
+                  <label for="reg-email">Email Address <span class="required">*</span></label>
+                  <div class="auth-input-wrap">
+                    <span class="auth-input-wrap__icon">✉️</span>
+                    <input type="email" id="reg-email" class="form-input" placeholder="john@example.com" required autocomplete="email">
+                  </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="auth-field">
+                  <label for="reg-phone">Phone Number <span class="required">*</span></label>
+                  <div class="auth-input-wrap">
+                    <span class="auth-input-wrap__icon">📞</span>
+                    <input type="tel" id="reg-phone" class="form-input" placeholder="+1 (555) 123-4567" required autocomplete="tel">
+                  </div>
+                </div>
+
+                <!-- Password -->
+                <div class="auth-field">
+                  <label for="reg-password">Password <span class="required">*</span></label>
+                  <div class="auth-input-wrap">
+                    <span class="auth-input-wrap__icon">🔒</span>
+                    <input type="password" id="reg-password" class="form-input" placeholder="Create a strong password" required autocomplete="new-password">
+                    <button type="button" class="auth-input-wrap__toggle" id="toggle-password" aria-label="Toggle password visibility" title="Show password">👁️</button>
+                  </div>
+                  <!-- Strength Indicator -->
+                  <div class="password-strength" id="password-strength">
+                    <div class="password-strength__bars">
+                      <div class="password-strength__bar weak"></div>
+                      <div class="password-strength__bar"></div>
+                      <div class="password-strength__bar"></div>
+                      <div class="password-strength__bar"></div>
+                    </div>
+                    <div class="password-strength__text">Password Strength: <strong>Weak</strong></div>
+                  </div>
+                  <!-- Requirements -->
+                  <div class="password-requirements">
+                    <div class="password-req met"><div class="password-req__icon">✓</div> Minimum 8 characters</div>
+                    <div class="password-req"><div class="password-req__icon">✗</div> At least one uppercase letter (A-Z)</div>
+                    <div class="password-req met"><div class="password-req__icon">✓</div> At least one lowercase letter (a-z)</div>
+                    <div class="password-req"><div class="password-req__icon">✗</div> At least one number (0-9)</div>
+                    <div class="password-req"><div class="password-req__icon">✗</div> At least one special character (!@#$)</div>
+                  </div>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="auth-field">
+                  <label for="reg-confirm">Confirm Password <span class="required">*</span></label>
+                  <div class="auth-input-wrap">
+                    <span class="auth-input-wrap__icon">🔒</span>
+                    <input type="password" id="reg-confirm" class="form-input" placeholder="Re-enter your password" required autocomplete="new-password">
+                    <button type="button" class="auth-input-wrap__toggle" id="toggle-confirm" aria-label="Toggle confirm password visibility" title="Show password">👁️</button>
+                  </div>
+                </div>
+
+                <!-- Terms -->
+                <div style="display:flex;align-items:flex-start;gap:var(--space-3)">
+                  <input type="checkbox" id="reg-terms" style="width:18px;height:18px;border-radius:var(--radius-sm);border:2px solid var(--color-border);appearance:none;-webkit-appearance:none;cursor:pointer;flex-shrink:0;margin-top:2px;position:relative" required>
+                  <label for="reg-terms" style="font-size:var(--fs-small);color:var(--color-light-text);line-height:var(--lh-relaxed);cursor:pointer;text-transform:none;letter-spacing:normal">
+                    I agree to the <a href="terms-and-conditions.html" style="color:var(--color-secondary);text-decoration:underline">Terms & Conditions</a> and <a href="privacy-policy.html" style="color:var(--color-secondary);text-decoration:underline">Privacy Policy</a>
+                  </label>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="auth-submit" id="register-btn">Create Account →</button>
+              </form>
+
+              <!-- Divider -->
+              <div class="auth-divider" style="margin:var(--space-6) 0">or sign up with</div>
+
+              <!-- Social -->
+              <div class="auth-socials">
+                <button class="auth-social-btn"><span class="auth-social-btn__icon">🔵</span> Continue with Google</button>
+                <button class="auth-social-btn"><span class="auth-social-btn__icon">🍎</span> Continue with Apple</button>
+                <button class="auth-social-btn"><span class="auth-social-btn__icon">📘</span> Continue with Facebook</button>
+              </div>
+
+              <!-- Footer -->
+              <div class="auth-card__footer">
+                Already have an account? <a href="login.html">Sign In</a>
+              </div>
+            </div>
+
+            <!-- Security Strip -->
+            <div class="security-strip">
+              <div class="security-badge"><div class="security-badge__icon">🔒</div> Secure Registration</div>
+              <div class="security-badge"><div class="security-badge__icon">🛡️</div> Encrypted Data</div>
+              <div class="security-badge"><div class="security-badge__icon">✅</div> Privacy Protected</div>
+              <div class="security-badge"><div class="security-badge__icon">🔐</div> Trusted Platform</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ACCOUNT BENEFITS
+         ============================================================ -->
+    <section class="section" style="background:var(--color-bg)" id="benefits">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">Member Benefits</div>
+          <h2 class="section-header__title">What You'll Unlock</h2>
+          <p class="section-header__subtitle">Create your account to access these exclusive features.</p>
+        </div>
+        <div class="auth-benefits-grid scroll-reveal">
+          <div class="auth-benefit"><div class="auth-benefit__icon">🚗</div><h3 class="auth-benefit__title">Quick Vehicle Booking</h3><p class="auth-benefit__text">Browse and book premium vehicles in just a few clicks.</p></div>
+          <div class="auth-benefit"><div class="auth-benefit__icon">📋</div><h3 class="auth-benefit__title">Rental History</h3><p class="auth-benefit__text">Access complete records of all your past and active rentals.</p></div>
+          <div class="auth-benefit"><div class="auth-benefit__icon">🔔</div><h3 class="auth-benefit__title">Booking Notifications</h3><p class="auth-benefit__text">Get real-time alerts for approvals, reminders, and updates.</p></div>
+          <div class="auth-benefit"><div class="auth-benefit__icon">⏱️</div><h3 class="auth-benefit__title">Extension Requests</h3><p class="auth-benefit__text">Easily extend your rental duration from your dashboard.</p></div>
+          <div class="auth-benefit"><div class="auth-benefit__icon">👤</div><h3 class="auth-benefit__title">Profile Management</h3><p class="auth-benefit__text">Manage personal info, license details, and preferences.</p></div>
+          <div class="auth-benefit"><div class="auth-benefit__icon">⚡</div><h3 class="auth-benefit__title">Fast Approval</h3><p class="auth-benefit__text">Verified accounts get prioritized booking approval.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TRUST INDICATORS
+         ============================================================ -->
+    <section class="section" id="trust">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">Security</div>
+          <h2 class="section-header__title">Your Security Is Our Priority</h2>
+        </div>
+        <div class="trust-grid scroll-reveal">
+          <div class="trust-badge-card"><div class="trust-badge-card__icon">🔒</div><div class="trust-badge-card__title">Secure Registration</div></div>
+          <div class="trust-badge-card"><div class="trust-badge-card__icon">🛡️</div><div class="trust-badge-card__title">Encrypted Data</div></div>
+          <div class="trust-badge-card"><div class="trust-badge-card__icon">👁️</div><div class="trust-badge-card__title">Privacy Protected</div></div>
+          <div class="trust-badge-card"><div class="trust-badge-card__icon">✅</div><div class="trust-badge-card__title">Verified Fleet</div></div>
+          <div class="trust-badge-card"><div class="trust-badge-card__icon">👥</div><div class="trust-badge-card__title">Trusted Platform</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         HELP SECTION
+         ============================================================ -->
+    <section class="section" style="background:var(--color-bg)" id="help">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">Need Assistance?</div>
+          <h2 class="section-header__title">We're Here to Help</h2>
+        </div>
+        <div class="auth-help-grid scroll-reveal">
+          <div class="auth-help-card"><div class="auth-help-card__icon">📞</div><h3 class="auth-help-card__title">Contact Support</h3><div class="auth-help-card__value">+1 (555) 123-4567</div><p class="auth-help-card__text">Available 24/7</p></div>
+          <div class="auth-help-card"><div class="auth-help-card__icon">❓</div><h3 class="auth-help-card__title">FAQs</h3><div class="auth-help-card__value"><a href="faq.html" style="color:var(--color-secondary);text-decoration:none">Visit Help Center</a></div><p class="auth-help-card__text">Common questions answered</p></div>
+          <div class="auth-help-card"><div class="auth-help-card__icon">✉️</div><h3 class="auth-help-card__title">Customer Care</h3><div class="auth-help-card__value">support@driveelite.com</div><p class="auth-help-card__text">Response within 2 hours</p></div>
+          <div class="auth-help-card"><div class="auth-help-card__icon">🕐</div><h3 class="auth-help-card__title">Business Hours</h3><div class="auth-help-card__value">Mon – Sat</div><p class="auth-help-card__text">8:00 AM – 8:00 PM</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA
+         ============================================================ -->
+    <section class="auth-cta" id="cta">
+      <div class="auth-cta__pattern"></div>
+      <div class="container">
+        <h2 class="auth-cta__title scroll-reveal">Already a Member?</h2>
+        <p class="auth-cta__text scroll-reveal">Sign in to your existing account to manage bookings, track rentals, and access your member dashboard.</p>
+        <div class="auth-cta__actions scroll-reveal">
+          <a href="login.html" class="btn btn--accent btn--lg">Sign In</a>
+          <a href="cars.html" class="btn btn--ghost btn--lg" style="color:#fff;border-color:rgba(255,255,255,.3)">Browse Cars</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-icon">DE</div>Drive<span>Elite</span></a><p class="footer__description">Your premier destination for luxury car rentals. We deliver top-tier vehicles with white-glove service for an unforgettable driving experience.</p><div class="footer__socials"><a href="#" class="footer__social-link" aria-label="Facebook">f</a><a href="#" class="footer__social-link" aria-label="Instagram">📷</a><a href="#" class="footer__social-link" aria-label="X / Twitter">𝕏</a><a href="#" class="footer__social-link" aria-label="LinkedIn">in</a><a href="#" class="footer__social-link" aria-label="YouTube">▶</a></div></div>
+        <div><h4 class="footer__heading">Company</h4><ul class="footer__list"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="services.html" class="footer__link">Careers</a></li><li><a href="about.html" class="footer__link">Press</a></li><li><a href="contact.html" class="footer__link">Contact</a></li></ul></div>
+        <div><h4 class="footer__heading">Quick Links</h4><ul class="footer__list"><li><a href="cars.html" class="footer__link">Our Fleet</a></li><li><a href="services.html" class="footer__link">Services</a></li><li><a href="faq.html" class="footer__link">FAQ</a></li><li><a href="booking.html" class="footer__link">Book a Car</a></li></ul></div>
+        <div><h4 class="footer__heading">Support</h4><ul class="footer__list"><li><a href="faq.html" class="footer__link">Help Center</a></li><li><a href="privacy-policy.html" class="footer__link">Privacy Policy</a></li><li><a href="terms-and-conditions.html" class="footer__link">Terms of Service</a></li><li><a href="terms-and-conditions.html" class="footer__link">Rental Policy</a></li></ul></div>
+        <div><h4 class="footer__heading">Contact</h4><div class="footer__contact-item"><div class="footer__contact-icon">📍</div><div><div class="footer__contact-label">Address</div><div class="footer__contact-value">123 Luxury Drive, Suite 100<br>New York, NY 10001</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">📞</div><div><div class="footer__contact-label">Phone</div><div class="footer__contact-value">+1 (555) 123-4567</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">✉️</div><div><div class="footer__contact-label">Email</div><div class="footer__contact-value">hello@driveelite.com</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">🕐</div><div><div class="footer__contact-label">Business Hours</div><div class="footer__contact-value">Mon–Sat: 8AM – 8PM</div></div></div></div>
+      </div>
+      <div class="footer__newsletter-section"><div class="footer__newsletter-wrap"><div class="footer__newsletter-text"><h4 class="footer__newsletter-title">Stay in the Fast Lane</h4><p class="footer__newsletter-subtitle">Subscribe for exclusive deals, new arrivals, and luxury driving tips.</p></div><form class="footer__newsletter-form" id="newsletter-form"><input type="email" class="footer__newsletter-input" placeholder="Enter your email address" aria-label="Newsletter email"><button type="submit" class="btn btn--primary btn--sm">Subscribe</button></form></div></div>
+      <div class="footer__bottom"><div class="footer__bottom-brand"><p>&copy; 2026 DriveElite. Crafted with <span class="footer__heart">❤</span> for luxury driving.</p></div><div class="footer__bottom-links"><a href="privacy-policy.html" class="footer__bottom-link">Privacy</a><a href="terms-and-conditions.html" class="footer__bottom-link">Terms</a><a href="contact.html" class="footer__bottom-link">Sitemap</a></div></div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/validation.js"></script>
+  <script src="assets/js/animation.js"></script>
+
+  <script>
+  (function() {
+    'use strict';
+
+    /* ---- Password Toggle ---- */
+    function setupToggle(toggleId, inputId) {
+      const btn = document.getElementById(toggleId);
+      const input = document.getElementById(inputId);
+      if (btn && input) {
+        btn.addEventListener('click', () => {
+          const isPassword = input.type === 'password';
+          input.type = isPassword ? 'text' : 'password';
+          btn.textContent = isPassword ? '🙈' : '👁️';
+          btn.title = isPassword ? 'Hide password' : 'Show password';
+        });
+      }
+    }
+    setupToggle('toggle-password', 'reg-password');
+    setupToggle('toggle-confirm', 'reg-confirm');
+
+    /* ---- Checkbox Styling (terms) ---- */
+    const termsCheck = document.getElementById('reg-terms');
+    if (termsCheck) {
+      termsCheck.addEventListener('change', function() {
+        if (this.checked) {
+          this.style.background = 'var(--color-secondary)';
+          this.style.borderColor = 'var(--color-secondary)';
+        } else {
+          this.style.background = '';
+          this.style.borderColor = '';
+        }
+      });
+    }
+
+    /* ---- Form Submit Prevention ---- */
+    const form = document.getElementById('register-form');
+    if (form) {
+      form.addEventListener('submit', (e) => { e.preventDefault(); });
+    }
+  })();
+  </script>
+</body>
+</html>

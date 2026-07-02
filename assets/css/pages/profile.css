@@ -1,0 +1,367 @@
+/* ============================================================
+   PROFILE PAGE — STYLES
+   ============================================================ */
+
+/* ============================================================
+   1. HERO & GENERAL LAYOUT
+   ============================================================ */
+.prof-hero {
+  position: relative;
+  padding: 140px 0 60px;
+  background: linear-gradient(135deg, #090e1c 0%, #111827 50%, #0d1322 100%);
+  overflow: hidden;
+}
+.prof-hero__overlay {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 75% 25%, rgba(37,99,235,0.08) 0%, transparent 50%),
+              radial-gradient(circle at 15% 75%, rgba(245,158,11,0.04) 0%, transparent 50%);
+}
+.prof-hero .container { position: relative; z-index: 2; }
+
+/* Grid Layout */
+.prof-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-8);
+}
+.prof-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* ============================================================
+   2. PROFILE SUMMARY HEADER
+   ============================================================ */
+.prof-summary-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-6) var(--space-8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+[data-theme="dark"] .prof-summary-card {
+  background: var(--dm-card); border-color: var(--dm-border);
+}
+.prof-summary-card__left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+.prof-summary-card__avatar {
+  width: 90px; height: 90px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem; border: 4px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  transition: transform var(--transition-base);
+}
+.prof-summary-card__avatar:hover {
+  transform: scale(1.05);
+}
+.prof-summary-card__name {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.prof-summary-card__status-badge {
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--color-success);
+  font-size: 10px;
+  font-weight: var(--fw-bold);
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+}
+.prof-summary-card__meta {
+  font-size: var(--fs-xs);
+  color: var(--color-light-text);
+  margin-top: var(--space-1);
+}
+.prof-summary-card__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-3);
+  text-align: right;
+}
+
+/* Completion progress circle or bar */
+.prof-completion {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-1);
+}
+.prof-completion__bar {
+  width: 140px; height: 6px;
+  background: var(--color-border-light);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+[data-theme="dark"] .prof-completion__bar { background: var(--dm-border); }
+.prof-completion__bar-fill {
+  height: 100%; width: 75%;
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-success));
+}
+
+/* ============================================================
+   3. DETAILS CARD & READ-ONLY FIELDS
+   ============================================================ */
+.prof-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+[data-theme="dark"] .prof-card {
+  background: var(--dm-card); border-color: var(--dm-border);
+}
+.prof-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border-light);
+}
+[data-theme="dark"] .prof-card__header { border-color: var(--dm-border); }
+.prof-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Fields Grid */
+.prof-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+.prof-grid--full { grid-column: span 2; }
+
+.prof-field { display: flex; flex-direction: column; gap: var(--space-1); }
+.prof-field label {
+  font-size: 11px;
+  font-weight: var(--fw-semibold);
+  color: var(--color-light-text);
+  text-transform: uppercase;
+}
+.prof-field input, .prof-field select {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  font-size: var(--fs-small);
+  background: var(--color-bg);
+  color: var(--color-dark-text);
+  transition: all var(--transition-base);
+}
+[data-theme="dark"] .prof-field input, [data-theme="dark"] .prof-field select {
+  background: var(--dm-bg); border-color: var(--dm-border); color: var(--dm-text);
+}
+/* Read-only field design override */
+.prof-field input[readonly], .prof-field select[disabled] {
+  background: var(--color-bg);
+  border-color: transparent;
+  padding-left: 0; padding-right: 0;
+  cursor: default;
+  font-weight: var(--fw-semibold);
+}
+[data-theme="dark"] .prof-field input[readonly], [data-theme="dark"] .prof-field select[disabled] {
+  background: transparent;
+}
+
+/* Avatar Changer module */
+.prof-avatar-section {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-4);
+  background: var(--color-bg);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--space-5);
+}
+[data-theme="dark"] .prof-avatar-section { background: var(--dm-bg); }
+
+/* ============================================================
+   4. ACCOUNT SECURITY & STATS
+   ============================================================ */
+.security-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) 0;
+  border-bottom: 1px dashed var(--color-border-light);
+}
+[data-theme="dark"] .security-item { border-color: var(--dm-border); }
+.security-item:last-child { border-bottom: none; }
+
+.prof-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+.prof-stat-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4);
+  text-align: center;
+  transition: all var(--transition-base);
+}
+.prof-stat-card:hover { border-color: var(--color-secondary); }
+[data-theme="dark"] .prof-stat-card { background: var(--dm-bg); border-color: var(--dm-border); }
+.prof-stat-card__val {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
+  color: var(--color-secondary);
+}
+
+/* ============================================================
+   5. TOGGLE SWITCH CARDS (Notification prefs, Privacy)
+   ============================================================ */
+.pref-toggles { display: flex; flex-direction: column; gap: var(--space-3); }
+.pref-toggle-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition-base);
+}
+[data-theme="dark"] .pref-toggle-card { background: var(--dm-bg); }
+
+/* Switch Toggle UI */
+.switch-toggle {
+  position: relative;
+  display: inline-block;
+  width: 44px; height: 24px;
+  flex-shrink: 0;
+}
+.switch-toggle input { opacity: 0; width: 0; height: 0; }
+.switch-slider {
+  position: absolute; inset: 0;
+  background-color: var(--color-border);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background-color var(--transition-base);
+}
+.switch-slider::before {
+  content: '';
+  position: absolute;
+  left: 2px; bottom: 2px;
+  width: 20px; height: 20px;
+  border-radius: var(--radius-full);
+  background-color: #fff;
+  transition: transform var(--transition-base);
+}
+.switch-toggle input:checked + .switch-slider {
+  background-color: var(--color-success);
+}
+.switch-toggle input:checked + .switch-slider::before {
+  transform: translateX(20px);
+}
+
+/* ============================================================
+   6. ACCOUNT ACTIVITY TIMELINE
+   ============================================================ */
+.prof-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  position: relative;
+  padding-left: var(--space-5);
+  margin-top: var(--space-2);
+}
+.prof-timeline::before {
+  content: '';
+  position: absolute;
+  top: 4px; bottom: 4px; left: 5px;
+  width: 2px;
+  background: var(--color-border-light);
+}
+[data-theme="dark"] .prof-timeline::before { background: var(--dm-border); }
+
+.prof-timeline-item {
+  position: relative;
+}
+.prof-timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 5px; left: -18px;
+  width: 8px; height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-secondary);
+  border: 2px solid var(--color-card);
+}
+[data-theme="dark"] .prof-timeline-item::before { border-color: var(--dm-card); }
+.prof-timeline-item__title { font-size: var(--fs-xs); font-weight: var(--fw-semibold); }
+.prof-timeline-item__time { font-size: 10px; color: var(--color-light-text); margin-top: 1px; }
+
+/* Connected Devices list */
+.device-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) 0;
+  font-size: var(--fs-xs);
+}
+
+/* Quick Actions Cards */
+.prof-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: var(--space-3);
+}
+.prof-quick-btn {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4) var(--space-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  transition: all var(--transition-base);
+}
+[data-theme="dark"] .prof-quick-btn { background: var(--dm-bg); border-color: var(--dm-border); }
+.prof-quick-btn:hover {
+  border-color: var(--color-secondary); color: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   7. RESPONSIVE BREAKPOINTS
+   ============================================================ */
+@media (max-width: 992px) {
+  .prof-layout { grid-template-columns: 1fr; }
+  .prof-summary-card { flex-direction: column; text-align: center; }
+  .prof-summary-card__left { flex-direction: column; }
+  .prof-summary-card__right { align-items: center; text-align: center; }
+}
+@media (max-width: 576px) {
+  .prof-grid { grid-template-columns: 1fr; }
+  .prof-grid--full { grid-column: span 1; }
+  .prof-avatar-section { flex-direction: column; text-align: center; }
+  .prof-stats-grid { grid-template-columns: 1fr; }
+}

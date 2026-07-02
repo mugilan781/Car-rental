@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DriveElite — Premium luxury car rental service. Browse our exclusive fleet of luxury vehicles and book your dream ride today.">
+  <title>DriveElite — Premium Car Rental</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/pages/home.css">
+</head>
+<body>
+
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar__logo">
+        <div class="navbar__logo-icon">DE</div>
+        Drive<span>Elite</span>
+      </a>
+      <div class="navbar__links">
+        <a href="index.html" class="navbar__link">Home</a>
+        <a href="cars.html" class="navbar__link">Cars</a>
+        <a href="services.html" class="navbar__link">Services</a>
+        <a href="about.html" class="navbar__link">About</a>
+        <a href="faq.html" class="navbar__link">FAQ</a>
+        <a href="contact.html" class="navbar__link">Contact</a>
+      </div>
+      <div class="navbar__actions">
+        <button class="navbar__search-btn" aria-label="Search" title="Search (Ctrl+K)">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <a href="login.html" class="btn btn--ghost btn--sm">Login</a>
+        <a href="register.html" class="btn btn--primary btn--sm">Register</a>
+      </div>
+      <button class="navbar__toggle" aria-label="Toggle mobile menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="navbar__mobile-overlay"></div>
+  <div class="navbar__mobile">
+    <a href="index.html" class="navbar__link">Home</a>
+    <a href="cars.html" class="navbar__link">Cars</a>
+    <a href="services.html" class="navbar__link">Services</a>
+    <a href="about.html" class="navbar__link">About</a>
+    <a href="faq.html" class="navbar__link">FAQ</a>
+    <a href="contact.html" class="navbar__link">Contact</a>
+    <a href="dashboard.html" class="navbar__link">Dashboard</a>
+    <a href="profile.html" class="navbar__link">Profile</a>
+    <a href="notifications.html" class="navbar__link">Notifications</a>
+    <a href="rental-history.html" class="navbar__link">Rental History</a>
+    <div class="navbar__actions">
+      <a href="login.html" class="btn btn--ghost btn--sm">Login</a>
+      <a href="register.html" class="btn btn--primary btn--sm">Register</a>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SECTION 1 — HERO
+       ============================================================ -->
+  <section class="home-hero" id="hero">
+    <div class="home-hero__bg">
+      <img src="assets/images/hero/hero-car.png" alt="Luxury sports car" loading="eager">
+    </div>
+    <div class="home-hero__overlay"></div>
+    <div class="home-hero__glow"></div>
+    <div class="home-hero__glow home-hero__glow--accent"></div>
+    <div class="container">
+      <div class="home-hero__grid">
+        <div class="home-hero__content scroll-reveal">
+          <div class="home-hero__badge">Premium Car Rental Service</div>
+          <h1 class="home-hero__title">
+            Experience Luxury<br>
+            <span class="highlight">On Every Drive</span>
+          </h1>
+          <p class="home-hero__desc">
+            Discover our exclusive collection of premium vehicles. From elegant sedans to powerful SUVs — choose your perfect ride and drive in style.
+          </p>
+          <div class="home-hero__actions">
+            <a href="cars.html" class="btn btn--primary btn--lg">Browse Cars</a>
+            <a href="booking.html" class="btn btn--ghost btn--lg" style="color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.2);">Book Now</a>
+          </div>
+          <div class="home-hero__stats">
+            <div>
+              <div class="home-hero__stat-value" data-count="200">200+</div>
+              <div class="home-hero__stat-label">Premium Cars</div>
+            </div>
+            <div>
+              <div class="home-hero__stat-value" data-count="15000">15K+</div>
+              <div class="home-hero__stat-label">Happy Clients</div>
+            </div>
+            <div>
+              <div class="home-hero__stat-value" data-count="25">25+</div>
+              <div class="home-hero__stat-label">Locations</div>
+            </div>
+          </div>
+        </div>
+        <div class="home-hero__visual scroll-reveal" style="--delay:.3s">
+          <img src="assets/images/hero/hero-car.png" alt="Luxury sports car showcase" class="home-hero__car-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main id="main-content">
+
+    <!-- ============================================================
+         SECTION 2 — BOOKING WIDGET
+         ============================================================ -->
+    <section class="booking-widget">
+      <div class="container">
+        <div class="booking-widget__card scroll-reveal">
+          <div class="booking-widget__header">
+            <h2 class="booking-widget__title">Find Your Perfect Ride</h2>
+            <div class="booking-widget__rental-type">
+              <button class="booking-widget__type-btn active" data-type="hourly">Hourly</button>
+              <button class="booking-widget__type-btn" data-type="daily">Daily</button>
+            </div>
+          </div>
+          <div class="booking-widget__fields">
+            <div class="booking-widget__field">
+              <label for="pickup-location">Pickup Location</label>
+              <input type="text" id="pickup-location" class="form-input" placeholder="Enter city or airport">
+            </div>
+            <div class="booking-widget__field">
+              <label for="dropoff-location">Drop-off Location</label>
+              <input type="text" id="dropoff-location" class="form-input" placeholder="Same as pickup">
+            </div>
+            <div class="booking-widget__field">
+              <label for="pickup-date">Pickup Date & Time</label>
+              <input type="datetime-local" id="pickup-date" class="form-input">
+            </div>
+            <div class="booking-widget__field">
+              <label for="return-date">Return Date & Time</label>
+              <input type="datetime-local" id="return-date" class="form-input">
+            </div>
+            <button class="btn btn--primary booking-widget__search-btn">🔍 Search Cars</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3 — FEATURED CATEGORIES
+         ============================================================ -->
+    <section class="section" id="categories">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">Browse by Category</div>
+          <h2 class="section-header__title">Explore Our Vehicle Categories</h2>
+          <p class="section-header__subtitle">From luxury sedans to powerful SUVs, we have the perfect vehicle for every occasion and preference.</p>
+        </div>
+        <div class="categories-grid">
+          <a href="cars.html" class="category-card scroll-reveal">
+            <div class="category-card__icon"><span>🏎️</span></div>
+            <h3 class="category-card__title">Luxury Cars</h3>
+            <p class="category-card__count">24 vehicles</p>
+          </a>
+          <a href="cars.html" class="category-card scroll-reveal" style="--delay:.1s">
+            <div class="category-card__icon"><span>🚙</span></div>
+            <h3 class="category-card__title">SUV</h3>
+            <p class="category-card__count">18 vehicles</p>
+          </a>
+          <a href="cars.html" class="category-card scroll-reveal" style="--delay:.2s">
+            <div class="category-card__icon"><span>🚗</span></div>
+            <h3 class="category-card__title">Sedan</h3>
+            <p class="category-card__count">32 vehicles</p>
+          </a>
+          <a href="cars.html" class="category-card scroll-reveal" style="--delay:.3s">
+            <div class="category-card__icon"><span>🏁</span></div>
+            <h3 class="category-card__title">Sports Cars</h3>
+            <p class="category-card__count">12 vehicles</p>
+          </a>
+          <a href="cars.html" class="category-card scroll-reveal" style="--delay:.4s">
+            <div class="category-card__icon"><span>⚡</span></div>
+            <h3 class="category-card__title">Electric</h3>
+            <p class="category-card__count">15 vehicles</p>
+          </a>
+          <a href="cars.html" class="category-card scroll-reveal" style="--delay:.5s">
+            <div class="category-card__icon"><span>👨‍👩‍👧‍👦</span></div>
+            <h3 class="category-card__title">Family</h3>
+            <p class="category-card__count">20 vehicles</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 4 — FEATURED RENTAL CARS
+         ============================================================ -->
+    <section class="section" id="featured-cars" style="background:var(--color-bg)">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">Featured Vehicles</div>
+          <h2 class="section-header__title">Our Most Popular Rentals</h2>
+          <p class="section-header__subtitle">Hand-picked premium vehicles loved by our customers. Experience luxury, performance, and comfort.</p>
+        </div>
+        <div class="cars-grid">
+          <!-- Car 1 -->
+          <div class="car-card scroll-reveal">
+            <div class="car-card__image" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">
+              <div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:4rem">🏎️</div>
+              <div class="car-card__badges">
+                <span class="badge badge--available">Available</span>
+                <span class="badge badge--popular">Popular</span>
+              </div>
+              <button class="car-card__favorite" aria-label="Add to favorites">♡</button>
+            </div>
+            <div class="car-card__body">
+              <div class="car-card__brand">Mercedes-Benz</div>
+              <h3 class="car-card__name">AMG GT 63</h3>
+              <div class="car-card__specs">
+                <span class="car-card__spec"><span class="car-card__spec-icon">⛽</span> Petrol</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon">⚙️</span> Automatic</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon">👤</span> 4 Seats</span>
+              </div>
+              <div class="car-card__footer">
+                <div class="car-card__pricing">
+                  <span class="car-card__price">$85<span class="car-card__price-unit">/hr</span></span>
+                  <span class="car-card__price-unit">$520/day</span>
+                </div>
+                <div class="car-card__rating">⭐ 4.9</div>
+              </div>
+              <div class="car-card__actions">
+                <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
+                <a href="booking.html" class="btn btn--primary btn--sm">Rent Now</a>
+              </div>
+            </div>
+          </div>
+          <!-- Car 2 -->
+          <div class="car-card scroll-reveal" style="--delay:.15s">
+            <div class="car-card__image" style="background:linear-gradient(135deg,#0f172a,#1e3a5f)">
+              <div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:4rem">🚙</div>
+              <div class="car-card__badges">
+                <span class="badge badge--available">Available</span>
+                <span class="badge badge--suv">SUV</span>
+              </div>
+              <button class="car-card__favorite" aria-label="Add to favorites">♡</button>
+            </div>
+            <div class="car-card__body">
+              <div class="car-card__brand">BMW</div>
+              <h3 class="car-card__name">X7 xDrive40i</h3>
+              <div class="car-card__specs">
+                <span class="car-card__spec"><span class="car-card__spec-icon">⛽</span> Petrol</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon">⚙️</span> Automatic</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon">👤</span> 7 Seats</span>
+              </div>
+              <div class="car-card__footer">
+                <div class="car-card__pricing">
+                  <span class="car-card__price">$65<span class="car-card__price-unit">/hr</span></span>
+                  <span class="car-card__price-unit">$420/day</span>
+                </div>
+                <div class="car-card__rating">⭐ 4.8</div>
+              </div>
+              <div class="car-card__actions">
+                <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
+                <a href="booking.html" class="btn btn--primary btn--sm">Rent Now</a>
+              </div>
+            </div>
+          </div>
+          <!-- Car 3 -->
+          <div class="car-card scroll-reveal" style="--delay:.3s">
+            <div class="car-card__image" style="background:linear-gradient(135deg,#14532d,#166534)">
+              <div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:4rem">⚡</div>
+              <div class="car-card__badges">
+                <span class="badge badge--available">Available</span>
+                <span class="badge badge--electric">Electric</span>
+              </div>
+              <button class="car-card__favorite" aria-label="Add to favorites">♡</button>
+            </div>
+            <div class="car-card__body">
+              <div class="car-card__brand">Tesla</div>
+              <h3 class="car-card__name">Model S Plaid</h3>
+              <div class="car-card__specs">
+                <span class="car-card__spec"><span class="car-card__spec-icon">⚡</span> Electric</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon">⚙️</span> Automatic</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon">👤</span> 5 Seats</span>
+              </div>
+              <div class="car-card__footer">
+                <div class="car-card__pricing">
+                  <span class="car-card__price">$75<span class="car-card__price-unit">/hr</span></span>
+                  <span class="car-card__price-unit">$480/day</span>
+                </div>
+                <div class="car-card__rating">⭐ 4.9</div>
+              </div>
+              <div class="car-card__actions">
+                <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
+                <a href="booking.html" class="btn btn--primary btn--sm">Rent Now</a>
+              </div>
+            </div>
+          </div>
+          <!-- Car 4 -->
+          <div class="car-card scroll-reveal">
+            <div class="car-card__image" style="background:linear-gradient(135deg,#1e1b4b,#312e81)">
+              <div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:4rem">🏁</div>
+              <div class="car-card__badges">
+                <span class="badge badge--available">Available</span>
+                <span class="badge badge--luxury">Luxury</span>
+              </div>
+              <button class="car-card__favorite" aria-label="Add to favorites">♡</button>
+            </div>
+            <div class="car-card__body">
+              <div class="car-card__brand">Porsche</div>
+              <h3 class="car-card__name">911 Turbo S</h3>
+              <div class="car-card__specs">
+                <span class="car-card__spec"><span class="car-card__spec-icon">⛽</span> Petrol</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon">⚙️</span> Automatic</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon">👤</span> 2 Seats</span>
+              </div>
+              <div class="car-card__footer">
+                <div class="car-card__pricing">
+                  <span class="car-card__price">$120<span class="car-card__price-unit">/hr</span></span>
+                  <span class="car-card__price-unit">$750/day</span>
+                </div>
+                <div class="car-card__rating">⭐ 5.0</div>
+              </div>
+              <div class="car-card__actions">
+                <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
+                <a href="booking.html" class="btn btn--primary btn--sm">Rent Now</a>
+              </div>
+            </div>
+          </div>
+          <!-- Car 5 -->
+          <div class="car-card scroll-reveal" style="--delay:.15s">
+            <div class="car-card__image" style="background:linear-gradient(135deg,#27272a,#3f3f46)">
+              <div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:4rem">🚗</div>
+              <div class="car-card__badges">
+                <span class="badge badge--available">Available</span>
+                <span class="badge badge--sedan">Sedan</span>
+              </div>
+              <button class="car-card__favorite" aria-label="Add to favorites">♡</button>
+            </div>
+            <div class="car-card__body">
+              <div class="car-card__brand">Audi</div>
+              <h3 class="car-card__name">A8 L Quattro</h3>
+              <div class="car-card__specs">
+                <span class="car-card__spec"><span class="car-card__spec-icon">⛽</span> Petrol</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon">⚙️</span> Automatic</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon">👤</span> 5 Seats</span>
+              </div>
+              <div class="car-card__footer">
+                <div class="car-card__pricing">
+                  <span class="car-card__price">$55<span class="car-card__price-unit">/hr</span></span>
+                  <span class="car-card__price-unit">$350/day</span>
+                </div>
+                <div class="car-card__rating">⭐ 4.7</div>
+              </div>
+              <div class="car-card__actions">
+                <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
+                <a href="booking.html" class="btn btn--primary btn--sm">Rent Now</a>
+              </div>
+            </div>
+          </div>
+          <!-- Car 6 -->
+          <div class="car-card scroll-reveal" style="--delay:.3s">
+            <div class="car-card__image" style="background:linear-gradient(135deg,#451a03,#78350f)">
+              <div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:4rem">🚕</div>
+              <div class="car-card__badges">
+                <span class="badge badge--available">Available</span>
+                <span class="badge badge--new">New</span>
+              </div>
+              <button class="car-card__favorite" aria-label="Add to favorites">♡</button>
+            </div>
+            <div class="car-card__body">
+              <div class="car-card__brand">Range Rover</div>
+              <h3 class="car-card__name">Sport SVR</h3>
+              <div class="car-card__specs">
+                <span class="car-card__spec"><span class="car-card__spec-icon">⛽</span> Diesel</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon">⚙️</span> Automatic</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon">👤</span> 5 Seats</span>
+              </div>
+              <div class="car-card__footer">
+                <div class="car-card__pricing">
+                  <span class="car-card__price">$90<span class="car-card__price-unit">/hr</span></span>
+                  <span class="car-card__price-unit">$580/day</span>
+                </div>
+                <div class="car-card__rating">⭐ 4.8</div>
+              </div>
+              <div class="car-card__actions">
+                <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
+                <a href="booking.html" class="btn btn--primary btn--sm">Rent Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-10">
+          <a href="cars.html" class="btn btn--outline btn--lg">View All Vehicles →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 5 — WHY CHOOSE US
+         ============================================================ -->
+    <section class="section" id="why-choose-us">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">Why DriveElite</div>
+          <h2 class="section-header__title">Why Choose Us</h2>
+          <p class="section-header__subtitle">We combine luxury, reliability, and exceptional service to deliver an unmatched car rental experience.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card scroll-reveal">
+            <div class="feature-card__icon">🕐</div>
+            <h3 class="feature-card__title">24/7 Support</h3>
+            <p class="feature-card__text">Round-the-clock customer support to assist you anytime, anywhere.</p>
+          </div>
+          <div class="feature-card scroll-reveal" style="--delay:.1s">
+            <div class="feature-card__icon">💰</div>
+            <h3 class="feature-card__title">Affordable Pricing</h3>
+            <p class="feature-card__text">Competitive rates with no hidden fees. Transparent pricing always.</p>
+          </div>
+          <div class="feature-card scroll-reveal" style="--delay:.2s">
+            <div class="feature-card__icon">✅</div>
+            <h3 class="feature-card__title">Verified Vehicles</h3>
+            <p class="feature-card__text">Every vehicle is inspected and certified for safety and quality.</p>
+          </div>
+          <div class="feature-card scroll-reveal" style="--delay:.3s">
+            <div class="feature-card__icon">📅</div>
+            <h3 class="feature-card__title">Flexible Plans</h3>
+            <p class="feature-card__text">Hourly, daily, or long-term rentals to suit your schedule perfectly.</p>
+          </div>
+          <div class="feature-card scroll-reveal">
+            <div class="feature-card__icon">⚡</div>
+            <h3 class="feature-card__title">Easy Booking</h3>
+            <p class="feature-card__text">Book in minutes with our streamlined reservation process.</p>
+          </div>
+          <div class="feature-card scroll-reveal" style="--delay:.1s">
+            <div class="feature-card__icon">🔧</div>
+            <h3 class="feature-card__title">Well Maintained</h3>
+            <p class="feature-card__text">Regular servicing ensures every car performs at its peak.</p>
+          </div>
+          <div class="feature-card scroll-reveal" style="--delay:.2s">
+            <div class="feature-card__icon">🧑‍✈️</div>
+            <h3 class="feature-card__title">Pro Drivers</h3>
+            <p class="feature-card__text">Optional chauffeur service with trained professional drivers.</p>
+          </div>
+          <div class="feature-card scroll-reveal" style="--delay:.3s">
+            <div class="feature-card__icon">🛡️</div>
+            <h3 class="feature-card__title">Roadside Assist</h3>
+            <p class="feature-card__text">Comprehensive roadside assistance for complete peace of mind.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 6 — HOW IT WORKS
+         ============================================================ -->
+    <section class="timeline-section" id="how-it-works">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">Simple Process</div>
+          <h2 class="section-header__title">How It Works</h2>
+          <p class="section-header__subtitle">Renting your dream car is easier than ever. Follow these simple steps.</p>
+        </div>
+        <div class="timeline scroll-reveal">
+          <div class="timeline__step">
+            <div class="timeline__number">1</div>
+            <div class="timeline__icon">🔍</div>
+            <div class="timeline__title">Browse Cars</div>
+            <div class="timeline__desc">Explore our premium fleet</div>
+          </div>
+          <div class="timeline__step">
+            <div class="timeline__number">2</div>
+            <div class="timeline__icon">🚗</div>
+            <div class="timeline__title">Choose Vehicle</div>
+            <div class="timeline__desc">Select your perfect ride</div>
+          </div>
+          <div class="timeline__step">
+            <div class="timeline__number">3</div>
+            <div class="timeline__icon">📅</div>
+            <div class="timeline__title">Select Duration</div>
+            <div class="timeline__desc">Pick rental period</div>
+          </div>
+          <div class="timeline__step">
+            <div class="timeline__number">4</div>
+            <div class="timeline__icon">📋</div>
+            <div class="timeline__title">Submit Request</div>
+            <div class="timeline__desc">Complete booking form</div>
+          </div>
+          <div class="timeline__step">
+            <div class="timeline__number">5</div>
+            <div class="timeline__icon">✅</div>
+            <div class="timeline__title">Get Approved</div>
+            <div class="timeline__desc">Quick admin approval</div>
+          </div>
+          <div class="timeline__step">
+            <div class="timeline__number">6</div>
+            <div class="timeline__icon">📸</div>
+            <div class="timeline__title">Verification</div>
+            <div class="timeline__desc">Vehicle condition check</div>
+          </div>
+          <div class="timeline__step">
+            <div class="timeline__number">7</div>
+            <div class="timeline__icon">🎉</div>
+            <div class="timeline__title">Pickup & Drive</div>
+            <div class="timeline__desc">Enjoy your journey!</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 7 — SPECIAL OFFERS
+         ============================================================ -->
+    <section class="section" id="offers">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">Limited Time</div>
+          <h2 class="section-header__title">Special Offers & Deals</h2>
+          <p class="section-header__subtitle">Take advantage of our exclusive promotions and save on your next rental.</p>
+        </div>
+        <div class="offers-grid">
+          <div class="offer-card offer-card--1 scroll-reveal">
+            <div class="offer-card__pattern"></div>
+            <div class="offer-card__discount">20% OFF</div>
+            <h3 class="offer-card__title">Weekend Getaway</h3>
+            <p class="offer-card__text">Book any car for the weekend and save 20%. Valid for Friday–Sunday rentals.</p>
+            <a href="booking.html" class="btn btn--ghost btn--sm" style="color:#fff;border-color:rgba(255,255,255,.3);width:fit-content">Book Now →</a>
+          </div>
+          <div class="offer-card offer-card--2 scroll-reveal" style="--delay:.15s">
+            <div class="offer-card__pattern"></div>
+            <div class="offer-card__discount">30% OFF</div>
+            <h3 class="offer-card__title">Long-Term Rental</h3>
+            <p class="offer-card__text">Rent for 7+ days and enjoy 30% off the total price. Great for business trips.</p>
+            <a href="booking.html" class="btn btn--ghost btn--sm" style="color:#fff;border-color:rgba(255,255,255,.3);width:fit-content">Book Now →</a>
+          </div>
+          <div class="offer-card offer-card--3 scroll-reveal">
+            <div class="offer-card__pattern"></div>
+            <div class="offer-card__discount">15% OFF</div>
+            <h3 class="offer-card__title">Festival Special</h3>
+            <p class="offer-card__text">Celebrate the season with special festival discounts on luxury vehicles.</p>
+            <a href="booking.html" class="btn btn--ghost btn--sm" style="color:#fff;border-color:rgba(255,255,255,.3);width:fit-content">Book Now →</a>
+          </div>
+          <div class="offer-card offer-card--4 scroll-reveal" style="--delay:.15s">
+            <div class="offer-card__pattern"></div>
+            <div class="offer-card__discount">25% OFF</div>
+            <h3 class="offer-card__title">Corporate Package</h3>
+            <p class="offer-card__text">Exclusive rates for businesses. Volume discounts and priority booking.</p>
+            <a href="contact.html" class="btn btn--ghost btn--sm" style="color:#fff;border-color:rgba(255,255,255,.3);width:fit-content">Contact Us →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 8 — COMPANY STATISTICS
+         ============================================================ -->
+    <section class="stats-section" id="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item scroll-reveal">
+            <div class="stat-item__icon">🚗</div>
+            <div class="stat-item__number" data-count="200">200+</div>
+            <div class="stat-item__label">Cars Available</div>
+            <div class="stat-item__divider"></div>
+          </div>
+          <div class="stat-item scroll-reveal" style="--delay:.1s">
+            <div class="stat-item__icon">😊</div>
+            <div class="stat-item__number" data-count="15000">15,000+</div>
+            <div class="stat-item__label">Happy Customers</div>
+            <div class="stat-item__divider"></div>
+          </div>
+          <div class="stat-item scroll-reveal" style="--delay:.2s">
+            <div class="stat-item__icon">🏆</div>
+            <div class="stat-item__number" data-count="25000">25,000+</div>
+            <div class="stat-item__label">Successful Rentals</div>
+            <div class="stat-item__divider"></div>
+          </div>
+          <div class="stat-item scroll-reveal" style="--delay:.3s">
+            <div class="stat-item__icon">📅</div>
+            <div class="stat-item__number" data-count="12">12+</div>
+            <div class="stat-item__label">Years Experience</div>
+            <div class="stat-item__divider"></div>
+          </div>
+          <div class="stat-item scroll-reveal" style="--delay:.4s">
+            <div class="stat-item__icon">🌍</div>
+            <div class="stat-item__number" data-count="25">25+</div>
+            <div class="stat-item__label">Cities Served</div>
+            <div class="stat-item__divider"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 9 — CUSTOMER TESTIMONIALS
+         ============================================================ -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">Testimonials</div>
+          <h2 class="section-header__title">What Our Clients Say</h2>
+          <p class="section-header__subtitle">Don't just take our word for it — hear from our satisfied customers.</p>
+        </div>
+        <div class="testimonials-slider scroll-reveal">
+          <div class="testimonials-track" id="testimonials-track">
+            <div class="testimonial-card">
+              <div class="testimonial-card__quote">"</div>
+              <p class="testimonial-card__text">An absolutely fantastic experience. The car was immaculate and the service was top-notch. Will definitely be using DriveElite again for my business trips.</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">👨‍💼</div>
+                <div>
+                  <div class="testimonial-card__name">James Anderson</div>
+                  <div class="testimonial-card__role">CEO, TechCorp</div>
+                  <div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-card__quote">"</div>
+              <p class="testimonial-card__text">The booking process was incredibly smooth. I had the car within an hour of requesting it. The quality and cleanliness of the vehicle exceeded my expectations.</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">👩‍💻</div>
+                <div>
+                  <div class="testimonial-card__name">Sarah Mitchell</div>
+                  <div class="testimonial-card__role">Marketing Director</div>
+                  <div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-card__quote">"</div>
+              <p class="testimonial-card__text">Best car rental experience I've ever had. The fleet is amazing — drove a Tesla Model S for a week. Customer service was exceptional throughout.</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">👨‍🔬</div>
+                <div>
+                  <div class="testimonial-card__name">Robert Chen</div>
+                  <div class="testimonial-card__role">Software Engineer</div>
+                  <div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonials-controls">
+            <button class="testimonials-btn" id="testimonial-prev" aria-label="Previous testimonial">←</button>
+            <button class="testimonials-btn" id="testimonial-next" aria-label="Next testimonial">→</button>
+          </div>
+          <div class="testimonials-dots">
+            <button class="testimonials-dot active" aria-label="Slide 1"></button>
+            <button class="testimonials-dot" aria-label="Slide 2"></button>
+            <button class="testimonials-dot" aria-label="Slide 3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 10 — TRUSTED BRANDS
+         ============================================================ -->
+    <section class="brands-section" id="brands">
+      <div class="container">
+        <div class="section-header scroll-reveal" style="margin-bottom:var(--space-8)">
+          <div class="section-header__badge">Our Partners</div>
+          <h2 class="section-header__title" style="font-size:var(--fs-h3)">Trusted by Top Brands</h2>
+        </div>
+        <div class="brands-grid scroll-reveal">
+          <div class="brand-logo"><div class="brand-logo__icon">🅱️</div><span class="brand-logo__name">BMW</span></div>
+          <div class="brand-logo"><div class="brand-logo__icon">⭐</div><span class="brand-logo__name">Mercedes</span></div>
+          <div class="brand-logo"><div class="brand-logo__icon">🔵</div><span class="brand-logo__name">Audi</span></div>
+          <div class="brand-logo"><div class="brand-logo__icon">🔴</div><span class="brand-logo__name">Toyota</span></div>
+          <div class="brand-logo"><div class="brand-logo__icon">🏍️</div><span class="brand-logo__name">Honda</span></div>
+          <div class="brand-logo"><div class="brand-logo__icon">🇰🇷</div><span class="brand-logo__name">Hyundai</span></div>
+          <div class="brand-logo"><div class="brand-logo__icon">⚡</div><span class="brand-logo__name">Tesla</span></div>
+          <div class="brand-logo"><div class="brand-logo__icon">🦅</div><span class="brand-logo__name">Ford</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 11 — MOBILE APP PROMO
+         ============================================================ -->
+    <section class="app-section" id="app">
+      <div class="container">
+        <div class="app-grid">
+          <div class="scroll-reveal">
+            <div class="app-content__badge">Mobile App</div>
+            <h2 class="app-content__title">Rent on the Go with Our Mobile App</h2>
+            <p class="app-content__text">Download the DriveElite app for the fastest booking experience. Browse, book, and manage your rentals — all from your phone.</p>
+            <div class="app-features">
+              <div class="app-feature"><div class="app-feature__check">✓</div> Instant booking & confirmation</div>
+              <div class="app-feature"><div class="app-feature__check">✓</div> Real-time vehicle tracking</div>
+              <div class="app-feature"><div class="app-feature__check">✓</div> Exclusive app-only discounts</div>
+              <div class="app-feature"><div class="app-feature__check">✓</div> 24/7 in-app customer support</div>
+            </div>
+            <div class="app-buttons">
+              <a href="#" class="app-btn">
+                <span class="app-btn__icon">🍎</span>
+                <div><div class="app-btn__text-sm">Download on the</div><div class="app-btn__text-lg">App Store</div></div>
+              </a>
+              <a href="#" class="app-btn">
+                <span class="app-btn__icon">▶️</span>
+                <div><div class="app-btn__text-sm">Get it on</div><div class="app-btn__text-lg">Google Play</div></div>
+              </a>
+            </div>
+          </div>
+          <div class="app-mockup scroll-reveal" style="--delay:.2s">
+            <div class="app-mockup__glow"></div>
+            <div class="app-mockup__phone">📱</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 12 — FAQ PREVIEW
+         ============================================================ -->
+    <section class="section" id="faq-preview">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">FAQs</div>
+          <h2 class="section-header__title">Frequently Asked Questions</h2>
+          <p class="section-header__subtitle">Quick answers to the most common questions about our rental service.</p>
+        </div>
+        <div class="faq-list scroll-reveal">
+          <div class="faq-item open">
+            <button class="faq-item__question">
+              What documents do I need to rent a car?
+              <span class="faq-item__toggle">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p class="faq-item__answer-text">You'll need a valid driver's license, a government-issued ID or passport, and a credit card for the security deposit. International renters should have an international driving permit.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__question">
+              Can I modify or cancel my booking?
+              <span class="faq-item__toggle">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p class="faq-item__answer-text">Yes! You can modify or cancel your booking up to 24 hours before the scheduled pickup time at no additional cost. Late cancellations may incur a small fee.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__question">
+              Is insurance included in the rental price?
+              <span class="faq-item__toggle">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p class="faq-item__answer-text">Basic insurance coverage is included with every rental. We also offer premium insurance packages for comprehensive protection at an additional cost.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__question">
+              What happens if the car breaks down?
+              <span class="faq-item__toggle">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p class="faq-item__answer-text">We provide 24/7 roadside assistance. Call our support line and we'll arrange a replacement vehicle or towing service at no extra charge.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__question">
+              Do you offer long-term rental discounts?
+              <span class="faq-item__toggle">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p class="faq-item__answer-text">Absolutely! We offer up to 30% discount for rentals of 7 days or more. Contact us for corporate and monthly rental packages.</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-10">
+          <a href="faq.html" class="btn btn--outline btn--lg">View All FAQs →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 13 — BLOG PREVIEW
+         ============================================================ -->
+    <section class="section" id="blog" style="background:var(--color-bg)">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">Latest News</div>
+          <h2 class="section-header__title">From Our Blog</h2>
+          <p class="section-header__subtitle">Stay updated with the latest driving tips, travel guides, and automotive news.</p>
+        </div>
+        <div class="blog-grid">
+          <div class="blog-card scroll-reveal">
+            <div class="blog-card__image">
+              <div class="blog-card__image-placeholder" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe)">🚗</div>
+            </div>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">Driving Tips</span>
+              <h3 class="blog-card__title">10 Essential Tips for Long-Distance Driving</h3>
+              <p class="blog-card__excerpt">Stay safe and comfortable on those extended road trips with these expert-approved tips.</p>
+              <div class="blog-card__meta">
+                <span>Jun 28, 2026</span>
+                <a href="#" class="blog-card__read-more">Read More →</a>
+              </div>
+            </div>
+          </div>
+          <div class="blog-card scroll-reveal" style="--delay:.1s">
+            <div class="blog-card__image">
+              <div class="blog-card__image-placeholder" style="background:linear-gradient(135deg,#fef3c7,#fde68a)">🗺️</div>
+            </div>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">Travel Guide</span>
+              <h3 class="blog-card__title">Best Scenic Routes to Explore This Summer</h3>
+              <p class="blog-card__excerpt">Discover breathtaking roads and hidden gems for your next driving adventure.</p>
+              <div class="blog-card__meta">
+                <span>Jun 25, 2026</span>
+                <a href="#" class="blog-card__read-more">Read More →</a>
+              </div>
+            </div>
+          </div>
+          <div class="blog-card scroll-reveal" style="--delay:.2s">
+            <div class="blog-card__image">
+              <div class="blog-card__image-placeholder" style="background:linear-gradient(135deg,#dcfce7,#bbf7d0)">🔧</div>
+            </div>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">Maintenance</span>
+              <h3 class="blog-card__title">How to Keep Your Rental Car in Top Condition</h3>
+              <p class="blog-card__excerpt">Simple maintenance checks you should do before and during your rental period.</p>
+              <div class="blog-card__meta">
+                <span>Jun 20, 2026</span>
+                <a href="#" class="blog-card__read-more">Read More →</a>
+              </div>
+            </div>
+          </div>
+          <div class="blog-card scroll-reveal" style="--delay:.3s">
+            <div class="blog-card__image">
+              <div class="blog-card__image-placeholder" style="background:linear-gradient(135deg,#fee2e2,#fecaca)">🛡️</div>
+            </div>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">Road Safety</span>
+              <h3 class="blog-card__title">A Complete Guide to Road Safety Essentials</h3>
+              <p class="blog-card__excerpt">Everything you need to know about staying safe while driving a rental car.</p>
+              <div class="blog-card__meta">
+                <span>Jun 15, 2026</span>
+                <a href="#" class="blog-card__read-more">Read More →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 14 — CALL TO ACTION
+         ============================================================ -->
+    <section class="home-cta" id="cta">
+      <div class="home-cta__pattern"></div>
+      <div class="container">
+        <h2 class="home-cta__title scroll-reveal">Ready to Experience Premium Driving?</h2>
+        <p class="home-cta__text scroll-reveal">Join thousands of satisfied customers who trust DriveElite for their luxury car rental needs. Book today and drive tomorrow.</p>
+        <div class="home-cta__actions scroll-reveal">
+          <a href="cars.html" class="btn btn--accent btn--lg">Browse Cars</a>
+          <a href="contact.html" class="btn btn--ghost btn--lg" style="color:#fff;border-color:rgba(255,255,255,.3)">Contact Us</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo"><div class="footer__logo-icon">DE</div>Drive<span>Elite</span></a>
+          <p class="footer__description">Your premier destination for luxury car rentals. We deliver top-tier vehicles with white-glove service for an unforgettable driving experience.</p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social-link" aria-label="Facebook">f</a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="footer__social-link" aria-label="X / Twitter">𝕏</a>
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">in</a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <ul class="footer__list">
+            <li><a href="about.html" class="footer__link">About Us</a></li>
+            <li><a href="services.html" class="footer__link">Careers</a></li>
+            <li><a href="about.html" class="footer__link">Press</a></li>
+            <li><a href="contact.html" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Quick Links</h4>
+          <ul class="footer__list">
+            <li><a href="cars.html" class="footer__link">Our Fleet</a></li>
+            <li><a href="services.html" class="footer__link">Services</a></li>
+            <li><a href="faq.html" class="footer__link">FAQ</a></li>
+            <li><a href="booking.html" class="footer__link">Book a Car</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Support</h4>
+          <ul class="footer__list">
+            <li><a href="faq.html" class="footer__link">Help Center</a></li>
+            <li><a href="privacy-policy.html" class="footer__link">Privacy Policy</a></li>
+            <li><a href="terms-and-conditions.html" class="footer__link">Terms of Service</a></li>
+            <li><a href="terms-and-conditions.html" class="footer__link">Rental Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Contact</h4>
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon">📍</div>
+            <div><div class="footer__contact-label">Address</div><div class="footer__contact-value">123 Luxury Drive, Suite 100<br>New York, NY 10001</div></div>
+          </div>
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon">📞</div>
+            <div><div class="footer__contact-label">Phone</div><div class="footer__contact-value">+1 (555) 123-4567</div></div>
+          </div>
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon">✉️</div>
+            <div><div class="footer__contact-label">Email</div><div class="footer__contact-value">hello@driveelite.com</div></div>
+          </div>
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon">🕐</div>
+            <div><div class="footer__contact-label">Business Hours</div><div class="footer__contact-value">Mon–Sat: 8AM – 8PM</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__newsletter-section">
+        <div class="footer__newsletter-wrap">
+          <div class="footer__newsletter-text">
+            <h4 class="footer__newsletter-title">Stay in the Fast Lane</h4>
+            <p class="footer__newsletter-subtitle">Subscribe for exclusive deals, new arrivals, and luxury driving tips.</p>
+          </div>
+          <form class="footer__newsletter-form" id="newsletter-form">
+            <input type="email" class="footer__newsletter-input" placeholder="Enter your email address" aria-label="Newsletter email">
+            <button type="submit" class="btn btn--primary btn--sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__bottom-brand"><p>&copy; 2026 DriveElite. Crafted with <span class="footer__heart">❤</span> for luxury driving.</p></div>
+        <div class="footer__bottom-links">
+          <a href="privacy-policy.html" class="footer__bottom-link">Privacy</a>
+          <a href="terms-and-conditions.html" class="footer__bottom-link">Terms</a>
+          <a href="contact.html" class="footer__bottom-link">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/validation.js"></script>
+  <script src="assets/js/animation.js"></script>
+
+  <!-- Homepage-specific interactions -->
+  <script>
+  (function() {
+    'use strict';
+
+    /* ---- Booking Widget: Rental Type Toggle ---- */
+    document.querySelectorAll('.booking-widget__type-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.booking-widget__type-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    /* ---- FAQ Accordion ---- */
+    document.querySelectorAll('.faq-item__question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const wasOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        // Toggle clicked
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    /* ---- Testimonials Basic Slider ---- */
+    const track = document.getElementById('testimonials-track');
+    const dots = document.querySelectorAll('.testimonials-dot');
+    let currentSlide = 0;
+
+    function goToSlide(index) {
+      if (!track) return;
+      const cards = track.children;
+      if (index < 0) index = cards.length - 1;
+      if (index >= cards.length) index = 0;
+      currentSlide = index;
+      const card = cards[0];
+      const cardWidth = card.offsetWidth + 24; // gap
+      track.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+    }
+
+    const prevBtn = document.getElementById('testimonial-prev');
+    const nextBtn = document.getElementById('testimonial-next');
+    if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goToSlide(i)));
+  })();
+  </script>
+</body>
+</html>

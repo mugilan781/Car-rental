@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manage your DriveElite account details, update driving license info, configure email preferences, and check membership reward points.">
+  <title>My Profile — DriveElite</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/pages/profile.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar__logo"><div class="navbar__logo-icon">DE</div>Drive<span>Elite</span></a>
+      <div class="navbar__links">
+        <a href="index.html" class="navbar__link">Home</a><a href="cars.html" class="navbar__link">Cars</a><a href="services.html" class="navbar__link">Services</a><a href="about.html" class="navbar__link">About</a><a href="faq.html" class="navbar__link">FAQ</a><a href="contact.html" class="navbar__link">Contact</a>
+      </div>
+      <div class="navbar__actions">
+        <button class="navbar__search-btn" aria-label="Search" title="Search (Ctrl+K)"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+        <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <a href="dashboard.html" class="btn btn--primary btn--sm">Dashboard</a>
+        <a href="index.html" class="btn btn--ghost btn--sm">Logout</a>
+      </div>
+      <button class="navbar__toggle" aria-label="Toggle mobile menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="navbar__mobile-overlay"></div>
+  <div class="navbar__mobile">
+    <a href="index.html" class="navbar__link">Home</a><a href="cars.html" class="navbar__link">Cars</a><a href="services.html" class="navbar__link">Services</a><a href="about.html" class="navbar__link">About</a><a href="faq.html" class="navbar__link">FAQ</a><a href="contact.html" class="navbar__link">Contact</a>
+    <div class="navbar__actions"><a href="dashboard.html" class="btn btn--primary btn--sm">Dashboard</a><a href="index.html" class="btn btn--ghost btn--sm">Logout</a></div>
+  </div>
+
+  <!-- HERO -->
+  <section class="prof-hero">
+    <div class="prof-hero__overlay"></div>
+    <div class="container">
+      <div class="prof-hero__content scroll-reveal">
+        <div class="auth-hero__badge">👤 Account Center</div>
+        <h1 class="auth-hero__title">My <span class="highlight">Profile</span></h1>
+        <p class="auth-hero__desc">Manage your personal credentials, contact points, security parameters, and notification preference cards.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb__list">
+        <li class="breadcrumb__item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb__separator">›</li>
+        <li class="breadcrumb__item"><a href="dashboard.html">Dashboard</a></li>
+        <li class="breadcrumb__separator">›</li>
+        <li class="breadcrumb__item active">Profile</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- PROFILE HEADER SUMMARY -->
+    <section class="section" style="padding-bottom:0">
+      <div class="container">
+        <div class="prof-summary-card scroll-reveal">
+          <div class="prof-summary-card__left">
+            <div class="prof-summary-card__avatar">JD</div>
+            <div>
+              <h2 class="prof-summary-card__name">John Doe <span class="prof-summary-card__status-badge">Verified</span></h2>
+              <div class="prof-summary-card__meta">
+                <span>Membership: <strong>Gold Elite Member</strong></span> &bull; 
+                <span>Member Since: <strong>June 28, 2026</strong></span>
+              </div>
+            </div>
+          </div>
+          <div class="prof-summary-card__right">
+            <div class="prof-completion">
+              <span style="font-size:11px;font-weight:var(--fw-bold);color:var(--color-success)">Profile Completion: 75%</span>
+              <div class="prof-completion__bar"><div class="prof-completion__bar-fill"></div></div>
+            </div>
+            <button type="button" class="btn btn--ghost btn--sm" id="edit-profile-summary-btn" style="padding:var(--space-2) var(--space-4)">Edit Profile Card</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TWO COLUMN LAYOUT -->
+    <section class="section">
+      <div class="container">
+        <div class="prof-layout">
+
+          <!-- LEFT COLUMN (Forms & Credentials) -->
+          <div class="prof-column scroll-reveal">
+            
+            <!-- Avatar photo changer module -->
+            <div class="prof-card">
+              <div class="prof-card__header">
+                <h3 class="prof-card__title">📸 Profile Photo</h3>
+              </div>
+              <div class="prof-avatar-section">
+                <div class="prof-summary-card__avatar" style="width:72px;height:72px;font-size:1.5rem">JD</div>
+                <div>
+                  <div style="font-size:var(--fs-xs);color:var(--color-light-text);line-height:var(--lh-relaxed);margin-bottom:var(--space-2)">
+                    Upload a high-quality square picture. Maximum size 2MB (JPG/PNG format).
+                  </div>
+                  <div style="display:flex;gap:var(--space-2)">
+                    <button type="button" class="btn btn--secondary btn--sm" style="padding:var(--space-2) var(--space-4)">Change Photo</button>
+                    <button type="button" class="btn btn--ghost btn--sm" style="padding:var(--space-2) var(--space-4);color:var(--color-danger)">Remove</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Personal Information -->
+            <div class="prof-card">
+              <div class="prof-card__header">
+                <h3 class="prof-card__title">👤 Personal Details</h3>
+                <button type="button" class="btn btn--ghost btn--sm" style="padding:4px 10px;font-size:11px">Edit Profile</button>
+              </div>
+              <form class="prof-grid" onsubmit="event.preventDefault()">
+                <div class="prof-field">
+                  <label for="first-name">First Name</label>
+                  <input type="text" id="first-name" value="John" readonly>
+                </div>
+                <div class="prof-field">
+                  <label for="last-name">Last Name</label>
+                  <input type="text" id="last-name" value="Doe" readonly>
+                </div>
+                <div class="prof-field">
+                  <label for="dob">Date of Birth</label>
+                  <input type="text" id="dob" value="September 15, 1990" readonly>
+                </div>
+                <div class="prof-field">
+                  <label for="gender">Gender</label>
+                  <select id="gender" disabled style="appearance:none;-webkit-appearance:none">
+                    <option selected>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="prof-card">
+              <div class="prof-card__header">
+                <h3 class="prof-card__title">✉️ Contact Information</h3>
+              </div>
+              <form class="prof-grid" onsubmit="event.preventDefault()">
+                <div class="prof-field">
+                  <label for="primary-phone">Primary Phone</label>
+                  <input type="text" id="primary-phone" value="+1 (555) 123-4567" readonly>
+                </div>
+                <div class="prof-field">
+                  <label for="alternate-phone">Alternate Phone</label>
+                  <input type="text" id="alternate-phone" value="Not Provided" readonly>
+                </div>
+                <div class="prof-field prof-grid--full">
+                  <label for="prof-email">Email Address</label>
+                  <input type="text" id="prof-email" value="john.doe@example.com" readonly>
+                </div>
+                <div class="prof-field prof-grid--full">
+                  <label for="emergency-contact">Emergency Contact Phone</label>
+                  <input type="text" id="emergency-contact" value="+1 (555) 987-6543 (Emergency)" readonly>
+                </div>
+              </form>
+            </div>
+
+            <!-- Address Details -->
+            <div class="prof-card">
+              <div class="prof-card__header">
+                <h3 class="prof-card__title">📍 Address Details</h3>
+              </div>
+              <form class="prof-grid" onsubmit="event.preventDefault()">
+                <div class="prof-field prof-grid--full">
+                  <label for="street-address">Street Address</label>
+                  <input type="text" id="street-address" value="123 Luxury Drive, Suite 100" readonly>
+                </div>
+                <div class="prof-field">
+                  <label for="city">City</label>
+                  <input type="text" id="city" value="New York" readonly>
+                </div>
+                <div class="prof-field">
+                  <label for="state">State</label>
+                  <input type="text" id="state" value="NY" readonly>
+                </div>
+                <div class="prof-field">
+                  <label for="country">Country</label>
+                  <input type="text" id="country" value="United States" readonly>
+                </div>
+                <div class="prof-field">
+                  <label for="postal-code">Postal Code</label>
+                  <input type="text" id="postal-code" value="10001" readonly>
+                </div>
+              </form>
+            </div>
+
+            <!-- Account Security -->
+            <div class="prof-card">
+              <div class="prof-card__header">
+                <h3 class="prof-card__title">🔐 Account Security</h3>
+              </div>
+              <div style="display:flex;flex-direction:column">
+                <div class="security-item">
+                  <div>
+                    <div style="font-size:var(--fs-xs);font-weight:var(--fw-bold)">Account Password</div>
+                    <div style="font-size:10px;color:var(--color-light-text);margin-top:2px">Last password change: June 28, 2026</div>
+                  </div>
+                  <button type="button" class="btn btn--secondary btn--sm" style="padding:var(--space-2) var(--space-4)">Change Password</button>
+                </div>
+                <div class="security-item">
+                  <div>
+                    <div style="font-size:var(--fs-xs);font-weight:var(--fw-bold)">Two-Factor Authentication</div>
+                    <div style="font-size:10px;color:var(--color-light-text);margin-top:2px">Protect account access with 2FA email codes.</div>
+                  </div>
+                  <span class="status-badge status-badge--active" style="padding:2px 6px;font-size:9px">✓ Active</span>
+                </div>
+                <div class="security-item" style="flex-direction:column;align-items:stretch">
+                  <div style="font-size:var(--fs-xs);font-weight:var(--fw-bold);margin-bottom:var(--space-2)">Recent Login Activity</div>
+                  <div class="device-item"><span>Windows 11 &bull; Chrome &bull; New York, USA</span><strong style="color:var(--color-success)">Current Device</strong></div>
+                  <div class="device-item"><span>Apple iPhone 15 &bull; Safari &bull; Boston, USA</span><span style="color:var(--color-light-text)">June 30, 2026</span></div>
+                  <div class="device-item"><span>Windows 11 &bull; Chrome &bull; Chicago, USA</span><span style="color:var(--color-light-text)">June 28, 2026 (Trusted)</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Privacy settings -->
+            <div class="prof-card">
+              <div class="prof-card__header">
+                <h3 class="prof-card__title">👁️ Privacy Settings</h3>
+              </div>
+              <div class="pref-toggles">
+                <div class="pref-toggle-card">
+                  <div><div style="font-size:var(--fs-xs);font-weight:var(--fw-bold)">Share Rental History Metrics</div><div style="font-size:10px;color:var(--color-light-text)">Allow anonymized trip statistics for fleet updates.</div></div>
+                  <label class="switch-toggle"><input type="checkbox" checked><span class="switch-slider"></span></label>
+                </div>
+                <div class="pref-toggle-card">
+                  <div><div style="font-size:var(--fs-xs);font-weight:var(--fw-bold)">Personalized Offers</div><div style="font-size:10px;color:var(--color-light-text)">Allow algorithm recommendations based on favorite vehicles.</div></div>
+                  <label class="switch-toggle"><input type="checkbox" checked><span class="switch-slider"></span></label>
+                </div>
+                <div class="pref-toggle-card">
+                  <div><div style="font-size:var(--fs-xs);font-weight:var(--fw-bold)">Public Visibility</div><div style="font-size:10px;color:var(--color-light-text)">Show review ratings and nicknames on public vehicle galleries.</div></div>
+                  <label class="switch-toggle"><input type="checkbox"><span class="switch-slider"></span></label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT COLUMN (Preferences & Stats) -->
+          <div class="prof-column scroll-reveal">
+            
+            <!-- Rental Stats -->
+            <div class="prof-card">
+              <div class="prof-card__header">
+                <h3 class="prof-card__title">📊 Rental Statistics</h3>
+              </div>
+              <div class="prof-stats-grid">
+                <div class="prof-stat-card"><div class="prof-stat-card__val">12</div><div style="font-size:10px;color:var(--color-light-text)">Total Trips</div></div>
+                <div class="prof-stat-card"><div class="prof-stat-card__val" style="color:var(--color-success)">1</div><div style="font-size:10px;color:var(--color-light-text)">Active Contracts</div></div>
+                <div class="prof-stat-card"><div class="prof-stat-card__val">10</div><div style="font-size:10px;color:var(--color-light-text)">Completed</div></div>
+                <div class="prof-stat-card"><div class="prof-stat-card__val" style="color:var(--color-accent)">1</div><div style="font-size:10px;color:var(--color-light-text)">Pending Requests</div></div>
+              </div>
+            </div>
+
+            <!-- Membership Info -->
+            <div class="prof-card">
+              <div class="prof-card__header">
+                <h3 class="prof-card__title">👑 Membership Level</h3>
+              </div>
+              <div class="rh-kv-list">
+                <div class="rh-kv-item"><span>Current Tier:</span><strong style="color:var(--color-accent)">Gold Elite</strong></div>
+                <div class="rh-kv-item"><span>Reward Points Accumulated:</span><strong>4,850 Points</strong></div>
+                <div class="rh-kv-item"><span>Next Tier (Platinum):</span><span style="font-size:11px;font-weight:bold">150 points left</span></div>
+              </div>
+              <div style="font-size:11px;color:var(--color-light-text);line-height:var(--lh-relaxed);background:var(--color-bg);padding:var(--space-3);border-radius:var(--radius-lg);margin-top:var(--space-3)">
+                🎁 <strong>Active Tier Benefits:</strong> Free vehicle delivery, waived security deposit fees, and 24/7 dedicated advisor support.
+              </div>
+            </div>
+
+            <!-- Saved Preferences -->
+            <div class="prof-card">
+              <div class="prof-card__header">
+                <h3 class="prof-card__title">⚙️ Rental Preferences</h3>
+              </div>
+              <div class="rh-kv-list">
+                <div class="rh-kv-item"><span>Preferred Type:</span><strong>Daily Rental</strong></div>
+                <div class="rh-kv-item"><span>Vehicle Category:</span><strong>High-Performance Supercars</strong></div>
+                <div class="rh-kv-item"><span>Showroom Location:</span><strong>Manhattan, NY</strong></div>
+                <div class="rh-kv-item"><span>Payment Method:</span><strong>Visa ending in 4242</strong></div>
+              </div>
+            </div>
+
+            <!-- Notification Preferences -->
+            <div class="prof-card">
+              <div class="prof-card__header">
+                <h3 class="prof-card__title">🔔 Notification Preferences</h3>
+              </div>
+              <div class="pref-toggles">
+                <div class="pref-toggle-card">
+                  <div><div style="font-size:11px;font-weight:var(--fw-bold)">Email Notifications</div><div style="font-size:9px;color:var(--color-light-text)">Send invoices and recovery alerts.</div></div>
+                  <label class="switch-toggle"><input type="checkbox" checked><span class="switch-slider"></span></label>
+                </div>
+                <div class="pref-toggle-card">
+                  <div><div style="font-size:11px;font-weight:var(--fw-bold)">Browser Notifications</div><div style="font-size:9px;color:var(--color-light-text)">Real-time status changes.</div></div>
+                  <label class="switch-toggle"><input type="checkbox" checked><span class="switch-slider"></span></label>
+                </div>
+                <div class="pref-toggle-card">
+                  <div><div style="font-size:11px;font-weight:var(--fw-bold)">Booking Updates</div><div style="font-size:9px;color:var(--color-light-text)">Notify on approvals/rejections.</div></div>
+                  <label class="switch-toggle"><input type="checkbox" checked><span class="switch-slider"></span></label>
+                </div>
+                <div class="pref-toggle-card">
+                  <div><div style="font-size:11px;font-weight:var(--fw-bold)">Rental Expiry Reminders</div><div style="font-size:9px;color:var(--color-light-text)">Warn 24 hours before returning.</div></div>
+                  <label class="switch-toggle"><input type="checkbox" checked><span class="switch-slider"></span></label>
+                </div>
+                <div class="pref-toggle-card">
+                  <div><div style="font-size:11px;font-weight:var(--fw-bold)">Promotional Offers</div><div style="font-size:9px;color:var(--color-light-text)">Discount codes and seasonal deals.</div></div>
+                  <label class="switch-toggle"><input type="checkbox"><span class="switch-slider"></span></label>
+                </div>
+                <div class="pref-toggle-card">
+                  <div><div style="font-size:11px;font-weight:var(--fw-bold)">Newsletter Weekly</div><div style="font-size:9px;color:var(--color-light-text)">Latest luxury auto highlights.</div></div>
+                  <label class="switch-toggle"><input type="checkbox"><span class="switch-slider"></span></label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Activity Timeline -->
+            <div class="prof-card">
+              <div class="prof-card__header">
+                <h3 class="prof-card__title">⏱️ Profile Logs</h3>
+              </div>
+              <div class="prof-timeline">
+                <div class="prof-timeline-item"><div class="prof-timeline-item__title">Profile email options updated</div><div class="prof-timeline-item__time">Jul 2, 2026 - 11:35 AM</div></div>
+                <div class="prof-timeline-item"><div class="prof-timeline-item__title">AMG GT 63 S Booking registered</div><div class="prof-timeline-item__time">Jul 1, 2026 - 10:15 AM</div></div>
+                <div class="prof-timeline-item"><div class="prof-timeline-item__title">Login session from Boston, USA logged</div><div class="prof-timeline-item__time">Jun 30, 2026 - 09:40 AM</div></div>
+                <div class="prof-timeline-item"><div class="prof-timeline-item__title">Driving License verified successfully</div><div class="prof-timeline-item__time">Jun 28, 2026 - 04:15 PM</div></div>
+                <div class="prof-timeline-item"><div class="prof-timeline-item__title">DriveElite member profile created</div><div class="prof-timeline-item__time">Jun 28, 2026 - 02:00 PM</div></div>
+              </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="prof-card">
+              <h3 class="prof-card__title" style="margin-bottom:var(--space-4)">Quick Actions</h3>
+              <div class="prof-quick-grid">
+                <a href="dashboard.html" class="prof-quick-btn"><div class="prof-quick-btn__icon">💻</div>Dashboard</a>
+                <a href="rental-history.html" class="prof-quick-btn"><div class="prof-quick-btn__icon">📋</div>History</a>
+                <a href="notifications.html" class="prof-quick-btn"><div class="prof-quick-btn__icon">🔔</div>Inbox</a>
+                <a href="cars.html" class="prof-quick-btn"><div class="prof-quick-btn__icon">🚗</div>Rent Car</a>
+              </div>
+            </div>
+
+            <!-- Customer support guidelines -->
+            <div class="prof-card">
+              <h3 class="prof-card__title" style="margin-bottom:var(--space-4)">Advisor Assistance</h3>
+              <div class="rh-support-list">
+                <div class="rh-support-item"><span>📞</span><div><strong>Support Center:</strong> +1 (555) 123-4567</div></div>
+                <div class="rh-support-item"><span>✉️</span><div><strong>Customer Care:</strong> support@driveelite.com</div></div>
+                <div class="rh-support-item"><span>🕐</span><div><strong>Office Hours:</strong> Mon - Sat, 8AM - 8PM</div></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-icon">DE</div>Drive<span>Elite</span></a><p class="footer__description">Your premier destination for luxury car rentals. We deliver top-tier vehicles with white-glove service for an unforgettable driving experience.</p><div class="footer__socials"><a href="#" class="footer__social-link" aria-label="Facebook">f</a><a href="#" class="footer__social-link" aria-label="Instagram">📷</a><a href="#" class="footer__social-link" aria-label="X / Twitter">𝕏</a><a href="#" class="footer__social-link" aria-label="LinkedIn">in</a><a href="#" class="footer__social-link" aria-label="YouTube">▶</a></div></div>
+        <div><h4 class="footer__heading">Company</h4><ul class="footer__list"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="services.html" class="footer__link">Careers</a></li><li><a href="about.html" class="footer__link">Press</a></li><li><a href="contact.html" class="footer__link">Contact</a></li></ul></div>
+        <div><h4 class="footer__heading">Quick Links</h4><ul class="footer__list"><li><a href="cars.html" class="footer__link">Our Fleet</a></li><li><a href="services.html" class="footer__link">Services</a></li><li><a href="faq.html" class="footer__link">FAQ</a></li><li><a href="booking.html" class="footer__link">Book a Car</a></li></ul></div>
+        <div><h4 class="footer__heading">Support</h4><ul class="footer__list"><li><a href="faq.html" class="footer__link">Help Center</a></li><li><a href="privacy-policy.html" class="footer__link">Privacy Policy</a></li><li><a href="terms-and-conditions.html" class="footer__link">Terms of Service</a></li><li><a href="terms-and-conditions.html" class="footer__link">Rental Policy</a></li></ul></div>
+        <div><h4 class="footer__heading">Contact</h4><div class="footer__contact-item"><div class="footer__contact-icon">📍</div><div><div class="footer__contact-label">Address</div><div class="footer__contact-value">123 Luxury Drive, Suite 100<br>New York, NY 10001</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">📞</div><div><div class="footer__contact-label">Phone</div><div class="footer__contact-value">+1 (555) 123-4567</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">✉️</div><div><div class="footer__contact-label">Email</div><div class="footer__contact-value">hello@driveelite.com</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">🕐</div><div><div class="footer__contact-label">Business Hours</div><div class="footer__contact-value">Mon–Sat: 8AM – 8PM</div></div></div></div>
+      </div>
+      <div class="footer__newsletter-section"><div class="footer__newsletter-wrap"><div class="footer__newsletter-text"><h4 class="footer__newsletter-title">Stay in the Fast Lane</h4><p class="footer__newsletter-subtitle">Subscribe for exclusive deals, new arrivals, and luxury driving tips.</p></div><form class="footer__newsletter-form" id="newsletter-form"><input type="email" class="footer__newsletter-input" placeholder="Enter your email address" aria-label="Newsletter email"><button type="submit" class="btn btn--primary btn--sm">Subscribe</button></form></div></div>
+      <div class="footer__bottom"><div class="footer__bottom-brand"><p>&copy; 2026 DriveElite. Crafted with <span class="footer__heart">❤</span> for luxury driving.</p></div><div class="footer__bottom-links"><a href="privacy-policy.html" class="footer__bottom-link">Privacy</a><a href="terms-and-conditions.html" class="footer__bottom-link">Terms</a><a href="contact.html" class="footer__bottom-link">Sitemap</a></div></div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/validation.js"></script>
+  <script src="assets/js/animation.js"></script>
+
+  <script>
+  (function() {
+    'use strict';
+
+    // Interactive Switch Toggles styling demo
+    const switches = document.querySelectorAll('.switch-toggle input');
+    switches.forEach(sw => {
+      sw.addEventListener('change', function() {
+        const card = this.closest('.pref-toggle-card');
+        if (card) {
+          if (this.checked) {
+            card.style.borderColor = 'rgba(34, 197, 94, 0.2)';
+          } else {
+            card.style.borderColor = '';
+          }
+        }
+      });
+      // Initial state
+      if (sw.checked) {
+        const card = sw.closest('.pref-toggle-card');
+        if (card) card.style.borderColor = 'rgba(34, 197, 94, 0.1)';
+      }
+    });
+
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Search the DriveElite Help Center. Find answers regarding vehicle verification, rental extensions, security deposit returns, and booking modification rules.">
+  <title>Help Center & FAQ — DriveElite</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/pages/faq.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar__logo"><div class="navbar__logo-icon">DE</div>Drive<span>Elite</span></a>
+      <div class="navbar__links">
+        <a href="index.html" class="navbar__link">Home</a><a href="cars.html" class="navbar__link">Cars</a><a href="services.html" class="navbar__link">Services</a><a href="about.html" class="navbar__link">About</a><a href="faq.html" class="navbar__link active">FAQ</a><a href="contact.html" class="navbar__link">Contact</a>
+      </div>
+      <div class="navbar__actions">
+        <button class="navbar__search-btn" aria-label="Search" title="Search (Ctrl+K)"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+        <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <a href="login.html" class="btn btn--ghost btn--sm">Login</a>
+        <a href="register.html" class="btn btn--primary btn--sm">Register</a>
+      </div>
+      <button class="navbar__toggle" aria-label="Toggle mobile menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="navbar__mobile-overlay"></div>
+  <div class="navbar__mobile">
+    <a href="index.html" class="navbar__link">Home</a><a href="cars.html" class="navbar__link">Cars</a><a href="services.html" class="navbar__link">Services</a><a href="about.html" class="navbar__link">About</a><a href="faq.html" class="navbar__link active">FAQ</a><a href="contact.html" class="navbar__link">Contact</a>
+    <div class="navbar__actions"><a href="login.html" class="btn btn--ghost btn--sm">Login</a><a href="register.html" class="btn btn--primary btn--sm">Register</a></div>
+  </div>
+
+  <!-- HERO -->
+  <section class="faq-hero">
+    <div class="faq-hero__overlay"></div>
+    <div class="container">
+      <div class="faq-hero__content scroll-reveal">
+        <div class="auth-hero__badge">📖 Knowledge Base</div>
+        <h1 class="auth-hero__title">Help & <span class="highlight">FAQs</span></h1>
+        <p class="auth-hero__desc">Search our repository for instant guides on pre-rental inspections, duration extensions, account setups, and policy checklists.</p>
+        
+        <!-- Large Search Section -->
+        <div class="faq-search-wrap">
+          <div class="faq-search-input-box">
+            <span class="faq-search-icon">🔍</span>
+            <input type="text" placeholder="Search popular questions, articles, or policies...">
+            <button type="button" class="btn btn--primary btn--md" style="padding:var(--space-3) var(--space-6)">Search</button>
+          </div>
+          <div class="popular-searches">
+            Popular Searches: 
+            <a href="#verification">Verification Process</a>, 
+            <a href="#extension">Extension Approvals</a>, 
+            <a href="#policies">Late Returns Policy</a>, 
+            <a href="#support">Option 9 Support</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb__list">
+        <li class="breadcrumb__item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb__separator">›</li>
+        <li class="breadcrumb__item active">Help Center</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- HELP CATEGORIES -->
+    <section class="section" style="padding-bottom:0">
+      <div class="container">
+        <div class="faq-cats-grid scroll-reveal">
+          <a href="#booking" class="faq-cat-card"><div class="faq-cat-card__icon">📋</div><div class="faq-cat-card__title">Booking</div><div class="faq-cat-card__desc">Making and changing reservations</div></a>
+          <a href="#vehicles" class="faq-cat-card"><div class="faq-cat-card__icon">🚗</div><div class="faq-cat-card__title">Vehicles</div><div class="faq-cat-card__desc">Fleet collections & maintenance</div></a>
+          <a href="#verification" class="faq-cat-card"><div class="faq-cat-card__icon">📸</div><div class="faq-cat-card__title">Verification</div><div class="faq-cat-card__desc">Pre-rental diagnostics uploads</div></a>
+          <a href="#extension" class="faq-cat-card"><div class="faq-cat-card__icon">⏱️</div><div class="faq-cat-card__title">Rental Extension</div><div class="faq-cat-card__desc">Extending trip durations</div></a>
+          <a href="#account" class="faq-cat-card"><div class="faq-cat-card__icon">👤</div><div class="faq-cat-card__title">Account</div><div class="faq-cat-card__desc">Credentials, logins, profiles</div></a>
+          <a href="#notifications" class="faq-cat-card"><div class="faq-cat-card__icon">🔔</div><div class="faq-cat-card__title">Notifications</div><div class="faq-cat-card__desc">Reminders & updates settings</div></a>
+          <a href="#faq" class="faq-cat-card"><div class="faq-cat-card__icon">💳</div><div class="faq-cat-card__title">Payments</div><div class="faq-cat-card__desc">Taxes, billing, security deposits</div></a>
+          <a href="#policies" class="faq-cat-card"><div class="faq-cat-card__icon">🛡️</div><div class="faq-cat-card__title">Policies</div><div class="faq-cat-card__desc">Cancellation, damages, late returns</div></a>
+          <a href="#articles" class="faq-cat-card"><div class="faq-cat-card__icon">📖</div><div class="faq-cat-card__title">Guides</div><div class="faq-cat-card__desc">Detailed support articles</div></a>
+          <a href="#support" class="faq-cat-card"><div class="faq-cat-card__icon">💬</div><div class="faq-cat-card__title">Support</div><div class="faq-cat-card__desc">Advisor channels, help desks</div></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TWO COLUMN CONTENT GRID -->
+    <section class="section">
+      <div class="container">
+        <div class="faq-layout">
+
+          <!-- LEFT COLUMN (FAQs Accordions & Guides) -->
+          <div class="faq-column scroll-reveal">
+            
+            <!-- 1. Booking FAQ -->
+            <div class="faq-sec" id="booking">
+              <h2 class="faq-sec__title">📋 Booking Questions</h2>
+              <div class="faq">
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">How do I book a vehicle?</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>Browse the Fleet, choose your vehicle, select daily or hourly options on the Booking Page, specify times, complete initial profiles details, and submit request. An admin will review it immediately.</p></div></div>
+                </div>
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">How long does booking approval take?</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>Our team reviews requests 24/7. Approvals are typically processed within 10 to 15 minutes, with instant email and dashboard notifications alerts sent to your account.</p></div></div>
+                </div>
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">Can I cancel my booking?</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>Yes. Cancellations are free up to 24 hours before your pickup appointment. Later cancellations might be liable to late cancellation fees.</p></div></div>
+                </div>
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">Can I modify my booking?</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>You can modify dates, pick-up showroom location, or vehicle category up to 12 hours before scheduled handover times, subject to garage availabilities.</p></div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Vehicle FAQ -->
+            <div class="faq-sec" id="vehicles">
+              <h2 class="faq-sec__title">🚗 Fleet & Vehicles Questions</h2>
+              <div class="faq">
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">What vehicle categories are available?</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>We offer Luxury Sedans (BMW, Mercedes-Benz), Sports Supercars (Ferrari, Lamborghini, Porsche 911), Premium SUVs (Range Rover, Urus), and Electric Powertrains (Tesla, Taycan).</p></div></div>
+                </div>
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">How do I choose the right vehicle?</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>Evaluate passengers capacity, luggage sizes, fuel economy preferences, and speed capabilities. You can consult detailed checklists on our fleet detail pages.</p></div></div>
+                </div>
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">Are vehicles regularly maintained?</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>Absolutely. Every sports and luxury model goes through extensive diagnostics, sanitization, fluid checks, and wheel alignment audits between bookings.</p></div></div>
+                </div>
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">How is vehicle availability updated?</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>All availabilities are updated live in our database. Reserved vehicles are instantly grayed out on calendar dates to eliminate double bookings conflicts.</p></div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Vehicle Verification FAQ -->
+            <div class="faq-sec" id="verification">
+              <h2 class="faq-sec__title">📸 Pre-Rental Vehicle Verification FAQ</h2>
+              <div class="faq">
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">Why must I verify the vehicle?</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>Verification captures physical status before handover. Pre-rental inspection reports protect you, ensuring no liability charges apply for pre-existing scratches.</p></div></div>
+                </div>
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">When can I upload vehicle photos?</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>The camera upload button unlocks on your dashboard active rentals screen once pickup starts, or after physical keys are checked out by showroom dispatchers.</p></div></div>
+                </div>
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">How many photos are required?</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>We request 4 exterior corner images, 1 interior dashboard console image, and 1 fuel/charge gauge reading image to generate verified reports.</p></div></div>
+                </div>
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">What happens after verification?</p></button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>Uploaded pictures are saved in the client contract files. Verification is marked completed, and key handover is approved immediately.</p></div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Rental Extension FAQ -->
+            <div class="faq-sec" id="extension">
+              <h2 class="faq-sec__title">⏱️ Rental Duration Extensions</h2>
+              <div class="faq">
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">How do I request a rental extension?</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>Go to Dashboard > Extend Duration. Specify extra days, review billing breakdowns (daily rate remains same), and submit requests to admin panels.</p></div></div>
+                </div>
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">When should I request an extension?</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>Submit requests at least 12 hours before original return deadlines. Late requests risk conflicts with subsequent reservations, leading to decline outcomes.</p></div></div>
+                </div>
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">What happens after submitting an extension request?</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>Our team verifies next booking reserves. If clear, the extension is approved, new timelines are set, and deposit authorizations remain unchanged.</p></div></div>
+                </div>
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">How will I know if it is approved?</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>Approval notifications alerts are dispatched via email and show up instantly under notifications in your dashboard. Active rental returns dates auto-adjust.</p></div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Account FAQ -->
+            <div class="faq-sec" id="account">
+              <h2 class="faq-sec__title">👤 Profile & Account Help</h2>
+              <div class="faq">
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">How do I create an account?</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>Click Register, enter credentials, verify email addresses, upload your NY driver license file, and wait 15 minutes for security status validation.</p></div></div>
+                </div>
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">How do I reset my password?</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>Click 'Forgot Password' on the login screen, enter your registered email address, click the recovery link sent to your inbox (expires in 15 mins), and specify new strong passwords.</p></div></div>
+                </div>
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">How do I update my profile?</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>Log into Profile, select Personal Details or Address, update information, upload new documents if license expires, and click save options.</p></div></div>
+                </div>
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">How do I manage notifications?</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>Under Profile Settings, use the toggle switches to choose whether to receive email notices, browser push alerts, or promotional seasonal discount updates.</p></div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. Notifications FAQ -->
+            <div class="faq-sec" id="notifications">
+              <h2 class="faq-sec__title">🔔 Notifications & Alerts FAQ</h2>
+              <div class="faq">
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">Why am I receiving reminders?</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>Reminders protect drivers from late return penalties. Alerts are automatically triggered 24 hours and 6 hours before contract expirations.</p></div></div>
+                </div>
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">How do booking notifications work?</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>Status changes (Review → Approved/Rejected) automatically trigger instant alerts in your inbox and send copy PDFs to your email.</p></div></div>
+                </div>
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">How do rental reminders work?</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>Scheduled pickups and returns details are pushed to notifications to guide you on showroom addresses and grace periods.</p></div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 7. Policies FAQ -->
+            <div class="faq-sec" id="policies">
+              <h2 class="faq-sec__title">🛡️ General Policies & Guidelines</h2>
+              <div class="faq">
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">Rental Policy</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>Drivers must be 21+ years (25+ for high performance sports supercars), hold a physical original driving license valid in NY, and submit security deposits.</p></div></div>
+                </div>
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">Cancellation Policy</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>Free cancellation up to 24h prior to pickup. Cancellations within 24h are charged a flat rate penalty of 1 day's rental fee, with rest refunded.</p></div></div>
+                </div>
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">Late Return Policy</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>We offer a 59-minute grace period. Later returns trigger hourly penalty rates automatically unless extensions were previously approved.</p></div></div>
+                </div>
+                <div class="faq__item">
+                  <button class="faq__question" aria-expanded="false">Vehicle Damage Policy</button>
+                  <div class="faq__answer-wrap"><div class="faq__answer"><p>Comprehensive coverage is included. Drivers are liable for insurance deductibles ($500) if damage reports occur during active rental periods.</p></div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Support Guides / Articles -->
+            <div class="faq-sec" id="articles">
+              <h2 class="faq-sec__title">📖 Support Guides & Manuals</h2>
+              <div class="art-grid">
+                <a href="#" class="art-card"><div class="art-card__icon">📋</div><div class="art-card__body"><h3 class="art-card__title">Booking Guide</h3><p class="art-card__desc">Complete details on making reservations.</p></div></a>
+                <a href="#" class="art-card"><div class="art-card__icon">🔑</div><div class="art-card__body"><h3 class="art-card__title">Vehicle Pickup Guide</h3><p class="art-card__desc">Showroom protocols and checklists.</p></div></a>
+                <a href="#" class="art-card"><div class="art-card__icon">🔄</div><div class="art-card__body"><h3 class="art-card__title">Vehicle Return Guide</h3><p class="art-card__desc">Fuel requirements and deposits checks.</p></div></a>
+                <a href="#" class="art-card"><div class="art-card__icon">⏱️</div><div class="art-card__body"><h3 class="art-card__title">Rental Extension Guide</h3><p class="art-card__desc">Rules for changing duration scales.</p></div></a>
+              </div>
+            </div>
+
+            <!-- Video Tutorials -->
+            <div class="faq-sec" id="videos">
+              <h2 class="faq-sec__title">▶️ Video Tutorials Playholders</h2>
+              <div class="art-grid">
+                <div class="video-card">
+                  <div class="video-card__thumb"><div class="video-card__play-btn">▶</div></div>
+                  <div class="video-card__body"><h3 class="video-card__title">Booking Tutorial</h3><p class="video-card__desc">How to book a supercar in under 2 minutes.</p></div>
+                </div>
+                <div class="video-card">
+                  <div class="video-card__thumb"><div class="video-card__play-btn">▶</div></div>
+                  <div class="video-card__body"><h3 class="video-card__title">Vehicle Verification Guide</h3><p class="video-card__desc">How to take and upload condition reporting photos.</p></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT COLUMN (Most Viewed & Helplines) -->
+          <div class="rh-column scroll-reveal">
+
+            <!-- Popular Questions list widget -->
+            <div class="pop-card">
+              <h3 class="pop-card__title">🔥 Popular Questions</h3>
+              <div class="pop-list">
+                <a href="#verification" class="pop-item">Why must I verify the vehicle before pickup?</a>
+                <a href="#extension" class="pop-item">How do I request a rental extension?</a>
+                <a href="#policies" class="pop-item">What is the late return grace period?</a>
+                <a href="#booking" class="pop-item">Can I cancel my booking for free?</a>
+                <a href="#account" class="pop-item">How do I reset my account password?</a>
+              </div>
+            </div>
+
+            <!-- Quick Actions Grid -->
+            <div class="pop-card">
+              <h3 class="pop-card__title">Quick Actions</h3>
+              <div class="rh-quick-grid">
+                <a href="cars.html" class="rh-quick-btn"><div class="rh-quick-btn__icon">🚗</div>Browse fleet</a>
+                <a href="contact.html" class="rh-quick-btn"><div class="rh-quick-btn__icon">💬</div>Help Center</a>
+                <a href="rental-history.html" class="rh-quick-btn"><div class="rh-quick-btn__icon">📋</div>History</a>
+                <a href="dashboard.html" class="rh-quick-btn"><div class="rh-quick-btn__icon">💻</div>Dashboard</a>
+              </div>
+            </div>
+
+            <!-- Still Need Help Contact cards -->
+            <div class="pop-card">
+              <h3 class="pop-card__title">💬 Customer Support Helpline</h3>
+              <div class="rh-support-list" style="font-size:11px;color:var(--color-light-text);line-height:var(--lh-relaxed)">
+                <div class="rh-support-item"><span>📞</span><div><strong>Call:</strong> +1 (555) 123-4567</div></div>
+                <div class="rh-support-item"><span>✉️</span><div><strong>Email:</strong> support@driveelite.com</div></div>
+                <div class="rh-support-item"><span>🚨</span><div><strong>Emergency Desk:</strong> Option 9 (24/7)</div></div>
+                <div class="rh-support-item"><span>💬</span><div><strong>WhatsApp Support:</strong> Available online</div></div>
+                <div class="rh-support-item"><span>🕐</span><div><strong>Hours:</strong> Mon - Sat, 8:00 AM - 8:00 PM</div></div>
+              </div>
+            </div>
+
+            <!-- Customer Satisfaction metrics -->
+            <div class="pop-card">
+              <h3 class="pop-card__title">📊 Satisfaction Metrics</h3>
+              <div class="satisfaction-grid">
+                <div class="satisfaction-card"><div class="satisfaction-card__val">99.4%</div><div style="font-size:9px;color:var(--color-light-text)">Support Rating</div></div>
+                <div class="satisfaction-card"><div class="satisfaction-card__val">&lt; 15m</div><div style="font-size:9px;color:var(--color-light-text)">Resolution Time</div></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta-section" id="cta">
+      <div class="cta-section__overlay"></div>
+      <div class="container">
+        <div class="cta-section__content scroll-reveal">
+          <h2 class="cta-section__title">Need Immediate Assistance?</h2>
+          <p class="cta-section__desc" style="margin:0 auto var(--space-6)">Speak to our expert advisors immediately. 24/7 breakdown helpline stands ready at Option 9.</p>
+          <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap">
+            <a href="cars.html" class="btn btn--accent btn--lg">Browse Cars</a>
+            <a href="contact.html" class="btn btn--accent btn--lg" style="background:#fff;color:var(--color-secondary)">Customer Support</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-icon">DE</div>Drive<span>Elite</span></a><p class="footer__description">Your premier destination for luxury car rentals. We deliver top-tier vehicles with white-glove service for an unforgettable driving experience.</p><div class="footer__socials"><a href="#" class="footer__social-link" aria-label="Facebook">f</a><a href="#" class="footer__social-link" aria-label="Instagram">📷</a><a href="#" class="footer__social-link" aria-label="X / Twitter">𝕏</a><a href="#" class="footer__social-link" aria-label="LinkedIn">in</a><a href="#" class="footer__social-link" aria-label="YouTube">▶</a></div></div>
+        <div><h4 class="footer__heading">Company</h4><ul class="footer__list"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="services.html" class="footer__link">Careers</a></li><li><a href="about.html" class="footer__link">Press</a></li><li><a href="contact.html" class="footer__link">Contact</a></li></ul></div>
+        <div><h4 class="footer__heading">Quick Links</h4><ul class="footer__list"><li><a href="cars.html" class="footer__link">Our Fleet</a></li><li><a href="services.html" class="footer__link">Services</a></li><li><a href="faq.html" class="footer__link">FAQ</a></li><li><a href="booking.html" class="footer__link">Book a Car</a></li></ul></div>
+        <div><h4 class="footer__heading">Support</h4><ul class="footer__list"><li><a href="faq.html" class="footer__link">Help Center</a></li><li><a href="privacy-policy.html" class="footer__link">Privacy Policy</a></li><li><a href="terms-and-conditions.html" class="footer__link">Terms of Service</a></li><li><a href="terms-and-conditions.html" class="footer__link">Rental Policy</a></li></ul></div>
+        <div><h4 class="footer__heading">Contact</h4><div class="footer__contact-item"><div class="footer__contact-icon">📍</div><div><div class="footer__contact-label">Address</div><div class="footer__contact-value">123 Luxury Drive, Suite 100<br>New York, NY 10001</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">📞</div><div><div class="footer__contact-label">Phone</div><div class="footer__contact-value">+1 (555) 123-4567</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">✉️</div><div><div class="footer__contact-label">Email</div><div class="footer__contact-value">hello@driveelite.com</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">🕐</div><div><div class="footer__contact-label">Business Hours</div><div class="footer__contact-value">Mon–Sat: 8AM – 8PM</div></div></div></div>
+      </div>
+      <div class="footer__newsletter-section"><div class="footer__newsletter-wrap"><div class="footer__newsletter-text"><h4 class="footer__newsletter-title">Stay in the Fast Lane</h4><p class="footer__newsletter-subtitle">Subscribe for exclusive deals, new arrivals, and luxury driving tips.</p></div><form class="footer__newsletter-form" id="newsletter-form"><input type="email" class="footer__newsletter-input" placeholder="Enter your email address" aria-label="Newsletter email"><button type="submit" class="btn btn--primary btn--sm">Subscribe</button></form></div></div>
+      <div class="footer__bottom"><div class="footer__bottom-brand"><p>&copy; 2026 DriveElite. Crafted with <span class="footer__heart">❤</span> for luxury driving.</p></div><div class="footer__bottom-links"><a href="privacy-policy.html" class="footer__bottom-link">Privacy</a><a href="terms-and-conditions.html" class="footer__bottom-link">Terms</a><a href="contact.html" class="footer__bottom-link">Sitemap</a></div></div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/validation.js"></script>
+  <script src="assets/js/animation.js"></script>
+
+  <script>
+  (function() {
+    'use strict';
+
+    // Interactive Accordion toggle checks
+    const faqQuestions = document.querySelectorAll('.faq__question');
+    faqQuestions.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        
+        // Collapse all others within the same section
+        const parentSec = this.closest('.faq-sec');
+        if (parentSec) {
+          const sisterQuestions = parentSec.querySelectorAll('.faq__question');
+          sisterQuestions.forEach(q => {
+            q.setAttribute('aria-expanded', 'false');
+            const panel = q.nextElementSibling;
+            if (panel) panel.style.maxHeight = null;
+          });
+        }
+
+        // Toggle selected
+        this.setAttribute('aria-expanded', !expanded ? 'true' : 'false');
+        const panel = this.nextElementSibling;
+        if (panel) {
+          panel.style.maxHeight = !expanded ? panel.scrollHeight + 'px' : null;
+        }
+      });
+    });
+
+  })();
+  </script>
+</body>
+</html>

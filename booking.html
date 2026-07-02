@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book your premium rental vehicle with DriveElite. Simple multi-step booking process with transparent pricing.">
+  <title>Book a Vehicle — DriveElite</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/pages/booking.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar__logo"><div class="navbar__logo-icon">DE</div>Drive<span>Elite</span></a>
+      <div class="navbar__links">
+        <a href="index.html" class="navbar__link">Home</a>
+        <a href="cars.html" class="navbar__link">Cars</a>
+        <a href="services.html" class="navbar__link">Services</a>
+        <a href="about.html" class="navbar__link">About</a>
+        <a href="faq.html" class="navbar__link">FAQ</a>
+        <a href="contact.html" class="navbar__link">Contact</a>
+      </div>
+      <div class="navbar__actions">
+        <button class="navbar__search-btn" aria-label="Search" title="Search (Ctrl+K)"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+        <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <a href="login.html" class="btn btn--ghost btn--sm">Login</a>
+        <a href="register.html" class="btn btn--primary btn--sm">Register</a>
+      </div>
+      <button class="navbar__toggle" aria-label="Toggle mobile menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="navbar__mobile-overlay"></div>
+  <div class="navbar__mobile">
+    <a href="index.html" class="navbar__link">Home</a><a href="cars.html" class="navbar__link">Cars</a><a href="services.html" class="navbar__link">Services</a><a href="about.html" class="navbar__link">About</a><a href="faq.html" class="navbar__link">FAQ</a><a href="contact.html" class="navbar__link">Contact</a>
+    <div class="navbar__actions"><a href="login.html" class="btn btn--ghost btn--sm">Login</a><a href="register.html" class="btn btn--primary btn--sm">Register</a></div>
+  </div>
+
+  <!-- HERO -->
+  <section class="booking-hero">
+    <div class="booking-hero__overlay"></div>
+    <div class="container">
+      <div class="booking-hero__content scroll-reveal">
+        <div class="booking-hero__badge">Book Your Ride</div>
+        <h1 class="booking-hero__title">Complete Your <span class="highlight">Booking</span></h1>
+        <p class="booking-hero__desc">You're just a few steps away from driving your dream car. Fill in the details below to secure your reservation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><ol class="breadcrumb__list"><li class="breadcrumb__item"><a href="index.html">Home</a></li><li class="breadcrumb__separator">›</li><li class="breadcrumb__item"><a href="cars.html">Cars</a></li><li class="breadcrumb__separator">›</li><li class="breadcrumb__item"><a href="car-details.html">AMG GT 63 S</a></li><li class="breadcrumb__separator">›</li><li class="breadcrumb__item active">Booking</li></ol></div></nav>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+         PROGRESS INDICATOR
+         ============================================================ -->
+    <section class="booking-progress">
+      <div class="container">
+        <div class="progress-card scroll-reveal">
+          <div class="progress-steps">
+            <div class="progress-step active">
+              <div class="progress-step__circle">1</div>
+              <div class="progress-step__title">Rental Details</div>
+              <div class="progress-step__subtitle">Select dates & location</div>
+            </div>
+            <div class="progress-step">
+              <div class="progress-step__circle">2</div>
+              <div class="progress-step__title">Your Information</div>
+              <div class="progress-step__subtitle">Personal details</div>
+            </div>
+            <div class="progress-step">
+              <div class="progress-step__circle">3</div>
+              <div class="progress-step__title">Review & Summary</div>
+              <div class="progress-step__subtitle">Confirm booking</div>
+            </div>
+            <div class="progress-step">
+              <div class="progress-step__circle">4</div>
+              <div class="progress-step__title">Confirmation</div>
+              <div class="progress-step__subtitle">Booking complete</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MAIN BOOKING FORM + SIDEBAR
+         ============================================================ -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="booking-layout">
+
+          <!-- ======== LEFT: FORM STEPS ======== -->
+          <div>
+
+            <!-- STEP 1: Rental Details -->
+            <div class="form-section scroll-reveal" id="step-1">
+              <div class="form-section__header">
+                <div class="form-section__icon">📅</div>
+                <div><div class="form-section__title">Step 1 — Rental Details</div><div class="form-section__subtitle">Select your rental type, dates, and locations</div></div>
+              </div>
+
+              <div class="form-group" style="margin-bottom:var(--space-6)">
+                <label>Rental Type <span class="required">*</span></label>
+                <div class="rental-type-toggle">
+                  <div class="rental-type-option">
+                    <input type="radio" name="rental-type" id="hourly" checked>
+                    <label for="hourly" class="rental-type-label"><span class="rental-type-label__icon">🕐</span><span class="rental-type-label__name">Hourly Rental</span><span class="rental-type-label__desc">Flexible hourly booking</span></label>
+                  </div>
+                  <div class="rental-type-option">
+                    <input type="radio" name="rental-type" id="daily">
+                    <label for="daily" class="rental-type-label"><span class="rental-type-label__icon">📅</span><span class="rental-type-label__name">Daily Rental</span><span class="rental-type-label__desc">Full day booking</span></label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group"><label for="pickup-date">Pickup Date <span class="required">*</span></label><input type="date" id="pickup-date" class="form-input"></div>
+                <div class="form-group"><label for="pickup-time">Pickup Time <span class="required">*</span></label><input type="time" id="pickup-time" class="form-input"></div>
+                <div class="form-group"><label for="return-date">Return Date <span class="required">*</span></label><input type="date" id="return-date" class="form-input"></div>
+                <div class="form-group"><label for="return-time">Return Time <span class="required">*</span></label><input type="time" id="return-time" class="form-input"></div>
+                <div class="form-group"><label for="pickup-loc">Pickup Location <span class="required">*</span></label><select id="pickup-loc" class="form-select"><option value="">Select Location</option><option>New York — Manhattan Office</option><option>New York — JFK Airport</option><option>New York — LaGuardia Airport</option><option>Brooklyn — Downtown</option></select></div>
+                <div class="form-group"><label for="return-loc">Return Location</label><select id="return-loc" class="form-select"><option value="">Same as Pickup</option><option>New York — Manhattan Office</option><option>New York — JFK Airport</option><option>New York — LaGuardia Airport</option><option>Brooklyn — Downtown</option></select></div>
+                <div class="form-group"><label for="rental-purpose">Rental Purpose</label><select id="rental-purpose" class="form-select"><option value="">Select Purpose</option><option>Business</option><option>Personal</option><option>Special Event</option><option>Airport Transfer</option></select></div>
+                <div class="form-group"><label for="special-requests">Special Requests</label><textarea id="special-requests" class="form-input" placeholder="Child seat, GPS preferences, etc."></textarea></div>
+              </div>
+
+              <div class="form-nav">
+                <div></div>
+                <button class="btn btn--primary">Next: Your Information →</button>
+              </div>
+            </div>
+
+            <!-- STEP 2: Customer Information -->
+            <div class="form-section scroll-reveal" id="step-2">
+              <div class="form-section__header">
+                <div class="form-section__icon">👤</div>
+                <div><div class="form-section__title">Step 2 — Customer Information</div><div class="form-section__subtitle">Provide your personal and contact details</div></div>
+              </div>
+              <div class="form-grid">
+                <div class="form-group"><label for="full-name">Full Name <span class="required">*</span></label><input type="text" id="full-name" class="form-input" placeholder="John Doe"></div>
+                <div class="form-group"><label for="email">Email Address <span class="required">*</span></label><input type="email" id="email" class="form-input" placeholder="john@example.com"></div>
+                <div class="form-group"><label for="phone">Phone Number <span class="required">*</span></label><input type="tel" id="phone" class="form-input" placeholder="+1 (555) 123-4567"></div>
+                <div class="form-group"><label for="emergency">Emergency Contact</label><input type="tel" id="emergency" class="form-input" placeholder="+1 (555) 987-6543"></div>
+                <div class="form-group"><label for="license">Driving License No. <span class="required">*</span></label><input type="text" id="license" class="form-input" placeholder="DL-XXXXXXXX"></div>
+                <div class="form-group"><label for="nationality">Nationality</label><select id="nationality" class="form-select"><option value="">Select Nationality</option><option>United States</option><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>India</option><option>Other</option></select></div>
+                <div class="form-group--full form-group"><label for="address">Address <span class="required">*</span></label><input type="text" id="address" class="form-input" placeholder="Street address"></div>
+                <div class="form-group"><label for="city">City <span class="required">*</span></label><input type="text" id="city" class="form-input" placeholder="New York"></div>
+                <div class="form-group"><label for="state">State <span class="required">*</span></label><input type="text" id="state" class="form-input" placeholder="NY"></div>
+                <div class="form-group"><label for="country">Country <span class="required">*</span></label><select id="country" class="form-select"><option value="">Select Country</option><option selected>United States</option><option>United Kingdom</option><option>Canada</option><option>Australia</option></select></div>
+                <div class="form-group"><label for="postal">Postal Code <span class="required">*</span></label><input type="text" id="postal" class="form-input" placeholder="10001"></div>
+              </div>
+              <div class="form-nav">
+                <button class="btn btn--ghost">← Back</button>
+                <button class="btn btn--primary">Next: Review Summary →</button>
+              </div>
+            </div>
+
+            <!-- STEP 3: Booking Summary -->
+            <div class="form-section scroll-reveal" id="step-3">
+              <div class="form-section__header">
+                <div class="form-section__icon">📋</div>
+                <div><div class="form-section__title">Step 3 — Booking Summary</div><div class="form-section__subtitle">Review all details before confirming</div></div>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group"><label>Vehicle</label><div style="padding:var(--space-3) var(--space-4);background:var(--color-bg);border-radius:var(--radius-lg);font-size:var(--fs-small);font-weight:var(--fw-semibold)">Mercedes-Benz AMG GT 63 S</div></div>
+                <div class="form-group"><label>Rental Type</label><div style="padding:var(--space-3) var(--space-4);background:var(--color-bg);border-radius:var(--radius-lg);font-size:var(--fs-small)">Daily Rental</div></div>
+                <div class="form-group"><label>Pickup</label><div style="padding:var(--space-3) var(--space-4);background:var(--color-bg);border-radius:var(--radius-lg);font-size:var(--fs-small)">Jul 5, 2026 — 10:00 AM</div></div>
+                <div class="form-group"><label>Return</label><div style="padding:var(--space-3) var(--space-4);background:var(--color-bg);border-radius:var(--radius-lg);font-size:var(--fs-small)">Jul 7, 2026 — 10:00 AM</div></div>
+                <div class="form-group"><label>Location</label><div style="padding:var(--space-3) var(--space-4);background:var(--color-bg);border-radius:var(--radius-lg);font-size:var(--fs-small)">Manhattan Office, New York</div></div>
+                <div class="form-group"><label>Customer</label><div style="padding:var(--space-3) var(--space-4);background:var(--color-bg);border-radius:var(--radius-lg);font-size:var(--fs-small)">John Doe — john@example.com</div></div>
+              </div>
+
+              <div style="margin-top:var(--space-6);padding:var(--space-5);background:var(--color-bg);border-radius:var(--radius-xl)">
+                <div style="display:flex;justify-content:space-between;padding:var(--space-2) 0;font-size:var(--fs-small)"><span style="color:var(--color-light-text)">Base Charge (2 days × $520)</span><span style="font-weight:var(--fw-semibold)">$1,040.00</span></div>
+                <div style="display:flex;justify-content:space-between;padding:var(--space-2) 0;font-size:var(--fs-small)"><span style="color:var(--color-light-text)">Security Deposit</span><span style="font-weight:var(--fw-semibold)">$200.00</span></div>
+                <div style="display:flex;justify-content:space-between;padding:var(--space-2) 0;font-size:var(--fs-small)"><span style="color:var(--color-light-text)">Service Fee</span><span style="font-weight:var(--fw-semibold)">$25.00</span></div>
+                <div style="display:flex;justify-content:space-between;padding:var(--space-2) 0;font-size:var(--fs-small)"><span style="color:var(--color-light-text)">Taxes (8%)</span><span style="font-weight:var(--fw-semibold)">$83.20</span></div>
+                <div style="height:1px;background:var(--color-border-light);margin:var(--space-3) 0"></div>
+                <div style="display:flex;justify-content:space-between;padding:var(--space-3) 0"><span style="font-family:var(--font-heading);font-weight:var(--fw-semibold)">Grand Total</span><span style="font-family:var(--font-heading);font-size:var(--fs-h3);font-weight:var(--fw-bold);color:var(--color-secondary)">$1,348.20</span></div>
+              </div>
+
+              <div class="form-nav">
+                <button class="btn btn--ghost">← Back</button>
+                <button class="btn btn--primary">Next: Confirmation →</button>
+              </div>
+            </div>
+
+            <!-- STEP 4: Confirmation -->
+            <div class="form-section scroll-reveal" id="step-4">
+              <div class="form-section__header">
+                <div class="form-section__icon">✅</div>
+                <div><div class="form-section__title">Step 4 — Confirmation</div><div class="form-section__subtitle">Review terms and confirm your booking</div></div>
+              </div>
+
+              <div class="terms-check">
+                <input type="checkbox" id="terms-agree">
+                <label for="terms-agree" class="terms-check__text">I have read and agree to the <a href="terms-and-conditions.html">Terms of Service</a>, <a href="privacy-policy.html">Privacy Policy</a>, and <a href="terms-and-conditions.html">Rental Agreement</a>. I understand that my booking is subject to admin approval and vehicle availability.</label>
+              </div>
+
+              <div class="terms-check">
+                <input type="checkbox" id="verify-agree">
+                <label for="verify-agree" class="terms-check__text">I understand that I will be required to upload six vehicle inspection photos before collecting the vehicle, as part of the condition verification process.</label>
+              </div>
+
+              <div class="confirmation-card">
+                <div class="confirmation-card__icon">🎉</div>
+                <h3 class="confirmation-card__title">Ready to Submit Your Booking?</h3>
+                <p class="confirmation-card__text">Once submitted, your booking request will be sent to our admin team for approval. You'll receive a confirmation email with the next steps.</p>
+                <div class="confirmation-card__actions">
+                  <button class="btn btn--ghost btn--lg">← Back to Review</button>
+                  <button class="btn btn--primary btn--lg">Confirm Booking →</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ======== RIGHT: STICKY SUMMARY ======== -->
+          <div>
+            <div class="booking-summary scroll-reveal" style="--delay:.2s">
+              <div class="booking-summary__vehicle">
+                <div class="booking-summary__img">🏎️</div>
+                <div>
+                  <div class="booking-summary__car-brand">Mercedes-Benz</div>
+                  <div class="booking-summary__car-name">AMG GT 63 S</div>
+                  <div class="booking-summary__car-badge"><span class="badge badge--available" style="font-size:0.65rem">Available</span></div>
+                </div>
+              </div>
+              <div class="booking-summary__body">
+                <div class="booking-summary__row"><span class="booking-summary__row-label">Rental Type</span><span class="booking-summary__row-value">Daily</span></div>
+                <div class="booking-summary__row"><span class="booking-summary__row-label">Duration</span><span class="booking-summary__row-value">2 Days</span></div>
+                <div class="booking-summary__row"><span class="booking-summary__row-label">Pickup</span><span class="booking-summary__row-value">Jul 5, 10 AM</span></div>
+                <div class="booking-summary__row"><span class="booking-summary__row-label">Return</span><span class="booking-summary__row-value">Jul 7, 10 AM</span></div>
+                <div class="booking-summary__divider"></div>
+                <div class="booking-summary__row"><span class="booking-summary__row-label">Base Charge</span><span class="booking-summary__row-value">$1,040.00</span></div>
+                <div class="booking-summary__row"><span class="booking-summary__row-label">Deposit</span><span class="booking-summary__row-value">$200.00</span></div>
+                <div class="booking-summary__row"><span class="booking-summary__row-label">Service Fee</span><span class="booking-summary__row-value">$25.00</span></div>
+                <div class="booking-summary__row"><span class="booking-summary__row-label">Taxes</span><span class="booking-summary__row-value">$83.20</span></div>
+                <div class="booking-summary__divider"></div>
+                <div class="booking-summary__total"><span class="booking-summary__total-label">Grand Total</span><span class="booking-summary__total-value">$1,348.20</span></div>
+              </div>
+              <div class="booking-summary__cta">
+                <button class="btn btn--primary btn--lg">Confirm Booking</button>
+                <p class="booking-summary__note">No charges until admin approval</p>
+              </div>
+              <div class="booking-summary__secure">🔒 Secure & encrypted booking</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BOOKING BENEFITS
+         ============================================================ -->
+    <section class="section" style="background:var(--color-bg)" id="benefits">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">Why Book With Us</div>
+          <h2 class="section-header__title">Booking Benefits</h2>
+        </div>
+        <div class="info-cards-grid scroll-reveal">
+          <div class="info-card-mini"><div class="info-card-mini__icon">💎</div><h3 class="info-card-mini__title">Transparent Pricing</h3><p class="info-card-mini__text">No hidden fees. What you see is exactly what you pay.</p></div>
+          <div class="info-card-mini"><div class="info-card-mini__icon">✅</div><h3 class="info-card-mini__title">Verified Fleet</h3><p class="info-card-mini__text">Every vehicle inspected and certified for quality.</p></div>
+          <div class="info-card-mini"><div class="info-card-mini__icon">🚫</div><h3 class="info-card-mini__title">No Hidden Charges</h3><p class="info-card-mini__text">Complete breakdown of all charges upfront.</p></div>
+          <div class="info-card-mini"><div class="info-card-mini__icon">📅</div><h3 class="info-card-mini__title">Flexible Duration</h3><p class="info-card-mini__text">Book hourly, daily, or weekly — your schedule.</p></div>
+          <div class="info-card-mini"><div class="info-card-mini__icon">🕐</div><h3 class="info-card-mini__title">Professional Support</h3><p class="info-card-mini__text">24/7 customer support throughout your rental.</p></div>
+          <div class="info-card-mini"><div class="info-card-mini__icon">🔒</div><h3 class="info-card-mini__title">Secure Process</h3><p class="info-card-mini__text">End-to-end encrypted booking and payment.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         RENTAL TERMS
+         ============================================================ -->
+    <section class="section" id="rental-terms">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">Policies</div>
+          <h2 class="section-header__title">Rental Terms & Conditions</h2>
+        </div>
+        <div class="bk-terms-list scroll-reveal">
+          <div class="bk-terms-item open"><button class="bk-terms-item__q">Rental Policy <span class="bk-terms-item__toggle">+</span></button><div class="bk-terms-item__a"><p class="bk-terms-item__text">All rentals require a valid driver's license and security deposit. Vehicles must be returned in the same condition as received. Mileage limits apply — check your specific vehicle terms for details.</p></div></div>
+          <div class="bk-terms-item"><button class="bk-terms-item__q">Cancellation Policy <span class="bk-terms-item__toggle">+</span></button><div class="bk-terms-item__a"><p class="bk-terms-item__text">Free cancellation up to 24 hours before pickup. Cancellations within 24 hours incur a 25% charge. No-shows are charged the full rental amount.</p></div></div>
+          <div class="bk-terms-item"><button class="bk-terms-item__q">Damage Policy <span class="bk-terms-item__toggle">+</span></button><div class="bk-terms-item__a"><p class="bk-terms-item__text">Renters are responsible for any damage during the rental period. Vehicle condition is documented through our 6-point photo inspection system. Basic CDW insurance is included.</p></div></div>
+          <div class="bk-terms-item"><button class="bk-terms-item__q">Insurance Coverage <span class="bk-terms-item__toggle">+</span></button><div class="bk-terms-item__a"><p class="bk-terms-item__text">Basic Collision Damage Waiver is included. Premium zero-deductible coverage is available at an additional cost. Third-party insurance is accepted if it meets minimum requirements.</p></div></div>
+          <div class="bk-terms-item"><button class="bk-terms-item__q">Fuel Policy <span class="bk-terms-item__toggle">+</span></button><div class="bk-terms-item__a"><p class="bk-terms-item__text">Vehicles are provided with a full tank. Return with full tank to avoid refueling charges of $5/gallon plus a $25 service fee.</p></div></div>
+          <div class="bk-terms-item"><button class="bk-terms-item__q">Late Return Policy <span class="bk-terms-item__toggle">+</span></button><div class="bk-terms-item__a"><p class="bk-terms-item__text">Late returns incur $50/hr surcharge. Returns more than 4 hours late are charged an additional full day. Contact us to extend and avoid surcharges.</p></div></div>
+          <div class="bk-terms-item"><button class="bk-terms-item__q">Rental Extension Policy <span class="bk-terms-item__toggle">+</span></button><div class="bk-terms-item__a"><p class="bk-terms-item__text">Extensions can be requested up to 2 hours before the scheduled return time. Subject to availability and admin approval. Extended rates match original booking terms.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         DOCUMENT REQUIREMENTS
+         ============================================================ -->
+    <section class="section" style="background:var(--color-bg)" id="documents">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">Requirements</div>
+          <h2 class="section-header__title">Document Requirements</h2>
+        </div>
+        <div class="doc-grid scroll-reveal">
+          <div class="doc-card"><div class="doc-card__icon">🪪</div><h3 class="doc-card__title">Driving License</h3><p class="doc-card__text">Valid, unexpired driver's license</p></div>
+          <div class="doc-card"><div class="doc-card__icon">🆔</div><h3 class="doc-card__title">Government ID</h3><p class="doc-card__text">Passport or national ID card</p></div>
+          <div class="doc-card"><div class="doc-card__icon">🎂</div><h3 class="doc-card__title">Age Requirement</h3><p class="doc-card__text">Minimum 25 years for luxury</p></div>
+          <div class="doc-card"><div class="doc-card__icon">💳</div><h3 class="doc-card__title">Security Deposit</h3><p class="doc-card__text">Credit card for $200 deposit</p></div>
+          <div class="doc-card"><div class="doc-card__icon">📸</div><h3 class="doc-card__title">Verification</h3><p class="doc-card__text">6-point photo inspection</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         VEHICLE PICKUP INFO
+         ============================================================ -->
+    <section class="section" id="pickup-info">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">Pickup Guide</div>
+          <h2 class="section-header__title">Vehicle Pickup Information</h2>
+        </div>
+        <div class="pickup-grid scroll-reveal">
+          <div class="pickup-card"><div class="pickup-card__icon">📍</div><h3 class="pickup-card__title">Pickup Instructions</h3><ul class="pickup-card__list"><li>Arrive 15 minutes before scheduled time</li><li>Bring all required documents</li><li>Meet our representative at the counter</li><li>Complete identity verification</li><li>Sign rental agreement digitally</li></ul></div>
+          <div class="pickup-card"><div class="pickup-card__icon">🔍</div><h3 class="pickup-card__title">Vehicle Inspection</h3><ul class="pickup-card__list"><li>Walk around the vehicle together</li><li>Upload 6 inspection photos</li><li>Note any existing marks or scratches</li><li>Verify fuel level and mileage</li><li>Receive digital inspection report</li></ul></div>
+          <div class="pickup-card"><div class="pickup-card__icon">📋</div><h3 class="pickup-card__title">Customer Responsibilities</h3><ul class="pickup-card__list"><li>Follow traffic laws at all times</li><li>Return vehicle on time and in condition</li><li>Report any incidents immediately</li><li>Maintain fuel levels per policy</li><li>Keep rental documents in the vehicle</li></ul></div>
+          <div class="pickup-card"><div class="pickup-card__icon">🔄</div><h3 class="pickup-card__title">Return Instructions</h3><ul class="pickup-card__list"><li>Return to designated location</li><li>Ensure full fuel tank</li><li>Remove all personal belongings</li><li>Upload return inspection photos</li><li>Receive deposit refund confirmation</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         VEHICLE VERIFICATION PREVIEW
+         ============================================================ -->
+    <section class="section" style="background:var(--color-bg)" id="verification">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">Quality Assurance</div>
+          <h2 class="section-header__title">Vehicle Condition Verification</h2>
+          <p class="section-header__subtitle">After admin approval, you'll be asked to upload six inspection photos before vehicle collection.</p>
+        </div>
+        <div class="condition-notice scroll-reveal"><span class="condition-notice__icon">ℹ️</span> This is an informational preview. The photo upload feature will be available after your booking is approved by our admin team.</div>
+        <div class="verify-grid scroll-reveal">
+          <div class="verify-card"><div class="verify-card__image" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe)">📸</div><div class="verify-card__body"><h3 class="verify-card__title">Front View</h3><p class="verify-card__desc">Bumper, hood, headlights</p></div></div>
+          <div class="verify-card"><div class="verify-card__image" style="background:linear-gradient(135deg,#fef3c7,#fde68a)">📸</div><div class="verify-card__body"><h3 class="verify-card__title">Rear View</h3><p class="verify-card__desc">Bumper, trunk, taillights</p></div></div>
+          <div class="verify-card"><div class="verify-card__image" style="background:linear-gradient(135deg,#dcfce7,#bbf7d0)">📸</div><div class="verify-card__body"><h3 class="verify-card__title">Left Side</h3><p class="verify-card__desc">Doors, mirrors, panels</p></div></div>
+          <div class="verify-card"><div class="verify-card__image" style="background:linear-gradient(135deg,#fee2e2,#fecaca)">📸</div><div class="verify-card__body"><h3 class="verify-card__title">Right Side</h3><p class="verify-card__desc">Doors, mirrors, panels</p></div></div>
+          <div class="verify-card"><div class="verify-card__image" style="background:linear-gradient(135deg,#e0e7ff,#c7d2fe)">📸</div><div class="verify-card__body"><h3 class="verify-card__title">Front Angle</h3><p class="verify-card__desc">3/4 front condition</p></div></div>
+          <div class="verify-card"><div class="verify-card__image" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8)">📸</div><div class="verify-card__body"><h3 class="verify-card__title">Rear Angle</h3><p class="verify-card__desc">3/4 rear condition</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CUSTOMER SUPPORT
+         ============================================================ -->
+    <section class="section" id="support">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">Need Help?</div>
+          <h2 class="section-header__title">Customer Support</h2>
+        </div>
+        <div class="support-grid scroll-reveal">
+          <div class="support-card"><div class="support-card__icon">📞</div><h3 class="support-card__title">Call Support</h3><div class="support-card__value">+1 (555) 123-4567</div><p class="support-card__text">Available 24/7</p></div>
+          <div class="support-card"><div class="support-card__icon">✉️</div><h3 class="support-card__title">Email Support</h3><div class="support-card__value">support@driveelite.com</div><p class="support-card__text">Response within 2 hours</p></div>
+          <div class="support-card"><div class="support-card__icon">💬</div><h3 class="support-card__title">Live Chat</h3><div class="support-card__value">Coming Soon</div><p class="support-card__text">In-app chat support</p></div>
+          <div class="support-card"><div class="support-card__icon">🕐</div><h3 class="support-card__title">Business Hours</h3><div class="support-card__value">Mon – Sat</div><p class="support-card__text">8:00 AM – 8:00 PM</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ
+         ============================================================ -->
+    <section class="section" style="background:var(--color-bg)" id="faq">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">FAQ</div>
+          <h2 class="section-header__title">Frequently Asked Questions</h2>
+        </div>
+        <div class="bk-terms-list scroll-reveal" id="faq-list">
+          <div class="bk-terms-item open"><button class="bk-terms-item__q">Can I modify my booking after submission? <span class="bk-terms-item__toggle">+</span></button><div class="bk-terms-item__a"><p class="bk-terms-item__text">Yes, you can modify your booking details through your dashboard before the admin approves it. Once approved, changes may require contacting our support team.</p></div></div>
+          <div class="bk-terms-item"><button class="bk-terms-item__q">Can I extend my rental duration? <span class="bk-terms-item__toggle">+</span></button><div class="bk-terms-item__a"><p class="bk-terms-item__text">Yes, rental extensions can be requested from your dashboard up to 2 hours before the scheduled return time. Extensions are subject to vehicle availability and admin approval.</p></div></div>
+          <div class="bk-terms-item"><button class="bk-terms-item__q">Can I cancel my booking? <span class="bk-terms-item__toggle">+</span></button><div class="bk-terms-item__a"><p class="bk-terms-item__text">Free cancellation up to 24 hours before pickup. Late cancellations incur a 25% fee. Refunds are processed within 5-7 business days.</p></div></div>
+          <div class="bk-terms-item"><button class="bk-terms-item__q">How does vehicle verification work? <span class="bk-terms-item__toggle">+</span></button><div class="bk-terms-item__a"><p class="bk-terms-item__text">After booking approval, you'll upload 6 photos of the vehicle (front, rear, left, right, front angle, rear angle) during pickup. The same process repeats at return for transparency.</p></div></div>
+          <div class="bk-terms-item"><button class="bk-terms-item__q">How long does booking approval take? <span class="bk-terms-item__toggle">+</span></button><div class="bk-terms-item__a"><p class="bk-terms-item__text">Most bookings are approved within 1-2 hours during business hours. You'll receive an email notification once your booking is approved or if additional information is needed.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA
+         ============================================================ -->
+    <section class="booking-cta" id="cta">
+      <div class="booking-cta__pattern"></div>
+      <div class="container">
+        <h2 class="booking-cta__title scroll-reveal">Need a Different Vehicle?</h2>
+        <p class="booking-cta__text scroll-reveal">Browse our complete premium fleet or contact our team for personalized assistance with your rental needs.</p>
+        <div class="booking-cta__actions scroll-reveal">
+          <a href="cars.html" class="btn btn--accent btn--lg">Browse More Cars</a>
+          <a href="contact.html" class="btn btn--ghost btn--lg" style="color:#fff;border-color:rgba(255,255,255,.3)">Contact Support</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-icon">DE</div>Drive<span>Elite</span></a><p class="footer__description">Your premier destination for luxury car rentals. We deliver top-tier vehicles with white-glove service for an unforgettable driving experience.</p><div class="footer__socials"><a href="#" class="footer__social-link" aria-label="Facebook">f</a><a href="#" class="footer__social-link" aria-label="Instagram">📷</a><a href="#" class="footer__social-link" aria-label="X / Twitter">𝕏</a><a href="#" class="footer__social-link" aria-label="LinkedIn">in</a><a href="#" class="footer__social-link" aria-label="YouTube">▶</a></div></div>
+        <div><h4 class="footer__heading">Company</h4><ul class="footer__list"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="services.html" class="footer__link">Careers</a></li><li><a href="about.html" class="footer__link">Press</a></li><li><a href="contact.html" class="footer__link">Contact</a></li></ul></div>
+        <div><h4 class="footer__heading">Quick Links</h4><ul class="footer__list"><li><a href="cars.html" class="footer__link">Our Fleet</a></li><li><a href="services.html" class="footer__link">Services</a></li><li><a href="faq.html" class="footer__link">FAQ</a></li><li><a href="booking.html" class="footer__link">Book a Car</a></li></ul></div>
+        <div><h4 class="footer__heading">Support</h4><ul class="footer__list"><li><a href="faq.html" class="footer__link">Help Center</a></li><li><a href="privacy-policy.html" class="footer__link">Privacy Policy</a></li><li><a href="terms-and-conditions.html" class="footer__link">Terms of Service</a></li><li><a href="terms-and-conditions.html" class="footer__link">Rental Policy</a></li></ul></div>
+        <div><h4 class="footer__heading">Contact</h4><div class="footer__contact-item"><div class="footer__contact-icon">📍</div><div><div class="footer__contact-label">Address</div><div class="footer__contact-value">123 Luxury Drive, Suite 100<br>New York, NY 10001</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">📞</div><div><div class="footer__contact-label">Phone</div><div class="footer__contact-value">+1 (555) 123-4567</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">✉️</div><div><div class="footer__contact-label">Email</div><div class="footer__contact-value">hello@driveelite.com</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">🕐</div><div><div class="footer__contact-label">Business Hours</div><div class="footer__contact-value">Mon–Sat: 8AM – 8PM</div></div></div></div>
+      </div>
+      <div class="footer__newsletter-section"><div class="footer__newsletter-wrap"><div class="footer__newsletter-text"><h4 class="footer__newsletter-title">Stay in the Fast Lane</h4><p class="footer__newsletter-subtitle">Subscribe for exclusive deals, new arrivals, and luxury driving tips.</p></div><form class="footer__newsletter-form" id="newsletter-form"><input type="email" class="footer__newsletter-input" placeholder="Enter your email address" aria-label="Newsletter email"><button type="submit" class="btn btn--primary btn--sm">Subscribe</button></form></div></div>
+      <div class="footer__bottom"><div class="footer__bottom-brand"><p>&copy; 2026 DriveElite. Crafted with <span class="footer__heart">❤</span> for luxury driving.</p></div><div class="footer__bottom-links"><a href="privacy-policy.html" class="footer__bottom-link">Privacy</a><a href="terms-and-conditions.html" class="footer__bottom-link">Terms</a><a href="contact.html" class="footer__bottom-link">Sitemap</a></div></div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/validation.js"></script>
+  <script src="assets/js/animation.js"></script>
+
+  <script>
+  (function() {
+    'use strict';
+    /* Accordion for rental terms + FAQ */
+    document.querySelectorAll('.bk-terms-item__q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.bk-terms-item');
+        const parent = item.parentElement;
+        const wasOpen = item.classList.contains('open');
+        parent.querySelectorAll('.bk-terms-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+  })();
+  </script>
+</body>
+</html>

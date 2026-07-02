@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse our exclusive fleet of luxury rental cars. Filter by type, brand, price, and more to find your perfect ride.">
+  <title>Our Fleet — DriveElite</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/pages/cars.css">
+</head>
+<body>
+
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar__logo"><div class="navbar__logo-icon">DE</div>Drive<span>Elite</span></a>
+      <div class="navbar__links">
+        <a href="index.html" class="navbar__link">Home</a>
+        <a href="cars.html" class="navbar__link">Cars</a>
+        <a href="services.html" class="navbar__link">Services</a>
+        <a href="about.html" class="navbar__link">About</a>
+        <a href="faq.html" class="navbar__link">FAQ</a>
+        <a href="contact.html" class="navbar__link">Contact</a>
+      </div>
+      <div class="navbar__actions">
+        <button class="navbar__search-btn" aria-label="Search" title="Search (Ctrl+K)">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <a href="login.html" class="btn btn--ghost btn--sm">Login</a>
+        <a href="register.html" class="btn btn--primary btn--sm">Register</a>
+      </div>
+      <button class="navbar__toggle" aria-label="Toggle mobile menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="navbar__mobile-overlay"></div>
+  <div class="navbar__mobile">
+    <a href="index.html" class="navbar__link">Home</a>
+    <a href="cars.html" class="navbar__link">Cars</a>
+    <a href="services.html" class="navbar__link">Services</a>
+    <a href="about.html" class="navbar__link">About</a>
+    <a href="faq.html" class="navbar__link">FAQ</a>
+    <a href="contact.html" class="navbar__link">Contact</a>
+    <a href="dashboard.html" class="navbar__link">Dashboard</a>
+    <div class="navbar__actions">
+      <a href="login.html" class="btn btn--ghost btn--sm">Login</a>
+      <a href="register.html" class="btn btn--primary btn--sm">Register</a>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       HERO BANNER
+       ============================================================ -->
+  <section class="cars-hero">
+    <div class="cars-hero__overlay"></div>
+    <div class="container">
+      <div class="cars-hero__content scroll-reveal">
+        <div class="cars-hero__badge">Our Premium Fleet</div>
+        <h1 class="cars-hero__title">Find Your <span class="highlight">Perfect Ride</span></h1>
+        <p class="cars-hero__desc">Browse our handpicked collection of luxury, performance, and comfort vehicles. Advanced filters help you find exactly what you need.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb__list">
+        <li class="breadcrumb__item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb__separator">›</li>
+        <li class="breadcrumb__item active">Cars</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main id="main-content">
+
+    <!-- ============================================================
+         SEARCH BAR
+         ============================================================ -->
+    <section class="cars-search">
+      <div class="container">
+        <div class="cars-search__card scroll-reveal">
+          <div class="cars-search__row">
+            <div class="cars-search__field">
+              <label for="search-keyword">Search Vehicle</label>
+              <input type="text" id="search-keyword" class="form-input" placeholder="Search by name, brand, or model...">
+            </div>
+            <div class="cars-search__field">
+              <label for="search-brand">Brand</label>
+              <select id="search-brand" class="form-select">
+                <option value="">All Brands</option>
+                <option>BMW</option>
+                <option>Mercedes-Benz</option>
+                <option>Audi</option>
+                <option>Toyota</option>
+                <option>Honda</option>
+                <option>Tesla</option>
+                <option>Porsche</option>
+                <option>Ford</option>
+              </select>
+            </div>
+            <div class="cars-search__field">
+              <label for="search-category">Category</label>
+              <select id="search-category" class="form-select">
+                <option value="">All Categories</option>
+                <option>Luxury</option>
+                <option>SUV</option>
+                <option>Sedan</option>
+                <option>Sports</option>
+                <option>Electric</option>
+                <option>Convertible</option>
+              </select>
+            </div>
+            <div class="cars-search__actions">
+              <button class="btn btn--primary">🔍 Search</button>
+              <button class="btn btn--ghost">Reset</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FILTER + VEHICLE GRID LAYOUT
+         ============================================================ -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+
+        <!-- Mobile filter toggle -->
+        <button class="filter-toggle-mobile" id="filter-toggle">
+          🔧 Show Filters
+        </button>
+
+        <div class="cars-layout">
+
+          <!-- ======== FILTER SIDEBAR ======== -->
+          <aside class="filter-sidebar" id="filter-sidebar">
+            <div class="filter-sidebar__header">
+              <h3 class="filter-sidebar__title">🔧 Filters</h3>
+              <button class="filter-sidebar__clear">Clear All</button>
+            </div>
+
+            <!-- Vehicle Category -->
+            <div class="filter-group">
+              <h4 class="filter-group__title">Vehicle Category <span class="filter-group__toggle">▾</span></h4>
+              <div class="filter-group__options">
+                <label class="filter-checkbox"><input type="checkbox"> Luxury <span class="filter-checkbox__count">24</span></label>
+                <label class="filter-checkbox"><input type="checkbox"> SUV <span class="filter-checkbox__count">18</span></label>
+                <label class="filter-checkbox"><input type="checkbox"> Sedan <span class="filter-checkbox__count">32</span></label>
+                <label class="filter-checkbox"><input type="checkbox"> Sports <span class="filter-checkbox__count">12</span></label>
+                <label class="filter-checkbox"><input type="checkbox"> Electric <span class="filter-checkbox__count">15</span></label>
+                <label class="filter-checkbox"><input type="checkbox"> Convertible <span class="filter-checkbox__count">8</span></label>
+                <label class="filter-checkbox"><input type="checkbox"> Hatchback <span class="filter-checkbox__count">10</span></label>
+              </div>
+            </div>
+
+            <!-- Brand -->
+            <div class="filter-group">
+              <h4 class="filter-group__title">Brand <span class="filter-group__toggle">▾</span></h4>
+              <div class="filter-group__options">
+                <label class="filter-checkbox"><input type="checkbox"> BMW <span class="filter-checkbox__count">14</span></label>
+                <label class="filter-checkbox"><input type="checkbox"> Mercedes <span class="filter-checkbox__count">16</span></label>
+                <label class="filter-checkbox"><input type="checkbox"> Audi <span class="filter-checkbox__count">12</span></label>
+                <label class="filter-checkbox"><input type="checkbox"> Toyota <span class="filter-checkbox__count">18</span></label>
+                <label class="filter-checkbox"><input type="checkbox"> Honda <span class="filter-checkbox__count">10</span></label>
+                <label class="filter-checkbox"><input type="checkbox"> Hyundai <span class="filter-checkbox__count">8</span></label>
+                <label class="filter-checkbox"><input type="checkbox"> Tesla <span class="filter-checkbox__count">6</span></label>
+                <label class="filter-checkbox"><input type="checkbox"> Ford <span class="filter-checkbox__count">9</span></label>
+              </div>
+            </div>
+
+            <!-- Rental Type -->
+            <div class="filter-group">
+              <h4 class="filter-group__title">Rental Type <span class="filter-group__toggle">▾</span></h4>
+              <div class="filter-group__options">
+                <label class="filter-checkbox"><input type="checkbox"> Hourly</label>
+                <label class="filter-checkbox"><input type="checkbox"> Daily</label>
+              </div>
+            </div>
+
+            <!-- Fuel Type -->
+            <div class="filter-group">
+              <h4 class="filter-group__title">Fuel Type <span class="filter-group__toggle">▾</span></h4>
+              <div class="filter-group__options">
+                <label class="filter-checkbox"><input type="checkbox"> Petrol <span class="filter-checkbox__count">45</span></label>
+                <label class="filter-checkbox"><input type="checkbox"> Diesel <span class="filter-checkbox__count">22</span></label>
+                <label class="filter-checkbox"><input type="checkbox"> Electric <span class="filter-checkbox__count">15</span></label>
+                <label class="filter-checkbox"><input type="checkbox"> Hybrid <span class="filter-checkbox__count">8</span></label>
+              </div>
+            </div>
+
+            <!-- Transmission -->
+            <div class="filter-group">
+              <h4 class="filter-group__title">Transmission <span class="filter-group__toggle">▾</span></h4>
+              <div class="filter-group__options">
+                <label class="filter-checkbox"><input type="checkbox"> Automatic <span class="filter-checkbox__count">72</span></label>
+                <label class="filter-checkbox"><input type="checkbox"> Manual <span class="filter-checkbox__count">18</span></label>
+              </div>
+            </div>
+
+            <!-- Seats -->
+            <div class="filter-group">
+              <h4 class="filter-group__title">Seats <span class="filter-group__toggle">▾</span></h4>
+              <div class="filter-group__options">
+                <label class="filter-checkbox"><input type="checkbox"> 2 Seats <span class="filter-checkbox__count">8</span></label>
+                <label class="filter-checkbox"><input type="checkbox"> 4 Seats <span class="filter-checkbox__count">20</span></label>
+                <label class="filter-checkbox"><input type="checkbox"> 5 Seats <span class="filter-checkbox__count">45</span></label>
+                <label class="filter-checkbox"><input type="checkbox"> 7 Seats <span class="filter-checkbox__count">12</span></label>
+              </div>
+            </div>
+
+            <!-- Price Range -->
+            <div class="filter-group">
+              <h4 class="filter-group__title">Price Range ($/hr) <span class="filter-group__toggle">▾</span></h4>
+              <div class="filter-group__options">
+                <div class="filter-range">
+                  <div class="filter-range__inputs">
+                    <div class="filter-range__input">
+                      <input type="number" value="20" min="0" placeholder="Min">
+                    </div>
+                    <div class="filter-range__input">
+                      <input type="number" value="200" max="500" placeholder="Max">
+                    </div>
+                  </div>
+                  <input type="range" class="filter-range__slider" min="0" max="500" value="200">
+                </div>
+              </div>
+            </div>
+
+            <!-- Availability -->
+            <div class="filter-group">
+              <h4 class="filter-group__title">Availability <span class="filter-group__toggle">▾</span></h4>
+              <div class="filter-group__options">
+                <label class="filter-checkbox"><input type="checkbox" checked> Available Now <span class="filter-checkbox__count">65</span></label>
+                <label class="filter-checkbox"><input type="checkbox"> Coming Soon <span class="filter-checkbox__count">12</span></label>
+                <label class="filter-checkbox"><input type="checkbox"> Featured Cars <span class="filter-checkbox__count">8</span></label>
+              </div>
+            </div>
+
+            <!-- Ratings -->
+            <div class="filter-group">
+              <h4 class="filter-group__title">Rating <span class="filter-group__toggle">▾</span></h4>
+              <div class="filter-group__options">
+                <div class="filter-rating">
+                  <label class="filter-rating__option"><input type="radio" name="rating" style="display:none"> <span class="filter-rating__stars">⭐⭐⭐⭐⭐</span> <span class="filter-rating__text">5.0</span></label>
+                  <label class="filter-rating__option"><input type="radio" name="rating" style="display:none"> <span class="filter-rating__stars">⭐⭐⭐⭐</span> <span class="filter-rating__text">4.0+</span></label>
+                  <label class="filter-rating__option"><input type="radio" name="rating" style="display:none"> <span class="filter-rating__stars">⭐⭐⭐</span> <span class="filter-rating__text">3.0+</span></label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sidebar Actions -->
+            <div class="filter-sidebar__actions">
+              <button class="btn btn--ghost btn--sm">Reset</button>
+              <button class="btn btn--primary btn--sm">Apply Filters</button>
+            </div>
+          </aside>
+
+          <!-- ======== MAIN CONTENT AREA ======== -->
+          <div>
+            <!-- Toolbar -->
+            <div class="cars-toolbar scroll-reveal">
+              <div class="cars-toolbar__count">Showing <span>12</span> of 90 vehicles</div>
+              <div class="cars-toolbar__controls">
+                <div class="cars-toolbar__sort">
+                  <label for="sort-by">Sort by:</label>
+                  <select id="sort-by" class="form-select">
+                    <option>Newest First</option>
+                    <option>Popularity</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                    <option>Rating</option>
+                    <option>A – Z</option>
+                  </select>
+                </div>
+                <div class="cars-toolbar__view">
+                  <button class="view-btn active" aria-label="Grid view" title="Grid View">⊞</button>
+                  <button class="view-btn" aria-label="List view" title="List View">☰</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Empty State (hidden by default) -->
+            <div class="cars-empty" id="cars-empty">
+              <div class="cars-empty__icon">🔍</div>
+              <h3 class="cars-empty__title">No Vehicles Found</h3>
+              <p class="cars-empty__text">We couldn't find any vehicles matching your criteria. Try adjusting your filters or search terms.</p>
+              <button class="btn btn--primary">Reset Filters</button>
+            </div>
+
+            <!-- Vehicle Grid -->
+            <div class="vehicle-grid" id="vehicle-grid">
+
+              <!-- Card 1 -->
+              <div class="v-card scroll-reveal">
+                <div class="v-card__image">
+                  <div class="v-card__image-placeholder" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">🏎️</div>
+                  <div class="v-card__badges">
+                    <span class="badge badge--available">Available</span>
+                    <span class="badge badge--popular">Featured</span>
+                  </div>
+                  <div class="v-card__actions-overlay">
+                    <button class="v-card__icon-btn" aria-label="Favorite" title="Add to favorites">♡</button>
+                    <button class="v-card__icon-btn" aria-label="Compare" title="Add to compare">⇄</button>
+                  </div>
+                  <div class="v-card__brand-logo">MB</div>
+                </div>
+                <div class="v-card__body">
+                  <div class="v-card__brand">Mercedes-Benz</div>
+                  <h3 class="v-card__name">AMG GT 63 S</h3>
+                  <p class="v-card__desc">Ultimate performance sedan with twin-turbo V8 engine, hand-crafted luxury interior.</p>
+                  <div class="v-card__specs">
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⛽</span> Petrol</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⚙️</span> Auto</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">👤</span> 4</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">📏</span> 12K mi</span>
+                  </div>
+                  <div class="v-card__features">
+                    <span class="v-card__feature">✓ AC</span>
+                    <span class="v-card__feature">✓ GPS</span>
+                    <span class="v-card__feature">✓ Bluetooth</span>
+                  </div>
+                  <div class="v-card__footer">
+                    <div>
+                      <div class="v-card__price">$85<span class="v-card__price-unit">/hr</span></div>
+                      <div class="v-card__price-daily">$520/day</div>
+                    </div>
+                    <div class="v-card__rating">
+                      <span class="v-card__rating-star">⭐</span> 4.9
+                      <span class="v-card__rating-count">(128)</span>
+                    </div>
+                  </div>
+                  <div class="v-card__cta">
+                    <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
+                    <a href="booking.html" class="btn btn--primary btn--sm">Rent Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="v-card scroll-reveal" style="--delay:.1s">
+                <div class="v-card__image">
+                  <div class="v-card__image-placeholder" style="background:linear-gradient(135deg,#0f172a,#1e3a5f)">🚙</div>
+                  <div class="v-card__badges">
+                    <span class="badge badge--available">Available</span>
+                    <span class="badge badge--suv">SUV</span>
+                  </div>
+                  <div class="v-card__actions-overlay">
+                    <button class="v-card__icon-btn" aria-label="Favorite">♡</button>
+                    <button class="v-card__icon-btn" aria-label="Compare">⇄</button>
+                  </div>
+                  <div class="v-card__brand-logo">BMW</div>
+                </div>
+                <div class="v-card__body">
+                  <div class="v-card__brand">BMW</div>
+                  <h3 class="v-card__name">X7 xDrive40i</h3>
+                  <p class="v-card__desc">Spacious luxury SUV with third-row seating and cutting-edge technology.</p>
+                  <div class="v-card__specs">
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⛽</span> Petrol</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⚙️</span> Auto</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">👤</span> 7</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">📏</span> 8K mi</span>
+                  </div>
+                  <div class="v-card__features">
+                    <span class="v-card__feature">✓ AC</span>
+                    <span class="v-card__feature">✓ GPS</span>
+                    <span class="v-card__feature">✓ Bluetooth</span>
+                  </div>
+                  <div class="v-card__footer">
+                    <div>
+                      <div class="v-card__price">$65<span class="v-card__price-unit">/hr</span></div>
+                      <div class="v-card__price-daily">$420/day</div>
+                    </div>
+                    <div class="v-card__rating"><span class="v-card__rating-star">⭐</span> 4.8 <span class="v-card__rating-count">(96)</span></div>
+                  </div>
+                  <div class="v-card__cta">
+                    <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
+                    <a href="booking.html" class="btn btn--primary btn--sm">Rent Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="v-card scroll-reveal" style="--delay:.2s">
+                <div class="v-card__image">
+                  <div class="v-card__image-placeholder" style="background:linear-gradient(135deg,#14532d,#166534)">⚡</div>
+                  <div class="v-card__badges">
+                    <span class="badge badge--available">Available</span>
+                    <span class="badge badge--electric">Electric</span>
+                  </div>
+                  <div class="v-card__actions-overlay">
+                    <button class="v-card__icon-btn" aria-label="Favorite">♡</button>
+                    <button class="v-card__icon-btn" aria-label="Compare">⇄</button>
+                  </div>
+                  <div class="v-card__brand-logo">T</div>
+                </div>
+                <div class="v-card__body">
+                  <div class="v-card__brand">Tesla</div>
+                  <h3 class="v-card__name">Model S Plaid</h3>
+                  <p class="v-card__desc">The quickest production car ever. 0-60 in under 2 seconds with 390 mile range.</p>
+                  <div class="v-card__specs">
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⚡</span> Electric</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⚙️</span> Auto</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">👤</span> 5</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">📏</span> 5K mi</span>
+                  </div>
+                  <div class="v-card__features">
+                    <span class="v-card__feature">✓ AC</span>
+                    <span class="v-card__feature">✓ GPS</span>
+                    <span class="v-card__feature">✓ Autopilot</span>
+                  </div>
+                  <div class="v-card__footer">
+                    <div>
+                      <div class="v-card__price">$75<span class="v-card__price-unit">/hr</span></div>
+                      <div class="v-card__price-daily">$480/day</div>
+                    </div>
+                    <div class="v-card__rating"><span class="v-card__rating-star">⭐</span> 4.9 <span class="v-card__rating-count">(142)</span></div>
+                  </div>
+                  <div class="v-card__cta">
+                    <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
+                    <a href="booking.html" class="btn btn--primary btn--sm">Rent Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="v-card scroll-reveal">
+                <div class="v-card__image">
+                  <div class="v-card__image-placeholder" style="background:linear-gradient(135deg,#1e1b4b,#312e81)">🏁</div>
+                  <div class="v-card__badges">
+                    <span class="badge badge--available">Available</span>
+                    <span class="badge badge--luxury">Luxury</span>
+                  </div>
+                  <div class="v-card__actions-overlay">
+                    <button class="v-card__icon-btn" aria-label="Favorite">♡</button>
+                    <button class="v-card__icon-btn" aria-label="Compare">⇄</button>
+                  </div>
+                  <div class="v-card__brand-logo">P</div>
+                </div>
+                <div class="v-card__body">
+                  <div class="v-card__brand">Porsche</div>
+                  <h3 class="v-card__name">911 Turbo S</h3>
+                  <p class="v-card__desc">Iconic sports car with 640 hp twin-turbo flat-six engine and all-wheel drive.</p>
+                  <div class="v-card__specs">
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⛽</span> Petrol</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⚙️</span> Auto</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">👤</span> 2</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">📏</span> 3K mi</span>
+                  </div>
+                  <div class="v-card__features">
+                    <span class="v-card__feature">✓ AC</span>
+                    <span class="v-card__feature">✓ GPS</span>
+                    <span class="v-card__feature">✓ Sport Mode</span>
+                  </div>
+                  <div class="v-card__footer">
+                    <div>
+                      <div class="v-card__price">$120<span class="v-card__price-unit">/hr</span></div>
+                      <div class="v-card__price-daily">$750/day</div>
+                    </div>
+                    <div class="v-card__rating"><span class="v-card__rating-star">⭐</span> 5.0 <span class="v-card__rating-count">(87)</span></div>
+                  </div>
+                  <div class="v-card__cta">
+                    <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
+                    <a href="booking.html" class="btn btn--primary btn--sm">Rent Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 5 -->
+              <div class="v-card scroll-reveal" style="--delay:.1s">
+                <div class="v-card__image">
+                  <div class="v-card__image-placeholder" style="background:linear-gradient(135deg,#27272a,#3f3f46)">🚗</div>
+                  <div class="v-card__badges">
+                    <span class="badge badge--available">Available</span>
+                    <span class="badge badge--sedan">Sedan</span>
+                  </div>
+                  <div class="v-card__actions-overlay">
+                    <button class="v-card__icon-btn" aria-label="Favorite">♡</button>
+                    <button class="v-card__icon-btn" aria-label="Compare">⇄</button>
+                  </div>
+                  <div class="v-card__brand-logo">A</div>
+                </div>
+                <div class="v-card__body">
+                  <div class="v-card__brand">Audi</div>
+                  <h3 class="v-card__name">A8 L Quattro</h3>
+                  <p class="v-card__desc">Flagship luxury sedan with adaptive air suspension and executive rear seating.</p>
+                  <div class="v-card__specs">
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⛽</span> Petrol</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⚙️</span> Auto</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">👤</span> 5</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">📏</span> 10K mi</span>
+                  </div>
+                  <div class="v-card__features">
+                    <span class="v-card__feature">✓ AC</span>
+                    <span class="v-card__feature">✓ GPS</span>
+                    <span class="v-card__feature">✓ Bluetooth</span>
+                  </div>
+                  <div class="v-card__footer">
+                    <div>
+                      <div class="v-card__price">$55<span class="v-card__price-unit">/hr</span></div>
+                      <div class="v-card__price-daily">$350/day</div>
+                    </div>
+                    <div class="v-card__rating"><span class="v-card__rating-star">⭐</span> 4.7 <span class="v-card__rating-count">(64)</span></div>
+                  </div>
+                  <div class="v-card__cta">
+                    <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
+                    <a href="booking.html" class="btn btn--primary btn--sm">Rent Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 6 -->
+              <div class="v-card scroll-reveal" style="--delay:.2s">
+                <div class="v-card__image">
+                  <div class="v-card__image-placeholder" style="background:linear-gradient(135deg,#451a03,#78350f)">🚕</div>
+                  <div class="v-card__badges">
+                    <span class="badge badge--available">Available</span>
+                    <span class="badge badge--new">New</span>
+                  </div>
+                  <div class="v-card__actions-overlay">
+                    <button class="v-card__icon-btn" aria-label="Favorite">♡</button>
+                    <button class="v-card__icon-btn" aria-label="Compare">⇄</button>
+                  </div>
+                  <div class="v-card__brand-logo">RR</div>
+                </div>
+                <div class="v-card__body">
+                  <div class="v-card__brand">Range Rover</div>
+                  <h3 class="v-card__name">Sport SVR</h3>
+                  <p class="v-card__desc">The most dynamic Range Rover ever built with supercharged V8 performance.</p>
+                  <div class="v-card__specs">
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⛽</span> Diesel</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⚙️</span> Auto</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">👤</span> 5</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">📏</span> 6K mi</span>
+                  </div>
+                  <div class="v-card__features">
+                    <span class="v-card__feature">✓ AC</span>
+                    <span class="v-card__feature">✓ GPS</span>
+                    <span class="v-card__feature">✓ 4WD</span>
+                  </div>
+                  <div class="v-card__footer">
+                    <div>
+                      <div class="v-card__price">$90<span class="v-card__price-unit">/hr</span></div>
+                      <div class="v-card__price-daily">$580/day</div>
+                    </div>
+                    <div class="v-card__rating"><span class="v-card__rating-star">⭐</span> 4.8 <span class="v-card__rating-count">(73)</span></div>
+                  </div>
+                  <div class="v-card__cta">
+                    <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
+                    <a href="booking.html" class="btn btn--primary btn--sm">Rent Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ===== PROMO BANNER (after first 6 cards) ===== -->
+              <div class="promo-banner scroll-reveal">
+                <div class="promo-banner__pattern"></div>
+                <div class="promo-banner__content">
+                  <div class="promo-banner__tag">🔥 Limited Time Offer</div>
+                  <h3 class="promo-banner__title">Weekend Special — Up to 30% Off</h3>
+                  <p class="promo-banner__text">Book any luxury vehicle for the weekend and save big. Corporate packages also available with exclusive fleet access.</p>
+                </div>
+                <div class="promo-banner__actions">
+                  <a href="booking.html" class="btn btn--accent btn--lg">Book Now →</a>
+                </div>
+              </div>
+
+              <!-- Card 7 -->
+              <div class="v-card scroll-reveal">
+                <div class="v-card__image">
+                  <div class="v-card__image-placeholder" style="background:linear-gradient(135deg,#0c4a6e,#075985)">🚘</div>
+                  <div class="v-card__badges">
+                    <span class="badge badge--available">Available</span>
+                    <span class="badge badge--premium">Premium</span>
+                  </div>
+                  <div class="v-card__actions-overlay">
+                    <button class="v-card__icon-btn" aria-label="Favorite">♡</button>
+                    <button class="v-card__icon-btn" aria-label="Compare">⇄</button>
+                  </div>
+                  <div class="v-card__brand-logo">MB</div>
+                </div>
+                <div class="v-card__body">
+                  <div class="v-card__brand">Mercedes-Benz</div>
+                  <h3 class="v-card__name">S-Class S580</h3>
+                  <p class="v-card__desc">The benchmark luxury sedan featuring MBUX, massage seats, and executive class.</p>
+                  <div class="v-card__specs">
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⛽</span> Petrol</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⚙️</span> Auto</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">👤</span> 5</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">📏</span> 9K mi</span>
+                  </div>
+                  <div class="v-card__features">
+                    <span class="v-card__feature">✓ AC</span>
+                    <span class="v-card__feature">✓ GPS</span>
+                    <span class="v-card__feature">✓ Massage</span>
+                  </div>
+                  <div class="v-card__footer">
+                    <div>
+                      <div class="v-card__price">$95<span class="v-card__price-unit">/hr</span></div>
+                      <div class="v-card__price-daily">$600/day</div>
+                    </div>
+                    <div class="v-card__rating"><span class="v-card__rating-star">⭐</span> 4.9 <span class="v-card__rating-count">(156)</span></div>
+                  </div>
+                  <div class="v-card__cta">
+                    <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
+                    <a href="booking.html" class="btn btn--primary btn--sm">Rent Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 8 -->
+              <div class="v-card scroll-reveal" style="--delay:.1s">
+                <div class="v-card__image">
+                  <div class="v-card__image-placeholder" style="background:linear-gradient(135deg,#365314,#4d7c0f)">🌿</div>
+                  <div class="v-card__badges">
+                    <span class="badge badge--available">Available</span>
+                    <span class="badge badge--electric">Hybrid</span>
+                  </div>
+                  <div class="v-card__actions-overlay">
+                    <button class="v-card__icon-btn" aria-label="Favorite">♡</button>
+                    <button class="v-card__icon-btn" aria-label="Compare">⇄</button>
+                  </div>
+                  <div class="v-card__brand-logo">T</div>
+                </div>
+                <div class="v-card__body">
+                  <div class="v-card__brand">Toyota</div>
+                  <h3 class="v-card__name">Camry Hybrid XSE</h3>
+                  <p class="v-card__desc">Fuel-efficient hybrid with sporty styling, advanced safety, and premium comfort.</p>
+                  <div class="v-card__specs">
+                    <span class="v-card__spec"><span class="v-card__spec-icon">🌿</span> Hybrid</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⚙️</span> Auto</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">👤</span> 5</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">📏</span> 15K mi</span>
+                  </div>
+                  <div class="v-card__features">
+                    <span class="v-card__feature">✓ AC</span>
+                    <span class="v-card__feature">✓ GPS</span>
+                    <span class="v-card__feature">✓ Bluetooth</span>
+                  </div>
+                  <div class="v-card__footer">
+                    <div>
+                      <div class="v-card__price">$35<span class="v-card__price-unit">/hr</span></div>
+                      <div class="v-card__price-daily">$220/day</div>
+                    </div>
+                    <div class="v-card__rating"><span class="v-card__rating-star">⭐</span> 4.6 <span class="v-card__rating-count">(89)</span></div>
+                  </div>
+                  <div class="v-card__cta">
+                    <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
+                    <a href="booking.html" class="btn btn--primary btn--sm">Rent Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 9 -->
+              <div class="v-card scroll-reveal" style="--delay:.2s">
+                <div class="v-card__image">
+                  <div class="v-card__image-placeholder" style="background:linear-gradient(135deg,#7f1d1d,#991b1b)">🏎️</div>
+                  <div class="v-card__badges">
+                    <span class="badge badge--available">Available</span>
+                    <span class="badge badge--luxury">Best Seller</span>
+                  </div>
+                  <div class="v-card__actions-overlay">
+                    <button class="v-card__icon-btn" aria-label="Favorite">♡</button>
+                    <button class="v-card__icon-btn" aria-label="Compare">⇄</button>
+                  </div>
+                  <div class="v-card__brand-logo">A</div>
+                </div>
+                <div class="v-card__body">
+                  <div class="v-card__brand">Audi</div>
+                  <h3 class="v-card__name">R8 V10 Plus</h3>
+                  <p class="v-card__desc">Naturally aspirated V10 supercar with Quattro AWD and carbon ceramic brakes.</p>
+                  <div class="v-card__specs">
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⛽</span> Petrol</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⚙️</span> Auto</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">👤</span> 2</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">📏</span> 4K mi</span>
+                  </div>
+                  <div class="v-card__features">
+                    <span class="v-card__feature">✓ AC</span>
+                    <span class="v-card__feature">✓ GPS</span>
+                    <span class="v-card__feature">✓ Launch Ctrl</span>
+                  </div>
+                  <div class="v-card__footer">
+                    <div>
+                      <div class="v-card__price">$110<span class="v-card__price-unit">/hr</span></div>
+                      <div class="v-card__price-daily">$700/day</div>
+                    </div>
+                    <div class="v-card__rating"><span class="v-card__rating-star">⭐</span> 5.0 <span class="v-card__rating-count">(67)</span></div>
+                  </div>
+                  <div class="v-card__cta">
+                    <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
+                    <a href="booking.html" class="btn btn--primary btn--sm">Rent Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 10 -->
+              <div class="v-card scroll-reveal">
+                <div class="v-card__image">
+                  <div class="v-card__image-placeholder" style="background:linear-gradient(135deg,#1c1917,#44403c)">🚐</div>
+                  <div class="v-card__badges">
+                    <span class="badge badge--available">Available</span>
+                  </div>
+                  <div class="v-card__actions-overlay">
+                    <button class="v-card__icon-btn" aria-label="Favorite">♡</button>
+                    <button class="v-card__icon-btn" aria-label="Compare">⇄</button>
+                  </div>
+                  <div class="v-card__brand-logo">H</div>
+                </div>
+                <div class="v-card__body">
+                  <div class="v-card__brand">Honda</div>
+                  <h3 class="v-card__name">CR-V Touring</h3>
+                  <p class="v-card__desc">Versatile family SUV with Honda Sensing suite, spacious cabin, and AWD.</p>
+                  <div class="v-card__specs">
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⛽</span> Petrol</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⚙️</span> Auto</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">👤</span> 5</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">📏</span> 18K mi</span>
+                  </div>
+                  <div class="v-card__features">
+                    <span class="v-card__feature">✓ AC</span>
+                    <span class="v-card__feature">✓ GPS</span>
+                    <span class="v-card__feature">✓ Bluetooth</span>
+                  </div>
+                  <div class="v-card__footer">
+                    <div>
+                      <div class="v-card__price">$40<span class="v-card__price-unit">/hr</span></div>
+                      <div class="v-card__price-daily">$260/day</div>
+                    </div>
+                    <div class="v-card__rating"><span class="v-card__rating-star">⭐</span> 4.5 <span class="v-card__rating-count">(112)</span></div>
+                  </div>
+                  <div class="v-card__cta">
+                    <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
+                    <a href="booking.html" class="btn btn--primary btn--sm">Rent Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 11 -->
+              <div class="v-card scroll-reveal" style="--delay:.1s">
+                <div class="v-card__image">
+                  <div class="v-card__image-placeholder" style="background:linear-gradient(135deg,#172554,#1e40af)">🚙</div>
+                  <div class="v-card__badges">
+                    <span class="badge badge--available">Available</span>
+                    <span class="badge badge--new">New Arrival</span>
+                  </div>
+                  <div class="v-card__actions-overlay">
+                    <button class="v-card__icon-btn" aria-label="Favorite">♡</button>
+                    <button class="v-card__icon-btn" aria-label="Compare">⇄</button>
+                  </div>
+                  <div class="v-card__brand-logo">HY</div>
+                </div>
+                <div class="v-card__body">
+                  <div class="v-card__brand">Hyundai</div>
+                  <h3 class="v-card__name">Tucson Limited</h3>
+                  <p class="v-card__desc">Modern compact SUV with striking design, Bose audio, and panoramic sunroof.</p>
+                  <div class="v-card__specs">
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⛽</span> Petrol</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⚙️</span> Auto</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">👤</span> 5</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">📏</span> 7K mi</span>
+                  </div>
+                  <div class="v-card__features">
+                    <span class="v-card__feature">✓ AC</span>
+                    <span class="v-card__feature">✓ GPS</span>
+                    <span class="v-card__feature">✓ Sunroof</span>
+                  </div>
+                  <div class="v-card__footer">
+                    <div>
+                      <div class="v-card__price">$38<span class="v-card__price-unit">/hr</span></div>
+                      <div class="v-card__price-daily">$240/day</div>
+                    </div>
+                    <div class="v-card__rating"><span class="v-card__rating-star">⭐</span> 4.6 <span class="v-card__rating-count">(58)</span></div>
+                  </div>
+                  <div class="v-card__cta">
+                    <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
+                    <a href="booking.html" class="btn btn--primary btn--sm">Rent Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 12 -->
+              <div class="v-card scroll-reveal" style="--delay:.2s">
+                <div class="v-card__image">
+                  <div class="v-card__image-placeholder" style="background:linear-gradient(135deg,#064e3b,#047857)">⚡</div>
+                  <div class="v-card__badges">
+                    <span class="badge badge--available">Available</span>
+                    <span class="badge badge--electric">Electric</span>
+                  </div>
+                  <div class="v-card__actions-overlay">
+                    <button class="v-card__icon-btn" aria-label="Favorite">♡</button>
+                    <button class="v-card__icon-btn" aria-label="Compare">⇄</button>
+                  </div>
+                  <div class="v-card__brand-logo">F</div>
+                </div>
+                <div class="v-card__body">
+                  <div class="v-card__brand">Ford</div>
+                  <h3 class="v-card__name">Mustang Mach-E GT</h3>
+                  <p class="v-card__desc">All-electric performance SUV with 480 hp, MagneRide suspension, and 270-mi range.</p>
+                  <div class="v-card__specs">
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⚡</span> Electric</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">⚙️</span> Auto</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">👤</span> 5</span>
+                    <span class="v-card__spec"><span class="v-card__spec-icon">📏</span> 4K mi</span>
+                  </div>
+                  <div class="v-card__features">
+                    <span class="v-card__feature">✓ AC</span>
+                    <span class="v-card__feature">✓ GPS</span>
+                    <span class="v-card__feature">✓ BlueCruise</span>
+                  </div>
+                  <div class="v-card__footer">
+                    <div>
+                      <div class="v-card__price">$60<span class="v-card__price-unit">/hr</span></div>
+                      <div class="v-card__price-daily">$380/day</div>
+                    </div>
+                    <div class="v-card__rating"><span class="v-card__rating-star">⭐</span> 4.7 <span class="v-card__rating-count">(45)</span></div>
+                  </div>
+                  <div class="v-card__cta">
+                    <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
+                    <a href="booking.html" class="btn btn--primary btn--sm">Rent Now</a>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /vehicle-grid -->
+
+            <!-- ===== PAGINATION ===== -->
+            <nav class="pagination scroll-reveal" aria-label="Pagination">
+              <a href="#" class="pagination__btn disabled" aria-label="First page">«</a>
+              <a href="#" class="pagination__btn disabled" aria-label="Previous page">‹</a>
+              <a href="#" class="pagination__btn active">1</a>
+              <a href="#" class="pagination__btn">2</a>
+              <a href="#" class="pagination__btn">3</a>
+              <span class="pagination__ellipsis">…</span>
+              <a href="#" class="pagination__btn">8</a>
+              <a href="#" class="pagination__btn" aria-label="Next page">›</a>
+              <a href="#" class="pagination__btn" aria-label="Last page">»</a>
+            </nav>
+
+          </div><!-- /main content area -->
+        </div><!-- /cars-layout -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+         WHY RENT FROM US
+         ============================================================ -->
+    <section class="section" id="why-rent" style="background:var(--color-bg)">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">Why DriveElite</div>
+          <h2 class="section-header__title">Why Rent From Us</h2>
+          <p class="section-header__subtitle">Experience the DriveElite difference with our commitment to quality, transparency, and service.</p>
+        </div>
+        <div class="why-rent-grid">
+          <div class="why-rent-card scroll-reveal">
+            <div class="why-rent-card__icon">💰</div>
+            <h3 class="why-rent-card__title">Affordable Pricing</h3>
+            <p class="why-rent-card__text">Competitive rates with no hidden fees or surprise charges.</p>
+          </div>
+          <div class="why-rent-card scroll-reveal" style="--delay:.1s">
+            <div class="why-rent-card__icon">✅</div>
+            <h3 class="why-rent-card__title">Verified Vehicles</h3>
+            <p class="why-rent-card__text">Every car is inspected and certified for safety and quality.</p>
+          </div>
+          <div class="why-rent-card scroll-reveal" style="--delay:.2s">
+            <div class="why-rent-card__icon">🕐</div>
+            <h3 class="why-rent-card__title">24/7 Support</h3>
+            <p class="why-rent-card__text">Round-the-clock customer support whenever you need us.</p>
+          </div>
+          <div class="why-rent-card scroll-reveal" style="--delay:.3s">
+            <div class="why-rent-card__icon">🛡️</div>
+            <h3 class="why-rent-card__title">Roadside Assist</h3>
+            <p class="why-rent-card__text">Comprehensive roadside assistance for complete peace of mind.</p>
+          </div>
+          <div class="why-rent-card scroll-reveal">
+            <div class="why-rent-card__icon">📅</div>
+            <h3 class="why-rent-card__title">Flexible Duration</h3>
+            <p class="why-rent-card__text">Hourly, daily, or long-term rentals to match your schedule.</p>
+          </div>
+          <div class="why-rent-card scroll-reveal" style="--delay:.1s">
+            <div class="why-rent-card__icon">⚡</div>
+            <h3 class="why-rent-card__title">Instant Booking</h3>
+            <p class="why-rent-card__text">Quick and hassle-free booking in just a few clicks.</p>
+          </div>
+          <div class="why-rent-card scroll-reveal" style="--delay:.2s">
+            <div class="why-rent-card__icon">🔧</div>
+            <h3 class="why-rent-card__title">Pro Maintenance</h3>
+            <p class="why-rent-card__text">Regular professional servicing for peak performance.</p>
+          </div>
+          <div class="why-rent-card scroll-reveal" style="--delay:.3s">
+            <div class="why-rent-card__icon">💎</div>
+            <h3 class="why-rent-card__title">Transparent Pricing</h3>
+            <p class="why-rent-card__text">What you see is what you pay. Zero hidden charges.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CUSTOMER REVIEWS
+         ============================================================ -->
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">Reviews</div>
+          <h2 class="section-header__title">What Our Renters Say</h2>
+          <p class="section-header__subtitle">Real experiences from real customers who chose DriveElite.</p>
+        </div>
+        <div class="mini-reviews">
+          <div class="mini-review scroll-reveal">
+            <div class="mini-review__header">
+              <div class="mini-review__avatar">👨‍💼</div>
+              <div>
+                <div class="mini-review__name">Michael Thompson</div>
+                <div class="mini-review__stars">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
+            <p class="mini-review__text">"The BMW X7 was in pristine condition. Seamless pickup and drop-off. DriveElite has set a new standard for car rentals."</p>
+          </div>
+          <div class="mini-review scroll-reveal" style="--delay:.1s">
+            <div class="mini-review__header">
+              <div class="mini-review__avatar">👩‍🔬</div>
+              <div>
+                <div class="mini-review__name">Emily Rodriguez</div>
+                <div class="mini-review__stars">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
+            <p class="mini-review__text">"Rented a Tesla Model S for a week. Amazing experience — the car was spotless and customer service was exceptional throughout."</p>
+          </div>
+          <div class="mini-review scroll-reveal" style="--delay:.2s">
+            <div class="mini-review__header">
+              <div class="mini-review__avatar">👨‍🎨</div>
+              <div>
+                <div class="mini-review__name">David Park</div>
+                <div class="mini-review__stars">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
+            <p class="mini-review__text">"Best prices I've found for luxury cars. The Porsche 911 was a dream to drive. Will definitely book again for my next trip."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CALL TO ACTION
+         ============================================================ -->
+    <section class="cars-cta" id="cars-cta">
+      <div class="cars-cta__pattern"></div>
+      <div class="container">
+        <h2 class="cars-cta__title scroll-reveal">Can't Find What You're Looking For?</h2>
+        <p class="cars-cta__text scroll-reveal">Our fleet is constantly growing. Contact our team for personalized assistance or browse our premium collection.</p>
+        <div class="cars-cta__actions scroll-reveal">
+          <a href="index.html#categories" class="btn btn--accent btn--lg">Browse Premium Fleet</a>
+          <a href="contact.html" class="btn btn--ghost btn--lg" style="color:#fff;border-color:rgba(255,255,255,.3)">Contact Support</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo"><div class="footer__logo-icon">DE</div>Drive<span>Elite</span></a>
+          <p class="footer__description">Your premier destination for luxury car rentals. We deliver top-tier vehicles with white-glove service for an unforgettable driving experience.</p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social-link" aria-label="Facebook">f</a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="footer__social-link" aria-label="X / Twitter">𝕏</a>
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">in</a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <ul class="footer__list">
+            <li><a href="about.html" class="footer__link">About Us</a></li>
+            <li><a href="services.html" class="footer__link">Careers</a></li>
+            <li><a href="about.html" class="footer__link">Press</a></li>
+            <li><a href="contact.html" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Quick Links</h4>
+          <ul class="footer__list">
+            <li><a href="cars.html" class="footer__link">Our Fleet</a></li>
+            <li><a href="services.html" class="footer__link">Services</a></li>
+            <li><a href="faq.html" class="footer__link">FAQ</a></li>
+            <li><a href="booking.html" class="footer__link">Book a Car</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Support</h4>
+          <ul class="footer__list">
+            <li><a href="faq.html" class="footer__link">Help Center</a></li>
+            <li><a href="privacy-policy.html" class="footer__link">Privacy Policy</a></li>
+            <li><a href="terms-and-conditions.html" class="footer__link">Terms of Service</a></li>
+            <li><a href="terms-and-conditions.html" class="footer__link">Rental Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Contact</h4>
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon">📍</div>
+            <div><div class="footer__contact-label">Address</div><div class="footer__contact-value">123 Luxury Drive, Suite 100<br>New York, NY 10001</div></div>
+          </div>
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon">📞</div>
+            <div><div class="footer__contact-label">Phone</div><div class="footer__contact-value">+1 (555) 123-4567</div></div>
+          </div>
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon">✉️</div>
+            <div><div class="footer__contact-label">Email</div><div class="footer__contact-value">hello@driveelite.com</div></div>
+          </div>
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon">🕐</div>
+            <div><div class="footer__contact-label">Business Hours</div><div class="footer__contact-value">Mon–Sat: 8AM – 8PM</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__newsletter-section">
+        <div class="footer__newsletter-wrap">
+          <div class="footer__newsletter-text">
+            <h4 class="footer__newsletter-title">Stay in the Fast Lane</h4>
+            <p class="footer__newsletter-subtitle">Subscribe for exclusive deals, new arrivals, and luxury driving tips.</p>
+          </div>
+          <form class="footer__newsletter-form" id="newsletter-form">
+            <input type="email" class="footer__newsletter-input" placeholder="Enter your email address" aria-label="Newsletter email">
+            <button type="submit" class="btn btn--primary btn--sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__bottom-brand"><p>&copy; 2026 DriveElite. Crafted with <span class="footer__heart">❤</span> for luxury driving.</p></div>
+        <div class="footer__bottom-links">
+          <a href="privacy-policy.html" class="footer__bottom-link">Privacy</a>
+          <a href="terms-and-conditions.html" class="footer__bottom-link">Terms</a>
+          <a href="contact.html" class="footer__bottom-link">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/validation.js"></script>
+  <script src="assets/js/animation.js"></script>
+
+  <!-- Cars page interactions -->
+  <script>
+  (function() {
+    'use strict';
+
+    /* ---- Mobile Filter Toggle ---- */
+    const filterToggle = document.getElementById('filter-toggle');
+    const filterSidebar = document.getElementById('filter-sidebar');
+    if (filterToggle && filterSidebar) {
+      filterToggle.addEventListener('click', () => {
+        const isShown = filterSidebar.classList.toggle('show');
+        filterToggle.textContent = isShown ? '✕ Hide Filters' : '🔧 Show Filters';
+      });
+    }
+
+    /* ---- Filter Group Collapse ---- */
+    document.querySelectorAll('.filter-group__title').forEach(title => {
+      title.addEventListener('click', () => {
+        title.closest('.filter-group').classList.toggle('collapsed');
+      });
+    });
+
+    /* ---- View Toggle (UI only) ---- */
+    document.querySelectorAll('.view-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+  })();
+  </script>
+</body>
+</html>

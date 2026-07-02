@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The page you are looking for does not exist. Browse our elite luxury fleet or search the Help Center.">
+  <title>Page Not Found (404) — DriveElite</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/pages/states.css">
+  <style>
+    /* Showcase tab styles inside 404 */
+    .showcase-header {
+      background: var(--color-bg);
+      border-top: 1px solid var(--color-border-light);
+      border-bottom: 1px solid var(--color-border-light);
+      padding: var(--space-6) 0;
+      text-align: center;
+    }
+    [data-theme="dark"] .showcase-header {
+      background: var(--dm-bg); border-color: var(--dm-border);
+    }
+    .showcase-tabs {
+      display: flex; gap: var(--space-2); justify-content: center; flex-wrap: wrap; margin-top: var(--space-4);
+    }
+    .showcase-btn {
+      padding: 6px 14px; font-size: 11px; font-weight: bold; border-radius: var(--radius-full);
+      border: 1px solid var(--color-border-light); background: var(--color-card); color: var(--color-light-text);
+      cursor: pointer; transition: all var(--transition-base);
+    }
+    [data-theme="dark"] .showcase-btn {
+      border-color: var(--dm-border); background: var(--dm-card);
+    }
+    .showcase-btn.active {
+      background: var(--color-secondary); color: #fff; border-color: var(--color-secondary);
+    }
+    .showcase-panel { display: none; padding: var(--space-8) 0; }
+    .showcase-panel.active { display: block; }
+    
+    .state-demo-row {
+      display: flex; gap: var(--space-6); flex-wrap: wrap; justify-content: center; margin-bottom: var(--space-6);
+    }
+    .state-demo-sec-title {
+      font-family: var(--font-heading); font-size: var(--fs-small); font-weight: var(--fw-bold);
+      margin-bottom: var(--space-4); text-align: center; text-transform: uppercase; color: var(--color-secondary);
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar__logo"><div class="navbar__logo-icon">DE</div>Drive<span>Elite</span></a>
+      <div class="navbar__links">
+        <a href="index.html" class="navbar__link">Home</a><a href="cars.html" class="navbar__link">Cars</a><a href="services.html" class="navbar__link">Services</a><a href="about.html" class="navbar__link">About</a><a href="faq.html" class="navbar__link">FAQ</a><a href="contact.html" class="navbar__link">Contact</a>
+      </div>
+      <div class="navbar__actions">
+        <button class="navbar__search-btn" aria-label="Search" title="Search (Ctrl+K)"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+        <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <a href="login.html" class="btn btn--ghost btn--sm">Login</a>
+        <a href="register.html" class="btn btn--primary btn--sm">Register</a>
+      </div>
+      <button class="navbar__toggle" aria-label="Toggle mobile menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="navbar__mobile-overlay"></div>
+  <div class="navbar__mobile">
+    <a href="index.html" class="navbar__link">Home</a><a href="cars.html" class="navbar__link">Cars</a><a href="services.html" class="navbar__link">Services</a><a href="about.html" class="navbar__link">About</a><a href="faq.html" class="navbar__link">FAQ</a><a href="contact.html" class="navbar__link">Contact</a>
+    <div class="navbar__actions"><a href="login.html" class="btn btn--ghost btn--sm">Login</a><a href="register.html" class="btn btn--primary btn--sm">Register</a></div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- 404 PRIMARY STATE PAGE -->
+    <section class="section state-page" id="primary-404-state">
+      <div class="container">
+        <div class="state-page__illustration">⚠️</div>
+        <h1 class="state-page__title">404</h1>
+        <p class="state-page__desc">
+          The page you are looking for might have been removed, had its name changed, or is temporarily unavailable under active server routes.
+        </p>
+        
+        <!-- Search placeholder inside 404 -->
+        <div style="max-width:400px;margin:0 auto var(--space-6);display:flex;gap:var(--space-2)">
+          <input type="text" placeholder="Search knowledge base..." class="form-input" style="flex:1">
+          <button type="button" class="btn btn--primary btn--sm">Search</button>
+        </div>
+
+        <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap">
+          <a href="index.html" class="btn btn--primary btn--md">Go Home</a>
+          <a href="cars.html" class="btn btn--secondary btn--md">Browse Cars</a>
+        </div>
+
+        <!-- Popular Links suggestion -->
+        <div style="margin-top:var(--space-8);font-size:var(--fs-xs);color:var(--color-light-text)">
+          Helpful suggestions: 
+          <a href="faq.html" style="color:var(--color-secondary);text-decoration:none;margin:0 5px">Help Center</a> | 
+          <a href="contact.html" style="color:var(--color-secondary);text-decoration:none;margin:0 5px">Contact Support</a> | 
+          <a href="dashboard.html" style="color:var(--color-secondary);text-decoration:none;margin:0 5px">User Dashboard</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SYSTEM STATES PREVIEW SHOWCASE PANEL -->
+    <div class="showcase-header">
+      <div class="container">
+        <div class="auth-hero__badge" style="margin-bottom:5px">🔧 Showcase Directory</div>
+        <h2 style="font-family:var(--font-heading);font-weight:var(--fw-bold);font-size:var(--fs-small)">System Components & States Library</h2>
+        <p style="font-size:10px;color:var(--color-light-text);max-width:540px;margin:0 auto">
+          Preview DriveElite's reusable layouts and system dialog states. These cards, modals, skeletons, and badges are responsive, accessible, and ready for backend API integrations.
+        </p>
+        <div class="showcase-tabs">
+          <button class="showcase-btn active" data-tab="tab-pages">Full Page States</button>
+          <button class="showcase-btn" data-tab="tab-loaders">Loaders & Skeletons</button>
+          <button class="showcase-btn" data-tab="tab-empty">Empty States</button>
+          <button class="showcase-btn" data-tab="tab-cards">Info/Warn/Error Cards</button>
+          <button class="showcase-btn" data-tab="tab-dialogs">Modals & Badges</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- TAB 1: FULL PAGE STATES -->
+      <div class="showcase-panel active" id="tab-pages">
+        
+        <!-- 403 Access Denied -->
+        <div class="state-demo-sec-title">403 Access Denied State</div>
+        <div class="state-page" style="min-height:auto;padding:var(--space-4) 0 var(--space-8)">
+          <div class="state-page__illustration" style="font-size:4rem;margin-bottom:var(--space-3)">🔒</div>
+          <h3 style="font-family:var(--font-heading);font-weight:bold;font-size:var(--fs-body)">403 Access Denied</h3>
+          <p class="state-page__desc" style="font-size:var(--fs-xs);margin-bottom:var(--space-4)">You do not have permissions to view this secure directory path. Admin privileges required.</p>
+          <div style="display:flex;gap:var(--space-2)">
+            <a href="dashboard.html" class="btn btn--secondary btn--sm">Return Dashboard</a>
+            <a href="index.html" class="btn btn--ghost btn--sm">Go Home</a>
+          </div>
+        </div>
+
+        <!-- Coming Soon -->
+        <div class="state-demo-sec-title">Coming Soon State</div>
+        <div class="state-page" style="min-height:auto;padding:var(--space-4) 0 var(--space-8)">
+          <div class="state-page__illustration" style="font-size:4rem;margin-bottom:var(--space-3)">🚀</div>
+          <h3 style="font-family:var(--font-heading);font-weight:bold;font-size:var(--fs-body)">Feature Coming Soon</h3>
+          <p class="state-page__desc" style="font-size:var(--fs-xs);margin-bottom:var(--space-4)">We are polishing our peer-to-peer verification module. Releases occur on scheduled cycles.</p>
+          <!-- Countdown placeholder -->
+          <div style="display:flex;gap:var(--space-4);justify-content:center;margin-bottom:var(--space-4)">
+            <div style="background:var(--color-card);border:1px solid var(--color-border-light);padding:var(--space-2) var(--space-4);border-radius:var(--radius-lg)"><strong style="font-size:var(--fs-body)">08</strong><div style="font-size:8px;color:var(--color-light-text)">Days</div></div>
+            <div style="background:var(--color-card);border:1px solid var(--color-border-light);padding:var(--space-2) var(--space-4);border-radius:var(--radius-lg)"><strong style="font-size:var(--fs-body)">14</strong><div style="font-size:8px;color:var(--color-light-text)">Hours</div></div>
+            <div style="background:var(--color-card);border:1px solid var(--color-border-light);padding:var(--space-2) var(--space-4);border-radius:var(--radius-lg)"><strong style="font-size:var(--fs-body)">52</strong><div style="font-size:8px;color:var(--color-light-text)">Mins</div></div>
+          </div>
+          <button type="button" class="btn btn--primary btn--sm">Notify Me On Launch</button>
+        </div>
+
+        <!-- Maintenance Mode -->
+        <div class="state-demo-sec-title">Maintenance Mode State</div>
+        <div class="state-page" style="min-height:auto;padding:var(--space-4) 0 var(--space-8)">
+          <div class="state-page__illustration" style="font-size:4rem;margin-bottom:var(--space-3)">🛠️</div>
+          <h3 style="font-family:var(--font-heading);font-weight:bold;font-size:var(--fs-body)">Scheduled System Maintenance</h3>
+          <p class="state-page__desc" style="font-size:var(--fs-xs);margin-bottom:var(--space-4)">We are upgrading our payment endpoints. Services will return on 08:00 AM EST, July 3rd.</p>
+          <a href="contact.html" class="btn btn--secondary btn--sm">Contact Customer Support</a>
+        </div>
+
+        <!-- No Internet / Offline -->
+        <div class="state-demo-sec-title">No Internet Offline State</div>
+        <div class="state-page" style="min-height:auto;padding:var(--space-4) 0">
+          <div class="state-page__illustration" style="font-size:4rem;margin-bottom:var(--space-3)">🔌</div>
+          <h3 style="font-family:var(--font-heading);font-weight:bold;font-size:var(--fs-body)">Offline Mode</h3>
+          <p class="state-page__desc" style="font-size:var(--fs-xs);margin-bottom:var(--space-4)">Please check your network cables or Wi-Fi status. Unable to connect to DriveElite server clusters.</p>
+          <div style="display:flex;gap:var(--space-2)">
+            <button type="button" class="btn btn--primary btn--sm" onclick="window.location.reload()">Retry Connection</button>
+            <a href="index.html" class="btn btn--ghost btn--sm">Return Home</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- TAB 2: LOADERS & SKELETONS -->
+      <div class="showcase-panel" id="tab-loaders">
+        
+        <!-- Reusable Loaders -->
+        <div class="state-demo-sec-title">Reusable Loaders & Spinners</div>
+        <div class="state-demo-row">
+          <div class="state-card" style="max-width:260px;padding:var(--space-4)">
+            <div class="spinner"></div>
+            <div style="font-size:11px;font-weight:bold;margin-top:5px">Circular Spinner</div>
+          </div>
+          <div class="state-card" style="max-width:260px;padding:var(--space-4)">
+            <div class="linear-progress"><div class="linear-progress__fill"></div></div>
+            <div style="font-size:11px;font-weight:bold;margin-top:5px">Linear Progress Bar</div>
+          </div>
+        </div>
+
+        <!-- Skeletons previews -->
+        <div class="state-demo-sec-title">Reusable Skeleton Loaders (Pulse Effect)</div>
+        <div class="state-demo-row">
+          
+          <!-- Car Card Skeleton -->
+          <div class="skeleton-card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-text" style="width:70%"></div>
+            <div class="skeleton skeleton-btn"></div>
+          </div>
+
+          <!-- Profile Card Skeleton -->
+          <div class="skeleton-card" style="align-items:center;text-align:center">
+            <div class="skeleton" style="width:64px;height:64px;border-radius:var(--radius-full)"></div>
+            <div class="skeleton skeleton-title" style="width:50%"></div>
+            <div class="skeleton skeleton-text" style="width:80%"></div>
+            <div class="skeleton skeleton-btn" style="width:60%"></div>
+          </div>
+
+          <!-- Dashboard Row Skeleton -->
+          <div class="skeleton-card" style="max-width:100%;width:320px;gap:var(--space-2)">
+            <div class="skeleton skeleton-title" style="width:30%"></div>
+            <div style="display:flex;justify-content:between;margin-top:var(--space-2)">
+              <div class="skeleton" style="width:50px;height:24px"></div>
+              <div class="skeleton" style="width:70px;height:24px"></div>
+            </div>
+            <div class="skeleton skeleton-text" style="width:100%"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAB 3: EMPTY STATES -->
+      <div class="showcase-panel" id="tab-empty">
+        <div class="state-demo-sec-title">Empty States Templates</div>
+        <div class="state-demo-row">
+          
+          <!-- No Cars -->
+          <div class="state-card">
+            <div class="state-card__icon">🚗</div>
+            <h4 class="state-card__title">No Vehicles Found</h4>
+            <p class="state-card__desc">No luxury models match your search tags. Modify filter parameters and retry.</p>
+            <a href="cars.html" class="btn btn--primary btn--sm" style="width:100%;text-align:center">Reset Filter</a>
+          </div>
+
+          <!-- No Notifications -->
+          <div class="state-card">
+            <div class="state-card__icon">🔔</div>
+            <h4 class="state-card__title">Inbox Empty</h4>
+            <p class="state-card__desc">You have no unread notices. Alerts will show up here as status modifications happen.</p>
+            <a href="dashboard.html" class="btn btn--ghost btn--sm" style="width:100%;text-align:center">Go Dashboard</a>
+          </div>
+
+          <!-- No History -->
+          <div class="state-card">
+            <div class="state-card__icon">📋</div>
+            <h4 class="state-card__title">No Rental Logs</h4>
+            <p class="state-card__desc">You haven't completed any trips with DriveElite yet. Book your first vehicle now.</p>
+            <a href="cars.html" class="btn btn--secondary btn--sm" style="width:100%;text-align:center">Rent Vehicle</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAB 4: INFO/WARN/ERROR CARDS -->
+      <div class="showcase-panel" id="tab-cards">
+        
+        <!-- Reusable State Cards -->
+        <div class="state-demo-sec-title">Success Cards</div>
+        <div class="state-demo-row">
+          <div class="state-card state-card--success">
+            <div class="state-card__icon">✓</div>
+            <h4 class="state-card__title">Account Verified</h4>
+            <p class="state-card__desc">Your driving license copies have been verified by showroom compliance teams.</p>
+          </div>
+          <div class="state-card state-card--success">
+            <div class="state-card__icon">💳</div>
+            <h4 class="state-card__title">Payment Successful</h4>
+            <p class="state-card__desc">Security deposit authorization of $200 has been verified. Handover ready.</p>
+          </div>
+        </div>
+
+        <div class="state-demo-sec-title">Error Cards</div>
+        <div class="state-demo-row">
+          <div class="state-card state-card--error">
+            <div class="state-card__icon">⚠️</div>
+            <h4 class="state-card__title">Booking Rejected</h4>
+            <p class="state-card__desc">The selected Lamborghini model experienced maintenance faults during checkup.</p>
+          </div>
+          <div class="state-card state-card--error">
+            <div class="state-card__icon">🔌</div>
+            <h4 class="state-card__title">Payment Declined</h4>
+            <p class="state-card__desc">Bank card transaction failed due to insufficient funds checks.</p>
+          </div>
+        </div>
+
+        <div class="state-demo-sec-title">Warning Cards</div>
+        <div class="state-demo-row">
+          <div class="state-card state-card--warning">
+            <div class="state-card__icon">🚨</div>
+            <h4 class="state-card__title">Incomplete Profile</h4>
+            <p class="state-card__desc">Please upload your driver license photos to complete registration parameters.</p>
+          </div>
+          <div class="state-card state-card--warning">
+            <div class="state-card__icon">⏱️</div>
+            <h4 class="state-card__title">Rental Expiring Soon</h4>
+            <p class="state-card__desc">Active Mercedes contract expires in 3 hours. Return or request extension.</p>
+          </div>
+        </div>
+
+        <div class="state-demo-sec-title">Info Announcement Cards</div>
+        <div class="state-demo-row">
+          <div class="state-card state-card--info">
+            <div class="state-card__icon">ℹ️</div>
+            <h4 class="state-card__title">Booking Pending Review</h4>
+            <p class="state-card__desc">Your Tesla model request is currently queued in admin review pipelines.</p>
+          </div>
+          <div class="state-card state-card--info">
+            <div class="state-card__icon">⚙️</div>
+            <h4 class="state-card__title">System Update Announcement</h4>
+            <p class="state-card__desc">Server databases will undergo scheduling upgrades tonight at 02:00 AM.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- TAB 5: DIALOGS & TOASTS -->
+      <div class="showcase-panel" id="tab-dialogs">
+        
+        <!-- Badges preview -->
+        <div class="state-demo-sec-title">Reusable Badges</div>
+        <div class="state-demo-row" style="background:var(--color-bg);padding:var(--space-4);border-radius:var(--radius-xl)">
+          <span class="badge badge--pending">Pending</span>
+          <span class="badge badge--approved">Approved</span>
+          <span class="badge badge--rejected">Rejected</span>
+          <span class="badge badge--cancelled">Cancelled</span>
+          <span class="badge badge--completed">Completed</span>
+          <span class="badge badge--active">Active</span>
+          <span class="badge badge--inactive">Inactive</span>
+          <span class="badge badge--ver-pending">Verification Pending</span>
+          <span class="badge badge--ver-completed">Verified</span>
+          <span class="badge badge--extended">Extended</span>
+          <span class="badge badge--expired">Expired</span>
+        </div>
+
+        <!-- Interactive Toast Previews -->
+        <div class="state-demo-sec-title">Interactive Toast Previews</div>
+        <div class="state-demo-row">
+          <button class="btn btn--primary btn--sm" id="btn-toast-success">Success Toast</button>
+          <button class="btn btn--secondary btn--sm" id="btn-toast-warning">Warning Toast</button>
+          <button class="btn btn--ghost btn--sm" id="btn-toast-error" style="border-color:var(--color-danger);color:var(--color-danger)">Error Toast</button>
+          <button class="btn btn--ghost btn--sm" id="btn-toast-info">Info Toast</button>
+        </div>
+
+        <!-- Modal Previews -->
+        <div class="state-demo-sec-title">Interactive Modal Templates</div>
+        <div class="state-demo-row">
+          <button class="btn btn--secondary btn--sm" id="btn-modal-logout">Logout Modal</button>
+          <button class="btn btn--ghost btn--sm" id="btn-modal-delete" style="border-color:var(--color-danger);color:var(--color-danger)">Delete Modal</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- MOCK MODAL LOGOUT OVERLAY -->
+  <div class="modal-overlay" id="modal-logout-overlay" style="display:none">
+    <div class="modal-wrap">
+      <div class="modal-header">
+        <h3 class="modal-title">Logout Confirmation</h3>
+        <button class="modal-close" id="modal-logout-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to logout from DriveElite secure session? Active booking details remain stored in database logs.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn--ghost btn--sm" id="modal-logout-cancel">Cancel</button>
+        <a href="login.html" class="btn btn--primary btn--sm" style="background:var(--color-danger);border-color:var(--color-danger)">Logout</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOCK MODAL DELETE OVERLAY -->
+  <div class="modal-overlay" id="modal-delete-overlay" style="display:none">
+    <div class="modal-wrap">
+      <div class="modal-header">
+        <h3 class="modal-title">Delete Booking Request</h3>
+        <button class="modal-close" id="modal-delete-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>This action is permanent and cannot be undone. Are you sure you want to delete pending reservation number DE-9843-98?</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn--ghost btn--sm" id="modal-delete-cancel">Cancel</button>
+        <button class="btn btn--primary btn--sm" id="modal-delete-confirm" style="background:var(--color-danger);border-color:var(--color-danger)">Delete Reservation</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-icon">DE</div>Drive<span>Elite</span></a><p class="footer__description">Your premier destination for luxury car rentals. We deliver top-tier vehicles with white-glove service for an unforgettable driving experience.</p><div class="footer__socials"><a href="#" class="footer__social-link" aria-label="Facebook">f</a><a href="#" class="footer__social-link" aria-label="Instagram">📷</a><a href="#" class="footer__social-link" aria-label="X / Twitter">𝕏</a><a href="#" class="footer__social-link" aria-label="LinkedIn">in</a><a href="#" class="footer__social-link" aria-label="YouTube">▶</a></div></div>
+        <div><h4 class="footer__heading">Company</h4><ul class="footer__list"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="services.html" class="footer__link">Careers</a></li><li><a href="about.html" class="footer__link">Press</a></li><li><a href="contact.html" class="footer__link">Contact</a></li></ul></div>
+        <div><h4 class="footer__heading">Quick Links</h4><ul class="footer__list"><li><a href="cars.html" class="footer__link">Our Fleet</a></li><li><a href="services.html" class="footer__link">Services</a></li><li><a href="faq.html" class="footer__link">FAQ</a></li><li><a href="booking.html" class="footer__link">Book a Car</a></li></ul></div>
+        <div><h4 class="footer__heading">Support</h4><ul class="footer__list"><li><a href="faq.html" class="footer__link">Help Center</a></li><li><a href="privacy-policy.html" class="footer__link">Privacy Policy</a></li><li><a href="terms-and-conditions.html" class="footer__link">Terms of Service</a></li><li><a href="terms-and-conditions.html" class="footer__link">Rental Policy</a></li></ul></div>
+        <div><h4 class="footer__heading">Contact</h4><div class="footer__contact-item"><div class="footer__contact-icon">📍</div><div><div class="footer__contact-label">Address</div><div class="footer__contact-value">123 Luxury Drive, Suite 100<br>New York, NY 10001</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">📞</div><div><div class="footer__contact-label">Phone</div><div class="footer__contact-value">+1 (555) 123-4567</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">✉️</div><div><div class="footer__contact-label">Email</div><div class="footer__contact-value">hello@driveelite.com</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">🕐</div><div><div class="footer__contact-label">Business Hours</div><div class="footer__contact-value">Mon–Sat: 8AM – 8PM</div></div></div></div>
+      </div>
+      <div class="footer__newsletter-section"><div class="footer__newsletter-wrap"><div class="footer__newsletter-text"><h4 class="footer__newsletter-title">Stay in the Fast Lane</h4><p class="footer__newsletter-subtitle">Subscribe for exclusive deals, new arrivals, and luxury driving tips.</p></div><form class="footer__newsletter-form" id="newsletter-form"><input type="email" class="footer__newsletter-input" placeholder="Enter your email address" aria-label="Newsletter email"><button type="submit" class="btn btn--primary btn--sm">Subscribe</button></form></div></div>
+      <div class="footer__bottom"><div class="footer__bottom-brand"><p>&copy; 2026 DriveElite. Crafted with <span class="footer__heart">❤</span> for luxury driving.</p></div><div class="footer__bottom-links"><a href="privacy-policy.html" class="footer__bottom-link">Privacy</a><a href="terms-and-conditions.html" class="footer__bottom-link">Terms</a><a href="contact.html" class="footer__bottom-link">Sitemap</a></div></div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/validation.js"></script>
+  <script src="assets/js/animation.js"></script>
+
+  <script>
+  (function() {
+    'use strict';
+
+    /* ---- Tab Switching Handler ---- */
+    const tabBtns = document.querySelectorAll('.showcase-btn');
+    const panels = document.querySelectorAll('.showcase-panel');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+
+        this.classList.add('active');
+        const targetPanelId = this.getAttribute('data-tab');
+        const panel = document.getElementById(targetPanelId);
+        if (panel) panel.classList.add('active');
+      });
+    });
+
+    /* ---- Modal Triggers ---- */
+    const modalLogoutOverlay = document.getElementById('modal-logout-overlay');
+    const modalDeleteOverlay = document.getElementById('modal-delete-overlay');
+
+    // Logout Modal
+    document.getElementById('btn-modal-logout').addEventListener('click', () => {
+      modalLogoutOverlay.style.display = 'flex';
+    });
+    document.getElementById('modal-logout-close').addEventListener('click', () => {
+      modalLogoutOverlay.style.display = 'none';
+    });
+    document.getElementById('modal-logout-cancel').addEventListener('click', () => {
+      modalLogoutOverlay.style.display = 'none';
+    });
+
+    // Delete Modal
+    document.getElementById('btn-modal-delete').addEventListener('click', () => {
+      modalDeleteOverlay.style.display = 'flex';
+    });
+    document.getElementById('modal-delete-close').addEventListener('click', () => {
+      modalDeleteOverlay.style.display = 'none';
+    });
+    document.getElementById('modal-delete-cancel').addEventListener('click', () => {
+      modalDeleteOverlay.style.display = 'none';
+    });
+    document.getElementById('modal-delete-confirm').addEventListener('click', () => {
+      modalDeleteOverlay.style.display = 'none';
+      showToast('success', '✓ Reservation request was successfully deleted.');
+    });
+
+    /* ---- Toast Notification Handler ---- */
+    const toastContainer = document.getElementById('toast-container');
+
+    function showToast(type, text) {
+      if (!toastContainer) return;
+      const toast = document.createElement('div');
+      toast.className = `toast-msg toast-msg--${type}`;
+      toast.style.marginBottom = '10px';
+      
+      let icon = 'ℹ️';
+      if (type === 'success') icon = '✓';
+      if (type === 'warning') icon = '🚨';
+      if (type === 'error') icon = '⚠️';
+
+      toast.innerHTML = `<span>${icon}</span><span>${text}</span>`;
+      toastContainer.appendChild(toast);
+
+      setTimeout(() => {
+        toast.remove();
+      }, 4000);
+    }
+
+    document.getElementById('btn-toast-success').addEventListener('click', () => {
+      showToast('success', '✓ Booking submitted successfully. Admin review is underway.');
+    });
+    document.getElementById('btn-toast-warning').addEventListener('click', () => {
+      showToast('warning', '🚨 Driving license photo upload is pending action.');
+    });
+    document.getElementById('btn-toast-error').addEventListener('click', () => {
+      showToast('error', '⚠️ Security deposit authentication failed. Try another card.');
+    });
+    document.getElementById('btn-toast-info').addEventListener('click', () => {
+      showToast('info', 'ℹ️ Active rental extension has been approved by admin.');
+    });
+
+  })();
+  </script>
+</body>
+</html>
