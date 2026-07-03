@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Access your complete DriveElite rental history to view active contracts, check past invoice totals, download agreements, and track timelines.">
   <title>Rental History — DriveElite</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/sprite.svg#icon-car">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/animations.css">
   <link rel="stylesheet" href="assets/css/utilities.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="stylesheet" href="assets/css/pages/rental-history.css">
-  <link rel="stylesheet" href="assets/css/pages/pages-dark.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -45,7 +44,7 @@
     <div class="rh-hero__overlay"></div>
     <div class="container">
       <div class="rh-hero__content scroll-reveal">
-        <div class="auth-hero__badge">📋 Rental History</div>
+        <div class="auth-hero__badge"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span> Rental History</div>
         <h1 class="auth-hero__title">My Rental <span class="highlight">History</span></h1>
         <p class="auth-hero__desc">View detailed summaries of your completed trips, active contracts, and pending vehicle verification progress.</p>
       </div>
@@ -68,13 +67,13 @@
   <main id="main-content">
 
     <!-- STATS OVERVIEW -->
-    <section class="section" style="padding-bottom:0">
+    <section class="section u-rental-history-1">
       <div class="container">
         <div class="rh-stats scroll-reveal">
           <div class="rh-stat-card"><span class="rh-stat-card__val">12</span><span class="rh-stat-card__label">Total Rentals</span></div>
           <div class="rh-stat-card"><span class="rh-stat-card__val">10</span><span class="rh-stat-card__label">Completed</span></div>
-          <div class="rh-stat-card"><span class="rh-stat-card__val" style="color:var(--color-success)">1</span><span class="rh-stat-card__label">Active Rental</span></div>
-          <div class="rh-stat-card"><span class="rh-stat-card__val" style="color:var(--color-accent)">1</span><span class="rh-stat-card__label">Pending Approval</span></div>
+          <div class="rh-stat-card"><span class="rh-stat-card__val u-rental-history-2">1</span><span class="rh-stat-card__label">Active Rental</span></div>
+          <div class="rh-stat-card"><span class="rh-stat-card__val u-rental-history-3">1</span><span class="rh-stat-card__label">Pending Approval</span></div>
           <div class="rh-stat-card"><span class="rh-stat-card__val">0</span><span class="rh-stat-card__label">Cancelled</span></div>
           <div class="rh-stat-card"><span class="rh-stat-card__val">3</span><span class="rh-stat-card__label">Extension Requests</span></div>
         </div>
@@ -95,19 +94,19 @@
               <!-- Search Inputs -->
               <div class="rh-search-row">
                 <div class="rh-input-wrap">
-                  <span class="rh-input-icon">🚗</span>
+                  <span class="rh-input-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car"/></svg></span></span>
                   <input type="text" id="search-car" placeholder="Search by vehicle name...">
                 </div>
                 <div class="rh-input-wrap">
-                  <span class="rh-input-icon">🆔</span>
+                  <span class="rh-input-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span></span>
                   <input type="text" id="search-id" placeholder="Search by booking ID (e.g. DE-10492)...">
                 </div>
-                <button type="button" class="btn btn--primary btn--sm" style="padding:var(--space-3) var(--space-6)">Search</button>
+                <button type="button" class="btn btn--primary btn--sm u-rental-history-4">Search</button>
               </div>
 
               <!-- View Toggles & Chips row -->
-              <div class="rh-chips-row" style="align-items:center;justify-content:space-between;margin-top:var(--space-2)">
-                <div style="display:flex;gap:var(--space-2)">
+              <div class="rh-chips-row u-rental-history-5">
+                <div class="u-rental-history-6">
                   <button class="rh-chip active">All Rentals</button>
                   <button class="rh-chip">Active</button>
                   <button class="rh-chip">Completed</button>
@@ -127,10 +126,10 @@
 
               <!-- Sort & Filter info -->
               <div class="rh-sub-bar">
-                <button type="button" class="btn btn--ghost btn--sm" id="clear-filters-btn" style="padding:4px 10px;font-size:11px">Clear Search Filters</button>
-                <div style="display:flex;align-items:center;gap:var(--space-3)">
-                  <label for="rh-sort" style="font-size:11px;color:var(--color-light-text)">Sort by:</label>
-                  <select id="rh-sort" style="padding:4px 8px;border:1px solid var(--color-border-light);border-radius:var(--radius-md);font-size:11px;background:var(--color-bg);color:var(--color-dark-text)">
+                <button type="button" class="btn btn--ghost btn--sm u-rental-history-7" id="clear-filters-btn">Clear Search Filters</button>
+                <div class="u-rental-history-8">
+                  <label class="u-rental-history-9" for="rh-sort">Sort by:</label>
+                  <select class="u-rental-history-10" id="rh-sort">
                     <option>Newest First</option>
                     <option>Oldest First</option>
                     <option>Price High to Low</option>
@@ -164,7 +163,7 @@
                   <!-- Row 1: Active -->
                   <tr>
                     <td><strong>#DE-10492</strong></td>
-                    <td><div class="rh-table-car-img">🏎️</div></td>
+                    <td><div class="rh-table-car-img"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car-sports"/></svg></span></div></td>
                     <td>Mercedes-AMG GT 63 S</td>
                     <td>Daily</td>
                     <td>Jul 1, 2026</td>
@@ -172,12 +171,12 @@
                     <td>3 Days</td>
                     <td>$1,348.20</td>
                     <td><span class="rh-status rh-status--active">Active</span></td>
-                    <td><button type="button" class="btn btn--ghost btn--sm view-preview-btn" data-booking="10492" style="font-size:10px;padding:3px 6px">Preview</button></td>
+                    <td><button type="button" class="btn btn--ghost btn--sm view-preview-btn u-rental-history-11" data-booking="10492">Preview</button></td>
                   </tr>
                   <!-- Row 2: Pending -->
                   <tr>
                     <td><strong>#DE-10523</strong></td>
-                    <td><div class="rh-table-car-img">🏎️</div></td>
+                    <td><div class="rh-table-car-img"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car-sports"/></svg></span></div></td>
                     <td>Porsche 911 Carrera S</td>
                     <td>Daily</td>
                     <td>Jul 10, 2026</td>
@@ -185,7 +184,7 @@
                     <td>2 Days</td>
                     <td>$1,120.00</td>
                     <td><span class="rh-status rh-status--pending">Pending</span></td>
-                    <td><button type="button" class="btn btn--ghost btn--sm view-preview-btn" data-booking="10523" style="font-size:10px;padding:3px 6px">Preview</button></td>
+                    <td><button type="button" class="btn btn--ghost btn--sm view-preview-btn u-rental-history-12" data-booking="10523">Preview</button></td>
                   </tr>
                   <!-- Row 3: Extended -->
                   <tr>
@@ -198,12 +197,12 @@
                     <td>6 Days (Ext)</td>
                     <td>$4,750.00</td>
                     <td><span class="rh-status rh-status--extended">Extended</span></td>
-                    <td><button type="button" class="btn btn--ghost btn--sm view-preview-btn" data-booking="10381" style="font-size:10px;padding:3px 6px">Preview</button></td>
+                    <td><button type="button" class="btn btn--ghost btn--sm view-preview-btn u-rental-history-13" data-booking="10381">Preview</button></td>
                   </tr>
                   <!-- Row 4: Completed -->
                   <tr>
                     <td><strong>#DE-10250</strong></td>
-                    <td><div class="rh-table-car-img">🏎️</div></td>
+                    <td><div class="rh-table-car-img"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car-sports"/></svg></span></div></td>
                     <td>Audi R8 V10 Decennium</td>
                     <td>Hourly</td>
                     <td>Jun 12, 2026</td>
@@ -211,7 +210,7 @@
                     <td>6 Hours</td>
                     <td>$380.00</td>
                     <td><span class="rh-status rh-status--completed">Completed</span></td>
-                    <td><button type="button" class="btn btn--ghost btn--sm view-preview-btn" data-booking="10250" style="font-size:10px;padding:3px 6px">Preview</button></td>
+                    <td><button type="button" class="btn btn--ghost btn--sm view-preview-btn u-rental-history-14" data-booking="10250">Preview</button></td>
                   </tr>
                   <!-- Row 5: Cancelled -->
                   <tr>
@@ -224,21 +223,21 @@
                     <td>3 Days</td>
                     <td>$840.00</td>
                     <td><span class="rh-status rh-status--cancelled">Cancelled</span></td>
-                    <td><button type="button" class="btn btn--ghost btn--sm view-preview-btn" data-booking="10118" style="font-size:10px;padding:3px 6px">Preview</button></td>
+                    <td><button type="button" class="btn btn--ghost btn--sm view-preview-btn u-rental-history-15" data-booking="10118">Preview</button></td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
             <!-- View 2: Cards Grid View (Hidden by default) -->
-            <div class="rh-cards-grid" id="rh-view-card" style="display:none">
+            <div class="rh-cards-grid u-rental-history-16" id="rh-view-card">
               <!-- Card 1 -->
               <div class="rh-car-card">
-                <div class="rh-car-card__visual">🏎️</div>
+                <div class="rh-car-card__visual"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car-sports"/></svg></span></div>
                 <div class="rh-car-card__body">
-                  <span class="rh-status rh-status--active" style="align-self:start;margin-bottom:var(--space-1)">Active</span>
+                  <span class="rh-status rh-status--active u-rental-history-17">Active</span>
                   <h3 class="rh-car-card__title">Mercedes-AMG GT 63 S</h3>
-                  <div style="font-size:11px;color:var(--color-light-text)">Booking ID: <strong>#DE-10492</strong></div>
+                  <div class="u-rental-history-18">Booking ID: <strong>#DE-10492</strong></div>
                   <div class="rh-car-card__meta-grid">
                     <div class="rh-car-card__meta-item">Type: <strong>Daily</strong></div>
                     <div class="rh-car-card__meta-item">Duration: <strong>3 Days</strong></div>
@@ -246,18 +245,18 @@
                     <div class="rh-car-card__meta-item">Return: <strong>Jul 4, 10:00 AM</strong></div>
                   </div>
                   <div class="rh-car-card__footer">
-                    <span style="font-size:var(--fs-body);font-weight:var(--fw-bold);color:var(--color-secondary)">$1,348.20</span>
-                    <button type="button" class="btn btn--ghost btn--sm view-preview-btn" data-booking="10492" style="font-size:11px;padding:var(--space-2) var(--space-4)">View Details</button>
+                    <span>$1,348.20</span>
+                    <button type="button" class="btn btn--ghost btn--sm view-preview-btn u-rental-history-19" data-booking="10492">View Details</button>
                   </div>
                 </div>
               </div>
               <!-- Card 2 -->
               <div class="rh-car-card">
-                <div class="rh-car-card__visual">🏎️</div>
+                <div class="rh-car-card__visual"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car-sports"/></svg></span></div>
                 <div class="rh-car-card__body">
-                  <span class="rh-status rh-status--pending" style="align-self:start;margin-bottom:var(--space-1)">Pending Approval</span>
+                  <span class="rh-status rh-status--pending u-rental-history-20">Pending Approval</span>
                   <h3 class="rh-car-card__title">Porsche 911 Carrera S</h3>
-                  <div style="font-size:11px;color:var(--color-light-text)">Booking ID: <strong>#DE-10523</strong></div>
+                  <div class="u-rental-history-21">Booking ID: <strong>#DE-10523</strong></div>
                   <div class="rh-car-card__meta-grid">
                     <div class="rh-car-card__meta-item">Type: <strong>Daily</strong></div>
                     <div class="rh-car-card__meta-item">Duration: <strong>2 Days</strong></div>
@@ -265,17 +264,17 @@
                     <div class="rh-car-card__meta-item">Return: <strong>Jul 12, 10:00 AM</strong></div>
                   </div>
                   <div class="rh-car-card__footer">
-                    <span style="font-size:var(--fs-body);font-weight:var(--fw-bold);color:var(--color-secondary)">$1,120.00</span>
-                    <button type="button" class="btn btn--ghost btn--sm view-preview-btn" data-booking="10523" style="font-size:11px;padding:var(--space-2) var(--space-4)">View Details</button>
+                    <span>$1,120.00</span>
+                    <button type="button" class="btn btn--ghost btn--sm view-preview-btn u-rental-history-22" data-booking="10523">View Details</button>
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- View 3: Progress Timeline (Hidden by default) -->
-            <div class="rh-timeline-card" id="rh-view-timeline" style="display:none">
-              <div style="font-family:var(--font-heading);font-weight:var(--fw-bold);font-size:var(--fs-body)">Booking #DE-10492 Process Timeline</div>
-              <p style="font-size:var(--fs-xs);color:var(--color-light-text);margin-top:2px">Detailed lifecycle tracking from submit to return completion.</p>
+            <div class="rh-timeline-card u-rental-history-23" id="rh-view-timeline">
+              <div class="u-rental-history-24">Booking #DE-10492 Process Timeline</div>
+              <p class="u-rental-history-25">Detailed lifecycle tracking from submit to return completion.</p>
               
               <div class="rh-timeline">
                 <div class="rh-timeline-node success">
@@ -310,8 +309,8 @@
             </div>
 
             <!-- Empty State layout (hidden by default) -->
-            <div class="rh-empty-state" id="rh-empty-state" style="display:none">
-              <div class="rh-empty-state__icon">📭</div>
+            <div class="rh-empty-state u-rental-history-26" id="rh-empty-state">
+              <div class="rh-empty-state__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span></div>
               <h2 class="rh-empty-state__title">No Rental History Found</h2>
               <p class="rh-empty-state__desc">You have no active or completed vehicle rental contracts logged under your DriveElite account.</p>
               <a href="cars.html" class="btn btn--primary btn--md">Browse Elite Collection</a>
@@ -337,54 +336,54 @@
 
               <!-- Payment Summary Breakdown -->
               <div class="payment-breakdown">
-                <div class="rh-kv-item" style="font-size:11px"><span>Base Rental Charges:</span><span>$1,040.00</span></div>
-                <div class="rh-kv-item" style="font-size:11px"><span>State Taxes & Fees:</span><span>$83.20</span></div>
-                <div class="rh-kv-item" style="font-size:11px"><span>Security Deposit:</span><span>$200.00</span></div>
-                <div class="rh-kv-item" style="font-size:11px"><span>Discounts Applied:</span><span style="color:var(--color-success)">-$0.00</span></div>
-                <div class="rh-kv-item" style="font-size:12px;font-weight:var(--fw-bold);border-top:1px dashed var(--color-border-light);padding-top:var(--space-2);margin-top:var(--space-1)"><span>Total Amount Paid:</span><strong style="color:var(--color-secondary);font-size:var(--fs-small)">$1,348.20</strong></div>
+                <div class="rh-kv-item u-rental-history-27"><span>Base Rental Charges:</span><span>$1,040.00</span></div>
+                <div class="rh-kv-item u-rental-history-28"><span>State Taxes & Fees:</span><span>$83.20</span></div>
+                <div class="rh-kv-item u-rental-history-29"><span>Security Deposit:</span><span>$200.00</span></div>
+                <div class="rh-kv-item u-rental-history-30"><span>Discounts Applied:</span><span class="u-rental-history-31">-$0.00</span></div>
+                <div class="rh-kv-item u-rental-history-32"><span>Total Amount Paid:</span><strong class="u-rental-history-33">$1,348.20</strong></div>
               </div>
 
               <!-- Verification / Extension Info logs -->
-              <div style="font-size:11px;color:var(--color-light-text);line-height:var(--lh-relaxed)">
-                <div style="margin-bottom:var(--space-2)">📸 <strong>Verification Status:</strong> <span class="rh-status rh-status--pending" style="font-size:9px;padding:1px 5px">Verification Pending</span></div>
-                <div>⏱️ <strong>Extension History:</strong> <span class="rh-status rh-status--completed" style="font-size:9px;padding:1px 5px">No Request Logged</span></div>
+              <div class="u-rental-history-34">
+                <div><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span> <strong>Verification Status:</strong> <span class="rh-status rh-status--pending u-rental-history-35">Verification Pending</span></div>
+                <div><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span> <strong>Extension History:</strong> <span class="rh-status rh-status--completed u-rental-history-36">No Request Logged</span></div>
               </div>
 
               <!-- Download invoice buttons -->
-              <div style="display:flex;flex-direction:column;gap:var(--space-2);margin-top:var(--space-2)">
-                <button type="button" class="btn btn--primary btn--sm" style="width:100%">Download Invoice (PDF)</button>
-                <button type="button" class="btn btn--ghost btn--sm" style="width:100%">Download Rental Summary</button>
-                <button type="button" class="btn btn--ghost btn--sm" style="width:100%">Print Booking Confirmation</button>
+              <div class="u-rental-history-37">
+                <button type="button" class="btn btn--primary btn--sm u-rental-history-38">Download Invoice (PDF)</button>
+                <button type="button" class="btn btn--ghost btn--sm u-rental-history-39">Download Rental Summary</button>
+                <button type="button" class="btn btn--ghost btn--sm u-rental-history-40">Print Booking Confirmation</button>
               </div>
 
             </div>
 
             <!-- Rate Your Experience star rating widget -->
             <div class="rating-section">
-              <h3 class="rh-details-sec-title" style="margin-bottom:var(--space-2)">Rate Your Experience</h3>
-              <p style="font-size:11px;color:var(--color-light-text)">Rate your recently completed trip with Audi R8</p>
+              <h3 class="rh-details-sec-title">Rate Your Experience</h3>
+              <p class="u-rental-history-41">Rate your recently completed trip with Audi R8</p>
               
               <!-- Stars -->
               <div class="rating-stars" id="stars-row">
-                <span class="rating-star" data-star="1">★</span>
-                <span class="rating-star" data-star="2">★</span>
-                <span class="rating-star" data-star="3">★</span>
-                <span class="rating-star" data-star="4">★</span>
-                <span class="rating-star" data-star="5">★</span>
+                <span class="rating-star" data-star="1"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span></span>
+                <span class="rating-star" data-star="2"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span></span>
+                <span class="rating-star" data-star="3"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span></span>
+                <span class="rating-star" data-star="4"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span></span>
+                <span class="rating-star" data-star="5"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span></span>
               </div>
 
-              <textarea placeholder="Write a short review describing vehicle condition and showroom service..." style="width:100%;height:70px;padding:8px;border:1px solid var(--color-border-light);border-radius:var(--radius-lg);font-size:11px;background:var(--color-bg);color:var(--color-dark-text);resize:none;margin-bottom:var(--space-3)"></textarea>
-              <button type="button" class="btn btn--secondary btn--sm" style="width:100%">Submit Review</button>
+              <textarea class="u-rental-history-42" placeholder="Write a short review describing vehicle condition and showroom service..."></textarea>
+              <button type="button" class="btn btn--secondary btn--sm u-rental-history-43">Submit Review</button>
             </div>
 
             <!-- Quick Links Actions Grid -->
             <div class="rh-details-card">
               <h3 class="rh-details-sec-title">Quick Actions</h3>
               <div class="rh-quick-grid">
-                <a href="cars.html" class="rh-quick-btn"><div class="rh-quick-btn__icon">🔄</div>Rent Again</a>
-                <a href="cars.html" class="rh-quick-btn"><div class="rh-quick-btn__icon">🚗</div>Browse fleet</a>
-                <a href="contact.html" class="rh-quick-btn"><div class="rh-quick-btn__icon">💬</div>Help Center</a>
-                <a href="notifications.html" class="rh-quick-btn"><div class="rh-quick-btn__icon">🔔</div>Alerts</a>
+                <a href="cars.html" class="rh-quick-btn"><div class="rh-quick-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-settings"/></svg></span></div>Rent Again</a>
+                <a href="cars.html" class="rh-quick-btn"><div class="rh-quick-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car"/></svg></span></div>Browse fleet</a>
+                <a href="contact.html" class="rh-quick-btn"><div class="rh-quick-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span></div>Help Center</a>
+                <a href="notifications.html" class="rh-quick-btn"><div class="rh-quick-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-bell"/></svg></span></div>Alerts</a>
               </div>
             </div>
 
@@ -392,9 +391,9 @@
             <div class="rh-details-card">
               <h3 class="rh-details-sec-title">Helpline Assistance</h3>
               <div class="rh-support-list">
-                <div class="rh-support-item"><span>📞</span><div><strong>HELPLINE:</strong> +1 (555) 123-4567</div></div>
-                <div class="rh-support-item"><span>🚨</span><div><strong>ROADSIDE:</strong> Option 9 (24/7 emergency)</div></div>
-                <div class="rh-support-item"><span>📋</span><div><strong>LATE RETURN POLICY:</strong> Grace period is 59 minutes. Late returns trigger hourly penalty rates automatically.</div></div>
+                <div class="rh-support-item"><span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span></span><div><strong>HELPLINE:</strong> +1 (555) 123-4567</div></div>
+                <div class="rh-support-item"><span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-bell"/></svg></span></span><div><strong>ROADSIDE:</strong> Option 9 (24/7 emergency)</div></div>
+                <div class="rh-support-item"><span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span></span><div><strong>LATE RETURN POLICY:</strong> Grace period is 59 minutes. Late returns trigger hourly penalty rates automatically.</div></div>
               </div>
             </div>
 
@@ -410,26 +409,23 @@
   <footer class="footer" id="footer">
     <div class="container">
       <div class="footer__grid">
-        <div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-icon">DE</div>Drive<span>Elite</span></a><p class="footer__description">Your premier destination for luxury car rentals. We deliver top-tier vehicles with white-glove service for an unforgettable driving experience.</p><div class="footer__socials"><a href="#" class="footer__social-link" aria-label="Facebook">f</a><a href="#" class="footer__social-link" aria-label="Instagram">📷</a><a href="#" class="footer__social-link" aria-label="X / Twitter">𝕏</a><a href="#" class="footer__social-link" aria-label="LinkedIn">in</a><a href="#" class="footer__social-link" aria-label="YouTube">▶</a></div></div>
+        <div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-icon">DE</div>Drive<span>Elite</span></a><p class="footer__description">Your premier destination for luxury car rentals. We deliver top-tier vehicles with white-glove service for an unforgettable driving experience.</p><div class="footer__socials"><a href="#" class="footer__social-link" aria-label="Facebook">f</a><a href="#" class="footer__social-link" aria-label="Instagram"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span></a><a href="#" class="footer__social-link" aria-label="X / Twitter"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-x"/></svg></span></a><a href="#" class="footer__social-link" aria-label="LinkedIn">in</a><a href="#" class="footer__social-link" aria-label="YouTube"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-youtube"/></svg></span></a></div></div>
         <div><h4 class="footer__heading">Company</h4><ul class="footer__list"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="services.html" class="footer__link">Careers</a></li><li><a href="about.html" class="footer__link">Press</a></li><li><a href="contact.html" class="footer__link">Contact</a></li></ul></div>
         <div><h4 class="footer__heading">Quick Links</h4><ul class="footer__list"><li><a href="cars.html" class="footer__link">Our Fleet</a></li><li><a href="services.html" class="footer__link">Services</a></li><li><a href="faq.html" class="footer__link">FAQ</a></li><li><a href="booking.html" class="footer__link">Book a Car</a></li></ul></div>
         <div><h4 class="footer__heading">Support</h4><ul class="footer__list"><li><a href="faq.html" class="footer__link">Help Center</a></li><li><a href="privacy-policy.html" class="footer__link">Privacy Policy</a></li><li><a href="terms-and-conditions.html" class="footer__link">Terms of Service</a></li><li><a href="terms-and-conditions.html" class="footer__link">Rental Policy</a></li></ul></div>
-        <div><h4 class="footer__heading">Contact</h4><div class="footer__contact-item"><div class="footer__contact-icon">📍</div><div><div class="footer__contact-label">Address</div><div class="footer__contact-value">123 Luxury Drive, Suite 100<br>New York, NY 10001</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">📞</div><div><div class="footer__contact-label">Phone</div><div class="footer__contact-value">+1 (555) 123-4567</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">✉️</div><div><div class="footer__contact-label">Email</div><div class="footer__contact-value">hello@driveelite.com</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">🕐</div><div><div class="footer__contact-label">Business Hours</div><div class="footer__contact-value">Mon–Sat: 8AM – 8PM</div></div></div></div>
+        <div><h4 class="footer__heading">Contact</h4><div class="footer__contact-item"><div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span></div><div><div class="footer__contact-label">Address</div><div class="footer__contact-value">123 Luxury Drive, Suite 100<br>New York, NY 10001</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span></div><div><div class="footer__contact-label">Phone</div><div class="footer__contact-value">+1 (555) 123-4567</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span></div><div><div class="footer__contact-label">Email</div><div class="footer__contact-value">hello@driveelite.com</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div><div><div class="footer__contact-label">Business Hours</div><div class="footer__contact-value">Mon–Sat: 8AM – 8PM</div></div></div></div>
       </div>
       <div class="footer__newsletter-section"><div class="footer__newsletter-wrap"><div class="footer__newsletter-text"><h4 class="footer__newsletter-title">Stay in the Fast Lane</h4><p class="footer__newsletter-subtitle">Subscribe for exclusive deals, new arrivals, and luxury driving tips.</p></div><form class="footer__newsletter-form" id="newsletter-form"><input type="email" class="footer__newsletter-input" placeholder="Enter your email address" aria-label="Newsletter email"><button type="submit" class="btn btn--primary btn--sm">Subscribe</button></form></div></div>
-      <div class="footer__bottom"><div class="footer__bottom-brand"><p>&copy; 2026 DriveElite. Crafted with <span class="footer__heart">❤</span> for luxury driving.</p></div><div class="footer__bottom-links"><a href="privacy-policy.html" class="footer__bottom-link">Privacy</a><a href="terms-and-conditions.html" class="footer__bottom-link">Terms</a><a href="contact.html" class="footer__bottom-link">Sitemap</a></div></div>
+      <div class="footer__bottom"><div class="footer__bottom-brand"><p>&copy; 2026 DriveElite. Crafted with <span class="footer__heart"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-heart"/></svg></span></span> for luxury driving.</p></div><div class="footer__bottom-links"><a href="privacy-policy.html" class="footer__bottom-link">Privacy</a><a href="terms-and-conditions.html" class="footer__bottom-link">Terms</a><a href="contact.html" class="footer__bottom-link">Sitemap</a></div></div>
     </div>
   </footer>
 
   <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
   <div class="toast-container" id="toast-container"></div>
-
-  <script src="assets/js/theme.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/ui.js"></script>
   <script src="assets/js/validation.js"></script>
   <script src="assets/js/animation.js"></script>
-
   <script>
   (function() {
     'use strict';

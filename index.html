@@ -1,21 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="DriveElite — Premium luxury car rental service. Browse our exclusive fleet of luxury vehicles and book your dream ride today.">
   <title>DriveElite — Premium Car Rental</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/sprite.svg#icon-car">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/animations.css">
   <link rel="stylesheet" href="assets/css/utilities.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="stylesheet" href="assets/css/pages/home.css">
-  <link rel="stylesheet" href="assets/css/pages/home-dark.css">
-  <link rel="stylesheet" href="assets/css/pages/pages-dark.css">
 </head>
 <body>
 
@@ -88,7 +86,7 @@
           </p>
           <div class="home-hero__actions">
             <a href="cars.html" class="btn btn--primary btn--lg">Browse Cars</a>
-            <a href="booking.html" class="btn btn--ghost btn--lg" style="color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.2);">Book Now</a>
+            <a href="booking.html" class="btn btn--ghost btn--lg">Book Now</a>
           </div>
           <div class="home-hero__stats">
             <div>
@@ -147,7 +145,7 @@
               <label for="return-date">Return Date & Time</label>
               <input type="datetime-local" id="return-date" class="form-input">
             </div>
-            <button class="btn btn--primary booking-widget__search-btn">🔍 Search Cars</button>
+            <button class="btn btn--primary booking-widget__search-btn"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-search"/></svg></span> Search Cars</button>
           </div>
         </div>
       </div>
@@ -165,32 +163,32 @@
         </div>
         <div class="categories-grid">
           <a href="cars.html" class="category-card scroll-reveal">
-            <div class="category-card__icon"><span>🏎️</span></div>
+            <div class="category-card__icon"><span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car-sports"/></svg></span></span></div>
             <h3 class="category-card__title">Luxury Cars</h3>
             <p class="category-card__count">24 vehicles</p>
           </a>
           <a href="cars.html" class="category-card scroll-reveal" style="--delay:.1s">
-            <div class="category-card__icon"><span>🚙</span></div>
+            <div class="category-card__icon"><span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car-suv"/></svg></span></span></div>
             <h3 class="category-card__title">SUV</h3>
             <p class="category-card__count">18 vehicles</p>
           </a>
           <a href="cars.html" class="category-card scroll-reveal" style="--delay:.2s">
-            <div class="category-card__icon"><span>🚗</span></div>
+            <div class="category-card__icon"><span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car"/></svg></span></span></div>
             <h3 class="category-card__title">Sedan</h3>
             <p class="category-card__count">32 vehicles</p>
           </a>
           <a href="cars.html" class="category-card scroll-reveal" style="--delay:.3s">
-            <div class="category-card__icon"><span>🏁</span></div>
+            <div class="category-card__icon"><span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check-circle"/></svg></span></span></div>
             <h3 class="category-card__title">Sports Cars</h3>
             <p class="category-card__count">12 vehicles</p>
           </a>
           <a href="cars.html" class="category-card scroll-reveal" style="--delay:.4s">
-            <div class="category-card__icon"><span>⚡</span></div>
+            <div class="category-card__icon"><span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-zap"/></svg></span></span></div>
             <h3 class="category-card__title">Electric</h3>
             <p class="category-card__count">15 vehicles</p>
           </a>
           <a href="cars.html" class="category-card scroll-reveal" style="--delay:.5s">
-            <div class="category-card__icon"><span>👨‍👩‍👧‍👦</span></div>
+            <div class="category-card__icon"><span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-users"/></svg></span></span></div>
             <h3 class="category-card__title">Family</h3>
             <p class="category-card__count">20 vehicles</p>
           </a>
@@ -201,7 +199,7 @@
     <!-- ============================================================
          SECTION 4 — FEATURED RENTAL CARS
          ============================================================ -->
-    <section class="section" id="featured-cars" style="background:var(--color-bg)">
+    <section class="section" id="featured-cars">
       <div class="container">
         <div class="section-header scroll-reveal">
           <div class="section-header__badge">Featured Vehicles</div>
@@ -211,8 +209,9 @@
         <div class="cars-grid">
           <!-- Car 1 -->
           <div class="car-card scroll-reveal">
-            <div class="car-card__image" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">
-              <div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:4rem">🏎️</div>
+            <div class="car-card__image">
+              
+              <img src="assets/images/hero/hero-car.png" alt="Mercedes-Benz luxury car" class="car-card__car-img" loading="lazy">
               <div class="car-card__badges">
                 <span class="badge badge--available">Available</span>
                 <span class="badge badge--popular">Popular</span>
@@ -223,16 +222,16 @@
               <div class="car-card__brand">Mercedes-Benz</div>
               <h3 class="car-card__name">AMG GT 63</h3>
               <div class="car-card__specs">
-                <span class="car-card__spec"><span class="car-card__spec-icon">⛽</span> Petrol</span>
-                <span class="car-card__spec"><span class="car-card__spec-icon">⚙️</span> Automatic</span>
-                <span class="car-card__spec"><span class="car-card__spec-icon">👤</span> 4 Seats</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-fuel"/></svg></span></span> Petrol</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-settings"/></svg></span></span> Automatic</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span></span> 4 Seats</span>
               </div>
               <div class="car-card__footer">
                 <div class="car-card__pricing">
                   <span class="car-card__price">$85<span class="car-card__price-unit">/hr</span></span>
                   <span class="car-card__price-unit">$520/day</span>
                 </div>
-                <div class="car-card__rating">⭐ 4.9</div>
+                <div class="car-card__rating"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span> 4.9</div>
               </div>
               <div class="car-card__actions">
                 <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
@@ -242,8 +241,9 @@
           </div>
           <!-- Car 2 -->
           <div class="car-card scroll-reveal" style="--delay:.15s">
-            <div class="car-card__image" style="background:linear-gradient(135deg,#0f172a,#1e3a5f)">
-              <div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:4rem">🚙</div>
+            <div class="car-card__image">
+              
+              <img src="assets/images/cars/suv.png" alt="BMW luxury car" class="car-card__car-img" loading="lazy">
               <div class="car-card__badges">
                 <span class="badge badge--available">Available</span>
                 <span class="badge badge--suv">SUV</span>
@@ -254,16 +254,16 @@
               <div class="car-card__brand">BMW</div>
               <h3 class="car-card__name">X7 xDrive40i</h3>
               <div class="car-card__specs">
-                <span class="car-card__spec"><span class="car-card__spec-icon">⛽</span> Petrol</span>
-                <span class="car-card__spec"><span class="car-card__spec-icon">⚙️</span> Automatic</span>
-                <span class="car-card__spec"><span class="car-card__spec-icon">👤</span> 7 Seats</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-fuel"/></svg></span></span> Petrol</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-settings"/></svg></span></span> Automatic</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span></span> 7 Seats</span>
               </div>
               <div class="car-card__footer">
                 <div class="car-card__pricing">
                   <span class="car-card__price">$65<span class="car-card__price-unit">/hr</span></span>
                   <span class="car-card__price-unit">$420/day</span>
                 </div>
-                <div class="car-card__rating">⭐ 4.8</div>
+                <div class="car-card__rating"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span> 4.8</div>
               </div>
               <div class="car-card__actions">
                 <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
@@ -273,8 +273,9 @@
           </div>
           <!-- Car 3 -->
           <div class="car-card scroll-reveal" style="--delay:.3s">
-            <div class="car-card__image" style="background:linear-gradient(135deg,#14532d,#166534)">
-              <div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:4rem">⚡</div>
+            <div class="car-card__image">
+              
+              <img src="assets/images/cars/electric.png" alt="Tesla luxury car" class="car-card__car-img" loading="lazy">
               <div class="car-card__badges">
                 <span class="badge badge--available">Available</span>
                 <span class="badge badge--electric">Electric</span>
@@ -285,16 +286,16 @@
               <div class="car-card__brand">Tesla</div>
               <h3 class="car-card__name">Model S Plaid</h3>
               <div class="car-card__specs">
-                <span class="car-card__spec"><span class="car-card__spec-icon">⚡</span> Electric</span>
-                <span class="car-card__spec"><span class="car-card__spec-icon">⚙️</span> Automatic</span>
-                <span class="car-card__spec"><span class="car-card__spec-icon">👤</span> 5 Seats</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-zap"/></svg></span></span> Electric</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-settings"/></svg></span></span> Automatic</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span></span> 5 Seats</span>
               </div>
               <div class="car-card__footer">
                 <div class="car-card__pricing">
                   <span class="car-card__price">$75<span class="car-card__price-unit">/hr</span></span>
                   <span class="car-card__price-unit">$480/day</span>
                 </div>
-                <div class="car-card__rating">⭐ 4.9</div>
+                <div class="car-card__rating"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span> 4.9</div>
               </div>
               <div class="car-card__actions">
                 <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
@@ -304,8 +305,9 @@
           </div>
           <!-- Car 4 -->
           <div class="car-card scroll-reveal">
-            <div class="car-card__image" style="background:linear-gradient(135deg,#1e1b4b,#312e81)">
-              <div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:4rem">🏁</div>
+            <div class="car-card__image">
+              
+              <img src="assets/images/cars/sports.png" alt="Porsche luxury car" class="car-card__car-img" loading="lazy">
               <div class="car-card__badges">
                 <span class="badge badge--available">Available</span>
                 <span class="badge badge--luxury">Luxury</span>
@@ -316,16 +318,16 @@
               <div class="car-card__brand">Porsche</div>
               <h3 class="car-card__name">911 Turbo S</h3>
               <div class="car-card__specs">
-                <span class="car-card__spec"><span class="car-card__spec-icon">⛽</span> Petrol</span>
-                <span class="car-card__spec"><span class="car-card__spec-icon">⚙️</span> Automatic</span>
-                <span class="car-card__spec"><span class="car-card__spec-icon">👤</span> 2 Seats</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-fuel"/></svg></span></span> Petrol</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-settings"/></svg></span></span> Automatic</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span></span> 2 Seats</span>
               </div>
               <div class="car-card__footer">
                 <div class="car-card__pricing">
                   <span class="car-card__price">$120<span class="car-card__price-unit">/hr</span></span>
                   <span class="car-card__price-unit">$750/day</span>
                 </div>
-                <div class="car-card__rating">⭐ 5.0</div>
+                <div class="car-card__rating"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span> 5.0</div>
               </div>
               <div class="car-card__actions">
                 <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
@@ -335,8 +337,9 @@
           </div>
           <!-- Car 5 -->
           <div class="car-card scroll-reveal" style="--delay:.15s">
-            <div class="car-card__image" style="background:linear-gradient(135deg,#27272a,#3f3f46)">
-              <div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:4rem">🚗</div>
+            <div class="car-card__image">
+              
+              <img src="assets/images/cars/sedan.png" alt="Audi luxury car" class="car-card__car-img" loading="lazy">
               <div class="car-card__badges">
                 <span class="badge badge--available">Available</span>
                 <span class="badge badge--sedan">Sedan</span>
@@ -347,16 +350,16 @@
               <div class="car-card__brand">Audi</div>
               <h3 class="car-card__name">A8 L Quattro</h3>
               <div class="car-card__specs">
-                <span class="car-card__spec"><span class="car-card__spec-icon">⛽</span> Petrol</span>
-                <span class="car-card__spec"><span class="car-card__spec-icon">⚙️</span> Automatic</span>
-                <span class="car-card__spec"><span class="car-card__spec-icon">👤</span> 5 Seats</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-fuel"/></svg></span></span> Petrol</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-settings"/></svg></span></span> Automatic</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span></span> 5 Seats</span>
               </div>
               <div class="car-card__footer">
                 <div class="car-card__pricing">
                   <span class="car-card__price">$55<span class="car-card__price-unit">/hr</span></span>
                   <span class="car-card__price-unit">$350/day</span>
                 </div>
-                <div class="car-card__rating">⭐ 4.7</div>
+                <div class="car-card__rating"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span> 4.7</div>
               </div>
               <div class="car-card__actions">
                 <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
@@ -366,8 +369,9 @@
           </div>
           <!-- Car 6 -->
           <div class="car-card scroll-reveal" style="--delay:.3s">
-            <div class="car-card__image" style="background:linear-gradient(135deg,#451a03,#78350f)">
-              <div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:4rem">🚕</div>
+            <div class="car-card__image">
+              
+              <img src="assets/images/cars/luxury.png" alt="Range Rover luxury car" class="car-card__car-img" loading="lazy">
               <div class="car-card__badges">
                 <span class="badge badge--available">Available</span>
                 <span class="badge badge--new">New</span>
@@ -378,16 +382,16 @@
               <div class="car-card__brand">Range Rover</div>
               <h3 class="car-card__name">Sport SVR</h3>
               <div class="car-card__specs">
-                <span class="car-card__spec"><span class="car-card__spec-icon">⛽</span> Diesel</span>
-                <span class="car-card__spec"><span class="car-card__spec-icon">⚙️</span> Automatic</span>
-                <span class="car-card__spec"><span class="car-card__spec-icon">👤</span> 5 Seats</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-fuel"/></svg></span></span> Diesel</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-settings"/></svg></span></span> Automatic</span>
+                <span class="car-card__spec"><span class="car-card__spec-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span></span> 5 Seats</span>
               </div>
               <div class="car-card__footer">
                 <div class="car-card__pricing">
                   <span class="car-card__price">$90<span class="car-card__price-unit">/hr</span></span>
                   <span class="car-card__price-unit">$580/day</span>
                 </div>
-                <div class="car-card__rating">⭐ 4.8</div>
+                <div class="car-card__rating"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span> 4.8</div>
               </div>
               <div class="car-card__actions">
                 <a href="car-details.html" class="btn btn--outline btn--sm">Details</a>
@@ -414,42 +418,42 @@
         </div>
         <div class="features-grid">
           <div class="feature-card scroll-reveal">
-            <div class="feature-card__icon">🕐</div>
+            <div class="feature-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div>
             <h3 class="feature-card__title">24/7 Support</h3>
             <p class="feature-card__text">Round-the-clock customer support to assist you anytime, anywhere.</p>
           </div>
           <div class="feature-card scroll-reveal" style="--delay:.1s">
-            <div class="feature-card__icon">💰</div>
+            <div class="feature-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-dollar"/></svg></span></div>
             <h3 class="feature-card__title">Affordable Pricing</h3>
             <p class="feature-card__text">Competitive rates with no hidden fees. Transparent pricing always.</p>
           </div>
           <div class="feature-card scroll-reveal" style="--delay:.2s">
-            <div class="feature-card__icon">✅</div>
+            <div class="feature-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check-circle"/></svg></span></div>
             <h3 class="feature-card__title">Verified Vehicles</h3>
             <p class="feature-card__text">Every vehicle is inspected and certified for safety and quality.</p>
           </div>
           <div class="feature-card scroll-reveal" style="--delay:.3s">
-            <div class="feature-card__icon">📅</div>
+            <div class="feature-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-calendar"/></svg></span></div>
             <h3 class="feature-card__title">Flexible Plans</h3>
             <p class="feature-card__text">Hourly, daily, or long-term rentals to suit your schedule perfectly.</p>
           </div>
           <div class="feature-card scroll-reveal">
-            <div class="feature-card__icon">⚡</div>
+            <div class="feature-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-zap"/></svg></span></div>
             <h3 class="feature-card__title">Easy Booking</h3>
             <p class="feature-card__text">Book in minutes with our streamlined reservation process.</p>
           </div>
           <div class="feature-card scroll-reveal" style="--delay:.1s">
-            <div class="feature-card__icon">🔧</div>
+            <div class="feature-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-wrench"/></svg></span></div>
             <h3 class="feature-card__title">Well Maintained</h3>
             <p class="feature-card__text">Regular servicing ensures every car performs at its peak.</p>
           </div>
           <div class="feature-card scroll-reveal" style="--delay:.2s">
-            <div class="feature-card__icon">🧑‍✈️</div>
+            <div class="feature-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span></div>
             <h3 class="feature-card__title">Pro Drivers</h3>
             <p class="feature-card__text">Optional chauffeur service with trained professional drivers.</p>
           </div>
           <div class="feature-card scroll-reveal" style="--delay:.3s">
-            <div class="feature-card__icon">🛡️</div>
+            <div class="feature-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-shield-check"/></svg></span></div>
             <h3 class="feature-card__title">Roadside Assist</h3>
             <p class="feature-card__text">Comprehensive roadside assistance for complete peace of mind.</p>
           </div>
@@ -470,43 +474,43 @@
         <div class="timeline scroll-reveal">
           <div class="timeline__step">
             <div class="timeline__number">1</div>
-            <div class="timeline__icon">🔍</div>
+            <div class="timeline__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-search"/></svg></span></div>
             <div class="timeline__title">Browse Cars</div>
             <div class="timeline__desc">Explore our premium fleet</div>
           </div>
           <div class="timeline__step">
             <div class="timeline__number">2</div>
-            <div class="timeline__icon">🚗</div>
+            <div class="timeline__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car"/></svg></span></div>
             <div class="timeline__title">Choose Vehicle</div>
             <div class="timeline__desc">Select your perfect ride</div>
           </div>
           <div class="timeline__step">
             <div class="timeline__number">3</div>
-            <div class="timeline__icon">📅</div>
+            <div class="timeline__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-calendar"/></svg></span></div>
             <div class="timeline__title">Select Duration</div>
             <div class="timeline__desc">Pick rental period</div>
           </div>
           <div class="timeline__step">
             <div class="timeline__number">4</div>
-            <div class="timeline__icon">📋</div>
+            <div class="timeline__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span></div>
             <div class="timeline__title">Submit Request</div>
             <div class="timeline__desc">Complete booking form</div>
           </div>
           <div class="timeline__step">
             <div class="timeline__number">5</div>
-            <div class="timeline__icon">✅</div>
+            <div class="timeline__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check-circle"/></svg></span></div>
             <div class="timeline__title">Get Approved</div>
             <div class="timeline__desc">Quick admin approval</div>
           </div>
           <div class="timeline__step">
             <div class="timeline__number">6</div>
-            <div class="timeline__icon">📸</div>
+            <div class="timeline__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span></div>
             <div class="timeline__title">Verification</div>
             <div class="timeline__desc">Vehicle condition check</div>
           </div>
           <div class="timeline__step">
             <div class="timeline__number">7</div>
-            <div class="timeline__icon">🎉</div>
+            <div class="timeline__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check-circle"/></svg></span></div>
             <div class="timeline__title">Pickup & Drive</div>
             <div class="timeline__desc">Enjoy your journey!</div>
           </div>
@@ -530,28 +534,28 @@
             <div class="offer-card__discount">20% OFF</div>
             <h3 class="offer-card__title">Weekend Getaway</h3>
             <p class="offer-card__text">Book any car for the weekend and save 20%. Valid for Friday–Sunday rentals.</p>
-            <a href="booking.html" class="btn btn--ghost btn--sm" style="color:#fff;border-color:rgba(255,255,255,.3);width:fit-content">Book Now →</a>
+            <a href="booking.html" class="btn btn--ghost btn--sm">Book Now →</a>
           </div>
           <div class="offer-card offer-card--2 scroll-reveal" style="--delay:.15s">
             <div class="offer-card__pattern"></div>
             <div class="offer-card__discount">30% OFF</div>
             <h3 class="offer-card__title">Long-Term Rental</h3>
             <p class="offer-card__text">Rent for 7+ days and enjoy 30% off the total price. Great for business trips.</p>
-            <a href="booking.html" class="btn btn--ghost btn--sm" style="color:#fff;border-color:rgba(255,255,255,.3);width:fit-content">Book Now →</a>
+            <a href="booking.html" class="btn btn--ghost btn--sm">Book Now →</a>
           </div>
           <div class="offer-card offer-card--3 scroll-reveal">
             <div class="offer-card__pattern"></div>
             <div class="offer-card__discount">15% OFF</div>
             <h3 class="offer-card__title">Festival Special</h3>
             <p class="offer-card__text">Celebrate the season with special festival discounts on luxury vehicles.</p>
-            <a href="booking.html" class="btn btn--ghost btn--sm" style="color:#fff;border-color:rgba(255,255,255,.3);width:fit-content">Book Now →</a>
+            <a href="booking.html" class="btn btn--ghost btn--sm">Book Now →</a>
           </div>
           <div class="offer-card offer-card--4 scroll-reveal" style="--delay:.15s">
             <div class="offer-card__pattern"></div>
             <div class="offer-card__discount">25% OFF</div>
             <h3 class="offer-card__title">Corporate Package</h3>
             <p class="offer-card__text">Exclusive rates for businesses. Volume discounts and priority booking.</p>
-            <a href="contact.html" class="btn btn--ghost btn--sm" style="color:#fff;border-color:rgba(255,255,255,.3);width:fit-content">Contact Us →</a>
+            <a href="contact.html" class="btn btn--ghost btn--sm">Contact Us →</a>
           </div>
         </div>
       </div>
@@ -564,31 +568,31 @@
       <div class="container">
         <div class="stats-grid">
           <div class="stat-item scroll-reveal">
-            <div class="stat-item__icon">🚗</div>
+            <div class="stat-item__icon"><span class="icon icon--lg"><svg><use href="assets/icons/sprite.svg#icon-car-sports"/></svg></span></div>
             <div class="stat-item__number" data-count="200">200+</div>
             <div class="stat-item__label">Cars Available</div>
             <div class="stat-item__divider"></div>
           </div>
           <div class="stat-item scroll-reveal" style="--delay:.1s">
-            <div class="stat-item__icon">😊</div>
+            <div class="stat-item__icon"><span class="icon icon--lg"><svg><use href="assets/icons/sprite.svg#icon-users"/></svg></span></div>
             <div class="stat-item__number" data-count="15000">15,000+</div>
             <div class="stat-item__label">Happy Customers</div>
             <div class="stat-item__divider"></div>
           </div>
           <div class="stat-item scroll-reveal" style="--delay:.2s">
-            <div class="stat-item__icon">🏆</div>
+            <div class="stat-item__icon"><span class="icon icon--lg"><svg><use href="assets/icons/sprite.svg#icon-trophy"/></svg></span></div>
             <div class="stat-item__number" data-count="25000">25,000+</div>
             <div class="stat-item__label">Successful Rentals</div>
             <div class="stat-item__divider"></div>
           </div>
           <div class="stat-item scroll-reveal" style="--delay:.3s">
-            <div class="stat-item__icon">📅</div>
+            <div class="stat-item__icon"><span class="icon icon--lg"><svg><use href="assets/icons/sprite.svg#icon-calendar"/></svg></span></div>
             <div class="stat-item__number" data-count="12">12+</div>
             <div class="stat-item__label">Years Experience</div>
             <div class="stat-item__divider"></div>
           </div>
           <div class="stat-item scroll-reveal" style="--delay:.4s">
-            <div class="stat-item__icon">🌍</div>
+            <div class="stat-item__icon"><span class="icon icon--lg"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span></div>
             <div class="stat-item__number" data-count="25">25+</div>
             <div class="stat-item__label">Cities Served</div>
             <div class="stat-item__divider"></div>
@@ -613,11 +617,11 @@
               <div class="testimonial-card__quote">"</div>
               <p class="testimonial-card__text">An absolutely fantastic experience. The car was immaculate and the service was top-notch. Will definitely be using DriveElite again for my business trips.</p>
               <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">👨‍💼</div>
+                <div class="testimonial-card__avatar"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span></div>
                 <div>
                   <div class="testimonial-card__name">James Anderson</div>
                   <div class="testimonial-card__role">CEO, TechCorp</div>
-                  <div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div>
+                  <div class="testimonial-card__stars"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span></div>
                 </div>
               </div>
             </div>
@@ -625,11 +629,11 @@
               <div class="testimonial-card__quote">"</div>
               <p class="testimonial-card__text">The booking process was incredibly smooth. I had the car within an hour of requesting it. The quality and cleanliness of the vehicle exceeded my expectations.</p>
               <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">👩‍💻</div>
+                <div class="testimonial-card__avatar"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span></div>
                 <div>
                   <div class="testimonial-card__name">Sarah Mitchell</div>
                   <div class="testimonial-card__role">Marketing Director</div>
-                  <div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div>
+                  <div class="testimonial-card__stars"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span></div>
                 </div>
               </div>
             </div>
@@ -637,11 +641,47 @@
               <div class="testimonial-card__quote">"</div>
               <p class="testimonial-card__text">Best car rental experience I've ever had. The fleet is amazing — drove a Tesla Model S for a week. Customer service was exceptional throughout.</p>
               <div class="testimonial-card__author">
-                <div class="testimonial-card__avatar">👨‍🔬</div>
+                <div class="testimonial-card__avatar"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span></div>
                 <div>
                   <div class="testimonial-card__name">Robert Chen</div>
                   <div class="testimonial-card__role">Software Engineer</div>
-                  <div class="testimonial-card__stars">⭐⭐⭐⭐⭐</div>
+                  <div class="testimonial-card__stars"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-card__quote">"</div>
+              <p class="testimonial-card__text">Drove the Range Rover Sport for our weekend getaway in upstate NY. The car was in pristine condition, and the pickup process took less than 5 minutes.</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span></div>
+                <div>
+                  <div class="testimonial-card__name">David Miller</div>
+                  <div class="testimonial-card__role">Real Estate Investor</div>
+                  <div class="testimonial-card__stars"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-card__quote">"</div>
+              <p class="testimonial-card__text">Excellent corporate package! We rented three premium sedans for our executives during a convention. Seamless billing, pristine vehicles, and professional support.</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span></div>
+                <div>
+                  <div class="testimonial-card__name">Emily Watson</div>
+                  <div class="testimonial-card__role">Operations Manager</div>
+                  <div class="testimonial-card__stars"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-card__quote">"</div>
+              <p class="testimonial-card__text">I booked a Porsche 911 for my wedding anniversary. Driving it was pure bliss, and the concierge service made us feel like royalty. Worth every penny!</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span></div>
+                <div>
+                  <div class="testimonial-card__name">Marcus Thorne</div>
+                  <div class="testimonial-card__role">Creative Director</div>
+                  <div class="testimonial-card__stars"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span></div>
                 </div>
               </div>
             </div>
@@ -654,6 +694,7 @@
             <button class="testimonials-dot active" aria-label="Slide 1"></button>
             <button class="testimonials-dot" aria-label="Slide 2"></button>
             <button class="testimonials-dot" aria-label="Slide 3"></button>
+            <button class="testimonials-dot" aria-label="Slide 4"></button>
           </div>
         </div>
       </div>
@@ -664,19 +705,19 @@
          ============================================================ -->
     <section class="brands-section" id="brands">
       <div class="container">
-        <div class="section-header scroll-reveal" style="margin-bottom:var(--space-8)">
+        <div class="section-header scroll-reveal">
           <div class="section-header__badge">Our Partners</div>
-          <h2 class="section-header__title" style="font-size:var(--fs-h3)">Trusted by Top Brands</h2>
+          <h2 class="section-header__title">Trusted by Top Brands</h2>
         </div>
         <div class="brands-grid scroll-reveal">
-          <div class="brand-logo"><div class="brand-logo__icon">🅱️</div><span class="brand-logo__name">BMW</span></div>
-          <div class="brand-logo"><div class="brand-logo__icon">⭐</div><span class="brand-logo__name">Mercedes</span></div>
-          <div class="brand-logo"><div class="brand-logo__icon">🔵</div><span class="brand-logo__name">Audi</span></div>
-          <div class="brand-logo"><div class="brand-logo__icon">🔴</div><span class="brand-logo__name">Toyota</span></div>
-          <div class="brand-logo"><div class="brand-logo__icon">🏍️</div><span class="brand-logo__name">Honda</span></div>
-          <div class="brand-logo"><div class="brand-logo__icon">🇰🇷</div><span class="brand-logo__name">Hyundai</span></div>
-          <div class="brand-logo"><div class="brand-logo__icon">⚡</div><span class="brand-logo__name">Tesla</span></div>
-          <div class="brand-logo"><div class="brand-logo__icon">🦅</div><span class="brand-logo__name">Ford</span></div>
+          <div class="brand-logo"><div class="brand-logo__icon"><img src="assets/images/brands/bmw.svg" alt="BMW" loading="lazy"></div><span class="brand-logo__name">BMW</span></div>
+          <div class="brand-logo"><div class="brand-logo__icon"><img src="assets/images/brands/mercedes.svg" alt="Mercedes-Benz" loading="lazy"></div><span class="brand-logo__name">Mercedes-Benz</span></div>
+          <div class="brand-logo"><div class="brand-logo__icon"><img src="assets/images/brands/audi.svg" alt="Audi" loading="lazy"></div><span class="brand-logo__name">Audi</span></div>
+          <div class="brand-logo"><div class="brand-logo__icon"><img src="assets/images/brands/toyota.svg" alt="Toyota" loading="lazy"></div><span class="brand-logo__name">Toyota</span></div>
+          <div class="brand-logo"><div class="brand-logo__icon"><img src="assets/images/brands/honda.svg" alt="Honda" loading="lazy"></div><span class="brand-logo__name">Honda</span></div>
+          <div class="brand-logo"><div class="brand-logo__icon"><img src="assets/images/brands/hyundai.svg" alt="Hyundai" loading="lazy"></div><span class="brand-logo__name">Hyundai</span></div>
+          <div class="brand-logo"><div class="brand-logo__icon"><img src="assets/images/brands/tesla.svg" alt="Tesla" loading="lazy"></div><span class="brand-logo__name">Tesla</span></div>
+          <div class="brand-logo"><div class="brand-logo__icon"><img src="assets/images/brands/ford.svg" alt="Ford" loading="lazy"></div><span class="brand-logo__name">Ford</span></div>
         </div>
       </div>
     </section>
@@ -692,25 +733,23 @@
             <h2 class="app-content__title">Rent on the Go with Our Mobile App</h2>
             <p class="app-content__text">Download the DriveElite app for the fastest booking experience. Browse, book, and manage your rentals — all from your phone.</p>
             <div class="app-features">
-              <div class="app-feature"><div class="app-feature__check">✓</div> Instant booking & confirmation</div>
-              <div class="app-feature"><div class="app-feature__check">✓</div> Real-time vehicle tracking</div>
-              <div class="app-feature"><div class="app-feature__check">✓</div> Exclusive app-only discounts</div>
-              <div class="app-feature"><div class="app-feature__check">✓</div> 24/7 in-app customer support</div>
+              <div class="app-feature"><div class="app-feature__check"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check"/></svg></span></div> Instant booking & confirmation</div>
+              <div class="app-feature"><div class="app-feature__check"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check"/></svg></span></div> Real-time vehicle tracking</div>
+              <div class="app-feature"><div class="app-feature__check"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check"/></svg></span></div> Exclusive app-only discounts</div>
+              <div class="app-feature"><div class="app-feature__check"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check"/></svg></span></div> 24/7 in-app customer support</div>
             </div>
             <div class="app-buttons">
               <a href="#" class="app-btn">
-                <span class="app-btn__icon">🍎</span>
-                <div><div class="app-btn__text-sm">Download on the</div><div class="app-btn__text-lg">App Store</div></div>
+                <img src="assets/images/app/app-store-badge.svg" alt="Download on the App Store" class="app-badge-img" loading="lazy">
               </a>
               <a href="#" class="app-btn">
-                <span class="app-btn__icon">▶️</span>
-                <div><div class="app-btn__text-sm">Get it on</div><div class="app-btn__text-lg">Google Play</div></div>
+                <img src="assets/images/app/google-play-badge.svg" alt="Get it on Google Play" class="app-badge-img" loading="lazy">
               </a>
             </div>
           </div>
           <div class="app-mockup scroll-reveal" style="--delay:.2s">
             <div class="app-mockup__glow"></div>
-            <div class="app-mockup__phone">📱</div>
+            <div class="app-mockup__phone"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car"/></svg></span></div>
           </div>
         </div>
       </div>
@@ -727,7 +766,7 @@
           <p class="section-header__subtitle">Quick answers to the most common questions about our rental service.</p>
         </div>
         <div class="faq-list scroll-reveal">
-          <div class="faq-item open">
+          <div class="faq-item">
             <button class="faq-item__question">
               What documents do I need to rent a car?
               <span class="faq-item__toggle">+</span>
@@ -782,7 +821,7 @@
     <!-- ============================================================
          SECTION 13 — BLOG PREVIEW
          ============================================================ -->
-    <section class="section" id="blog" style="background:var(--color-bg)">
+    <section class="section" id="blog">
       <div class="container">
         <div class="section-header scroll-reveal">
           <div class="section-header__badge">Latest News</div>
@@ -792,7 +831,7 @@
         <div class="blog-grid">
           <div class="blog-card scroll-reveal">
             <div class="blog-card__image">
-              <div class="blog-card__image-placeholder" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe)">🚗</div>
+              <img src="assets/images/blog/driving_tips.png" alt="10 Essential Tips for Long-Distance Driving" loading="lazy">
             </div>
             <div class="blog-card__body">
               <span class="blog-card__tag">Driving Tips</span>
@@ -806,7 +845,7 @@
           </div>
           <div class="blog-card scroll-reveal" style="--delay:.1s">
             <div class="blog-card__image">
-              <div class="blog-card__image-placeholder" style="background:linear-gradient(135deg,#fef3c7,#fde68a)">🗺️</div>
+              <img src="assets/images/blog/road_trip.png" alt="Best Scenic Routes to Explore This Summer" loading="lazy">
             </div>
             <div class="blog-card__body">
               <span class="blog-card__tag">Travel Guide</span>
@@ -820,7 +859,7 @@
           </div>
           <div class="blog-card scroll-reveal" style="--delay:.2s">
             <div class="blog-card__image">
-              <div class="blog-card__image-placeholder" style="background:linear-gradient(135deg,#dcfce7,#bbf7d0)">🔧</div>
+              <img src="assets/images/blog/car_maintenance.png" alt="How to Keep Your Rental Car in Top Condition" loading="lazy">
             </div>
             <div class="blog-card__body">
               <span class="blog-card__tag">Maintenance</span>
@@ -834,7 +873,7 @@
           </div>
           <div class="blog-card scroll-reveal" style="--delay:.3s">
             <div class="blog-card__image">
-              <div class="blog-card__image-placeholder" style="background:linear-gradient(135deg,#fee2e2,#fecaca)">🛡️</div>
+              <img src="assets/images/blog/road_safety.png" alt="A Complete Guide to Road Safety Essentials" loading="lazy">
             </div>
             <div class="blog-card__body">
               <span class="blog-card__tag">Road Safety</span>
@@ -860,7 +899,7 @@
         <p class="home-cta__text scroll-reveal">Join thousands of satisfied customers who trust DriveElite for their luxury car rental needs. Book today and drive tomorrow.</p>
         <div class="home-cta__actions scroll-reveal">
           <a href="cars.html" class="btn btn--accent btn--lg">Browse Cars</a>
-          <a href="contact.html" class="btn btn--ghost btn--lg" style="color:#fff;border-color:rgba(255,255,255,.3)">Contact Us</a>
+          <a href="contact.html" class="btn btn--ghost btn--lg">Contact Us</a>
         </div>
       </div>
     </section>
@@ -876,10 +915,10 @@
           <p class="footer__description">Your premier destination for luxury car rentals. We deliver top-tier vehicles with white-glove service for an unforgettable driving experience.</p>
           <div class="footer__socials">
             <a href="#" class="footer__social-link" aria-label="Facebook">f</a>
-            <a href="#" class="footer__social-link" aria-label="Instagram">📷</a>
-            <a href="#" class="footer__social-link" aria-label="X / Twitter">𝕏</a>
+            <a href="#" class="footer__social-link" aria-label="Instagram"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span></a>
+            <a href="#" class="footer__social-link" aria-label="X / Twitter"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-x"/></svg></span></a>
             <a href="#" class="footer__social-link" aria-label="LinkedIn">in</a>
-            <a href="#" class="footer__social-link" aria-label="YouTube">▶</a>
+            <a href="#" class="footer__social-link" aria-label="YouTube"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-youtube"/></svg></span></a>
           </div>
         </div>
         <div>
@@ -912,19 +951,19 @@
         <div>
           <h4 class="footer__heading">Contact</h4>
           <div class="footer__contact-item">
-            <div class="footer__contact-icon">📍</div>
+            <div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span></div>
             <div><div class="footer__contact-label">Address</div><div class="footer__contact-value">123 Luxury Drive, Suite 100<br>New York, NY 10001</div></div>
           </div>
           <div class="footer__contact-item">
-            <div class="footer__contact-icon">📞</div>
+            <div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span></div>
             <div><div class="footer__contact-label">Phone</div><div class="footer__contact-value">+1 (555) 123-4567</div></div>
           </div>
           <div class="footer__contact-item">
-            <div class="footer__contact-icon">✉️</div>
+            <div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span></div>
             <div><div class="footer__contact-label">Email</div><div class="footer__contact-value">hello@driveelite.com</div></div>
           </div>
           <div class="footer__contact-item">
-            <div class="footer__contact-icon">🕐</div>
+            <div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div>
             <div><div class="footer__contact-label">Business Hours</div><div class="footer__contact-value">Mon–Sat: 8AM – 8PM</div></div>
           </div>
         </div>
@@ -942,7 +981,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <div class="footer__bottom-brand"><p>&copy; 2026 DriveElite. Crafted with <span class="footer__heart">❤</span> for luxury driving.</p></div>
+        <div class="footer__bottom-brand"><p>&copy; 2026 DriveElite. Crafted with <span class="footer__heart"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-heart"/></svg></span></span> for luxury driving.</p></div>
         <div class="footer__bottom-links">
           <a href="privacy-policy.html" class="footer__bottom-link">Privacy</a>
           <a href="terms-and-conditions.html" class="footer__bottom-link">Terms</a>
@@ -954,8 +993,6 @@
 
   <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
   <div class="toast-container" id="toast-container"></div>
-
-  <script src="assets/js/theme.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/ui.js"></script>
   <script src="assets/js/validation.js"></script>
@@ -994,8 +1031,14 @@
     function goToSlide(index) {
       if (!track) return;
       const cards = track.children;
-      if (index < 0) index = cards.length - 1;
-      if (index >= cards.length) index = 0;
+      
+      // Calculate visible cards dynamically to prevent sliding to empty tracks
+      const visibleCards = window.innerWidth > 992 ? 3 : (window.innerWidth > 768 ? 2 : 1);
+      const maxSlide = Math.max(0, cards.length - visibleCards);
+      
+      if (index < 0) index = maxSlide;
+      if (index > maxSlide) index = 0;
+      
       currentSlide = index;
       const card = cards[0];
       const cardWidth = card.offsetWidth + 24; // gap

@@ -8,15 +8,13 @@
 .faq-hero {
   position: relative;
   padding: 140px 0 80px;
-  background: linear-gradient(135deg, #090e1c 0%, #111827 50%, #0d1322 100%);
-  overflow: hidden;
-}
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg) 100%);
+  overflow: hidden;}
 .faq-hero__overlay {
   position: absolute; inset: 0;
-  background: radial-gradient(circle at 75% 25%, rgba(245,185,66,0.08) 0%, transparent 50%),
-              radial-gradient(circle at 15% 75%, rgba(245,185,66,0.04) 0%, transparent 50%);
-}
-.faq-hero .container { position: relative; z-index: 2; }
+  background: radial-gradient(circle at 75% 25%, var(--color-accent-50) 0%, transparent 50%),
+              radial-gradient(circle at 15% 75%, var(--color-accent-50) 0%, transparent 50%);}
+.faq-hero .container { position: relative; z-index: 2;}
 
 /* Large Search Row */
 .faq-search-wrap {
@@ -24,13 +22,11 @@
   margin: var(--space-6) 0 0;
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
-}
+  gap: var(--space-3);}
 .faq-search-input-box {
   display: flex;
   gap: var(--space-3);
-  position: relative;
-}
+  position: relative;}
 .faq-search-input-box input {
   flex: 1;
   padding: var(--space-4) var(--space-5);
@@ -41,30 +37,24 @@
   background: var(--color-card);
   color: var(--color-dark-text);
   box-shadow: var(--shadow-sm);
-  transition: all var(--transition-base);
-}
-[data-theme="dark"] .faq-search-input-box input {
-  background: var(--color-card); border-color: var(--color-border); color: var(--color-dark-text);
-}
+  transition: all var(--transition-base);}
+.faq-search-input-box input {
+  background: var(--color-card); border-color: var(--color-border); color: var(--color-dark-text);}
 .faq-search-input-box input:focus {
   outline: none; border-color: var(--color-secondary);
-  box-shadow: 0 0 0 4px rgba(245,185,66,0.15);
-}
+  box-shadow: 0 0 0 4px var(--color-accent-100);}
 .faq-search-icon {
   position: absolute; left: var(--space-5); top: 50%;
   transform: translateY(-50%); font-size: 1.25rem;
-  color: var(--color-light-text); pointer-events: none;
-}
+  color: var(--color-light-text); pointer-events: none;}
 .popular-searches {
   display: flex; gap: var(--space-2); flex-wrap: wrap;
   font-size: var(--fs-xs); color: var(--color-light-text);
-  align-items: center;
-}
+  align-items: center;}
 .popular-searches a {
   color: #fff; text-decoration: none; font-weight: var(--fw-semibold);
-  transition: color var(--transition-base);
-}
-.popular-searches a:hover { color: var(--color-secondary); text-decoration: underline; }
+  transition: color var(--transition-base);}
+.popular-searches a:hover { color: var(--color-secondary); text-decoration: underline;}
 
 /* ============================================================
    2. GRID LAYOUTS & CATEGORY CARDS
@@ -72,15 +62,13 @@
 .faq-layout {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: var(--space-8);
-}
-.faq-column { display: flex; flex-direction: column; gap: var(--space-8); }
+  gap: var(--space-8);}
+.faq-column { display: flex; flex-direction: column; gap: var(--space-8);}
 
 .faq-cats-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: var(--space-4);
-}
+  gap: var(--space-4);}
 .faq-cat-card {
   background: var(--color-card);
   border: 1px solid var(--color-border-light);
@@ -89,29 +77,23 @@
   text-align: center;
   transition: all var(--transition-smooth);
   text-decoration: none; color: inherit;
-  display: flex; flex-direction: column; align-items: center;
-}
+  display: flex; flex-direction: column; align-items: center;}
 .faq-cat-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-card-hover);
-  border-color: var(--color-secondary);
-}
-[data-theme="dark"] .faq-cat-card {
-  background: var(--color-card); border-color: var(--color-border);
-}
+  border-color: var(--color-secondary);}
+.faq-cat-card {
+  background: var(--color-card); border-color: var(--color-border);}
 .faq-cat-card__icon {
-  font-size: 2rem; margin-bottom: var(--space-3);
-}
+  font-size: 2rem; margin-bottom: var(--space-3);}
 .faq-cat-card__title {
   font-family: var(--font-heading);
   font-size: var(--fs-xs);
   font-weight: var(--fw-bold);
-  margin-bottom: var(--space-1);
-}
+  margin-bottom: var(--space-1);}
 .faq-cat-card__desc {
   font-size: 10px; color: var(--color-light-text);
-  line-height: var(--lh-tight);
-}
+  line-height: var(--lh-tight);}
 
 /* ============================================================
    3. ACCORDIONS WRAPPERS
@@ -121,11 +103,9 @@
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-2xl);
   padding: var(--space-6);
-  box-shadow: var(--shadow-sm);
-}
-[data-theme="dark"] .faq-sec {
-  background: var(--color-card); border-color: var(--color-border);
-}
+  box-shadow: var(--shadow-sm);}
+.faq-sec {
+  background: var(--color-card); border-color: var(--color-border);}
 .faq-sec__title {
   font-family: var(--font-heading);
   font-size: var(--fs-body);
@@ -133,9 +113,8 @@
   margin-bottom: var(--space-5);
   padding-bottom: var(--space-2);
   border-bottom: 1px solid var(--color-border-light);
-  display: flex; align-items: center; gap: var(--space-2);
-}
-[data-theme="dark"] .faq-sec__title { border-color: var(--color-border); }
+  display: flex; align-items: center; gap: var(--space-2);}
+.faq-sec__title { border-color: var(--color-border);}
 
 /* ============================================================
    4. ARTICLE & VIDEO CARDS
@@ -143,8 +122,7 @@
 .art-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-5);
-}
+  gap: var(--space-5);}
 .art-card {
   background: var(--color-card);
   border: 1px solid var(--color-border-light);
@@ -154,20 +132,17 @@
   align-items: center;
   gap: var(--space-4);
   text-decoration: none; color: inherit;
-  transition: all var(--transition-smooth);
-}
+  transition: all var(--transition-smooth);}
 .art-card:hover {
   transform: translateY(-2px);
   border-color: var(--color-secondary);
-  box-shadow: var(--shadow-sm);
-}
-[data-theme="dark"] .art-card {
-  background: var(--color-card); border-color: var(--color-border);
-}
-.art-card__icon { font-size: 1.75rem; flex-shrink: 0; }
-.art-card__body { display: flex; flex-direction: column; gap: var(--space-1); }
-.art-card__title { font-family: var(--font-heading); font-size: var(--fs-xs); font-weight: var(--fw-bold); }
-.art-card__desc { font-size: 10px; color: var(--color-light-text); line-height: var(--lh-tight); }
+  box-shadow: var(--shadow-sm);}
+.art-card {
+  background: var(--color-card); border-color: var(--color-border);}
+.art-card__icon { font-size: 1.75rem; flex-shrink: 0;}
+.art-card__body { display: flex; flex-direction: column; gap: var(--space-1);}
+.art-card__title { font-family: var(--font-heading); font-size: var(--fs-xs); font-weight: var(--fw-bold);}
+.art-card__desc { font-size: 10px; color: var(--color-light-text); line-height: var(--lh-tight);}
 
 /* Video Tutorials cards */
 .video-card {
@@ -176,31 +151,26 @@
   border-radius: var(--radius-2xl);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  transition: all var(--transition-smooth);
-}
+  transition: all var(--transition-smooth);}
 .video-card:hover {
-  transform: translateY(-3px); border-color: var(--color-secondary);
-}
-[data-theme="dark"] .video-card {
-  background: var(--color-card); border-color: var(--color-border);
-}
+  transform: translateY(-3px); border-color: var(--color-secondary);}
+.video-card {
+  background: var(--color-card); border-color: var(--color-border);}
 .video-card__thumb {
   width: 100%; aspect-ratio: 16/9;
-  background: linear-gradient(135deg, #F9FAFB, #0f172a);
+  background: linear-gradient(135deg, #F9FAFB, var(--color-dark-bg));
   display: flex; align-items: center; justify-content: center;
-  font-size: 3rem; position: relative;
-}
+  font-size: 3rem; position: relative;}
 .video-card__play-btn {
   position: absolute;
   width: 48px; height: 48px;
   border-radius: var(--radius-full);
   background: var(--color-secondary); color: #fff;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.25rem; font-weight: bold;
-}
-.video-card__body { padding: var(--space-4); }
-.video-card__title { font-family: var(--font-heading); font-size: var(--fs-xs); font-weight: var(--fw-bold); margin-bottom: 2px; }
-.video-card__desc { font-size: 10px; color: var(--color-light-text); }
+  font-size: 1.25rem; font-weight: bold;}
+.video-card__body { padding: var(--space-4);}
+.video-card__title { font-family: var(--font-heading); font-size: var(--fs-xs); font-weight: var(--fw-bold); margin-bottom: 2px;}
+.video-card__desc { font-size: 10px; color: var(--color-light-text);}
 
 /* ============================================================
    5. POPULAR QUESTIONS SIDEBAR WIDGET
@@ -209,56 +179,78 @@
   background: var(--color-card);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-2xl);
-  padding: var(--space-5);
-}
-[data-theme="dark"] .pop-card {
-  background: var(--color-card); border-color: var(--color-border);
-}
+  padding: var(--space-5);}
+.pop-card {
+  background: var(--color-card); border-color: var(--color-border);}
 .pop-card__title {
   font-family: var(--font-heading);
   font-size: var(--fs-small);
   font-weight: var(--fw-bold);
   margin-bottom: var(--space-4);
   padding-bottom: var(--space-2);
-  border-bottom: 1px solid var(--color-border-light);
-}
-[data-theme="dark"] .pop-card__title { border-color: var(--color-border); }
+  border-bottom: 1px solid var(--color-border-light);}
+.pop-card__title { border-color: var(--color-border);}
 
-.pop-list { display: flex; flex-direction: column; gap: var(--space-3); }
+.pop-list { display: flex; flex-direction: column; gap: var(--space-3);}
 .pop-item {
   font-size: var(--fs-xs); color: var(--color-secondary);
   text-decoration: none; font-weight: var(--fw-semibold);
-  transition: color var(--transition-base);
-}
-.pop-item:hover { color: var(--color-secondary-700); text-decoration: underline; }
+  transition: color var(--transition-base);}
+.pop-item:hover { color: var(--color-secondary-700); text-decoration: underline;}
 
 /* Connected side cards help statistics */
 .satisfaction-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);
-  margin-top: var(--space-3);
-}
+  margin-top: var(--space-3);}
 .satisfaction-card {
-  background: var(--color-bg); border-radius: var(--radius-lg); padding: var(--space-3); text-align: center;
-}
-[data-theme="dark"] .satisfaction-card { background: var(--color-bg); }
-.satisfaction-card__val { font-size: var(--fs-small); font-weight: var(--fw-bold); color: var(--color-secondary); }
+  background: var(--color-bg); border-radius: var(--radius-lg); padding: var(--space-3); text-align: center;}
+.satisfaction-card { background: var(--color-bg);}
+.satisfaction-card__val { font-size: var(--fs-small); font-weight: var(--fw-bold); color: var(--color-secondary);}
 
 /* ============================================================
    6. RESPONSIVE BREAKPOINTS
    ============================================================ */
 @media (max-width: 1200px) {
-  .faq-cats-grid { grid-template-columns: repeat(3, 1fr); }
+  .faq-cats-grid { grid-template-columns: repeat(3, 1fr);}
 }
 @media (max-width: 992px) {
-  .faq-layout { grid-template-columns: 1fr; }
-  .art-grid { grid-template-columns: 1fr; }
+  .faq-layout { grid-template-columns: 1fr;}
+  .art-grid { grid-template-columns: 1fr;}
 }
 @media (max-width: 768px) {
-  .faq-cats-grid { grid-template-columns: repeat(2, 1fr); }
+  .faq-cats-grid { grid-template-columns: repeat(2, 1fr);}
 }
 @media (max-width: 576px) {
-  .faq-cats-grid { grid-template-columns: 1fr; }
-  .faq-hero { padding: 120px 0 60px; }
-  .faq-search-input-box { flex-direction: column; }
-  .faq-search-input-box .btn { width: 100%; }
+  .faq-cats-grid { grid-template-columns: 1fr;}
+  .faq-hero { padding: 120px 0 60px;}
+  .faq-search-input-box { flex-direction: column;}
+  .faq-search-input-box .btn { width: 100%;}
 }
+
+/* ============================================================
+   UTILITY CLASSES GENERATED FROM INLINE STYLES FOR FAQ.HTML
+   ============================================================ */
+.u-faq-1 {
+  padding:var(--space-3) var(--space-6);}
+.u-faq-2 {
+  padding-bottom:0;}
+.u-faq-3 {
+  font-size:11px;
+  color:var(--color-light-text);
+  line-height:var(--lh-relaxed);}
+.u-faq-4 {
+  font-size:9px;
+  color:var(--color-light-text);}
+.u-faq-5 {
+  font-size:9px;
+  color:var(--color-light-text);}
+.u-faq-6 {
+  margin:0 auto var(--space-6);}
+.u-faq-7 {
+  display:flex;
+  gap:var(--space-4);
+  justify-content:center;
+  flex-wrap:wrap;}
+.u-faq-8 {
+  background:#fff;
+  color:var(--color-secondary);}

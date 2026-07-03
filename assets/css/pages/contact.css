@@ -8,15 +8,13 @@
 .cont-hero {
   position: relative;
   padding: 140px 0 80px;
-  background: linear-gradient(135deg, #090e1c 0%, #111827 50%, #0d1322 100%);
-  overflow: hidden;
-}
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg) 100%);
+  overflow: hidden;}
 .cont-hero__overlay {
   position: absolute; inset: 0;
-  background: radial-gradient(circle at 75% 25%, rgba(245,185,66,0.08) 0%, transparent 50%),
-              radial-gradient(circle at 15% 75%, rgba(239,68,68,0.03) 0%, transparent 50%);
-}
-.cont-hero .container { position: relative; z-index: 2; }
+  background: radial-gradient(circle at 75% 25%, var(--color-accent-50) 0%, transparent 50%),
+              radial-gradient(circle at 15% 75%, rgba(239,68,68,0.03) 0%, transparent 50%);}
+.cont-hero .container { position: relative; z-index: 2;}
 
 /* ============================================================
    2. CONTACT SPLIT & FORM
@@ -24,34 +22,29 @@
 .cont-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-8);
-}
+  gap: var(--space-8);}
 .cont-card {
   background: var(--color-card);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-2xl);
   padding: var(--space-6);
-  box-shadow: var(--shadow-sm);
-}
-[data-theme="dark"] .cont-card {
-  background: var(--color-card); border-color: var(--color-border);
-}
+  box-shadow: var(--shadow-sm);}
+.cont-card {
+  background: var(--color-card); border-color: var(--color-border);}
 
 /* Contact Form Specifics */
 .cont-form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-4);
-}
-.cont-form-grid--full { grid-column: span 2; }
+  gap: var(--space-4);}
+.cont-form-grid--full { grid-column: span 2;}
 
-.cont-field { display: flex; flex-direction: column; gap: var(--space-2); }
+.cont-field { display: flex; flex-direction: column; gap: var(--space-2);}
 .cont-field label {
   font-size: 11px;
   font-weight: var(--fw-semibold);
   color: var(--color-light-text);
-  text-transform: uppercase;
-}
+  text-transform: uppercase;}
 .cont-field input, .cont-field select, .cont-field textarea {
   width: 100%;
   padding: var(--space-3) var(--space-4);
@@ -60,15 +53,12 @@
   font-size: var(--fs-small);
   background: var(--color-bg);
   color: var(--color-dark-text);
-  transition: all var(--transition-base);
-}
-[data-theme="dark"] .cont-field input, [data-theme="dark"] .cont-field select, [data-theme="dark"] .cont-field textarea {
-  background: var(--color-bg); border-color: var(--color-border); color: var(--color-dark-text);
-}
+  transition: all var(--transition-base);}
+.cont-field input, .cont-field select, .cont-field textarea {
+  background: var(--color-bg); border-color: var(--color-border); color: var(--color-dark-text);}
 .cont-field input:focus, .cont-field select:focus, .cont-field textarea:focus {
   outline: none; border-color: var(--color-secondary);
-  box-shadow: 0 0 0 3px rgba(245,185,66,0.1);
-}
+  box-shadow: 0 0 0 3px var(--color-accent-100);}
 
 .cont-file-placeholder {
   display: flex;
@@ -80,11 +70,9 @@
   font-size: var(--fs-xs);
   color: var(--color-light-text);
   background: var(--color-bg);
-  cursor: pointer;
-}
-[data-theme="dark"] .cont-file-placeholder {
-  border-color: var(--color-border); background: var(--color-bg);
-}
+  cursor: pointer;}
+.cont-file-placeholder {
+  border-color: var(--color-border); background: var(--color-bg);}
 
 /* ============================================================
    3. CONTACT INFO & CARDS
@@ -92,74 +80,59 @@
 .cont-grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-6);
-}
+  gap: var(--space-6);}
 .cont-grid-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-5);
-}
+  gap: var(--space-5);}
 .cont-grid-5 {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: var(--space-4);
-}
+  gap: var(--space-4);}
 
 .info-card {
   background: var(--color-card);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-2xl);
-  padding: var(--space-6);
-  transition: all var(--transition-smooth);
-}
+  transition: all var(--transition-smooth);}
 .info-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-card-hover);
-  border-color: var(--color-secondary);
-}
-[data-theme="dark"] .info-card {
-  background: var(--color-card); border-color: var(--color-border);
-}
+  border-color: var(--color-secondary);}
+.info-card {
+  background: var(--color-card); border-color: var(--color-border);}
 .info-card__icon {
   font-size: 2.25rem;
-  margin-bottom: var(--space-4);
-}
+  margin-bottom: var(--space-4);}
 .info-card__title {
   font-family: var(--font-heading);
-  font-size: var(--fs-body);
-  font-weight: var(--fw-bold);
-  margin-bottom: var(--space-2);
-}
+  font-weight: var(--fw-bold);}
 .info-card__desc {
   font-size: var(--fs-xs);
   color: var(--color-light-text);
   line-height: var(--lh-relaxed);
-  margin-bottom: var(--space-4);
-}
+  margin-bottom: var(--space-4);}
 .info-card__value {
   font-size: var(--fs-xs);
   font-weight: var(--fw-bold);
   word-break: break-all;
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
-}
+  gap: var(--space-1);}
 
 /* Business Hours list */
 .hours-list {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  font-size: var(--fs-xs);
-}
+  font-size: var(--fs-xs);}
 .hours-item {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px dashed var(--color-border-light);
-  padding-bottom: var(--space-1);
-}
-[data-theme="dark"] .hours-item { border-color: var(--color-border); }
-.hours-item:last-child { border-bottom: none; }
+  padding-bottom: var(--space-1);}
+.hours-item { border-color: var(--color-border);}
+.hours-item:last-child { border-bottom: none;}
 
 /* ============================================================
    4. MAPS & BRANCHES
@@ -175,9 +148,8 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-3);
-  border: 1px solid var(--color-border-light);
-}
-[data-theme="dark"] .map-placeholder { border-color: var(--color-border); }
+  border: 1px solid var(--color-border-light);}
+.map-placeholder { border-color: var(--color-border);}
 
 /* ============================================================
    5. EMERGENCY SUPPORT CARD
@@ -190,20 +162,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-6);
-}
-.emergency-strip__content { max-width: 600px; }
+  gap: var(--space-6);}
+.emergency-strip__content { max-width: 600px;}
 .emergency-strip__title {
   font-family: var(--font-heading);
   font-size: var(--fs-h3);
   font-weight: var(--fw-bold);
-  margin-bottom: var(--space-2);
-}
+  margin-bottom: var(--space-2);}
 .emergency-strip__desc {
   font-size: var(--fs-xs);
   opacity: 0.9;
-  line-height: var(--lh-relaxed);
-}
+  line-height: var(--lh-relaxed);}
 
 /* ============================================================
    6. WHATSAPP & PHONE SUPPORT CARDS
@@ -214,24 +183,20 @@
   border-radius: var(--radius-2xl);
   padding: var(--space-6);
   text-align: center;
-  transition: all var(--transition-smooth);
-}
+  transition: all var(--transition-smooth);}
 .wa-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.1);
-}
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.1);}
 .wa-card__icon {
   font-size: 3rem; color: #22c55e;
-  margin-bottom: var(--space-3);
-}
+  margin-bottom: var(--space-3);}
 
 /* Social icons list */
 .socials-row {
   display: flex;
   justify-content: center;
   gap: var(--space-4);
-  font-size: 1.5rem;
-}
+  font-size: 1.5rem;}
 .social-icon-btn {
   width: 46px; height: 46px;
   border-radius: var(--radius-full);
@@ -239,32 +204,27 @@
   border: 1px solid var(--color-border-light);
   display: flex; align-items: center; justify-content: center;
   text-decoration: none; color: inherit;
-  transition: all var(--transition-smooth);
-}
-[data-theme="dark"] .social-icon-btn {
-  background: var(--color-bg); border-color: var(--color-border);
-}
+  transition: all var(--transition-smooth);}
+.social-icon-btn {
+  background: var(--color-bg); border-color: var(--color-border);}
 .social-icon-btn:hover {
   border-color: var(--color-secondary); color: var(--color-secondary);
-  transform: translateY(-3px);
-}
+  transform: translateY(-3px);}
 
 /* Timeline Process support */
 .support-timeline {
   display: flex;
   justify-content: space-between;
   position: relative;
-  margin-top: var(--space-8);
-}
+  margin-top: var(--space-8);}
 .support-timeline::before {
   content: '';
   position: absolute;
   top: 18px; left: 0; right: 0;
   height: 2px;
   background: var(--color-border-light);
-  z-index: 1;
-}
-[data-theme="dark"] .support-timeline::before { background: var(--color-border); }
+  z-index: 1;}
+.support-timeline::before { background: var(--color-border);}
 .support-step {
   position: relative;
   z-index: 2;
@@ -272,8 +232,7 @@
   flex-direction: column;
   align-items: center;
   flex: 1;
-  text-align: center;
-}
+  text-align: center;}
 .support-step__dot {
   width: 38px; height: 38px;
   border-radius: var(--radius-full);
@@ -283,43 +242,186 @@
   font-size: var(--fs-xs);
   font-weight: var(--fw-bold);
   color: var(--color-light-text);
-  transition: all var(--transition-base);
-}
-[data-theme="dark"] .support-step__dot {
-  background: var(--color-card); border-color: var(--color-border);
-}
+  transition: all var(--transition-base);}
+.support-step__dot {
+  background: var(--color-card); border-color: var(--color-border);}
 .support-step:hover .support-step__dot {
-  border-color: var(--color-secondary); color: var(--color-secondary);
-}
+  border-color: var(--color-secondary); color: var(--color-secondary);}
 .support-step__title {
   font-family: var(--font-heading);
   font-size: var(--fs-xs);
   font-weight: var(--fw-bold);
-  margin-top: var(--space-3);
-}
+  margin-top: var(--space-3);}
 
 /* ============================================================
    7. RESPONSIVE BREAKPOINTS
    ============================================================ */
 @media (max-width: 1200px) {
-  .cont-grid-5 { grid-template-columns: repeat(3, 1fr); }
+  .cont-grid-5 { grid-template-columns: repeat(3, 1fr);}
 }
 @media (max-width: 992px) {
-  .cont-split { grid-template-columns: 1fr; }
-  .cont-grid-3 { grid-template-columns: repeat(2, 1fr); }
-  .cont-grid-4 { grid-template-columns: repeat(2, 1fr); }
-  .emergency-strip { flex-direction: column; text-align: center; }
+  .cont-split { grid-template-columns: 1fr;}
+  .cont-grid-3 { grid-template-columns: repeat(2, 1fr);}
+  .cont-grid-4 { grid-template-columns: repeat(2, 1fr);}
+  .emergency-strip { flex-direction: column; text-align: center;}
 }
 @media (max-width: 768px) {
-  .cont-grid-5 { grid-template-columns: repeat(2, 1fr); }
-  .support-timeline { flex-direction: column; gap: var(--space-4); }
-  .support-timeline::before { display: none; }
-  .support-step { flex: none; }
+  .cont-grid-5 { grid-template-columns: repeat(2, 1fr);}
+  .support-timeline { flex-direction: column; gap: var(--space-4);}
+  .support-timeline::before { display: none;}
+  .support-step { flex: none;}
 }
 @media (max-width: 576px) {
-  .cont-form-grid { grid-template-columns: 1fr; }
-  .cont-form-grid--full { grid-column: span 1; }
-  .cont-grid-3 { grid-template-columns: 1fr; }
-  .cont-grid-4 { grid-template-columns: 1fr; }
-  .cont-grid-5 { grid-template-columns: 1fr; }
+  .cont-form-grid { grid-template-columns: 1fr;}
+  .cont-form-grid--full { grid-column: span 1;}
+  .cont-grid-3 { grid-template-columns: 1fr;}
+  .cont-grid-4 { grid-template-columns: 1fr;}
+  .cont-grid-5 { grid-template-columns: 1fr;}
 }
+
+/* ============================================================
+   UTILITY CLASSES GENERATED FROM INLINE STYLES FOR CONTACT.HTML
+   ============================================================ */
+.u-contact-1 {
+  padding-bottom:0;}
+.u-contact-2 {
+  font-size:2rem;
+  color:var(--color-secondary);}
+.u-contact-3 {
+  font-size:2rem;
+  color:var(--color-success);}
+.u-contact-4 {
+  font-size:2rem;
+  color:var(--color-secondary);}
+.u-contact-5 {
+  font-size:2rem;
+  color:var(--color-accent);}
+.u-contact-6 {
+  color:var(--color-danger);}
+.u-contact-7 {
+  color:var(--color-danger);}
+.u-contact-8 {
+  color:var(--color-danger);}
+.u-contact-9 {
+  color:var(--color-danger);}
+.u-contact-10 {
+  color:var(--color-danger);}
+.u-contact-11 {
+  color:var(--color-danger);}
+.u-contact-12 {
+  height:100px;}
+.u-contact-13 {
+  display:flex;
+  gap:var(--space-3);
+  margin-top:var(--space-3);}
+.u-contact-14 {
+  flex:1;}
+.u-contact-15 {
+  padding:var(--space-3) var(--space-6);}
+.u-contact-16 {
+  display:flex;
+  flex-direction:column;
+  gap:var(--space-4);}
+.u-contact-17 {
+  border-left:3px solid var(--color-secondary);
+  padding-left:var(--space-3);}
+.u-contact-18 {
+  font-weight:bold;
+  font-size:var(--fs-xs);}
+.u-contact-19 {
+  font-size:11px;
+  color:var(--color-light-text);
+  margin-top:2px;}
+.u-contact-20 {
+  border-left:3px solid var(--color-border);
+  padding-left:var(--space-3);}
+.u-contact-21 {
+  font-weight:bold;
+  font-size:var(--fs-xs);}
+.u-contact-22 {
+  font-size:11px;
+  color:var(--color-light-text);
+  margin-top:2px;}
+.u-contact-23 {
+  border-left:3px solid var(--color-border);
+  padding-left:var(--space-3);}
+.u-contact-24 {
+  font-weight:bold;
+  font-size:var(--fs-xs);}
+.u-contact-25 {
+  font-size:11px;
+  color:var(--color-light-text);
+  margin-top:2px;}
+.u-contact-26 {
+  width:100%;
+  background:#22c55e;
+  border-color:#22c55e;
+  color:#fff;}
+.u-contact-27 {
+  color:var(--color-danger);}
+.u-contact-28 {
+  font-weight:bold;
+  color:var(--color-success);}
+.u-contact-29 {
+  font-weight:bold;
+  color:var(--color-danger);}
+.u-contact-30 {
+  background:#fff;
+  color:var(--color-danger);}
+.u-contact-31 {
+  font-size:4rem;}
+.u-contact-32 {
+  font-family:var(--font-heading);
+  font-weight:var(--fw-bold);
+  font-size:var(--fs-body);
+  color:#fff;}
+.u-contact-33 {
+  font-size:var(--fs-xs);
+  color:rgba(255,255,255,0.6);
+  text-align:center;
+  max-width:320px;}
+.u-contact-34 {
+  text-decoration:none;}
+.u-contact-35 {
+  text-decoration:none;
+  color:inherit;}
+.u-contact-36 {
+  text-decoration:none;
+  color:inherit;}
+.u-contact-37 {
+  text-decoration:none;
+  color:inherit;}
+.u-contact-38 {
+  text-decoration:none;
+  color:inherit;}
+.u-contact-39 {
+  text-decoration:none;
+  color:inherit;}
+.u-contact-40 {
+  font-weight:bold;
+  font-size:var(--fs-xs);}
+.u-contact-41 {
+  font-size:10px;
+  color:var(--color-light-text);}
+.u-contact-42 {
+  font-weight:bold;
+  font-size:var(--fs-xs);}
+.u-contact-43 {
+  font-size:10px;
+  color:var(--color-light-text);}
+.u-contact-44 {
+  font-weight:bold;
+  font-size:var(--fs-xs);}
+.u-contact-45 {
+  font-size:10px;
+  color:var(--color-light-text);}
+.u-contact-46 {
+  margin:0 auto var(--space-6);}
+.u-contact-47 {
+  display:flex;
+  gap:var(--space-4);
+  justify-content:center;
+  flex-wrap:wrap;}
+.u-contact-48 {
+  background:#fff;
+  color:var(--color-secondary);}

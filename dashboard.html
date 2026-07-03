@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Access your DriveElite member dashboard to track bookings, request rental extensions, check verification status, and manage your account.">
   <title>User Dashboard — DriveElite</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/sprite.svg#icon-car">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/animations.css">
   <link rel="stylesheet" href="assets/css/utilities.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="stylesheet" href="assets/css/pages/dashboard.css">
-  <link rel="stylesheet" href="assets/css/pages/pages-dark.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -55,13 +54,13 @@
         <div class="welcome-card__profile">
           <div class="welcome-card__avatar">JD</div>
           <div>
-            <div style="font-family:var(--font-heading);font-weight:var(--fw-bold);font-size:var(--fs-body);color:#fff">John Doe</div>
-            <div style="font-size:var(--fs-xs);color:rgba(255,255,255,0.5)">john.doe@example.com</div>
+            <div class="u-dashboard-1">John Doe</div>
+            <div>john.doe@example.com</div>
           </div>
         </div>
         <div class="welcome-card__meta">
           <div class="welcome-card__date" id="current-date-placeholder">Thursday, July 2, 2026</div>
-          <div class="welcome-card__status">Account Status: <span style="color:var(--color-success)">✓ Verified</span></div>
+          <div class="welcome-card__status">Account Status: <span class="u-dashboard-2"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check"/></svg></span> Verified</span></div>
         </div>
       </div>
     </div>
@@ -81,27 +80,27 @@
   <main id="main-content">
 
     <!-- STATS OVERVIEW & QUICK ACTIONS -->
-    <section class="section" style="padding-bottom:0">
+    <section class="section u-dashboard-3">
       <div class="container">
         
         <!-- Quick Actions -->
-        <div class="db-quick-actions scroll-reveal" style="margin-bottom:var(--space-8)">
-          <a href="cars.html" class="quick-action-btn"><div class="quick-action-btn__icon">🚗</div><div class="quick-action-btn__title">Browse Cars</div><div class="quick-action-btn__desc">Search & book new vehicles</div></a>
-          <a href="#active-rental" class="quick-action-btn"><div class="quick-action-btn__icon">🔑</div><div class="quick-action-btn__title">My Rentals</div><div class="quick-action-btn__desc">Track your active bookings</div></a>
-          <a href="#history" class="quick-action-btn"><div class="quick-action-btn__icon">📋</div><div class="quick-action-btn__title">Rental History</div><div class="quick-action-btn__desc">Check past rental summaries</div></a>
-          <a href="#notifications" class="quick-action-btn"><div class="quick-action-btn__icon">🔔</div><div class="quick-action-btn__title">Notifications</div><div class="quick-action-btn__desc">View inbox and warnings</div></a>
-          <a href="profile.html" class="quick-action-btn"><div class="quick-action-btn__icon">👤</div><div class="quick-action-btn__title">Profile</div><div class="quick-action-btn__desc">Edit account details & license</div></a>
-          <a href="#support" class="quick-action-btn"><div class="quick-action-btn__icon">💬</div><div class="quick-action-btn__title">Contact Support</div><div class="quick-action-btn__desc">Get 24/7 client assistance</div></a>
+        <div class="db-quick-actions scroll-reveal">
+          <a href="cars.html" class="quick-action-btn"><div class="quick-action-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car"/></svg></span></div><div class="quick-action-btn__title">Browse Cars</div><div class="quick-action-btn__desc">Search & book new vehicles</div></a>
+          <a href="#active-rental" class="quick-action-btn"><div class="quick-action-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-lock"/></svg></span></div><div class="quick-action-btn__title">My Rentals</div><div class="quick-action-btn__desc">Track your active bookings</div></a>
+          <a href="#history" class="quick-action-btn"><div class="quick-action-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span></div><div class="quick-action-btn__title">Rental History</div><div class="quick-action-btn__desc">Check past rental summaries</div></a>
+          <a href="#notifications" class="quick-action-btn"><div class="quick-action-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-bell"/></svg></span></div><div class="quick-action-btn__title">Notifications</div><div class="quick-action-btn__desc">View inbox and warnings</div></a>
+          <a href="profile.html" class="quick-action-btn"><div class="quick-action-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span></div><div class="quick-action-btn__title">Profile</div><div class="quick-action-btn__desc">Edit account details & license</div></a>
+          <a href="#support" class="quick-action-btn"><div class="quick-action-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span></div><div class="quick-action-btn__title">Contact Support</div><div class="quick-action-btn__desc">Get 24/7 client assistance</div></a>
         </div>
 
         <!-- Dashboard Stats -->
         <div class="db-stats scroll-reveal">
-          <div class="db-stat-card"><div class="db-stat-card__icon">📊</div><div class="db-stat-card__info"><span class="db-stat-card__val">12</span><span class="db-stat-card__label">Total Rentals</span></div></div>
-          <div class="db-stat-card"><div class="db-stat-card__icon">🔑</div><div class="db-stat-card__info"><span class="db-stat-card__val">1</span><span class="db-stat-card__label">Active Rental</span></div></div>
-          <div class="db-stat-card"><div class="db-stat-card__icon">✅</div><div class="db-stat-card__info"><span class="db-stat-card__val">10</span><span class="db-stat-card__label">Completed Rentals</span></div></div>
-          <div class="db-stat-card"><div class="db-stat-card__icon">⏳</div><div class="db-stat-card__info"><span class="db-stat-card__val">1</span><span class="db-stat-card__label">Pending Requests</span></div></div>
-          <div class="db-stat-card"><div class="db-stat-card__icon">❌</div><div class="db-stat-card__info"><span class="db-stat-card__val">0</span><span class="db-stat-card__label">Cancelled Requests</span></div></div>
-          <div class="db-stat-card"><div class="db-stat-card__icon">🔔</div><div class="db-stat-card__info"><span class="db-stat-card__val">4</span><span class="db-stat-card__label">Notifications</span></div></div>
+          <div class="db-stat-card"><div class="db-stat-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span></div><div class="db-stat-card__info"><span class="db-stat-card__val">12</span><span class="db-stat-card__label">Total Rentals</span></div></div>
+          <div class="db-stat-card"><div class="db-stat-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-lock"/></svg></span></div><div class="db-stat-card__info"><span class="db-stat-card__val">1</span><span class="db-stat-card__label">Active Rental</span></div></div>
+          <div class="db-stat-card"><div class="db-stat-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check-circle"/></svg></span></div><div class="db-stat-card__info"><span class="db-stat-card__val">10</span><span class="db-stat-card__label">Completed Rentals</span></div></div>
+          <div class="db-stat-card"><div class="db-stat-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div><div class="db-stat-card__info"><span class="db-stat-card__val">1</span><span class="db-stat-card__label">Pending Requests</span></div></div>
+          <div class="db-stat-card"><div class="db-stat-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-x-circle"/></svg></span></div><div class="db-stat-card__info"><span class="db-stat-card__val">0</span><span class="db-stat-card__label">Cancelled Requests</span></div></div>
+          <div class="db-stat-card"><div class="db-stat-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-bell"/></svg></span></div><div class="db-stat-card__info"><span class="db-stat-card__val">4</span><span class="db-stat-card__label">Notifications</span></div></div>
         </div>
 
       </div>
@@ -118,11 +117,11 @@
             <!-- Active Rental Section -->
             <div class="db-sec" id="active-rental">
               <div class="db-sec__header">
-                <h2 class="db-sec__title">🔑 Active Rental Overview</h2>
+                <h2 class="db-sec__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-lock"/></svg></span> Active Rental Overview</h2>
                 <span class="status-badge status-badge--active">Active</span>
               </div>
               <div class="active-rental-card">
-                <div class="active-rental-card__img">🏎️</div>
+                <div class="active-rental-card__img"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car-sports"/></svg></span></div>
                 <div class="active-rental-card__body">
                   <h3 class="active-rental-card__title">Mercedes-AMG GT 63 S</h3>
                   <div class="active-rental-card__meta">
@@ -132,8 +131,8 @@
                     <div class="active-rental-card__meta-item">Return: <strong>Jul 4, 2026 - 10:00 AM</strong></div>
                   </div>
                   <div class="active-rental-card__footer">
-                    <div style="font-size:var(--fs-xs);color:var(--color-light-text)">Remaining Time: <strong style="color:var(--color-secondary)">1 Day, 18 Hours</strong></div>
-                    <a href="car-details.html" class="btn btn--primary btn--sm" style="padding:var(--space-2) var(--space-4)">View Details</a>
+                    <div>Remaining Time: <strong class="u-dashboard-4">1 Day, 18 Hours</strong></div>
+                    <a href="car-details.html" class="btn btn--primary btn--sm u-dashboard-5">View Details</a>
                   </div>
                 </div>
               </div>
@@ -142,15 +141,15 @@
             <!-- Booking Status Tracker -->
             <div class="db-sec" id="tracker">
               <div class="db-sec__header">
-                <h2 class="db-sec__title">📈 Active Booking Status Tracker</h2>
+                <h2 class="db-sec__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span> Active Booking Status Tracker</h2>
                 <span class="db-sec__link">Live Update</span>
               </div>
-              <p style="font-size:var(--fs-xs);color:var(--color-light-text);margin:0">Follow the progress of your latest rental booking as it processes through verification and pickup readiness.</p>
+              <p class="u-dashboard-6">Follow the progress of your latest rental booking as it processes through verification and pickup readiness.</p>
               
               <div class="tracker-timeline">
-                <div class="tracker-step completed"><div class="tracker-step__dot">✓</div><div class="tracker-step__label">Booking Submitted</div></div>
-                <div class="tracker-step completed"><div class="tracker-step__dot">✓</div><div class="tracker-step__label">Under Review</div></div>
-                <div class="tracker-step completed"><div class="tracker-step__dot">✓</div><div class="tracker-step__label">Approved</div></div>
+                <div class="tracker-step completed"><div class="tracker-step__dot"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check"/></svg></span></div><div class="tracker-step__label">Booking Submitted</div></div>
+                <div class="tracker-step completed"><div class="tracker-step__dot"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check"/></svg></span></div><div class="tracker-step__label">Under Review</div></div>
+                <div class="tracker-step completed"><div class="tracker-step__dot"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check"/></svg></span></div><div class="tracker-step__label">Approved</div></div>
                 <div class="tracker-step current"><div class="tracker-step__dot">4</div><div class="tracker-step__label">Vehicle Verification</div></div>
                 <div class="tracker-step"><div class="tracker-step__dot">5</div><div class="tracker-step__label">Ready for Pickup</div></div>
                 <div class="tracker-step"><div class="tracker-step__dot">6</div><div class="tracker-step__label">Completed</div></div>
@@ -158,36 +157,36 @@
             </div>
 
             <!-- Vehicle Verification Status & Extension Preview -->
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-5)">
+            <div class="u-dashboard-7">
               
               <!-- Vehicle Verification Status Card -->
               <div class="db-sec">
-                <div class="db-sec__header" style="margin-bottom:var(--space-4)">
-                  <h3 class="db-sec__title" style="font-size:var(--fs-small)">📸 Vehicle Verification</h3>
+                <div class="db-sec__header">
+                  <h3 class="db-sec__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span> Vehicle Verification</h3>
                 </div>
-                <p style="font-size:11px;color:var(--color-light-text);line-height:var(--lh-relaxed);margin-bottom:var(--space-4)">
+                <p class="u-dashboard-8">
                   Verify vehicle condition. Camera uploads will unlock here automatically once pickup is approved.
                 </p>
-                <div style="display:flex;flex-direction:column;gap:var(--space-2)">
-                  <div style="display:flex;justify-content:between;align-items:center;font-size:11px"><span>Admin Approval Status</span><span class="status-badge status-badge--active" style="padding:2px 6px;font-size:9px">✓ Approved</span></div>
-                  <div style="display:flex;justify-content:between;align-items:center;font-size:11px"><span>Camera Verification</span><span class="status-badge status-badge--pending" style="padding:2px 6px;font-size:9px">⏳ Pending</span></div>
+                <div class="u-dashboard-9">
+                  <div class="u-dashboard-10"><span>Admin Approval Status</span><span class="status-badge status-badge--active u-dashboard-11"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check"/></svg></span> Approved</span></div>
+                  <div class="u-dashboard-12"><span>Camera Verification</span><span class="status-badge status-badge--pending u-dashboard-13"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span> Pending</span></div>
                 </div>
               </div>
 
               <!-- Rental Extension Preview Card -->
               <div class="db-sec">
-                <div class="db-sec__header" style="margin-bottom:var(--space-4)">
-                  <h3 class="db-sec__title" style="font-size:var(--fs-small)">⏱️ Extend Duration</h3>
+                <div class="db-sec__header">
+                  <h3 class="db-sec__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span> Extend Duration</h3>
                 </div>
-                <p style="font-size:11px;color:var(--color-light-text);line-height:var(--lh-relaxed);margin-bottom:var(--space-4)">
+                <p class="u-dashboard-14">
                   Need to drive longer? Request an extension for your AMG GT 63 S rental immediately.
                 </p>
                 <div class="extension-card">
                   <div>
-                    <div style="font-size:10px;color:var(--color-light-text);text-transform:uppercase">Extension Status</div>
-                    <div style="font-size:12px;font-weight:var(--fw-bold)">Not Requested</div>
+                    <div class="u-dashboard-15">Extension Status</div>
+                    <div class="u-dashboard-16">Not Requested</div>
                   </div>
-                  <a href="extend-rental.html" class="btn btn--secondary btn--sm" style="padding:var(--space-2) var(--space-4)">Request Extension</a>
+                  <a href="extend-rental.html" class="btn btn--secondary btn--sm u-dashboard-17">Request Extension</a>
                 </div>
               </div>
 
@@ -219,8 +218,8 @@
                       <td>Jun 15, 2026</td>
                       <td>Daily</td>
                       <td>$1,120.00</td>
-                      <td><span class="status-badge status-badge--completed" style="font-size:9px;padding:2px 6px">Completed</span></td>
-                      <td><a href="car-details.html" class="db-sec__link" style="font-size:11px">Details</a></td>
+                      <td><span class="status-badge status-badge--completed u-dashboard-18">Completed</span></td>
+                      <td><a href="car-details.html" class="db-sec__link u-dashboard-19">Details</a></td>
                     </tr>
                     <tr>
                       <td>Audi R8 V10 Decennium</td>
@@ -228,8 +227,8 @@
                       <td>May 21, 2026</td>
                       <td>Hourly</td>
                       <td>$380.00</td>
-                      <td><span class="status-badge status-badge--completed" style="font-size:9px;padding:2px 6px">Completed</span></td>
-                      <td><a href="car-details.html" class="db-sec__link" style="font-size:11px">Details</a></td>
+                      <td><span class="status-badge status-badge--completed u-dashboard-20">Completed</span></td>
+                      <td><a href="car-details.html" class="db-sec__link u-dashboard-21">Details</a></td>
                     </tr>
                     <tr>
                       <td>BMW M8 Competition</td>
@@ -237,8 +236,8 @@
                       <td>Apr 08, 2026</td>
                       <td>Daily</td>
                       <td>$950.00</td>
-                      <td><span class="status-badge status-badge--completed" style="font-size:9px;padding:2px 6px">Completed</span></td>
-                      <td><a href="car-details.html" class="db-sec__link" style="font-size:11px">Details</a></td>
+                      <td><span class="status-badge status-badge--completed u-dashboard-22">Completed</span></td>
+                      <td><a href="car-details.html" class="db-sec__link u-dashboard-23">Details</a></td>
                     </tr>
                   </tbody>
                 </table>
@@ -248,27 +247,27 @@
             <!-- Favorite Vehicles -->
             <div class="db-sec" id="favorites">
               <div class="db-sec__header">
-                <h2 class="db-sec__title">⭐️ Favorite Vehicles</h2>
+                <h2 class="db-sec__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span>️ Favorite Vehicles</h2>
                 <a href="cars.html" class="db-sec__link">Browse All →</a>
               </div>
               <div class="fav-grid">
                 <div class="fav-card">
-                  <div class="fav-card__img">🏎️</div>
+                  <div class="fav-card__img"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car-sports"/></svg></span></div>
                   <h3 class="fav-card__title">Ferrari F8 Tributo</h3>
                   <div class="fav-card__meta">
                     <span class="fav-card__price">$950/day</span>
-                    <span style="color:var(--color-accent)">★ 4.9 (48 reviews)</span>
+                    <span class="u-dashboard-24"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span> 4.9 (48 reviews)</span>
                   </div>
-                  <a href="car-details.html" class="btn btn--ghost btn--sm" style="width:100%;text-align:center">View Details</a>
+                  <a href="car-details.html" class="btn btn--ghost btn--sm u-dashboard-25">View Details</a>
                 </div>
                 <div class="fav-card">
                   <div class="fav-card__img"> SUV </div>
                   <h3 class="fav-card__title">Lamborghini Urus</h3>
                   <div class="fav-card__meta">
                     <span class="fav-card__price">$750/day</span>
-                    <span style="color:var(--color-accent)">★ 4.8 (36 reviews)</span>
+                    <span class="u-dashboard-26"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span> 4.8 (36 reviews)</span>
                   </div>
-                  <a href="car-details.html" class="btn btn--ghost btn--sm" style="width:100%;text-align:center">View Details</a>
+                  <a href="car-details.html" class="btn btn--ghost btn--sm u-dashboard-27">View Details</a>
                 </div>
               </div>
             </div>
@@ -280,43 +279,43 @@
             
             <!-- Profile Completion Progress -->
             <div class="db-sec" id="profile-progress">
-              <div class="db-sec__header" style="margin-bottom:var(--space-4)">
-                <h2 class="db-sec__title">👤 Profile Completion</h2>
-                <span class="db-sec__title" style="color:var(--color-success)">75%</span>
+              <div class="db-sec__header">
+                <h2 class="db-sec__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span> Profile Completion</h2>
+                <span class="db-sec__title u-dashboard-28">75%</span>
               </div>
               <div class="profile-progress">
                 <div class="profile-progress__bar-outer"><div class="profile-progress__bar-inner"></div></div>
                 <div class="profile-progress__list">
-                  <div class="profile-progress__item"><span>Personal Information</span><span class="profile-progress__status profile-progress__status--done">✓ Done</span></div>
-                  <div class="profile-progress__item"><span>Contact Details</span><span class="profile-progress__status profile-progress__status--done">✓ Done</span></div>
-                  <div class="profile-progress__item"><span>Driving License Verification</span><span class="profile-progress__status profile-progress__status--done">✓ Done</span></div>
-                  <div class="profile-progress__item"><span>Proof of Address</span><span class="profile-progress__status profile-progress__status--pending">⏳ Pending</span></div>
+                  <div class="profile-progress__item"><span>Personal Information</span><span class="profile-progress__status profile-progress__status--done"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check"/></svg></span> Done</span></div>
+                  <div class="profile-progress__item"><span>Contact Details</span><span class="profile-progress__status profile-progress__status--done"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check"/></svg></span> Done</span></div>
+                  <div class="profile-progress__item"><span>Driving License Verification</span><span class="profile-progress__status profile-progress__status--done"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check"/></svg></span> Done</span></div>
+                  <div class="profile-progress__item"><span>Proof of Address</span><span class="profile-progress__status profile-progress__status--pending"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span> Pending</span></div>
                 </div>
-                <a href="profile.html" class="btn btn--secondary btn--sm" style="width:100%;text-align:center;margin-top:var(--space-2)">Complete Profile</a>
+                <a href="profile.html" class="btn btn--secondary btn--sm u-dashboard-29">Complete Profile</a>
               </div>
             </div>
 
             <!-- Notifications Preview -->
             <div class="db-sec" id="notifications">
               <div class="db-sec__header">
-                <h2 class="db-sec__title">🔔 Notifications Preview</h2>
+                <h2 class="db-sec__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-bell"/></svg></span> Notifications Preview</h2>
                 <a href="notifications.html" class="db-sec__link">View All</a>
               </div>
               <div class="notification-list">
                 <div class="notification-item notification-item--success">
-                  <div class="notification-item__icon">✅</div>
+                  <div class="notification-item__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check-circle"/></svg></span></div>
                   <div class="notification-item__body"><div class="notification-item__title">Booking Approved</div><div class="notification-item__time">2 hours ago</div></div>
                 </div>
                 <div class="notification-item notification-item--info">
-                  <div class="notification-item__icon">📅</div>
+                  <div class="notification-item__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-calendar"/></svg></span></div>
                   <div class="notification-item__body"><div class="notification-item__title">Rental Reminder: AMG GT 63 S</div><div class="notification-item__time">5 hours ago</div></div>
                 </div>
                 <div class="notification-item notification-item--warning">
-                  <div class="notification-item__icon">⚠️</div>
+                  <div class="notification-item__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-alert-triangle"/></svg></span></div>
                   <div class="notification-item__body"><div class="notification-item__title">Extension request approved</div><div class="notification-item__time">Yesterday</div></div>
                 </div>
                 <div class="notification-item notification-item--info">
-                  <div class="notification-item__icon">📢</div>
+                  <div class="notification-item__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-bell"/></svg></span></div>
                   <div class="notification-item__body"><div class="notification-item__title">New luxury fleet additions</div><div class="notification-item__time">3 days ago</div></div>
                 </div>
               </div>
@@ -325,7 +324,7 @@
             <!-- Recent Activity Timeline -->
             <div class="db-sec" id="activity">
               <div class="db-sec__header">
-                <h2 class="db-sec__title">⏱️ Recent Activity</h2>
+                <h2 class="db-sec__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span> Recent Activity</h2>
               </div>
               <div class="activity-timeline">
                 <div class="activity-item"><div class="activity-item__title">Active Rental extension requested</div><div class="activity-item__time">Jul 2, 2026 - 11:30 AM</div></div>
@@ -338,20 +337,20 @@
             <!-- Rental Guidelines -->
             <div class="db-sec" id="guidelines">
               <div class="db-sec__header">
-                <h2 class="db-sec__title">📋 Rental Guidelines</h2>
+                <h2 class="db-sec__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span> Rental Guidelines</h2>
               </div>
               <div class="guide-list">
-                <div class="guide-item"><span class="guide-item__icon">ℹ️</span><span><strong>Pickup Process:</strong> Present original physical driving license + ID at counter.</span></div>
-                <div class="guide-item"><span class="guide-item__icon">ℹ️</span><span><strong>Return Process:</strong> Return vehicle with full tank of fuel. Additional clean fees apply for dirty interiors.</span></div>
-                <div class="guide-item"><span class="guide-item__icon">ℹ️</span><span><strong>Extensions:</strong> Must request extension at least 12 hours before original return time.</span></div>
-                <div class="guide-item"><span class="guide-item__icon">ℹ️</span><span><strong>Responsibilities:</strong> Customer is liable for tolls, traffic violations, and insurance deductibles.</span></div>
+                <div class="guide-item"><span class="guide-item__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-info"/></svg></span></span><span><strong>Pickup Process:</strong> Present original physical driving license + ID at counter.</span></div>
+                <div class="guide-item"><span class="guide-item__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-info"/></svg></span></span><span><strong>Return Process:</strong> Return vehicle with full tank of fuel. Additional clean fees apply for dirty interiors.</span></div>
+                <div class="guide-item"><span class="guide-item__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-info"/></svg></span></span><span><strong>Extensions:</strong> Must request extension at least 12 hours before original return time.</span></div>
+                <div class="guide-item"><span class="guide-item__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-info"/></svg></span></span><span><strong>Responsibilities:</strong> Customer is liable for tolls, traffic violations, and insurance deductibles.</span></div>
               </div>
             </div>
 
             <!-- Promotional cards -->
             <div class="db-sec" id="promotions">
               <div class="db-sec__header">
-                <h2 class="db-sec__title">🎁 Member Deals</h2>
+                <h2 class="db-sec__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span> Member Deals</h2>
               </div>
               <div class="promo-grid">
                 <div class="promo-card promo-card--luxury"><div><h4 class="promo-card__title">Luxury Collection</h4><p class="promo-card__desc">Get 15% off Ferrari rentals this month.</p></div></div>
@@ -364,13 +363,13 @@
             <!-- Customer Support Contact card -->
             <div class="db-sec" id="support">
               <div class="db-sec__header">
-                <h2 class="db-sec__title">💬 Support Assistance</h2>
+                <h2 class="db-sec__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span> Support Assistance</h2>
               </div>
-              <div style="display:flex;flex-direction:column;gap:var(--space-3);font-size:var(--fs-xs)">
-                <div style="display:flex;align-items:center;gap:var(--space-2)"><span>📞</span><strong>Call:</strong> +1 (555) 123-4567 (24/7 Helpline)</div>
-                <div style="display:flex;align-items:center;gap:var(--space-2)"><span>✉️</span><strong>Email:</strong> support@driveelite.com</div>
-                <div style="display:flex;align-items:center;gap:var(--space-2)"><span>💬</span><strong>Live Chat:</strong> <span style="color:var(--color-light-text)">Offline (Outside working hours)</span></div>
-                <div style="display:flex;align-items:center;gap:var(--space-2)"><span>🚨</span><strong>Emergency Assistance:</strong> Option 9 on helpline</div>
+              <div class="u-dashboard-30">
+                <div class="u-dashboard-31"><span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span></span><strong>Call:</strong> +1 (555) 123-4567 (24/7 Helpline)</div>
+                <div class="u-dashboard-32"><span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span></span><strong>Email:</strong> support@driveelite.com</div>
+                <div class="u-dashboard-33"><span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span></span><strong>Live Chat:</strong> <span class="u-dashboard-34">Offline (Outside working hours)</span></div>
+                <div class="u-dashboard-35"><span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-bell"/></svg></span></span><strong>Emergency Assistance:</strong> Option 9 on helpline</div>
               </div>
             </div>
 
@@ -386,26 +385,23 @@
   <footer class="footer" id="footer">
     <div class="container">
       <div class="footer__grid">
-        <div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-icon">DE</div>Drive<span>Elite</span></a><p class="footer__description">Your premier destination for luxury car rentals. We deliver top-tier vehicles with white-glove service for an unforgettable driving experience.</p><div class="footer__socials"><a href="#" class="footer__social-link" aria-label="Facebook">f</a><a href="#" class="footer__social-link" aria-label="Instagram">📷</a><a href="#" class="footer__social-link" aria-label="X / Twitter">𝕏</a><a href="#" class="footer__social-link" aria-label="LinkedIn">in</a><a href="#" class="footer__social-link" aria-label="YouTube">▶</a></div></div>
+        <div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-icon">DE</div>Drive<span>Elite</span></a><p class="footer__description">Your premier destination for luxury car rentals. We deliver top-tier vehicles with white-glove service for an unforgettable driving experience.</p><div class="footer__socials"><a href="#" class="footer__social-link" aria-label="Facebook">f</a><a href="#" class="footer__social-link" aria-label="Instagram"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span></a><a href="#" class="footer__social-link" aria-label="X / Twitter"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-x"/></svg></span></a><a href="#" class="footer__social-link" aria-label="LinkedIn">in</a><a href="#" class="footer__social-link" aria-label="YouTube"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-youtube"/></svg></span></a></div></div>
         <div><h4 class="footer__heading">Company</h4><ul class="footer__list"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="services.html" class="footer__link">Careers</a></li><li><a href="about.html" class="footer__link">Press</a></li><li><a href="contact.html" class="footer__link">Contact</a></li></ul></div>
         <div><h4 class="footer__heading">Quick Links</h4><ul class="footer__list"><li><a href="cars.html" class="footer__link">Our Fleet</a></li><li><a href="services.html" class="footer__link">Services</a></li><li><a href="faq.html" class="footer__link">FAQ</a></li><li><a href="booking.html" class="footer__link">Book a Car</a></li></ul></div>
         <div><h4 class="footer__heading">Support</h4><ul class="footer__list"><li><a href="faq.html" class="footer__link">Help Center</a></li><li><a href="privacy-policy.html" class="footer__link">Privacy Policy</a></li><li><a href="terms-and-conditions.html" class="footer__link">Terms of Service</a></li><li><a href="terms-and-conditions.html" class="footer__link">Rental Policy</a></li></ul></div>
-        <div><h4 class="footer__heading">Contact</h4><div class="footer__contact-item"><div class="footer__contact-icon">📍</div><div><div class="footer__contact-label">Address</div><div class="footer__contact-value">123 Luxury Drive, Suite 100<br>New York, NY 10001</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">📞</div><div><div class="footer__contact-label">Phone</div><div class="footer__contact-value">+1 (555) 123-4567</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">✉️</div><div><div class="footer__contact-label">Email</div><div class="footer__contact-value">hello@driveelite.com</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">🕐</div><div><div class="footer__contact-label">Business Hours</div><div class="footer__contact-value">Mon–Sat: 8AM – 8PM</div></div></div></div>
+        <div><h4 class="footer__heading">Contact</h4><div class="footer__contact-item"><div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span></div><div><div class="footer__contact-label">Address</div><div class="footer__contact-value">123 Luxury Drive, Suite 100<br>New York, NY 10001</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span></div><div><div class="footer__contact-label">Phone</div><div class="footer__contact-value">+1 (555) 123-4567</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span></div><div><div class="footer__contact-label">Email</div><div class="footer__contact-value">hello@driveelite.com</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div><div><div class="footer__contact-label">Business Hours</div><div class="footer__contact-value">Mon–Sat: 8AM – 8PM</div></div></div></div>
       </div>
       <div class="footer__newsletter-section"><div class="footer__newsletter-wrap"><div class="footer__newsletter-text"><h4 class="footer__newsletter-title">Stay in the Fast Lane</h4><p class="footer__newsletter-subtitle">Subscribe for exclusive deals, new arrivals, and luxury driving tips.</p></div><form class="footer__newsletter-form" id="newsletter-form"><input type="email" class="footer__newsletter-input" placeholder="Enter your email address" aria-label="Newsletter email"><button type="submit" class="btn btn--primary btn--sm">Subscribe</button></form></div></div>
-      <div class="footer__bottom"><div class="footer__bottom-brand"><p>&copy; 2026 DriveElite. Crafted with <span class="footer__heart">❤</span> for luxury driving.</p></div><div class="footer__bottom-links"><a href="privacy-policy.html" class="footer__bottom-link">Privacy</a><a href="terms-and-conditions.html" class="footer__bottom-link">Terms</a><a href="contact.html" class="footer__bottom-link">Sitemap</a></div></div>
+      <div class="footer__bottom"><div class="footer__bottom-brand"><p>&copy; 2026 DriveElite. Crafted with <span class="footer__heart"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-heart"/></svg></span></span> for luxury driving.</p></div><div class="footer__bottom-links"><a href="privacy-policy.html" class="footer__bottom-link">Privacy</a><a href="terms-and-conditions.html" class="footer__bottom-link">Terms</a><a href="contact.html" class="footer__bottom-link">Sitemap</a></div></div>
     </div>
   </footer>
 
   <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
   <div class="toast-container" id="toast-container"></div>
-
-  <script src="assets/js/theme.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/ui.js"></script>
   <script src="assets/js/validation.js"></script>
   <script src="assets/js/animation.js"></script>
-
   <script>
   (function() {
     'use strict';

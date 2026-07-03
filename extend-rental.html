@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Request a rental extension for your current booking on DriveElite.">
   <title>Extend Rental — DriveElite</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/sprite.svg#icon-car">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/animations.css">
   <link rel="stylesheet" href="assets/css/utilities.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
-  <link rel="stylesheet" href="assets/css/pages/pages-dark.css">
 </head>
 <body>
 
@@ -92,7 +91,7 @@
     <section class="section">
       <div class="container">
         <div class="empty-state scroll-reveal">
-          <div class="empty-state__icon">⏰</div>
+          <div class="empty-state__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div>
           <h3 class="empty-state__title">Extension Form Coming Soon</h3>
           <p class="empty-state__text">Rental extension form with date selection, cost preview, and approval status will appear here.</p>
           <a href="index.html" class="btn btn--primary">Back to Home</a>
@@ -123,10 +122,10 @@
           <p class="footer__description">Your premier destination for luxury car rentals. We deliver top-tier vehicles with white-glove service for an unforgettable driving experience.</p>
           <div class="footer__socials">
             <a href="#" class="footer__social-link" aria-label="Facebook">f</a>
-            <a href="#" class="footer__social-link" aria-label="Instagram">📷</a>
-            <a href="#" class="footer__social-link" aria-label="X / Twitter">𝕏</a>
+            <a href="#" class="footer__social-link" aria-label="Instagram"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span></a>
+            <a href="#" class="footer__social-link" aria-label="X / Twitter"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-x"/></svg></span></a>
             <a href="#" class="footer__social-link" aria-label="LinkedIn">in</a>
-            <a href="#" class="footer__social-link" aria-label="YouTube">▶</a>
+            <a href="#" class="footer__social-link" aria-label="YouTube"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-youtube"/></svg></span></a>
           </div>
         </div>
 
@@ -167,28 +166,28 @@
         <div>
           <h4 class="footer__heading">Contact</h4>
           <div class="footer__contact-item">
-            <div class="footer__contact-icon">📍</div>
+            <div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span></div>
             <div>
               <div class="footer__contact-label">Address</div>
               <div class="footer__contact-value">123 Luxury Drive, Suite 100<br>New York, NY 10001</div>
             </div>
           </div>
           <div class="footer__contact-item">
-            <div class="footer__contact-icon">📞</div>
+            <div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span></div>
             <div>
               <div class="footer__contact-label">Phone</div>
               <div class="footer__contact-value">+1 (555) 123-4567</div>
             </div>
           </div>
           <div class="footer__contact-item">
-            <div class="footer__contact-icon">✉️</div>
+            <div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span></div>
             <div>
               <div class="footer__contact-label">Email</div>
               <div class="footer__contact-value">hello@driveelite.com</div>
             </div>
           </div>
           <div class="footer__contact-item">
-            <div class="footer__contact-icon">🕐</div>
+            <div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div>
             <div>
               <div class="footer__contact-label">Business Hours</div>
               <div class="footer__contact-value">Mon–Sat: 8AM – 8PM</div>
@@ -214,7 +213,7 @@
       <!-- Bottom Bar -->
       <div class="footer__bottom">
         <div class="footer__bottom-brand">
-          <p>&copy; 2026 DriveElite. Crafted with <span class="footer__heart">❤</span> for luxury driving.</p>
+          <p>&copy; 2026 DriveElite. Crafted with <span class="footer__heart"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-heart"/></svg></span></span> for luxury driving.</p>
         </div>
         <div class="footer__bottom-links">
           <a href="privacy-policy.html" class="footer__bottom-link">Privacy</a>
@@ -232,7 +231,6 @@
   <div class="toast-container" id="toast-container"></div>
 
   <!-- Scripts -->
-  <script src="assets/js/theme.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/ui.js"></script>
   <script src="assets/js/validation.js"></script>

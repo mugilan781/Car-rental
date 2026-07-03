@@ -404,7 +404,7 @@
   position: fixed;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.04) 0%, rgba(245, 158, 11, 0.01) 50%, transparent 80%);
+  background: radial-gradient(circle, var(--color-secondary-50) 0%, var(--color-secondary-50) 50%, transparent 80%);
   border-radius: 50%;
   pointer-events: none;
   z-index: 1;
@@ -431,7 +431,7 @@
   border-radius: inherit;
   background: radial-gradient(
     600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
-    rgba(245, 158, 11, 0.08),
+    var(--color-secondary-50),
     transparent 45%
   );
   z-index: 1;
@@ -449,8 +449,8 @@
   background: linear-gradient(
     to right,
     #FFFFFF 15%,
-    #FBBF24 40%,
-    #F59E0B 60%,
+    var(--color-secondary) 40%,
+    var(--color-primary) 60%,
     #FFFFFF 85%
   );
   background-size: 200% auto;
@@ -478,8 +478,8 @@
 
 /* --- Luxurious Glow Border on Hover --- */
 .glow-border:hover {
-  box-shadow: 0 0 30px rgba(245, 158, 11, 0.15) !important;
-  border-color: rgba(245, 158, 11, 0.3) !important;
+  box-shadow: 0 0 30px var(--color-secondary-50) !important;
+  border-color: var(--color-secondary-50) !important;
 }
 
 /* --- Hero Image Immersive Parallax Smooth Transition --- */

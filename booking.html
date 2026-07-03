@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Book your premium rental vehicle with DriveElite. Simple multi-step booking process with transparent pricing.">
   <title>Book a Vehicle — DriveElite</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/sprite.svg#icon-car">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/animations.css">
   <link rel="stylesheet" href="assets/css/utilities.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="stylesheet" href="assets/css/pages/booking.css">
-  <link rel="stylesheet" href="assets/css/pages/pages-dark.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -97,7 +96,7 @@
     <!-- ============================================================
          MAIN BOOKING FORM + SIDEBAR
          ============================================================ -->
-    <section class="section" style="padding-top:0">
+    <section class="section u-booking-1">
       <div class="container">
         <div class="booking-layout">
 
@@ -107,20 +106,20 @@
             <!-- STEP 1: Rental Details -->
             <div class="form-section scroll-reveal" id="step-1">
               <div class="form-section__header">
-                <div class="form-section__icon">📅</div>
+                <div class="form-section__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-calendar"/></svg></span></div>
                 <div><div class="form-section__title">Step 1 — Rental Details</div><div class="form-section__subtitle">Select your rental type, dates, and locations</div></div>
               </div>
 
-              <div class="form-group" style="margin-bottom:var(--space-6)">
+              <div class="form-group">
                 <label>Rental Type <span class="required">*</span></label>
                 <div class="rental-type-toggle">
                   <div class="rental-type-option">
                     <input type="radio" name="rental-type" id="hourly" checked>
-                    <label for="hourly" class="rental-type-label"><span class="rental-type-label__icon">🕐</span><span class="rental-type-label__name">Hourly Rental</span><span class="rental-type-label__desc">Flexible hourly booking</span></label>
+                    <label for="hourly" class="rental-type-label"><span class="rental-type-label__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></span><span class="rental-type-label__name">Hourly Rental</span><span class="rental-type-label__desc">Flexible hourly booking</span></label>
                   </div>
                   <div class="rental-type-option">
                     <input type="radio" name="rental-type" id="daily">
-                    <label for="daily" class="rental-type-label"><span class="rental-type-label__icon">📅</span><span class="rental-type-label__name">Daily Rental</span><span class="rental-type-label__desc">Full day booking</span></label>
+                    <label for="daily" class="rental-type-label"><span class="rental-type-label__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-calendar"/></svg></span></span><span class="rental-type-label__name">Daily Rental</span><span class="rental-type-label__desc">Full day booking</span></label>
                   </div>
                 </div>
               </div>
@@ -137,7 +136,7 @@
               </div>
 
               <div class="form-nav">
-                <div></div>
+                
                 <button class="btn btn--primary">Next: Your Information →</button>
               </div>
             </div>
@@ -145,7 +144,7 @@
             <!-- STEP 2: Customer Information -->
             <div class="form-section scroll-reveal" id="step-2">
               <div class="form-section__header">
-                <div class="form-section__icon">👤</div>
+                <div class="form-section__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span></div>
                 <div><div class="form-section__title">Step 2 — Customer Information</div><div class="form-section__subtitle">Provide your personal and contact details</div></div>
               </div>
               <div class="form-grid">
@@ -170,26 +169,26 @@
             <!-- STEP 3: Booking Summary -->
             <div class="form-section scroll-reveal" id="step-3">
               <div class="form-section__header">
-                <div class="form-section__icon">📋</div>
+                <div class="form-section__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span></div>
                 <div><div class="form-section__title">Step 3 — Booking Summary</div><div class="form-section__subtitle">Review all details before confirming</div></div>
               </div>
 
               <div class="form-grid">
-                <div class="form-group"><label>Vehicle</label><div style="padding:var(--space-3) var(--space-4);background:var(--color-bg);border-radius:var(--radius-lg);font-size:var(--fs-small);font-weight:var(--fw-semibold)">Mercedes-Benz AMG GT 63 S</div></div>
-                <div class="form-group"><label>Rental Type</label><div style="padding:var(--space-3) var(--space-4);background:var(--color-bg);border-radius:var(--radius-lg);font-size:var(--fs-small)">Daily Rental</div></div>
-                <div class="form-group"><label>Pickup</label><div style="padding:var(--space-3) var(--space-4);background:var(--color-bg);border-radius:var(--radius-lg);font-size:var(--fs-small)">Jul 5, 2026 — 10:00 AM</div></div>
-                <div class="form-group"><label>Return</label><div style="padding:var(--space-3) var(--space-4);background:var(--color-bg);border-radius:var(--radius-lg);font-size:var(--fs-small)">Jul 7, 2026 — 10:00 AM</div></div>
-                <div class="form-group"><label>Location</label><div style="padding:var(--space-3) var(--space-4);background:var(--color-bg);border-radius:var(--radius-lg);font-size:var(--fs-small)">Manhattan Office, New York</div></div>
-                <div class="form-group"><label>Customer</label><div style="padding:var(--space-3) var(--space-4);background:var(--color-bg);border-radius:var(--radius-lg);font-size:var(--fs-small)">John Doe — john@example.com</div></div>
+                <div class="form-group"><label>Vehicle</label><div class="u-booking-2">Mercedes-Benz AMG GT 63 S</div></div>
+                <div class="form-group"><label>Rental Type</label><div class="u-booking-3">Daily Rental</div></div>
+                <div class="form-group"><label>Pickup</label><div class="u-booking-4">Jul 5, 2026 — 10:00 AM</div></div>
+                <div class="form-group"><label>Return</label><div class="u-booking-5">Jul 7, 2026 — 10:00 AM</div></div>
+                <div class="form-group"><label>Location</label><div class="u-booking-6">Manhattan Office, New York</div></div>
+                <div class="form-group"><label>Customer</label><div class="u-booking-7">John Doe — john@example.com</div></div>
               </div>
 
-              <div style="margin-top:var(--space-6);padding:var(--space-5);background:var(--color-bg);border-radius:var(--radius-xl)">
-                <div style="display:flex;justify-content:space-between;padding:var(--space-2) 0;font-size:var(--fs-small)"><span style="color:var(--color-light-text)">Base Charge (2 days × $520)</span><span style="font-weight:var(--fw-semibold)">$1,040.00</span></div>
-                <div style="display:flex;justify-content:space-between;padding:var(--space-2) 0;font-size:var(--fs-small)"><span style="color:var(--color-light-text)">Security Deposit</span><span style="font-weight:var(--fw-semibold)">$200.00</span></div>
-                <div style="display:flex;justify-content:space-between;padding:var(--space-2) 0;font-size:var(--fs-small)"><span style="color:var(--color-light-text)">Service Fee</span><span style="font-weight:var(--fw-semibold)">$25.00</span></div>
-                <div style="display:flex;justify-content:space-between;padding:var(--space-2) 0;font-size:var(--fs-small)"><span style="color:var(--color-light-text)">Taxes (8%)</span><span style="font-weight:var(--fw-semibold)">$83.20</span></div>
-                <div style="height:1px;background:var(--color-border-light);margin:var(--space-3) 0"></div>
-                <div style="display:flex;justify-content:space-between;padding:var(--space-3) 0"><span style="font-family:var(--font-heading);font-weight:var(--fw-semibold)">Grand Total</span><span style="font-family:var(--font-heading);font-size:var(--fs-h3);font-weight:var(--fw-bold);color:var(--color-secondary)">$1,348.20</span></div>
+              <div class="u-booking-8">
+                <div class="u-booking-9"><span class="u-booking-10">Base Charge (2 days × $520)</span><span class="u-booking-11">$1,040.00</span></div>
+                <div class="u-booking-12"><span class="u-booking-13">Security Deposit</span><span class="u-booking-14">$200.00</span></div>
+                <div class="u-booking-15"><span class="u-booking-16">Service Fee</span><span class="u-booking-17">$25.00</span></div>
+                <div class="u-booking-18"><span class="u-booking-19">Taxes (8%)</span><span class="u-booking-20">$83.20</span></div>
+                <div class="u-booking-21"></div>
+                <div class="u-booking-22"><span class="u-booking-23">Grand Total</span><span class="u-booking-24">$1,348.20</span></div>
               </div>
 
               <div class="form-nav">
@@ -201,7 +200,7 @@
             <!-- STEP 4: Confirmation -->
             <div class="form-section scroll-reveal" id="step-4">
               <div class="form-section__header">
-                <div class="form-section__icon">✅</div>
+                <div class="form-section__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check-circle"/></svg></span></div>
                 <div><div class="form-section__title">Step 4 — Confirmation</div><div class="form-section__subtitle">Review terms and confirm your booking</div></div>
               </div>
 
@@ -216,7 +215,7 @@
               </div>
 
               <div class="confirmation-card">
-                <div class="confirmation-card__icon">🎉</div>
+                <div class="confirmation-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check-circle"/></svg></span></div>
                 <h3 class="confirmation-card__title">Ready to Submit Your Booking?</h3>
                 <p class="confirmation-card__text">Once submitted, your booking request will be sent to our admin team for approval. You'll receive a confirmation email with the next steps.</p>
                 <div class="confirmation-card__actions">
@@ -232,11 +231,11 @@
           <div>
             <div class="booking-summary scroll-reveal" style="--delay:.2s">
               <div class="booking-summary__vehicle">
-                <div class="booking-summary__img">🏎️</div>
+                <div class="booking-summary__img"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car-sports"/></svg></span></div>
                 <div>
                   <div class="booking-summary__car-brand">Mercedes-Benz</div>
                   <div class="booking-summary__car-name">AMG GT 63 S</div>
-                  <div class="booking-summary__car-badge"><span class="badge badge--available" style="font-size:0.65rem">Available</span></div>
+                  <div class="booking-summary__car-badge"><span class="badge badge--available u-booking-25">Available</span></div>
                 </div>
               </div>
               <div class="booking-summary__body">
@@ -256,7 +255,7 @@
                 <button class="btn btn--primary btn--lg">Confirm Booking</button>
                 <p class="booking-summary__note">No charges until admin approval</p>
               </div>
-              <div class="booking-summary__secure">🔒 Secure & encrypted booking</div>
+              <div class="booking-summary__secure"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-lock"/></svg></span> Secure & encrypted booking</div>
             </div>
           </div>
 
@@ -267,19 +266,19 @@
     <!-- ============================================================
          BOOKING BENEFITS
          ============================================================ -->
-    <section class="section" style="background:var(--color-bg)" id="benefits">
+    <section class="section" id="benefits">
       <div class="container">
         <div class="section-header scroll-reveal">
           <div class="section-header__badge">Why Book With Us</div>
           <h2 class="section-header__title">Booking Benefits</h2>
         </div>
         <div class="info-cards-grid scroll-reveal">
-          <div class="info-card-mini"><div class="info-card-mini__icon">💎</div><h3 class="info-card-mini__title">Transparent Pricing</h3><p class="info-card-mini__text">No hidden fees. What you see is exactly what you pay.</p></div>
-          <div class="info-card-mini"><div class="info-card-mini__icon">✅</div><h3 class="info-card-mini__title">Verified Fleet</h3><p class="info-card-mini__text">Every vehicle inspected and certified for quality.</p></div>
-          <div class="info-card-mini"><div class="info-card-mini__icon">🚫</div><h3 class="info-card-mini__title">No Hidden Charges</h3><p class="info-card-mini__text">Complete breakdown of all charges upfront.</p></div>
-          <div class="info-card-mini"><div class="info-card-mini__icon">📅</div><h3 class="info-card-mini__title">Flexible Duration</h3><p class="info-card-mini__text">Book hourly, daily, or weekly — your schedule.</p></div>
-          <div class="info-card-mini"><div class="info-card-mini__icon">🕐</div><h3 class="info-card-mini__title">Professional Support</h3><p class="info-card-mini__text">24/7 customer support throughout your rental.</p></div>
-          <div class="info-card-mini"><div class="info-card-mini__icon">🔒</div><h3 class="info-card-mini__title">Secure Process</h3><p class="info-card-mini__text">End-to-end encrypted booking and payment.</p></div>
+          <div class="info-card-mini"><div class="info-card-mini__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span></div><h3 class="info-card-mini__title">Transparent Pricing</h3><p class="info-card-mini__text">No hidden fees. What you see is exactly what you pay.</p></div>
+          <div class="info-card-mini"><div class="info-card-mini__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check-circle"/></svg></span></div><h3 class="info-card-mini__title">Verified Fleet</h3><p class="info-card-mini__text">Every vehicle inspected and certified for quality.</p></div>
+          <div class="info-card-mini"><div class="info-card-mini__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-x-circle"/></svg></span></div><h3 class="info-card-mini__title">No Hidden Charges</h3><p class="info-card-mini__text">Complete breakdown of all charges upfront.</p></div>
+          <div class="info-card-mini"><div class="info-card-mini__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-calendar"/></svg></span></div><h3 class="info-card-mini__title">Flexible Duration</h3><p class="info-card-mini__text">Book hourly, daily, or weekly — your schedule.</p></div>
+          <div class="info-card-mini"><div class="info-card-mini__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div><h3 class="info-card-mini__title">Professional Support</h3><p class="info-card-mini__text">24/7 customer support throughout your rental.</p></div>
+          <div class="info-card-mini"><div class="info-card-mini__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-lock"/></svg></span></div><h3 class="info-card-mini__title">Secure Process</h3><p class="info-card-mini__text">End-to-end encrypted booking and payment.</p></div>
         </div>
       </div>
     </section>
@@ -308,18 +307,18 @@
     <!-- ============================================================
          DOCUMENT REQUIREMENTS
          ============================================================ -->
-    <section class="section" style="background:var(--color-bg)" id="documents">
+    <section class="section" id="documents">
       <div class="container">
         <div class="section-header scroll-reveal">
           <div class="section-header__badge">Requirements</div>
           <h2 class="section-header__title">Document Requirements</h2>
         </div>
         <div class="doc-grid scroll-reveal">
-          <div class="doc-card"><div class="doc-card__icon">🪪</div><h3 class="doc-card__title">Driving License</h3><p class="doc-card__text">Valid, unexpired driver's license</p></div>
-          <div class="doc-card"><div class="doc-card__icon">🆔</div><h3 class="doc-card__title">Government ID</h3><p class="doc-card__text">Passport or national ID card</p></div>
-          <div class="doc-card"><div class="doc-card__icon">🎂</div><h3 class="doc-card__title">Age Requirement</h3><p class="doc-card__text">Minimum 25 years for luxury</p></div>
-          <div class="doc-card"><div class="doc-card__icon">💳</div><h3 class="doc-card__title">Security Deposit</h3><p class="doc-card__text">Credit card for $200 deposit</p></div>
-          <div class="doc-card"><div class="doc-card__icon">📸</div><h3 class="doc-card__title">Verification</h3><p class="doc-card__text">6-point photo inspection</p></div>
+          <div class="doc-card"><div class="doc-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span></div><h3 class="doc-card__title">Driving License</h3><p class="doc-card__text">Valid, unexpired driver's license</p></div>
+          <div class="doc-card"><div class="doc-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span></div><h3 class="doc-card__title">Government ID</h3><p class="doc-card__text">Passport or national ID card</p></div>
+          <div class="doc-card"><div class="doc-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-calendar"/></svg></span></div><h3 class="doc-card__title">Age Requirement</h3><p class="doc-card__text">Minimum 25 years for luxury</p></div>
+          <div class="doc-card"><div class="doc-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-credit-card"/></svg></span></div><h3 class="doc-card__title">Security Deposit</h3><p class="doc-card__text">Credit card for $200 deposit</p></div>
+          <div class="doc-card"><div class="doc-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span></div><h3 class="doc-card__title">Verification</h3><p class="doc-card__text">6-point photo inspection</p></div>
         </div>
       </div>
     </section>
@@ -334,10 +333,10 @@
           <h2 class="section-header__title">Vehicle Pickup Information</h2>
         </div>
         <div class="pickup-grid scroll-reveal">
-          <div class="pickup-card"><div class="pickup-card__icon">📍</div><h3 class="pickup-card__title">Pickup Instructions</h3><ul class="pickup-card__list"><li>Arrive 15 minutes before scheduled time</li><li>Bring all required documents</li><li>Meet our representative at the counter</li><li>Complete identity verification</li><li>Sign rental agreement digitally</li></ul></div>
-          <div class="pickup-card"><div class="pickup-card__icon">🔍</div><h3 class="pickup-card__title">Vehicle Inspection</h3><ul class="pickup-card__list"><li>Walk around the vehicle together</li><li>Upload 6 inspection photos</li><li>Note any existing marks or scratches</li><li>Verify fuel level and mileage</li><li>Receive digital inspection report</li></ul></div>
-          <div class="pickup-card"><div class="pickup-card__icon">📋</div><h3 class="pickup-card__title">Customer Responsibilities</h3><ul class="pickup-card__list"><li>Follow traffic laws at all times</li><li>Return vehicle on time and in condition</li><li>Report any incidents immediately</li><li>Maintain fuel levels per policy</li><li>Keep rental documents in the vehicle</li></ul></div>
-          <div class="pickup-card"><div class="pickup-card__icon">🔄</div><h3 class="pickup-card__title">Return Instructions</h3><ul class="pickup-card__list"><li>Return to designated location</li><li>Ensure full fuel tank</li><li>Remove all personal belongings</li><li>Upload return inspection photos</li><li>Receive deposit refund confirmation</li></ul></div>
+          <div class="pickup-card"><div class="pickup-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span></div><h3 class="pickup-card__title">Pickup Instructions</h3><ul class="pickup-card__list"><li>Arrive 15 minutes before scheduled time</li><li>Bring all required documents</li><li>Meet our representative at the counter</li><li>Complete identity verification</li><li>Sign rental agreement digitally</li></ul></div>
+          <div class="pickup-card"><div class="pickup-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-search"/></svg></span></div><h3 class="pickup-card__title">Vehicle Inspection</h3><ul class="pickup-card__list"><li>Walk around the vehicle together</li><li>Upload 6 inspection photos</li><li>Note any existing marks or scratches</li><li>Verify fuel level and mileage</li><li>Receive digital inspection report</li></ul></div>
+          <div class="pickup-card"><div class="pickup-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span></div><h3 class="pickup-card__title">Customer Responsibilities</h3><ul class="pickup-card__list"><li>Follow traffic laws at all times</li><li>Return vehicle on time and in condition</li><li>Report any incidents immediately</li><li>Maintain fuel levels per policy</li><li>Keep rental documents in the vehicle</li></ul></div>
+          <div class="pickup-card"><div class="pickup-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-settings"/></svg></span></div><h3 class="pickup-card__title">Return Instructions</h3><ul class="pickup-card__list"><li>Return to designated location</li><li>Ensure full fuel tank</li><li>Remove all personal belongings</li><li>Upload return inspection photos</li><li>Receive deposit refund confirmation</li></ul></div>
         </div>
       </div>
     </section>
@@ -345,21 +344,21 @@
     <!-- ============================================================
          VEHICLE VERIFICATION PREVIEW
          ============================================================ -->
-    <section class="section" style="background:var(--color-bg)" id="verification">
+    <section class="section" id="verification">
       <div class="container">
         <div class="section-header scroll-reveal">
           <div class="section-header__badge">Quality Assurance</div>
           <h2 class="section-header__title">Vehicle Condition Verification</h2>
           <p class="section-header__subtitle">After admin approval, you'll be asked to upload six inspection photos before vehicle collection.</p>
         </div>
-        <div class="condition-notice scroll-reveal"><span class="condition-notice__icon">ℹ️</span> This is an informational preview. The photo upload feature will be available after your booking is approved by our admin team.</div>
+        <div class="condition-notice scroll-reveal"><span class="condition-notice__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-info"/></svg></span></span> This is an informational preview. The photo upload feature will be available after your booking is approved by our admin team.</div>
         <div class="verify-grid scroll-reveal">
-          <div class="verify-card"><div class="verify-card__image" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe)">📸</div><div class="verify-card__body"><h3 class="verify-card__title">Front View</h3><p class="verify-card__desc">Bumper, hood, headlights</p></div></div>
-          <div class="verify-card"><div class="verify-card__image" style="background:linear-gradient(135deg,#fef3c7,#fde68a)">📸</div><div class="verify-card__body"><h3 class="verify-card__title">Rear View</h3><p class="verify-card__desc">Bumper, trunk, taillights</p></div></div>
-          <div class="verify-card"><div class="verify-card__image" style="background:linear-gradient(135deg,#dcfce7,#bbf7d0)">📸</div><div class="verify-card__body"><h3 class="verify-card__title">Left Side</h3><p class="verify-card__desc">Doors, mirrors, panels</p></div></div>
-          <div class="verify-card"><div class="verify-card__image" style="background:linear-gradient(135deg,#fee2e2,#fecaca)">📸</div><div class="verify-card__body"><h3 class="verify-card__title">Right Side</h3><p class="verify-card__desc">Doors, mirrors, panels</p></div></div>
-          <div class="verify-card"><div class="verify-card__image" style="background:linear-gradient(135deg,#e0e7ff,#c7d2fe)">📸</div><div class="verify-card__body"><h3 class="verify-card__title">Front Angle</h3><p class="verify-card__desc">3/4 front condition</p></div></div>
-          <div class="verify-card"><div class="verify-card__image" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8)">📸</div><div class="verify-card__body"><h3 class="verify-card__title">Rear Angle</h3><p class="verify-card__desc">3/4 rear condition</p></div></div>
+          <div class="verify-card"><div class="verify-card__image"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span></div><div class="verify-card__body"><h3 class="verify-card__title">Front View</h3><p class="verify-card__desc">Bumper, hood, headlights</p></div></div>
+          <div class="verify-card"><div class="verify-card__image"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span></div><div class="verify-card__body"><h3 class="verify-card__title">Rear View</h3><p class="verify-card__desc">Bumper, trunk, taillights</p></div></div>
+          <div class="verify-card"><div class="verify-card__image"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span></div><div class="verify-card__body"><h3 class="verify-card__title">Left Side</h3><p class="verify-card__desc">Doors, mirrors, panels</p></div></div>
+          <div class="verify-card"><div class="verify-card__image"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span></div><div class="verify-card__body"><h3 class="verify-card__title">Right Side</h3><p class="verify-card__desc">Doors, mirrors, panels</p></div></div>
+          <div class="verify-card"><div class="verify-card__image"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span></div><div class="verify-card__body"><h3 class="verify-card__title">Front Angle</h3><p class="verify-card__desc">3/4 front condition</p></div></div>
+          <div class="verify-card"><div class="verify-card__image"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span></div><div class="verify-card__body"><h3 class="verify-card__title">Rear Angle</h3><p class="verify-card__desc">3/4 rear condition</p></div></div>
         </div>
       </div>
     </section>
@@ -374,10 +373,10 @@
           <h2 class="section-header__title">Customer Support</h2>
         </div>
         <div class="support-grid scroll-reveal">
-          <div class="support-card"><div class="support-card__icon">📞</div><h3 class="support-card__title">Call Support</h3><div class="support-card__value">+1 (555) 123-4567</div><p class="support-card__text">Available 24/7</p></div>
-          <div class="support-card"><div class="support-card__icon">✉️</div><h3 class="support-card__title">Email Support</h3><div class="support-card__value">support@driveelite.com</div><p class="support-card__text">Response within 2 hours</p></div>
-          <div class="support-card"><div class="support-card__icon">💬</div><h3 class="support-card__title">Live Chat</h3><div class="support-card__value">Coming Soon</div><p class="support-card__text">In-app chat support</p></div>
-          <div class="support-card"><div class="support-card__icon">🕐</div><h3 class="support-card__title">Business Hours</h3><div class="support-card__value">Mon – Sat</div><p class="support-card__text">8:00 AM – 8:00 PM</p></div>
+          <div class="support-card"><div class="support-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span></div><h3 class="support-card__title">Call Support</h3><div class="support-card__value">+1 (555) 123-4567</div><p class="support-card__text">Available 24/7</p></div>
+          <div class="support-card"><div class="support-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span></div><h3 class="support-card__title">Email Support</h3><div class="support-card__value">support@driveelite.com</div><p class="support-card__text">Response within 2 hours</p></div>
+          <div class="support-card"><div class="support-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span></div><h3 class="support-card__title">Live Chat</h3><div class="support-card__value">Coming Soon</div><p class="support-card__text">In-app chat support</p></div>
+          <div class="support-card"><div class="support-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div><h3 class="support-card__title">Business Hours</h3><div class="support-card__value">Mon – Sat</div><p class="support-card__text">8:00 AM – 8:00 PM</p></div>
         </div>
       </div>
     </section>
@@ -385,7 +384,7 @@
     <!-- ============================================================
          FAQ
          ============================================================ -->
-    <section class="section" style="background:var(--color-bg)" id="faq">
+    <section class="section" id="faq">
       <div class="container">
         <div class="section-header scroll-reveal">
           <div class="section-header__badge">FAQ</div>
@@ -411,7 +410,7 @@
         <p class="booking-cta__text scroll-reveal">Browse our complete premium fleet or contact our team for personalized assistance with your rental needs.</p>
         <div class="booking-cta__actions scroll-reveal">
           <a href="cars.html" class="btn btn--accent btn--lg">Browse More Cars</a>
-          <a href="contact.html" class="btn btn--ghost btn--lg" style="color:#fff;border-color:rgba(255,255,255,.3)">Contact Support</a>
+          <a href="contact.html" class="btn btn--ghost btn--lg">Contact Support</a>
         </div>
       </div>
     </section>
@@ -422,26 +421,23 @@
   <footer class="footer" id="footer">
     <div class="container">
       <div class="footer__grid">
-        <div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-icon">DE</div>Drive<span>Elite</span></a><p class="footer__description">Your premier destination for luxury car rentals. We deliver top-tier vehicles with white-glove service for an unforgettable driving experience.</p><div class="footer__socials"><a href="#" class="footer__social-link" aria-label="Facebook">f</a><a href="#" class="footer__social-link" aria-label="Instagram">📷</a><a href="#" class="footer__social-link" aria-label="X / Twitter">𝕏</a><a href="#" class="footer__social-link" aria-label="LinkedIn">in</a><a href="#" class="footer__social-link" aria-label="YouTube">▶</a></div></div>
+        <div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-icon">DE</div>Drive<span>Elite</span></a><p class="footer__description">Your premier destination for luxury car rentals. We deliver top-tier vehicles with white-glove service for an unforgettable driving experience.</p><div class="footer__socials"><a href="#" class="footer__social-link" aria-label="Facebook">f</a><a href="#" class="footer__social-link" aria-label="Instagram"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span></a><a href="#" class="footer__social-link" aria-label="X / Twitter"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-x"/></svg></span></a><a href="#" class="footer__social-link" aria-label="LinkedIn">in</a><a href="#" class="footer__social-link" aria-label="YouTube"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-youtube"/></svg></span></a></div></div>
         <div><h4 class="footer__heading">Company</h4><ul class="footer__list"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="services.html" class="footer__link">Careers</a></li><li><a href="about.html" class="footer__link">Press</a></li><li><a href="contact.html" class="footer__link">Contact</a></li></ul></div>
         <div><h4 class="footer__heading">Quick Links</h4><ul class="footer__list"><li><a href="cars.html" class="footer__link">Our Fleet</a></li><li><a href="services.html" class="footer__link">Services</a></li><li><a href="faq.html" class="footer__link">FAQ</a></li><li><a href="booking.html" class="footer__link">Book a Car</a></li></ul></div>
         <div><h4 class="footer__heading">Support</h4><ul class="footer__list"><li><a href="faq.html" class="footer__link">Help Center</a></li><li><a href="privacy-policy.html" class="footer__link">Privacy Policy</a></li><li><a href="terms-and-conditions.html" class="footer__link">Terms of Service</a></li><li><a href="terms-and-conditions.html" class="footer__link">Rental Policy</a></li></ul></div>
-        <div><h4 class="footer__heading">Contact</h4><div class="footer__contact-item"><div class="footer__contact-icon">📍</div><div><div class="footer__contact-label">Address</div><div class="footer__contact-value">123 Luxury Drive, Suite 100<br>New York, NY 10001</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">📞</div><div><div class="footer__contact-label">Phone</div><div class="footer__contact-value">+1 (555) 123-4567</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">✉️</div><div><div class="footer__contact-label">Email</div><div class="footer__contact-value">hello@driveelite.com</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon">🕐</div><div><div class="footer__contact-label">Business Hours</div><div class="footer__contact-value">Mon–Sat: 8AM – 8PM</div></div></div></div>
+        <div><h4 class="footer__heading">Contact</h4><div class="footer__contact-item"><div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span></div><div><div class="footer__contact-label">Address</div><div class="footer__contact-value">123 Luxury Drive, Suite 100<br>New York, NY 10001</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span></div><div><div class="footer__contact-label">Phone</div><div class="footer__contact-value">+1 (555) 123-4567</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span></div><div><div class="footer__contact-label">Email</div><div class="footer__contact-value">hello@driveelite.com</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div><div><div class="footer__contact-label">Business Hours</div><div class="footer__contact-value">Mon–Sat: 8AM – 8PM</div></div></div></div>
       </div>
       <div class="footer__newsletter-section"><div class="footer__newsletter-wrap"><div class="footer__newsletter-text"><h4 class="footer__newsletter-title">Stay in the Fast Lane</h4><p class="footer__newsletter-subtitle">Subscribe for exclusive deals, new arrivals, and luxury driving tips.</p></div><form class="footer__newsletter-form" id="newsletter-form"><input type="email" class="footer__newsletter-input" placeholder="Enter your email address" aria-label="Newsletter email"><button type="submit" class="btn btn--primary btn--sm">Subscribe</button></form></div></div>
-      <div class="footer__bottom"><div class="footer__bottom-brand"><p>&copy; 2026 DriveElite. Crafted with <span class="footer__heart">❤</span> for luxury driving.</p></div><div class="footer__bottom-links"><a href="privacy-policy.html" class="footer__bottom-link">Privacy</a><a href="terms-and-conditions.html" class="footer__bottom-link">Terms</a><a href="contact.html" class="footer__bottom-link">Sitemap</a></div></div>
+      <div class="footer__bottom"><div class="footer__bottom-brand"><p>&copy; 2026 DriveElite. Crafted with <span class="footer__heart"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-heart"/></svg></span></span> for luxury driving.</p></div><div class="footer__bottom-links"><a href="privacy-policy.html" class="footer__bottom-link">Privacy</a><a href="terms-and-conditions.html" class="footer__bottom-link">Terms</a><a href="contact.html" class="footer__bottom-link">Sitemap</a></div></div>
     </div>
   </footer>
 
   <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
   <div class="toast-container" id="toast-container"></div>
-
-  <script src="assets/js/theme.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/ui.js"></script>
   <script src="assets/js/validation.js"></script>
   <script src="assets/js/animation.js"></script>
-
   <script>
   (function() {
     'use strict';
