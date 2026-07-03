@@ -128,25 +128,33 @@
    4. FILTER SIDEBAR
    ============================================================ */
 .filter-sidebar {
+  display: flex;
+  flex-direction: column;
   position: sticky;
   top: 100px;
   background: var(--color-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
-  padding: var(--space-6);
-  max-height: calc(100vh - 120px);
-  overflow-y: auto;}
+  overflow: hidden;}
+
+/* Scrollable Content Wrapper */
+.filter-sidebar__content {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  padding: 0 var(--space-6) var(--space-6);
+}
 
 @media (min-width: 992px) {
   .filter-sidebar {
-    height: 1080px; /* Visually extends alongside the grid down to the bottom of the promo banner */
-    max-height: 1080px;}
+    height: 1420px; /* Visually aligns outer container bottom border exactly with bottom of the second row of vehicle cards */
+    max-height: 1420px;}
 }
 
-.filter-sidebar::-webkit-scrollbar {
+.filter-sidebar__content::-webkit-scrollbar {
   width: 4px;}
 
-.filter-sidebar::-webkit-scrollbar-thumb {
+.filter-sidebar__content::-webkit-scrollbar-thumb {
   background: var(--color-border);
   border-radius: var(--radius-full);}
 
@@ -154,9 +162,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: var(--space-6);
-  padding-bottom: var(--space-4);
-  border-bottom: 1px solid var(--color-border);}
+  margin-bottom: var(--space-5);
+  padding: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+  flex: 0 0 auto;}
 
 .filter-sidebar__title {
   font-family: var(--font-heading);
@@ -330,14 +339,6 @@
   font-size: var(--fs-xs);
   color: var(--color-light-text);}
 
-/* Sidebar Actions */
-.filter-sidebar__actions {
-  display: flex;
-  gap: var(--space-3);
-  margin-top: var(--space-2);}
-
-.filter-sidebar__actions .btn {
-  flex: 1;}
 
 /* ============================================================
    5. TOOLBAR (SORT + VIEW + COUNT)
