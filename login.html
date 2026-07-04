@@ -13,238 +13,124 @@
   <link rel="stylesheet" href="assets/css/animations.css">
   <link rel="stylesheet" href="assets/css/utilities.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
-  <link rel="stylesheet" href="assets/css/pages/auth.css">
+  <link rel="stylesheet" href="assets/css/pages/login.css">
 </head>
-<body>
+<body class="login-page">
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
-    <div class="container">
-      <a href="index.html" class="navbar__logo"><div class="navbar__logo-icon">DE</div>Drive<span>Elite</span></a>
-      <div class="navbar__links">
-        <a href="index.html" class="navbar__link">Home</a>
-        <a href="cars.html" class="navbar__link">Cars</a>
-        <a href="services.html" class="navbar__link">Services</a>
-        <a href="about.html" class="navbar__link">About</a>
-        <a href="faq.html" class="navbar__link">FAQ</a>
-        <a href="contact.html" class="navbar__link">Contact</a>
-      </div>
-      <div class="navbar__actions">
-        <button class="navbar__search-btn" aria-label="Search" title="Search (Ctrl+K)"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
-<a href="login.html" class="btn btn--ghost btn--sm">Login</a>
-        <a href="register.html" class="btn btn--primary btn--sm">Register</a>
-      </div>
-      <button class="navbar__toggle" aria-label="Toggle mobile menu"><span></span><span></span><span></span></button>
+  <main id="main-content" class="auth-shell">
+    
+    <!-- BRAND LOGO -->
+    <div class="login-header">
+      <a href="index.html" class="login-logo" aria-label="Drive Elite Home">
+        <div class="login-logo-icon">DE</div>
+        Drive<span>Elite</span>
+      </a>
+      <h1 class="login-title">Welcome <span class="highlight">Back</span></h1>
+      <p class="login-subtitle">Sign in to continue your premium driving experience.</p>
     </div>
-  </nav>
-  <div class="navbar__mobile-overlay"></div>
-  <div class="navbar__mobile">
-    <a href="index.html" class="navbar__link">Home</a><a href="cars.html" class="navbar__link">Cars</a><a href="services.html" class="navbar__link">Services</a><a href="about.html" class="navbar__link">About</a><a href="faq.html" class="navbar__link">FAQ</a><a href="contact.html" class="navbar__link">Contact</a>
-    <div class="navbar__actions"><a href="login.html" class="btn btn--ghost btn--sm">Login</a><a href="register.html" class="btn btn--primary btn--sm">Register</a></div>
-  </div>
 
-  <!-- HERO -->
-  <section class="auth-hero">
-    <div class="auth-hero__overlay"></div>
-    <div class="container">
-      <div class="auth-hero__content scroll-reveal">
-        <div class="auth-hero__badge"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-lock"/></svg></span> Secure Login</div>
-        <h1 class="auth-hero__title">Welcome <span class="highlight">Back</span></h1>
-        <p class="auth-hero__desc">Sign in to your DriveElite account to manage bookings, track rental status, and access exclusive member benefits.</p>
+    <!-- LOGIN CARD -->
+    <div class="login-card">
+      <form class="auth-form" id="login-form" novalidate>
+        
+        <!-- Email Field -->
+        <div class="form-group">
+          <label for="login-email">Email Address <span class="required">*</span></label>
+          <div class="input-wrap">
+            <span class="input-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </span>
+            <input type="email" id="login-email" class="form-input" placeholder="john@example.com" required autocomplete="email">
+          </div>
+          <span class="form-error" id="email-error">Please enter a valid email address.</span>
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-group">
+          <label for="login-password">Password <span class="required">*</span></label>
+          <div class="input-wrap">
+            <span class="input-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </span>
+            <input type="password" id="login-password" class="form-input" placeholder="Enter your password" required autocomplete="current-password">
+            <button type="button" class="password-toggle" id="toggle-password" aria-label="Show password" title="Show password">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+          <span class="form-error" id="password-error">Password must be at least 8 characters.</span>
+        </div>
+
+        <!-- Remember / Forgot Row -->
+        <div class="login-options">
+          <label class="remember-me">
+            <input type="checkbox" id="remember-me">
+            Remember me
+          </label>
+          <a href="forgot-password.html" class="forgot-link">Forgot Password?</a>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn--primary btn--lg submit-btn" id="login-btn">
+          Sign In
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 2px;">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+
+      </form>
+
+      <!-- Social login divider -->
+      <div class="social-divider">
+        <span class="divider-line"></span>
+        <span class="divider-text">OR CONTINUE WITH</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- Social login buttons -->
+      <div class="social-buttons">
+        
+        <!-- Google button -->
+        <button type="button" class="social-btn" id="google-login-btn">
+          <!-- Official multicolor Google G SVG -->
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l3.66-2.85z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.85c.87-2.6 3.3-4.53 6.16-4.53z"/>
+          </svg>
+          Continue with Google
+        </button>
+
+        <!-- Apple button -->
+        <button type="button" class="social-btn" id="apple-login-btn">
+          <!-- Official Apple monochrome SVG -->
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.21.67-2.93 1.49-.62.69-1.16 1.84-1.01 2.96 1.12.09 2.27-.58 2.95-1.39z"/>
+          </svg>
+          Continue with Apple
+        </button>
+
       </div>
     </div>
-  </section>
 
-  <!-- BREADCRUMB -->
-  <nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><ol class="breadcrumb__list"><li class="breadcrumb__item"><a href="index.html">Home</a></li><li class="breadcrumb__separator">›</li><li class="breadcrumb__item active">Login</li></ol></div></nav>
-
-  <main id="main-content">
-
-    <!-- ============================================================
-         MAIN LOGIN SECTION
-         ============================================================ -->
-    <section class="section">
-      <div class="container">
-        <div class="auth-layout scroll-reveal">
-
-          <!-- LEFT — BRANDING -->
-          <div class="auth-branding">
-            <div class="auth-branding__visual">
-              <div class="auth-branding__placeholder"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car-sports"/></svg></span></div>
-            </div>
-            <h2 class="auth-branding__tagline">Your Premium Driving Experience Awaits</h2>
-            <p class="auth-branding__text">Access our exclusive fleet of luxury vehicles, manage your rentals effortlessly, and enjoy a seamless premium car rental experience.</p>
-            <div class="auth-branding__features">
-              <div class="auth-branding__feature"><div class="auth-branding__feature-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car"/></svg></span></div> Browse 200+ premium vehicles</div>
-              <div class="auth-branding__feature"><div class="auth-branding__feature-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span></div> Track all your bookings in one place</div>
-              <div class="auth-branding__feature"><div class="auth-branding__feature-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-bell"/></svg></span></div> Get real-time rental notifications</div>
-              <div class="auth-branding__feature"><div class="auth-branding__feature-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div> Extend rentals instantly from dashboard</div>
-              <div class="auth-branding__feature"><div class="auth-branding__feature-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-shield-check"/></svg></span></div> Secure, verified rental platform</div>
-            </div>
-          </div>
-
-          <!-- RIGHT — LOGIN CARD -->
-          <div>
-            <div class="auth-card">
-              <div class="auth-card__header">
-                <div class="auth-card__logo">DE</div>
-                <h2 class="auth-card__title">Sign In</h2>
-                <p class="auth-card__subtitle">Enter your credentials to access your account</p>
-              </div>
-
-              <form class="auth-form" id="login-form" novalidate>
-                <!-- Email -->
-                <div class="auth-field">
-                  <label for="login-email">Email Address <span class="required">*</span></label>
-                  <div class="auth-input-wrap">
-                    <span class="auth-input-wrap__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span></span>
-                    <input type="email" id="login-email" class="form-input" placeholder="john@example.com" required autocomplete="email">
-                  </div>
-                </div>
-
-                <!-- Password -->
-                <div class="auth-field">
-                  <label for="login-password">Password <span class="required">*</span></label>
-                  <div class="auth-input-wrap">
-                    <span class="auth-input-wrap__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-lock"/></svg></span></span>
-                    <input type="password" id="login-password" class="form-input" placeholder="Enter your password" required autocomplete="current-password">
-                    <button type="button" class="auth-input-wrap__toggle" id="toggle-password" aria-label="Toggle password visibility" title="Show password"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-eye"/></svg></span></button>
-                  </div>
-                </div>
-
-                <!-- Remember / Forgot -->
-                <div class="auth-options">
-                  <label class="auth-remember">
-                    <input type="checkbox" id="remember-me">
-                    Remember me
-                  </label>
-                  <a href="forgot-password.html" class="auth-forgot">Forgot password?</a>
-                </div>
-
-                <!-- Submit -->
-                <button type="submit" class="auth-submit" id="login-btn">Sign In →</button>
-              </form>
-
-              <!-- Divider -->
-              <div class="auth-divider u-login-1">or continue with</div>
-
-              <!-- Social Login -->
-              <div class="auth-socials">
-                <button class="auth-social-btn"><span class="auth-social-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car"/></svg></span></span> Continue with Google</button>
-                <button class="auth-social-btn"><span class="auth-social-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-apple"/></svg></span></span> Continue with Apple</button>
-                <button class="auth-social-btn"><span class="auth-social-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-file-text"/></svg></span></span> Continue with Facebook</button>
-              </div>
-
-              <!-- Footer -->
-              <div class="auth-card__footer">
-                Don't have an account? <a href="register.html">Create Account</a>
-              </div>
-            </div>
-
-            <!-- Security Strip -->
-            <div class="security-strip">
-              <div class="security-badge"><div class="security-badge__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-lock"/></svg></span></div> Secure Login</div>
-              <div class="security-badge"><div class="security-badge__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-shield-check"/></svg></span></div> Encrypted</div>
-              <div class="security-badge"><div class="security-badge__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check-circle"/></svg></span></div> Verified Platform</div>
-              <div class="security-badge"><div class="security-badge__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-lock"/></svg></span></div> Protected Data</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         LOGIN BENEFITS
-         ============================================================ -->
-    <section class="section" id="benefits">
-      <div class="container">
-        <div class="section-header scroll-reveal">
-          <div class="section-header__badge">Member Benefits</div>
-          <h2 class="section-header__title">What You Can Do After Login</h2>
-          <p class="section-header__subtitle">Unlock the full DriveElite experience with your account.</p>
-        </div>
-        <div class="auth-benefits-grid scroll-reveal">
-          <div class="auth-benefit"><div class="auth-benefit__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span></div><h3 class="auth-benefit__title">View Rental History</h3><p class="auth-benefit__text">Access complete history of all your past and current rentals.</p></div>
-          <div class="auth-benefit"><div class="auth-benefit__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span></div><h3 class="auth-benefit__title">Track Booking Status</h3><p class="auth-benefit__text">Real-time status updates from booking to completion.</p></div>
-          <div class="auth-benefit"><div class="auth-benefit__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-bell"/></svg></span></div><h3 class="auth-benefit__title">Rental Notifications</h3><p class="auth-benefit__text">Timely alerts for approvals, reminders, and updates.</p></div>
-          <div class="auth-benefit"><div class="auth-benefit__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div><h3 class="auth-benefit__title">Rental Extensions</h3><p class="auth-benefit__text">Easily extend your rental duration from your dashboard.</p></div>
-          <div class="auth-benefit"><div class="auth-benefit__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span></div><h3 class="auth-benefit__title">Profile Management</h3><p class="auth-benefit__text">Update personal info, license details, and preferences.</p></div>
-          <div class="auth-benefit"><div class="auth-benefit__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span></div><h3 class="auth-benefit__title">Vehicle Verification</h3><p class="auth-benefit__text">Upload inspection photos and track condition reports.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         TRUST INDICATORS
-         ============================================================ -->
-    <section class="section" id="trust">
-      <div class="container">
-        <div class="section-header scroll-reveal">
-          <div class="section-header__badge">Trust & Safety</div>
-          <h2 class="section-header__title">You're in Safe Hands</h2>
-        </div>
-        <div class="trust-grid scroll-reveal">
-          <div class="trust-badge-card"><div class="trust-badge-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-lock"/></svg></span></div><div class="trust-badge-card__title">Secure Platform</div></div>
-          <div class="trust-badge-card"><div class="trust-badge-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check-circle"/></svg></span></div><div class="trust-badge-card__title">Verified Vehicles</div></div>
-          <div class="trust-badge-card"><div class="trust-badge-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-credit-card"/></svg></span></div><div class="trust-badge-card__title">Protected Payments</div></div>
-          <div class="trust-badge-card"><div class="trust-badge-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-users"/></svg></span></div><div class="trust-badge-card__title">50,000+ Customers</div></div>
-          <div class="trust-badge-card"><div class="trust-badge-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div><div class="trust-badge-card__title">24/7 Support</div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         HELP SECTION
-         ============================================================ -->
-    <section class="section" id="help">
-      <div class="container">
-        <div class="section-header scroll-reveal">
-          <div class="section-header__badge">Need Help?</div>
-          <h2 class="section-header__title">Customer Support</h2>
-        </div>
-        <div class="auth-help-grid scroll-reveal">
-          <div class="auth-help-card"><div class="auth-help-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span></div><h3 class="auth-help-card__title">Contact Support</h3><div class="auth-help-card__value">+1 (555) 123-4567</div><p class="auth-help-card__text">Available 24/7</p></div>
-          <div class="auth-help-card"><div class="auth-help-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-info"/></svg></span></div><h3 class="auth-help-card__title">FAQs</h3><div class="auth-help-card__value"><a class="u-login-2" href="faq.html">Visit Help Center</a></div><p class="auth-help-card__text">Common questions answered</p></div>
-          <div class="auth-help-card"><div class="auth-help-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span></div><h3 class="auth-help-card__title">Customer Care</h3><div class="auth-help-card__value">support@driveelite.com</div><p class="auth-help-card__text">Response within 2 hours</p></div>
-          <div class="auth-help-card"><div class="auth-help-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div><h3 class="auth-help-card__title">Working Hours</h3><div class="auth-help-card__value">Mon – Sat</div><p class="auth-help-card__text">8:00 AM – 8:00 PM</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         CTA
-         ============================================================ -->
-    <section class="auth-cta" id="cta">
-      <div class="auth-cta__pattern"></div>
-      <div class="container">
-        <h2 class="auth-cta__title scroll-reveal">New to DriveElite?</h2>
-        <p class="auth-cta__text scroll-reveal">Create your free account in minutes and start browsing our exclusive fleet of premium rental vehicles.</p>
-        <div class="auth-cta__actions scroll-reveal">
-          <a href="register.html" class="btn btn--accent btn--lg">Create Free Account</a>
-          <a href="cars.html" class="btn btn--ghost btn--lg">Browse Cars</a>
-        </div>
-      </div>
-    </section>
+    <!-- REGISTER FOOTER LINK -->
+    <div class="login-footer">
+      Don't have an account? <a href="register.html">Create Account</a>
+    </div>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="footer" id="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-icon">DE</div>Drive<span>Elite</span></a><p class="footer__description">Your premier destination for luxury car rentals. We deliver top-tier vehicles with white-glove service for an unforgettable driving experience.</p><div class="footer__socials"><a href="#" class="footer__social-link" aria-label="Facebook">f</a><a href="#" class="footer__social-link" aria-label="Instagram"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span></a><a href="#" class="footer__social-link" aria-label="X / Twitter"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-x"/></svg></span></a><a href="#" class="footer__social-link" aria-label="LinkedIn">in</a><a href="#" class="footer__social-link" aria-label="YouTube"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-youtube"/></svg></span></a></div></div>
-        <div><h4 class="footer__heading">Company</h4><ul class="footer__list"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="services.html" class="footer__link">Careers</a></li><li><a href="about.html" class="footer__link">Press</a></li><li><a href="contact.html" class="footer__link">Contact</a></li></ul></div>
-        <div><h4 class="footer__heading">Quick Links</h4><ul class="footer__list"><li><a href="cars.html" class="footer__link">Our Fleet</a></li><li><a href="services.html" class="footer__link">Services</a></li><li><a href="faq.html" class="footer__link">FAQ</a></li><li><a href="booking.html" class="footer__link">Book a Car</a></li></ul></div>
-        <div><h4 class="footer__heading">Support</h4><ul class="footer__list"><li><a href="faq.html" class="footer__link">Help Center</a></li><li><a href="privacy-policy.html" class="footer__link">Privacy Policy</a></li><li><a href="terms-and-conditions.html" class="footer__link">Terms of Service</a></li><li><a href="terms-and-conditions.html" class="footer__link">Rental Policy</a></li></ul></div>
-        <div><h4 class="footer__heading">Contact</h4><div class="footer__contact-item"><div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span></div><div><div class="footer__contact-label">Address</div><div class="footer__contact-value">123 Luxury Drive, Suite 100<br>New York, NY 10001</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span></div><div><div class="footer__contact-label">Phone</div><div class="footer__contact-value">+1 (555) 123-4567</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span></div><div><div class="footer__contact-label">Email</div><div class="footer__contact-value">hello@driveelite.com</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div><div><div class="footer__contact-label">Business Hours</div><div class="footer__contact-value">Mon–Sat: 8AM – 8PM</div></div></div></div>
-      </div>
-      <div class="footer__newsletter-section"><div class="footer__newsletter-wrap"><div class="footer__newsletter-text"><h4 class="footer__newsletter-title">Stay in the Fast Lane</h4><p class="footer__newsletter-subtitle">Subscribe for exclusive deals, new arrivals, and luxury driving tips.</p></div><form class="footer__newsletter-form" id="newsletter-form"><input type="email" class="footer__newsletter-input" placeholder="Enter your email address" aria-label="Newsletter email"><button type="submit" class="btn btn--primary btn--sm">Subscribe</button></form></div></div>
-      <div class="footer__bottom"><div class="footer__bottom-brand"><p>&copy; 2026 DriveElite. Crafted with <span class="footer__heart"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-heart"/></svg></span></span> for luxury driving.</p></div><div class="footer__bottom-links"><a href="privacy-policy.html" class="footer__bottom-link">Privacy</a><a href="terms-and-conditions.html" class="footer__bottom-link">Terms</a><a href="contact.html" class="footer__bottom-link">Sitemap</a></div></div>
-    </div>
-  </footer>
-
-  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
   <div class="toast-container" id="toast-container"></div>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/ui.js"></script>
@@ -254,25 +140,127 @@
   (function() {
     'use strict';
 
-    /* ---- Password Toggle ---- */
+    /* ---- Password Visibility Toggle ---- */
     const toggleBtn = document.getElementById('toggle-password');
     const passwordInput = document.getElementById('login-password');
     if (toggleBtn && passwordInput) {
       toggleBtn.addEventListener('click', () => {
         const isPassword = passwordInput.type === 'password';
         passwordInput.type = isPassword ? 'text' : 'password';
-        toggleBtn.innerHTML = isPassword ? '<span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-eye-off"/></svg></span>' : '<span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-eye"/></svg></span>';
+        
+        // Update SVG inside the button
+        toggleBtn.innerHTML = isPassword 
+          ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+              <line x1="1" y1="1" x2="23" y2="23"></line>
+            </svg>` 
+          : `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>`;
+            
+        toggleBtn.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
         toggleBtn.title = isPassword ? 'Hide password' : 'Show password';
       });
     }
 
-    /* ---- Form Submit Prevention ---- */
+    /* ---- Client Side Validation and Form Submissions ---- */
     const loginForm = document.getElementById('login-form');
-    if (loginForm) {
+    const emailInput = document.getElementById('login-email');
+    const passwordInputEl = document.getElementById('login-password');
+    const emailError = document.getElementById('email-error');
+    const passwordError = document.getElementById('password-error');
+
+    if (loginForm && emailInput && passwordInputEl) {
       loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
+
+        let isValid = true;
+
+        // Simple Email Verification
+        const emailVal = emailInput.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailVal)) {
+          emailInput.classList.add('error');
+          if (emailError) emailError.classList.add('visible');
+          isValid = false;
+        } else {
+          emailInput.classList.remove('error');
+          if (emailError) emailError.classList.remove('visible');
+        }
+
+        // Simple Password Verification
+        const passwordVal = passwordInputEl.value;
+        if (passwordVal.length < 8) {
+          passwordInputEl.classList.add('error');
+          if (passwordError) passwordError.classList.add('visible');
+          isValid = false;
+        } else {
+          passwordInputEl.classList.remove('error');
+          if (passwordError) passwordError.classList.remove('visible');
+        }
+
+        if (isValid) {
+          // Trigger successful login feedback and redirect to dashboard
+          if (typeof UI !== 'undefined' && UI.showToast) {
+            UI.showToast({
+              title: 'Success',
+              message: 'Signing in to your DriveElite dashboard...',
+              type: 'success',
+              duration: 2000
+            });
+          }
+          
+          setTimeout(() => {
+            window.location.href = 'dashboard.html';
+          }, 1500);
+        }
+      });
+
+      // Realtime validation clear on focus
+      emailInput.addEventListener('focus', () => {
+        emailInput.classList.remove('error');
+        if (emailError) emailError.classList.remove('visible');
+      });
+
+      passwordInputEl.addEventListener('focus', () => {
+        passwordInputEl.classList.remove('error');
+        if (passwordError) passwordError.classList.remove('visible');
       });
     }
+
+    /* ---- Google / Apple Authentication hooks ---- */
+    const googleBtn = document.getElementById('google-login-btn');
+    const appleBtn = document.getElementById('apple-login-btn');
+
+    if (googleBtn) {
+      googleBtn.addEventListener('click', () => {
+        // OAuth Google Login Integration placeholder
+        if (typeof UI !== 'undefined' && UI.showToast) {
+          UI.showToast({
+            title: 'Google Login',
+            message: 'Connecting to Google OAuth account services...',
+            type: 'info',
+            duration: 3000
+          });
+        }
+      });
+    }
+
+    if (appleBtn) {
+      appleBtn.addEventListener('click', () => {
+        // OAuth Apple Login Integration placeholder
+        if (typeof UI !== 'undefined' && UI.showToast) {
+          UI.showToast({
+            title: 'Apple Login',
+            message: 'Connecting to Apple ID account services...',
+            type: 'info',
+            duration: 3000
+          });
+        }
+      });
+    }
+
   })();
   </script>
 </body>

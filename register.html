@@ -13,289 +13,219 @@
   <link rel="stylesheet" href="assets/css/animations.css">
   <link rel="stylesheet" href="assets/css/utilities.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
-  <link rel="stylesheet" href="assets/css/pages/auth.css">
+  <link rel="stylesheet" href="assets/css/pages/register.css">
 </head>
-<body>
+<body class="register-page">
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
-    <div class="container">
-      <a href="index.html" class="navbar__logo"><div class="navbar__logo-icon">DE</div>Drive<span>Elite</span></a>
-      <div class="navbar__links">
-        <a href="index.html" class="navbar__link">Home</a><a href="cars.html" class="navbar__link">Cars</a><a href="services.html" class="navbar__link">Services</a><a href="about.html" class="navbar__link">About</a><a href="faq.html" class="navbar__link">FAQ</a><a href="contact.html" class="navbar__link">Contact</a>
-      </div>
-      <div class="navbar__actions">
-        <button class="navbar__search-btn" aria-label="Search" title="Search (Ctrl+K)"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
-<a href="login.html" class="btn btn--ghost btn--sm">Login</a>
-        <a href="register.html" class="btn btn--primary btn--sm">Register</a>
-      </div>
-      <button class="navbar__toggle" aria-label="Toggle mobile menu"><span></span><span></span><span></span></button>
+  <main id="main-content" class="auth-shell">
+    
+    <!-- BRAND LOGO -->
+    <div class="login-header">
+      <a href="index.html" class="login-logo" aria-label="Drive Elite Home">
+        <div class="login-logo-icon">DE</div>
+        Drive<span>Elite</span>
+      </a>
+      <h1 class="login-title">Create <span class="highlight">Account</span></h1>
+      <p class="login-subtitle">Join Drive Elite and begin your premium driving experience.</p>
     </div>
-  </nav>
-  <div class="navbar__mobile-overlay"></div>
-  <div class="navbar__mobile">
-    <a href="index.html" class="navbar__link">Home</a><a href="cars.html" class="navbar__link">Cars</a><a href="services.html" class="navbar__link">Services</a><a href="about.html" class="navbar__link">About</a><a href="faq.html" class="navbar__link">FAQ</a><a href="contact.html" class="navbar__link">Contact</a>
-    <div class="navbar__actions"><a href="login.html" class="btn btn--ghost btn--sm">Login</a><a href="register.html" class="btn btn--primary btn--sm">Register</a></div>
-  </div>
 
-  <!-- HERO -->
-  <section class="auth-hero">
-    <div class="auth-hero__overlay"></div>
-    <div class="container">
-      <div class="auth-hero__content scroll-reveal">
-        <div class="auth-hero__badge"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span> Join DriveElite</div>
-        <h1 class="auth-hero__title">Create Your <span class="highlight">Account</span></h1>
-        <p class="auth-hero__desc">Join thousands of satisfied customers and gain access to our exclusive fleet of premium rental vehicles.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- BREADCRUMB -->
-  <nav class="breadcrumb" aria-label="Breadcrumb"><div class="container"><ol class="breadcrumb__list"><li class="breadcrumb__item"><a href="index.html">Home</a></li><li class="breadcrumb__separator">›</li><li class="breadcrumb__item active">Register</li></ol></div></nav>
-
-  <main id="main-content">
-
-    <!-- ============================================================
-         MAIN REGISTER SECTION
-         ============================================================ -->
-    <section class="section">
-      <div class="container">
-        <div class="auth-layout scroll-reveal">
-
-          <!-- LEFT — BRANDING -->
-          <div class="auth-branding">
-            <div class="auth-branding__visual">
-              <div class="auth-branding__placeholder"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car"/></svg></span></div>
+    <!-- REGISTER CARD -->
+    <div class="register-card">
+      <form class="auth-form" id="register-form" novalidate>
+        
+        <!-- Name Row (Grid) -->
+        <div class="form-grid">
+          
+          <!-- First Name -->
+          <div class="form-group">
+            <label for="first-name">First Name <span class="required">*</span></label>
+            <div class="input-wrap">
+              <span class="input-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </span>
+              <input type="text" id="first-name" class="form-input" placeholder="John" required autocomplete="given-name">
             </div>
-            <h2 class="auth-branding__tagline">Start Your Premium Journey Today</h2>
-            <p class="auth-branding__text">Create your free account in minutes and unlock the full DriveElite experience — from luxury sedans to high-performance supercars.</p>
-            <div class="auth-branding__features">
-              <div class="auth-branding__feature"><div class="auth-branding__feature-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-zap"/></svg></span></div> Easy registration — takes less than 2 minutes</div>
-              <div class="auth-branding__feature"><div class="auth-branding__feature-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car"/></svg></span></div> Access 200+ luxury & premium vehicles</div>
-              <div class="auth-branding__feature"><div class="auth-branding__feature-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-dollar"/></svg></span></div> Exclusive member pricing & seasonal deals</div>
-              <div class="auth-branding__feature"><div class="auth-branding__feature-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-calendar"/></svg></span></div> Flexible hourly, daily & weekly rentals</div>
-              <div class="auth-branding__feature"><div class="auth-branding__feature-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-shield-check"/></svg></span></div> Verified vehicles & secure platform</div>
-              <div class="auth-branding__feature"><div class="auth-branding__feature-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div> 24/7 customer support</div>
-            </div>
+            <span class="form-error" id="firstname-error">First name is required.</span>
           </div>
 
-          <!-- RIGHT — REGISTER CARD -->
-          <div>
-            <div class="auth-card">
-              <div class="auth-card__header">
-                <div class="auth-card__logo">DE</div>
-                <h2 class="auth-card__title">Create Account</h2>
-                <p class="auth-card__subtitle">Fill in your details to get started</p>
-              </div>
-
-              <form class="auth-form" id="register-form" novalidate>
-
-                <!-- Name Row -->
-                <div class="auth-form-grid">
-                  <div class="auth-field">
-                    <label for="first-name">First Name <span class="required">*</span></label>
-                    <div class="auth-input-wrap">
-                      <span class="auth-input-wrap__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span></span>
-                      <input type="text" id="first-name" class="form-input" placeholder="John" required autocomplete="given-name">
-                    </div>
-                  </div>
-                  <div class="auth-field">
-                    <label for="last-name">Last Name <span class="required">*</span></label>
-                    <div class="auth-input-wrap">
-                      <span class="auth-input-wrap__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span></span>
-                      <input type="text" id="last-name" class="form-input" placeholder="Doe" required autocomplete="family-name">
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Email -->
-                <div class="auth-field">
-                  <label for="reg-email">Email Address <span class="required">*</span></label>
-                  <div class="auth-input-wrap">
-                    <span class="auth-input-wrap__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span></span>
-                    <input type="email" id="reg-email" class="form-input" placeholder="john@example.com" required autocomplete="email">
-                  </div>
-                </div>
-
-                <!-- Phone -->
-                <div class="auth-field">
-                  <label for="reg-phone">Phone Number <span class="required">*</span></label>
-                  <div class="auth-input-wrap">
-                    <span class="auth-input-wrap__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span></span>
-                    <input type="tel" id="reg-phone" class="form-input" placeholder="+1 (555) 123-4567" required autocomplete="tel">
-                  </div>
-                </div>
-
-                <!-- Password -->
-                <div class="auth-field">
-                  <label for="reg-password">Password <span class="required">*</span></label>
-                  <div class="auth-input-wrap">
-                    <span class="auth-input-wrap__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-lock"/></svg></span></span>
-                    <input type="password" id="reg-password" class="form-input" placeholder="Create a strong password" required autocomplete="new-password">
-                    <button type="button" class="auth-input-wrap__toggle" id="toggle-password" aria-label="Toggle password visibility" title="Show password"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-eye"/></svg></span></button>
-                  </div>
-                  <!-- Strength Indicator -->
-                  <div class="password-strength" id="password-strength">
-                    <div class="password-strength__bars">
-                      <div class="password-strength__bar weak"></div>
-                      <div class="password-strength__bar"></div>
-                      <div class="password-strength__bar"></div>
-                      <div class="password-strength__bar"></div>
-                    </div>
-                    <div class="password-strength__text">Password Strength: <strong>Weak</strong></div>
-                  </div>
-                  <!-- Requirements -->
-                  <div class="password-requirements">
-                    <div class="password-req met"><div class="password-req__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check"/></svg></span></div> Minimum 8 characters</div>
-                    <div class="password-req"><div class="password-req__icon">✗</div> At least one uppercase letter (A-Z)</div>
-                    <div class="password-req met"><div class="password-req__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check"/></svg></span></div> At least one lowercase letter (a-z)</div>
-                    <div class="password-req"><div class="password-req__icon">✗</div> At least one number (0-9)</div>
-                    <div class="password-req"><div class="password-req__icon">✗</div> At least one special character (!@#$)</div>
-                  </div>
-                </div>
-
-                <!-- Confirm Password -->
-                <div class="auth-field">
-                  <label for="reg-confirm">Confirm Password <span class="required">*</span></label>
-                  <div class="auth-input-wrap">
-                    <span class="auth-input-wrap__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-lock"/></svg></span></span>
-                    <input type="password" id="reg-confirm" class="form-input" placeholder="Re-enter your password" required autocomplete="new-password">
-                    <button type="button" class="auth-input-wrap__toggle" id="toggle-confirm" aria-label="Toggle confirm password visibility" title="Show password"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-eye"/></svg></span></button>
-                  </div>
-                </div>
-
-                <!-- Terms -->
-                <div class="u-register-1">
-                  <input class="u-register-2" type="checkbox" id="reg-terms" required>
-                  <label class="u-register-3" for="reg-terms">
-                    I agree to the <a class="u-register-4" href="terms-and-conditions.html">Terms & Conditions</a> and <a class="u-register-5" href="privacy-policy.html">Privacy Policy</a>
-                  </label>
-                </div>
-
-                <!-- Submit -->
-                <button type="submit" class="auth-submit" id="register-btn">Create Account →</button>
-              </form>
-
-              <!-- Divider -->
-              <div class="auth-divider u-register-6">or sign up with</div>
-
-              <!-- Social -->
-              <div class="auth-socials">
-                <button class="auth-social-btn"><span class="auth-social-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car"/></svg></span></span> Continue with Google</button>
-                <button class="auth-social-btn"><span class="auth-social-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-apple"/></svg></span></span> Continue with Apple</button>
-                <button class="auth-social-btn"><span class="auth-social-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-file-text"/></svg></span></span> Continue with Facebook</button>
-              </div>
-
-              <!-- Footer -->
-              <div class="auth-card__footer">
-                Already have an account? <a href="login.html">Sign In</a>
-              </div>
+          <!-- Last Name -->
+          <div class="form-group">
+            <label for="last-name">Last Name <span class="required">*</span></label>
+            <div class="input-wrap">
+              <span class="input-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </span>
+              <input type="text" id="last-name" class="form-input" placeholder="Doe" required autocomplete="family-name">
             </div>
+            <span class="form-error" id="lastname-error">Last name is required.</span>
+          </div>
 
-            <!-- Security Strip -->
-            <div class="security-strip">
-              <div class="security-badge"><div class="security-badge__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-lock"/></svg></span></div> Secure Registration</div>
-              <div class="security-badge"><div class="security-badge__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-shield-check"/></svg></span></div> Encrypted Data</div>
-              <div class="security-badge"><div class="security-badge__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check-circle"/></svg></span></div> Privacy Protected</div>
-              <div class="security-badge"><div class="security-badge__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-lock"/></svg></span></div> Trusted Platform</div>
+        </div>
+
+        <!-- Email Address -->
+        <div class="form-group">
+          <label for="reg-email">Email Address <span class="required">*</span></label>
+          <div class="input-wrap">
+            <span class="input-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </span>
+            <input type="email" id="reg-email" class="form-input" placeholder="john@example.com" required autocomplete="email">
+          </div>
+          <span class="form-error" id="email-error">Please enter a valid email address.</span>
+        </div>
+
+        <!-- Phone Number -->
+        <div class="form-group">
+          <label for="reg-phone">Phone Number <span class="required">*</span></label>
+          <div class="input-wrap">
+            <span class="input-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </span>
+            <input type="tel" id="reg-phone" class="form-input" placeholder="+1 (555) 123-4567" required autocomplete="tel">
+          </div>
+          <span class="form-error" id="phone-error">Please enter a valid phone number.</span>
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-group">
+          <label for="reg-password">Password <span class="required">*</span></label>
+          <div class="input-wrap">
+            <span class="input-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </span>
+            <input type="password" id="reg-password" class="form-input password-field" placeholder="Create a strong password" required autocomplete="new-password">
+            <button type="button" class="password-toggle" id="toggle-password" aria-label="Show password" title="Show password">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+          
+          <!-- Strength Indicator -->
+          <div class="password-strength" id="password-strength">
+            <div class="password-strength__bars">
+              <div class="password-strength__bar"></div>
+              <div class="password-strength__bar"></div>
+              <div class="password-strength__bar"></div>
+              <div class="password-strength__bar"></div>
+            </div>
+            <div class="password-strength__text">Password Strength: <strong>Too Short</strong></div>
+          </div>
+
+          <!-- Requirements -->
+          <div class="password-requirements">
+            <div class="password-req" id="req-length">
+              <span class="password-req__icon">✗</span> Minimum 8 characters
+            </div>
+            <div class="password-req" id="req-case">
+              <span class="password-req__icon">✗</span> Uppercase & lowercase letters
+            </div>
+            <div class="password-req" id="req-number">
+              <span class="password-req__icon">✗</span> At least one number (0-9)
+            </div>
+            <div class="password-req" id="req-special">
+              <span class="password-req__icon">✗</span> At least one special character (!@#$)
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ============================================================
-         ACCOUNT BENEFITS
-         ============================================================ -->
-    <section class="section" id="benefits">
-      <div class="container">
-        <div class="section-header scroll-reveal">
-          <div class="section-header__badge">Member Benefits</div>
-          <h2 class="section-header__title">What You'll Unlock</h2>
-          <p class="section-header__subtitle">Create your account to access these exclusive features.</p>
+        <!-- Confirm Password Field -->
+        <div class="form-group">
+          <label for="reg-confirm">Confirm Password <span class="required">*</span></label>
+          <div class="input-wrap">
+            <span class="input-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </span>
+            <input type="password" id="reg-confirm" class="form-input password-field" placeholder="Re-enter your password" required autocomplete="new-password">
+            <button type="button" class="password-toggle" id="toggle-confirm" aria-label="Show password" title="Show password">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+          <span class="form-error" id="confirm-error">Passwords do not match.</span>
         </div>
-        <div class="auth-benefits-grid scroll-reveal">
-          <div class="auth-benefit"><div class="auth-benefit__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-car"/></svg></span></div><h3 class="auth-benefit__title">Quick Vehicle Booking</h3><p class="auth-benefit__text">Browse and book premium vehicles in just a few clicks.</p></div>
-          <div class="auth-benefit"><div class="auth-benefit__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span></div><h3 class="auth-benefit__title">Rental History</h3><p class="auth-benefit__text">Access complete records of all your past and active rentals.</p></div>
-          <div class="auth-benefit"><div class="auth-benefit__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-bell"/></svg></span></div><h3 class="auth-benefit__title">Booking Notifications</h3><p class="auth-benefit__text">Get real-time alerts for approvals, reminders, and updates.</p></div>
-          <div class="auth-benefit"><div class="auth-benefit__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div><h3 class="auth-benefit__title">Extension Requests</h3><p class="auth-benefit__text">Easily extend your rental duration from your dashboard.</p></div>
-          <div class="auth-benefit"><div class="auth-benefit__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-user"/></svg></span></div><h3 class="auth-benefit__title">Profile Management</h3><p class="auth-benefit__text">Manage personal info, license details, and preferences.</p></div>
-          <div class="auth-benefit"><div class="auth-benefit__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-zap"/></svg></span></div><h3 class="auth-benefit__title">Fast Approval</h3><p class="auth-benefit__text">Verified accounts get prioritized booking approval.</p></div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ============================================================
-         TRUST INDICATORS
-         ============================================================ -->
-    <section class="section" id="trust">
-      <div class="container">
-        <div class="section-header scroll-reveal">
-          <div class="section-header__badge">Security</div>
-          <h2 class="section-header__title">Your Security Is Our Priority</h2>
+        <!-- Terms & Conditions Acceptance -->
+        <div class="terms-group">
+          <input type="checkbox" id="reg-terms" required>
+          <label for="reg-terms">
+            I agree to the <a href="terms-and-conditions.html" target="_blank">Terms & Conditions</a> and <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
+          </label>
         </div>
-        <div class="trust-grid scroll-reveal">
-          <div class="trust-badge-card"><div class="trust-badge-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-lock"/></svg></span></div><div class="trust-badge-card__title">Secure Registration</div></div>
-          <div class="trust-badge-card"><div class="trust-badge-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-shield-check"/></svg></span></div><div class="trust-badge-card__title">Encrypted Data</div></div>
-          <div class="trust-badge-card"><div class="trust-badge-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-eye"/></svg></span></div><div class="trust-badge-card__title">Privacy Protected</div></div>
-          <div class="trust-badge-card"><div class="trust-badge-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check-circle"/></svg></span></div><div class="trust-badge-card__title">Verified Fleet</div></div>
-          <div class="trust-badge-card"><div class="trust-badge-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-users"/></svg></span></div><div class="trust-badge-card__title">Trusted Platform</div></div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ============================================================
-         HELP SECTION
-         ============================================================ -->
-    <section class="section" id="help">
-      <div class="container">
-        <div class="section-header scroll-reveal">
-          <div class="section-header__badge">Need Assistance?</div>
-          <h2 class="section-header__title">We're Here to Help</h2>
-        </div>
-        <div class="auth-help-grid scroll-reveal">
-          <div class="auth-help-card"><div class="auth-help-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span></div><h3 class="auth-help-card__title">Contact Support</h3><div class="auth-help-card__value">+1 (555) 123-4567</div><p class="auth-help-card__text">Available 24/7</p></div>
-          <div class="auth-help-card"><div class="auth-help-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-info"/></svg></span></div><h3 class="auth-help-card__title">FAQs</h3><div class="auth-help-card__value"><a class="u-register-7" href="faq.html">Visit Help Center</a></div><p class="auth-help-card__text">Common questions answered</p></div>
-          <div class="auth-help-card"><div class="auth-help-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span></div><h3 class="auth-help-card__title">Customer Care</h3><div class="auth-help-card__value">support@driveelite.com</div><p class="auth-help-card__text">Response within 2 hours</p></div>
-          <div class="auth-help-card"><div class="auth-help-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div><h3 class="auth-help-card__title">Business Hours</h3><div class="auth-help-card__value">Mon – Sat</div><p class="auth-help-card__text">8:00 AM – 8:00 PM</p></div>
-        </div>
-      </div>
-    </section>
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn--primary btn--lg submit-btn" id="register-btn">
+          Create Account
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 2px;">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
 
-    <!-- ============================================================
-         CTA
-         ============================================================ -->
-    <section class="auth-cta" id="cta">
-      <div class="auth-cta__pattern"></div>
-      <div class="container">
-        <h2 class="auth-cta__title scroll-reveal">Already a Member?</h2>
-        <p class="auth-cta__text scroll-reveal">Sign in to your existing account to manage bookings, track rentals, and access your member dashboard.</p>
-        <div class="auth-cta__actions scroll-reveal">
-          <a href="login.html" class="btn btn--accent btn--lg">Sign In</a>
-          <a href="cars.html" class="btn btn--ghost btn--lg">Browse Cars</a>
-        </div>
+      </form>
+
+      <!-- Social login divider -->
+      <div class="social-divider">
+        <span class="divider-line"></span>
+        <span class="divider-text">OR CONTINUE WITH</span>
+        <span class="divider-line"></span>
       </div>
-    </section>
+
+      <!-- Social login buttons -->
+      <div class="social-buttons">
+        
+        <!-- Google button -->
+        <button type="button" class="social-btn" id="google-register-btn">
+          <!-- Official multicolor Google G SVG -->
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l3.66-2.85z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.85c.87-2.6 3.3-4.53 6.16-4.53z"/>
+          </svg>
+          Continue with Google
+        </button>
+
+        <!-- Apple button -->
+        <button type="button" class="social-btn" id="apple-register-btn">
+          <!-- Official Apple monochrome SVG -->
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.21.67-2.93 1.49-.62.69-1.16 1.84-1.01 2.96 1.12.09 2.27-.58 2.95-1.39z"/>
+          </svg>
+          Continue with Apple
+        </button>
+
+      </div>
+    </div>
+
+    <!-- SIGN IN FOOTER LINK -->
+    <div class="login-footer">
+      Already have an account? <a href="login.html">Sign In</a>
+    </div>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="footer" id="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-icon">DE</div>Drive<span>Elite</span></a><p class="footer__description">Your premier destination for luxury car rentals. We deliver top-tier vehicles with white-glove service for an unforgettable driving experience.</p><div class="footer__socials"><a href="#" class="footer__social-link" aria-label="Facebook">f</a><a href="#" class="footer__social-link" aria-label="Instagram"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span></a><a href="#" class="footer__social-link" aria-label="X / Twitter"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-x"/></svg></span></a><a href="#" class="footer__social-link" aria-label="LinkedIn">in</a><a href="#" class="footer__social-link" aria-label="YouTube"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-youtube"/></svg></span></a></div></div>
-        <div><h4 class="footer__heading">Company</h4><ul class="footer__list"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="services.html" class="footer__link">Careers</a></li><li><a href="about.html" class="footer__link">Press</a></li><li><a href="contact.html" class="footer__link">Contact</a></li></ul></div>
-        <div><h4 class="footer__heading">Quick Links</h4><ul class="footer__list"><li><a href="cars.html" class="footer__link">Our Fleet</a></li><li><a href="services.html" class="footer__link">Services</a></li><li><a href="faq.html" class="footer__link">FAQ</a></li><li><a href="booking.html" class="footer__link">Book a Car</a></li></ul></div>
-        <div><h4 class="footer__heading">Support</h4><ul class="footer__list"><li><a href="faq.html" class="footer__link">Help Center</a></li><li><a href="privacy-policy.html" class="footer__link">Privacy Policy</a></li><li><a href="terms-and-conditions.html" class="footer__link">Terms of Service</a></li><li><a href="terms-and-conditions.html" class="footer__link">Rental Policy</a></li></ul></div>
-        <div><h4 class="footer__heading">Contact</h4><div class="footer__contact-item"><div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span></div><div><div class="footer__contact-label">Address</div><div class="footer__contact-value">123 Luxury Drive, Suite 100<br>New York, NY 10001</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span></div><div><div class="footer__contact-label">Phone</div><div class="footer__contact-value">+1 (555) 123-4567</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span></div><div><div class="footer__contact-label">Email</div><div class="footer__contact-value">hello@driveelite.com</div></div></div><div class="footer__contact-item"><div class="footer__contact-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div><div><div class="footer__contact-label">Business Hours</div><div class="footer__contact-value">Mon–Sat: 8AM – 8PM</div></div></div></div>
-      </div>
-      <div class="footer__newsletter-section"><div class="footer__newsletter-wrap"><div class="footer__newsletter-text"><h4 class="footer__newsletter-title">Stay in the Fast Lane</h4><p class="footer__newsletter-subtitle">Subscribe for exclusive deals, new arrivals, and luxury driving tips.</p></div><form class="footer__newsletter-form" id="newsletter-form"><input type="email" class="footer__newsletter-input" placeholder="Enter your email address" aria-label="Newsletter email"><button type="submit" class="btn btn--primary btn--sm">Subscribe</button></form></div></div>
-      <div class="footer__bottom"><div class="footer__bottom-brand"><p>&copy; 2026 DriveElite. Crafted with <span class="footer__heart"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-heart"/></svg></span></span> for luxury driving.</p></div><div class="footer__bottom-links"><a href="privacy-policy.html" class="footer__bottom-link">Privacy</a><a href="terms-and-conditions.html" class="footer__bottom-link">Terms</a><a href="contact.html" class="footer__bottom-link">Sitemap</a></div></div>
-    </div>
-  </footer>
-
-  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
   <div class="toast-container" id="toast-container"></div>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/ui.js"></script>
@@ -305,41 +235,253 @@
   (function() {
     'use strict';
 
-    /* ---- Password Toggle ---- */
-    function setupToggle(toggleId, inputId) {
-      const btn = document.getElementById(toggleId);
-      const input = document.getElementById(inputId);
-      if (btn && input) {
-        btn.addEventListener('click', () => {
-          const isPassword = input.type === 'password';
-          input.type = isPassword ? 'text' : 'password';
-          btn.innerHTML = isPassword ? '<span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-eye-off"/></svg></span>' : '<span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-eye"/></svg></span>';
-          btn.title = isPassword ? 'Hide password' : 'Show password';
+    /* ---- Password Visibility Toggle ---- */
+    function setupPasswordToggle(toggleBtnId, passwordInputId) {
+      const toggleBtn = document.getElementById(toggleBtnId);
+      const passwordInput = document.getElementById(passwordInputId);
+      if (toggleBtn && passwordInput) {
+        toggleBtn.addEventListener('click', () => {
+          const isPassword = passwordInput.type === 'password';
+          passwordInput.type = isPassword ? 'text' : 'password';
+          
+          toggleBtn.innerHTML = isPassword 
+            ? `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                <line x1="1" y1="1" x2="23" y2="23"></line>
+              </svg>` 
+            : `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>`;
+              
+          toggleBtn.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
+          toggleBtn.title = isPassword ? 'Hide password' : 'Show password';
         });
       }
     }
-    setupToggle('toggle-password', 'reg-password');
-    setupToggle('toggle-confirm', 'reg-confirm');
+    setupPasswordToggle('toggle-password', 'reg-password');
+    setupPasswordToggle('toggle-confirm', 'reg-confirm');
 
-    /* ---- Checkbox Styling (terms) ---- */
-    const termsCheck = document.getElementById('reg-terms');
-    if (termsCheck) {
-      termsCheck.addEventListener('change', function() {
-        if (this.checked) {
-          this.style.background = 'var(--color-secondary)';
-          this.style.borderColor = 'var(--color-secondary)';
+    /* ---- Password Strength Checker ---- */
+    const passwordInput = document.getElementById('reg-password');
+    const strengthBars = document.querySelectorAll('.password-strength__bar');
+    const strengthText = document.querySelector('.password-strength__text strong');
+    
+    const reqLength = document.getElementById('req-length');
+    const reqCase = document.getElementById('req-case');
+    const reqNumber = document.getElementById('req-number');
+    const reqSpecial = document.getElementById('req-special');
+
+    if (passwordInput) {
+      passwordInput.addEventListener('input', () => {
+        const val = passwordInput.value;
+        
+        // 1. Validate requirements
+        const hasLength = val.length >= 8;
+        const hasCase = /[a-z]/.test(val) && /[A-Z]/.test(val);
+        const hasNumber = /[0-9]/.test(val);
+        const hasSpecial = /[!@#\$%\^&\*\(\)_\+\-\=\[\]\{\};':",\.\/<>\?\\\|]/.test(val);
+
+        updateRequirement(reqLength, hasLength);
+        updateRequirement(reqCase, hasCase);
+        updateRequirement(reqNumber, hasNumber);
+        updateRequirement(reqSpecial, hasSpecial);
+
+        // 2. Score strength
+        let score = 0;
+        if (val.length > 0) {
+          if (hasLength) score++;
+          if (hasCase) score++;
+          if (hasNumber) score++;
+          if (hasSpecial) score++;
+        }
+
+        // Update UI bars
+        strengthBars.forEach((bar, index) => {
+          bar.className = 'password-strength__bar'; // reset classes
+          if (val.length > 0 && index < score) {
+            if (score <= 1) {
+              bar.classList.add('weak');
+            } else if (score <= 3) {
+              bar.classList.add('medium');
+            } else {
+              bar.classList.add('strong');
+            }
+          }
+        });
+
+        // Update text label
+        if (val.length === 0) {
+          strengthText.textContent = 'Too Short';
+        } else if (score <= 1) {
+          strengthText.textContent = 'Weak';
+        } else if (score <= 3) {
+          strengthText.textContent = 'Medium';
         } else {
-          this.style.background = '';
-          this.style.borderColor = '';
+          strengthText.textContent = 'Strong';
         }
       });
     }
 
-    /* ---- Form Submit Prevention ---- */
-    const form = document.getElementById('register-form');
-    if (form) {
-      form.addEventListener('submit', (e) => { e.preventDefault(); });
+    function updateRequirement(el, isMet) {
+      if (!el) return;
+      if (isMet) {
+        el.classList.add('met');
+        el.querySelector('.password-req__icon').innerHTML = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>`;
+      } else {
+        el.classList.remove('met');
+        el.querySelector('.password-req__icon').textContent = '✗';
+      }
     }
+
+    /* ---- Submit & Validation Validation ---- */
+    const registerForm = document.getElementById('register-form');
+    const firstNameInput = document.getElementById('first-name');
+    const lastNameInput = document.getElementById('last-name');
+    const emailInput = document.getElementById('reg-email');
+    const phoneInput = document.getElementById('reg-phone');
+    const confirmInput = document.getElementById('reg-confirm');
+    const termsCheckbox = document.getElementById('reg-terms');
+
+    const firstnameError = document.getElementById('firstname-error');
+    const lastnameError = document.getElementById('lastname-error');
+    const emailError = document.getElementById('email-error');
+    const phoneError = document.getElementById('phone-error');
+    const confirmError = document.getElementById('confirm-error');
+
+    if (registerForm) {
+      registerForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        let isValid = true;
+
+        // First Name
+        if (!firstNameInput.value.trim()) {
+          firstNameInput.classList.add('error');
+          if (firstnameError) firstnameError.classList.add('visible');
+          isValid = false;
+        } else {
+          firstNameInput.classList.remove('error');
+          if (firstnameError) firstnameError.classList.remove('visible');
+        }
+
+        // Last Name
+        if (!lastNameInput.value.trim()) {
+          lastNameInput.classList.add('error');
+          if (lastnameError) lastnameError.classList.add('visible');
+          isValid = false;
+        } else {
+          lastNameInput.classList.remove('error');
+          if (lastnameError) lastnameError.classList.remove('visible');
+        }
+
+        // Email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailInput.value.trim())) {
+          emailInput.classList.add('error');
+          if (emailError) emailError.classList.add('visible');
+          isValid = false;
+        } else {
+          emailInput.classList.remove('error');
+          if (emailError) emailError.classList.remove('visible');
+        }
+
+        // Phone
+        if (!phoneInput.value.trim()) {
+          phoneInput.classList.add('error');
+          if (phoneError) phoneError.classList.add('visible');
+          isValid = false;
+        } else {
+          phoneInput.classList.remove('error');
+          if (phoneError) phoneError.classList.remove('visible');
+        }
+
+        // Password & Confirm Match
+        if (passwordInput.value !== confirmInput.value) {
+          confirmInput.classList.add('error');
+          if (confirmError) confirmError.classList.add('visible');
+          isValid = false;
+        } else {
+          confirmInput.classList.remove('error');
+          if (confirmError) confirmError.classList.remove('visible');
+        }
+
+        // Terms checked
+        if (!termsCheckbox.checked) {
+          termsCheckbox.style.outline = '2px solid var(--color-danger)';
+          isValid = false;
+        } else {
+          termsCheckbox.style.outline = '';
+        }
+
+        if (isValid) {
+          if (typeof UI !== 'undefined' && UI.showToast) {
+            UI.showToast({
+              title: 'Success',
+              message: 'Account created successfully! Redirecting...',
+              type: 'success',
+              duration: 2000
+            });
+          }
+
+          setTimeout(() => {
+            window.location.href = 'dashboard.html';
+          }, 1500);
+        }
+      });
+
+      // Clear errors on focus
+      const inputs = [firstNameInput, lastNameInput, emailInput, phoneInput, confirmInput];
+      const errors = [firstnameError, lastnameError, emailError, phoneError, confirmError];
+
+      inputs.forEach((input, idx) => {
+        if (input) {
+          input.addEventListener('focus', () => {
+            input.classList.remove('error');
+            if (errors[idx]) errors[idx].classList.remove('visible');
+          });
+        }
+      });
+
+      if (termsCheckbox) {
+        termsCheckbox.addEventListener('change', () => {
+          termsCheckbox.style.outline = '';
+        });
+      }
+    }
+
+    /* ---- OAuth Google / Apple Registrations ---- */
+    const googleBtn = document.getElementById('google-register-btn');
+    const appleBtn = document.getElementById('apple-register-btn');
+
+    if (googleBtn) {
+      googleBtn.addEventListener('click', () => {
+        if (typeof UI !== 'undefined' && UI.showToast) {
+          UI.showToast({
+            title: 'Google OAuth',
+            message: 'Connecting to Google register services...',
+            type: 'info',
+            duration: 3000
+          });
+        }
+      });
+    }
+
+    if (appleBtn) {
+      appleBtn.addEventListener('click', () => {
+        if (typeof UI !== 'undefined' && UI.showToast) {
+          UI.showToast({
+            title: 'Apple OAuth',
+            message: 'Connecting to Apple registration services...',
+            type: 'info',
+            duration: 3000
+          });
+        }
+      });
+    }
+
   })();
   </script>
 </body>

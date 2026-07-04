@@ -13,9 +13,9 @@
   <link rel="stylesheet" href="assets/css/animations.css">
   <link rel="stylesheet" href="assets/css/utilities.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
-  <link rel="stylesheet" href="assets/css/pages/legal.css">
+  <link rel="stylesheet" href="assets/css/pages/privacy.css">
 </head>
-<body>
+<body class="privacy-page">
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- NAVBAR -->
@@ -27,7 +27,7 @@
       </div>
       <div class="navbar__actions">
         <button class="navbar__search-btn" aria-label="Search" title="Search (Ctrl+K)"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
-<a href="login.html" class="btn btn--ghost btn--sm">Login</a>
+        <a href="login.html" class="btn btn--ghost btn--sm">Login</a>
         <a href="register.html" class="btn btn--primary btn--sm">Register</a>
       </div>
       <button class="navbar__toggle" aria-label="Toggle mobile menu"><span></span><span></span><span></span></button>
@@ -43,13 +43,13 @@
   <div class="reading-progress-bar"><div class="reading-progress-fill" id="reading-progress"></div></div>
 
   <!-- HERO -->
-  <section class="legal-hero">
-    <div class="legal-hero__overlay"></div>
+  <section class="privacy-hero">
+    <div class="privacy-hero__overlay"></div>
     <div class="container">
-      <div class="legal-hero__content scroll-reveal">
-        <div class="auth-hero__badge"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-lock"/></svg></span> Security Pledge</div>
-        <h1 class="auth-hero__title">Privacy <span class="highlight">Policy</span></h1>
-        <p class="auth-hero__desc">Please review our document practices detailing how we handle, process, and secure your personal account identifiers.</p>
+      <div class="privacy-hero__content">
+        <div class="privacy-hero__badge">Privacy & Data</div>
+        <h1 class="privacy-hero__title">Privacy <span class="highlight">Policy</span></h1>
+        <p class="privacy-hero__desc">Learn how Drive Elite collects, uses, protects, and manages your personal information.</p>
       </div>
     </div>
   </section>
@@ -60,8 +60,6 @@
       <ol class="breadcrumb__list">
         <li class="breadcrumb__item"><a href="index.html">Home</a></li>
         <li class="breadcrumb__separator">›</li>
-        <li class="breadcrumb__item"><a href="dashboard.html">Dashboard</a></li>
-        <li class="breadcrumb__separator">›</li>
         <li class="breadcrumb__item active">Privacy Policy</li>
       </ol>
     </div>
@@ -69,190 +67,252 @@
 
   <main id="main-content">
 
-    <section class="section">
+    <section class="privacy-section">
       <div class="container">
         
-        <div class="legal-layout">
-
-          <!-- LEFT COLUMN (Sticky Sidebar Table of Contents) -->
-          <aside class="legal-sidebar">
-            <h3 class="legal-sidebar__title">Table of Contents</h3>
-            <nav class="legal-nav-list" aria-label="Privacy sections">
-              <a href="#intro" class="legal-nav-link active">1. Introduction</a>
-              <a href="#collect" class="legal-nav-link">2. Information We Collect</a>
-              <a href="#use" class="legal-nav-link">3. How We Use Information</a>
-              <a href="#share" class="legal-nav-link">4. Information Sharing</a>
-              <a href="#cookies" class="legal-nav-link">5. Cookies & Tracking</a>
-              <a href="#security" class="legal-nav-link">6. Data Security</a>
-              <a href="#rights" class="legal-nav-link">7. User Rights</a>
-              <a href="#third-party" class="legal-nav-link">8. Third-Party Services</a>
-              <a href="#retention" class="legal-nav-link">9. Data Retention</a>
-              <a href="#children" class="legal-nav-link">10. Children's Privacy</a>
-              <a href="#updates" class="legal-nav-link">11. Policy Updates</a>
-              <a href="#support" class="legal-nav-link">12. Contact Legal Support</a>
-            </nav>
-          </aside>
-
-          <!-- RIGHT COLUMN (Legal Text) -->
-          <div class="legal-content scroll-reveal">
+        <div class="privacy-content">
             
-            <!-- Metadata & Download block -->
-            <div class="u-privacy-policy-1">
-              <div>Last Updated: <strong>July 2, 2026</strong></div>
-              <div class="u-privacy-policy-2">
-                <button type="button" class="btn btn--ghost btn--sm u-privacy-policy-3" onclick="window.print()">Print Document</button>
-                <button type="button" class="btn btn--secondary btn--sm u-privacy-policy-4">Download PDF</button>
-              </div>
-            </div>
+          <!-- Metadata block -->
+          <div class="privacy-meta-strip">
+            <div>Last Updated: <strong>July 2, 2026</strong></div>
+          </div>
 
-            <!-- 1. Introduction -->
-            <section class="legal-sec" id="intro">
-              <h2 class="legal-sec__title">1. Introduction</h2>
+          <!-- 1. Introduction -->
+          <section class="privacy-sec" id="intro">
+            <div class="privacy-sec__header">
+              <h2 class="privacy-sec__title">1. Introduction</h2>
+            </div>
+            <div class="privacy-sec__body">
               <p>
                 Welcome to DriveElite ("Company", "we", "us", or "our"). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice or our practices with regard to your personal info, please contact us.
               </p>
-              <div class="legal-quote">
+              <div class="privacy-quote">
                 "Your privacy is our core guarantee. We design every booking tracker, verification camera tool, and extension log with data safety protocols."
               </div>
-            </section>
+            </div>
+          </section>
 
-            <!-- 2. Information We Collect -->
-            <section class="legal-sec" id="collect">
-              <h2 class="legal-sec__title">2. Information We Collect</h2>
+          <!-- 2. Information We Collect -->
+          <section class="privacy-sec scroll-reveal" id="collect">
+            <div class="privacy-sec__header">
+              <h2 class="privacy-sec__title">2. Information We Collect</h2>
+            </div>
+            <div class="privacy-sec__body">
               <p>
                 We collect personal information that you voluntarily provide to us when you register on the portal, express an interest in obtaining information about us or our fleet range, or when you contact customer support desks.
               </p>
-              <div class="legal-callout">
-                <h4 class="legal-callout__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-lock"/></svg></span> Key Categories Collected:</h4>
-                <ul class="legal-callout__desc">
-                  <li><strong>Personal Identifiers:</strong> First and last name, date of birth, gender, and digital copies of driving licenses.</li>
-                  <li><strong>Booking Details:</strong> Vehicles rented, showroom pickup/return locations, rental duration periods, and invoice amounts.</li>
-                  <li><strong>Rental Diagnostics:</strong> Camera verification condition photos uploaded at pickup or return.</li>
-                  <li><strong>Communications:</strong> Email logs, advisor live chat recordings, and option 9 helpline transcripts.</li>
-                  <li><strong>Device Metrics:</strong> Trusted login devices, IP locations, browser user agents.</li>
+              <div class="privacy-card">
+                <h4 class="privacy-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-lock"/></svg></span> Key Categories Collected:</h4>
+                <ul class="privacy-card__list">
+                  <li><span class="privacy-card__list-bullet">•</span><div><strong>Personal Identifiers:</strong> First and last name, date of birth, gender, and digital copies of driving licenses.</div></li>
+                  <li><span class="privacy-card__list-bullet">•</span><div><strong>Booking Details:</strong> Vehicles rented, showroom pickup/return locations, rental duration periods, and invoice amounts.</div></li>
+                  <li><span class="privacy-card__list-bullet">•</span><div><strong>Rental Diagnostics:</strong> Camera verification condition photos uploaded at pickup or return.</div></li>
+                  <li><span class="privacy-card__list-bullet">•</span><div><strong>Communications:</strong> Email logs, advisor live chat recordings, and option 9 helpline transcripts.</div></li>
+                  <li><span class="privacy-card__list-bullet">•</span><div><strong>Device Metrics:</strong> Trusted login devices, IP locations, browser user agents.</div></li>
                 </ul>
               </div>
-            </section>
+            </div>
+          </section>
 
-            <!-- 3. How We Use Information -->
-            <section class="legal-sec" id="use">
-              <h2 class="legal-sec__title">3. How We Use Your Information</h2>
+          <!-- 3. How We Use Information -->
+          <section class="privacy-sec scroll-reveal" id="use">
+            <div class="privacy-sec__header">
+              <h2 class="privacy-sec__title">3. How We Use Your Information</h2>
+            </div>
+            <div class="privacy-sec__body">
               <p>
                 We process your information for purposes based on legitimate business interests, the fulfillment of our contract agreements with you, compliance with legal obligations, and/or your consent.
               </p>
               <p>
                 Specifically, personal drivers data is analyzed to verify license validities, coordinate showroom dispatchers, update active trackers, notify of late return alerts, and evaluate star rating feedback reviews.
               </p>
-            </section>
+            </div>
+          </section>
 
-            <!-- 4. Information Sharing -->
-            <section class="legal-sec" id="share">
-              <h2 class="legal-sec__title">4. Information Sharing</h2>
+          <!-- 4. Information Sharing -->
+          <section class="privacy-sec scroll-reveal" id="share">
+            <div class="privacy-sec__header">
+              <h2 class="privacy-sec__title">4. Information Sharing</h2>
+            </div>
+            <div class="privacy-sec__body">
               <p>
                 We only share information with your consent, to comply with laws, to provide you with services, to protect your rights, or to fulfill business contract obligations. We do not sell driver details databases to third-party marketing directories.
               </p>
-            </section>
+            </div>
+          </section>
 
-            <!-- 5. Cookies -->
-            <section class="legal-sec" id="cookies">
-              <h2 class="legal-sec__title">5. Cookies & Tracking Technologies</h2>
+          <!-- 5. Cookies -->
+          <section class="privacy-sec scroll-reveal" id="cookies">
+            <div class="privacy-sec__header">
+              <h2 class="privacy-sec__title">5. Cookies & Tracking Technologies</h2>
+            </div>
+            <div class="privacy-sec__body">
               <p>
                 We may use cookies and similar tracking technologies (like web beacons and pixels) to access or store information. Specific details about how we use such technologies and how you can refuse certain cookies are set out in our Cookie Notice.
               </p>
-            </section>
+            </div>
+          </section>
 
-            <!-- 6. Data Security -->
-            <section class="legal-sec" id="security">
-              <h2 class="legal-sec__title">6. Data Security</h2>
+          <!-- 6. Data Security -->
+          <section class="privacy-sec scroll-reveal" id="security">
+            <div class="privacy-sec__header">
+              <h2 class="privacy-sec__title">6. Data Security</h2>
+            </div>
+            <div class="privacy-sec__body">
               <p>
                 We have implemented appropriate technical and organizational security measures designed to protect the security of any personal information we process. Driver license photos and payment histories are encrypted using standard AES-256 protocols.
               </p>
-            </section>
+            </div>
+          </section>
 
-            <!-- 7. User Rights -->
-            <section class="legal-sec" id="rights">
-              <h2 class="legal-sec__title">7. User Rights</h2>
+          <!-- 7. User Rights -->
+          <section class="privacy-sec scroll-reveal" id="rights">
+            <div class="privacy-sec__header">
+              <h2 class="privacy-sec__title">7. User Rights</h2>
+            </div>
+            <div class="privacy-sec__body">
               <p>
                 In some regions (like the EEA and UK), you have certain rights under applicable data protection laws. These may include the right to request access and obtain a copy of your personal info, request rectification or erasure, or restrict processing.
               </p>
               <p>
                 You can review or update details under account Profile Settings, or toggle notification choices (Email, Browser reminders, Newsletters) at any time.
               </p>
-            </section>
+            </div>
+          </section>
 
-            <!-- 8. Third Party Services -->
-            <section class="legal-sec" id="third-party">
-              <h2 class="legal-sec__title">8. Third-Party Services</h2>
+          <!-- 8. Third Party Services -->
+          <section class="privacy-sec scroll-reveal" id="third-party">
+            <div class="privacy-sec__header">
+              <h2 class="privacy-sec__title">8. Third-Party Services</h2>
+            </div>
+            <div class="privacy-sec__body">
               <p>
                 We may link to or incorporate third-party services (like payment gateways, insurance providers, and mapping platforms). We are not responsible for their independent data handling policies, and suggest reviewing their guidelines.
               </p>
-            </section>
+            </div>
+          </section>
 
-            <!-- 9. Data Retention -->
-            <section class="legal-sec" id="retention">
-              <h2 class="legal-sec__title">9. Data Retention</h2>
+          <!-- 9. Data Retention -->
+          <section class="privacy-sec scroll-reveal" id="retention">
+            <div class="privacy-sec__header">
+              <h2 class="privacy-sec__title">9. Data Retention</h2>
+            </div>
+            <div class="privacy-sec__body">
               <p>
                 We will only keep your personal information for as long as it is necessary for the purposes set out in this privacy policy, unless a longer retention period is required or permitted by law (such as tax or audit requirements).
               </p>
-            </section>
+            </div>
+          </section>
 
-            <!-- 10. Children's Privacy -->
-            <section class="legal-sec" id="children">
-              <h2 class="legal-sec__title">10. Children's Privacy</h2>
+          <!-- 10. Children's Privacy -->
+          <section class="privacy-sec scroll-reveal" id="children">
+            <div class="privacy-sec__header">
+              <h2 class="privacy-sec__title">10. Children's Privacy</h2>
+            </div>
+            <div class="privacy-sec__body">
               <p>
                 We do not knowingly solicit data from or market to children under 18 years of age. By using the services, you represent that you are at least 18.
               </p>
-            </section>
+            </div>
+          </section>
 
-            <!-- 11. Policy Updates -->
-            <section class="legal-sec" id="updates">
-              <h2 class="legal-sec__title">11. Policy Updates</h2>
+          <!-- 11. Policy Updates -->
+          <section class="privacy-sec scroll-reveal" id="updates">
+            <div class="privacy-sec__header">
+              <h2 class="privacy-sec__title">11. Policy Updates</h2>
+            </div>
+            <div class="privacy-sec__body">
               <p>
                 We may update this privacy notice from time to time. The updated version will be indicated by an updated "Revised" date and the updated version will be effective as soon as it is accessible.
               </p>
-            </section>
-
-            <!-- Legal Highlights Cards Grid -->
-            <div class="legal-grid-3 u-privacy-policy-5">
-              <div class="legal-card"><div class="legal-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-lock"/></svg></span> Secure Info</div><p class="legal-card__desc">Enterprise-grade encryption keeps all license documents safe.</p></div>
-              <div class="legal-card"><div class="legal-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-eye"/></svg></span> Transparent</div><p class="legal-card__desc">No hidden tracking algorithms or third-party databases sale.</p></div>
-              <div class="legal-card"><div class="legal-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check"/></svg></span> User Rights</div><p class="legal-card__desc">Opt-out of emails, browser alerts, or newsletters anytime.</p></div>
             </div>
+          </section>
 
-            <!-- 12. Contact Legal Support -->
-            <section class="legal-sec u-privacy-policy-6" id="support">
-              <h2 class="legal-sec__title">12. Contact Legal Support</h2>
+          <!-- Legal Highlights Cards Grid -->
+          <div class="privacy-highlights-grid scroll-reveal">
+            <div class="privacy-highlight-card">
+              <div class="privacy-highlight-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-lock"/></svg></span></div>
+              <h4 class="privacy-highlight-card__title">Secure Info</h4>
+              <p class="privacy-highlight-card__desc">Enterprise-grade encryption keeps all license documents safe.</p>
+            </div>
+            <div class="privacy-highlight-card">
+              <div class="privacy-highlight-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-eye"/></svg></span></div>
+              <h4 class="privacy-highlight-card__title">Transparent</h4>
+              <p class="privacy-highlight-card__desc">No hidden tracking algorithms or third-party databases sale.</p>
+            </div>
+            <div class="privacy-highlight-card">
+              <div class="privacy-highlight-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-check"/></svg></span></div>
+              <h4 class="privacy-highlight-card__title">User Rights</h4>
+              <p class="privacy-highlight-card__desc">Opt-out of emails, browser alerts, or newsletters anytime.</p>
+            </div>
+          </div>
+
+          <!-- 12. Contact Legal Support -->
+          <section class="privacy-sec scroll-reveal" id="support">
+            <div class="privacy-sec__header">
+              <h2 class="privacy-sec__title">12. Contact Legal Support</h2>
+            </div>
+            <div class="privacy-sec__body">
               <p>
                 If you have questions or comments about this policy, you may email our legal compliance division directly:
               </p>
-              <div class="u-privacy-policy-7">
-                <div><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span> <strong>Legal Compliance email:</strong> legal@driveelite.com</div>
-                <div><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span> <strong>Advisor Support:</strong> +1 (555) 123-4567 | <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span> <strong>Hours:</strong> Mon - Sat, 8AM - 8PM</div>
-                <div><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-info"/></svg></span> <strong>Helpline FAQs:</strong> <a class="u-privacy-policy-8" href="faq.html">Visit Help Center</a></div>
-              </div>
-            </section>
-
-            <!-- Related Legal Document links -->
-            <div class="u-privacy-policy-9">
-              <h4 class="u-privacy-policy-10">Related Legal Documents:</h4>
-              <div class="u-privacy-policy-11">
-                <a class="u-privacy-policy-12" href="terms-and-conditions.html">Terms & Conditions →</a>
-                <a class="u-privacy-policy-13" href="terms-and-conditions.html#refund">Refund & Cancellation Policies →</a>
-              </div>
-            </div>
-
-            <!-- Related Navigation Grid Quick Links -->
-            <div class="u-privacy-policy-14">
-              <h4 class="u-privacy-policy-15">Quick Portal Links:</h4>
-              <div class="related-nav-grid">
-                <a href="faq.html" class="related-nav-btn"><div class="related-nav-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-info"/></svg></span></div>Help Center</a>
-                <a href="contact.html" class="related-nav-btn"><div class="related-nav-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span></div>Support</a>
-                <a href="services.html" class="related-nav-btn"><div class="related-nav-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-wrench"/></svg></span></div>Services</a>
-                <a href="about.html" class="related-nav-btn"><div class="related-nav-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span></div>About Us</a>
-                <a href="dashboard.html" class="related-nav-btn"><div class="related-nav-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-settings"/></svg></span></div>Dashboard</a>
+              <div class="privacy-contact-box">
+                <div class="privacy-contact-box__list">
+                  <div class="privacy-contact-item">
+                    <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span>
+                    <span><strong>Legal Compliance email:</strong> <a href="mailto:legal@driveelite.com">legal@driveelite.com</a></span>
+                  </div>
+                  <div class="privacy-contact-item">
+                    <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span>
+                    <span><strong>Advisor Support:</strong> +1 (555) 123-4567</span>
+                  </div>
+                  <div class="privacy-contact-item">
+                    <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span>
+                    <span><strong>Hours:</strong> Mon - Sat, 8AM - 8PM</span>
+                  </div>
+                  <div class="privacy-contact-item">
+                    <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-info"/></svg></span>
+                    <span><strong>Helpline FAQs:</strong> <a href="faq.html">Visit Help Center</a></span>
+                  </div>
+                </div>
               </div>
             </div>
+          </section>
 
+          <!-- Related Legal Document links -->
+          <div class="privacy-related-docs scroll-reveal">
+            <h4 class="privacy-related-docs__title">Related Legal Documents:</h4>
+            <div class="privacy-related-docs__links">
+              <a href="terms-and-conditions.html">Terms & Conditions →</a>
+              <a href="terms-and-conditions.html#refund">Refund & Cancellation Policies →</a>
+            </div>
+          </div>
+
+          <!-- Related Navigation Grid Quick Links -->
+          <div class="privacy-portal-section scroll-reveal">
+            <h4 class="privacy-portal-title">Quick Portal Links:</h4>
+            <div class="privacy-portal-links">
+              <a href="faq.html" class="privacy-portal-btn">
+                <div class="privacy-portal-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-info"/></svg></span></div>
+                Help Center
+              </a>
+              <a href="contact.html" class="privacy-portal-btn">
+                <div class="privacy-portal-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span></div>
+                Support
+              </a>
+              <a href="services.html" class="privacy-portal-btn">
+                <div class="privacy-portal-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-wrench"/></svg></span></div>
+                Services
+              </a>
+              <a href="about.html" class="privacy-portal-btn">
+                <div class="privacy-portal-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span></div>
+                About Us
+              </a>
+              <a href="dashboard.html" class="privacy-portal-btn">
+                <div class="privacy-portal-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-settings"/></svg></span></div>
+                Dashboard
+              </a>
+            </div>
           </div>
 
         </div>
@@ -287,30 +347,9 @@
   (function() {
     'use strict';
 
-    /* ---- Sticky Sidebar active nav link scroll listener ---- */
-    const sections = document.querySelectorAll('.legal-sec');
-    const navLinks = document.querySelectorAll('.legal-nav-link');
     const progressFill = document.getElementById('reading-progress');
 
     window.addEventListener('scroll', function() {
-      let currentSectionId = '';
-      
-      sections.forEach(sec => {
-        const top = sec.offsetTop - 120;
-        if (window.scrollY >= top) {
-          currentSectionId = sec.getAttribute('id');
-        }
-      });
-
-      if (currentSectionId) {
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${currentSectionId}`) {
-            link.classList.add('active');
-          }
-        });
-      }
-
       // Reading Progress Calculation
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       if (docHeight > 0) {

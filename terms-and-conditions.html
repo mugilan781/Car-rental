@@ -13,9 +13,9 @@
   <link rel="stylesheet" href="assets/css/animations.css">
   <link rel="stylesheet" href="assets/css/utilities.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
-  <link rel="stylesheet" href="assets/css/pages/legal.css">
+  <link rel="stylesheet" href="assets/css/pages/terms.css">
 </head>
-<body>
+<body class="terms-page">
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- NAVBAR -->
@@ -27,7 +27,7 @@
       </div>
       <div class="navbar__actions">
         <button class="navbar__search-btn" aria-label="Search" title="Search (Ctrl+K)"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
-<a href="login.html" class="btn btn--ghost btn--sm">Login</a>
+        <a href="login.html" class="btn btn--ghost btn--sm">Login</a>
         <a href="register.html" class="btn btn--primary btn--sm">Register</a>
       </div>
       <button class="navbar__toggle" aria-label="Toggle mobile menu"><span></span><span></span><span></span></button>
@@ -43,13 +43,13 @@
   <div class="reading-progress-bar"><div class="reading-progress-fill" id="reading-progress"></div></div>
 
   <!-- HERO -->
-  <section class="legal-hero">
-    <div class="legal-hero__overlay"></div>
+  <section class="terms-hero">
+    <div class="terms-hero__overlay"></div>
     <div class="container">
-      <div class="legal-hero__content scroll-reveal">
-        <div class="auth-hero__badge"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span> Showroom Agreements</div>
-        <h1 class="auth-hero__title">Terms & <span class="highlight">Conditions</span></h1>
-        <p class="auth-hero__desc">Please review our driver terms and conditions detailing age constraints, return policies, and vehicle verification processes.</p>
+      <div class="terms-hero__content">
+        <div class="terms-hero__badge">Terms & Conditions</div>
+        <h1 class="terms-hero__title">Terms & <span class="highlight">Conditions</span></h1>
+        <p class="terms-hero__desc">Please review our driver terms and conditions detailing age constraints, return policies, and vehicle verification processes.</p>
       </div>
     </div>
   </section>
@@ -60,8 +60,6 @@
       <ol class="breadcrumb__list">
         <li class="breadcrumb__item"><a href="index.html">Home</a></li>
         <li class="breadcrumb__separator">›</li>
-        <li class="breadcrumb__item"><a href="dashboard.html">Dashboard</a></li>
-        <li class="breadcrumb__separator">›</li>
         <li class="breadcrumb__item active">Terms & Conditions</li>
       </ol>
     </div>
@@ -69,64 +67,49 @@
 
   <main id="main-content">
 
-    <section class="section">
+    <section class="terms-section">
       <div class="container">
         
-        <div class="legal-layout">
-
-          <!-- LEFT COLUMN (Sticky Sidebar Table of Contents) -->
-          <aside class="legal-sidebar">
-            <h3 class="legal-sidebar__title">Table of Contents</h3>
-            <nav class="legal-nav-list" aria-label="Terms sections">
-              <a href="#intro" class="legal-nav-link active">1. Introduction</a>
-              <a href="#accept" class="legal-nav-link">2. Acceptance of Terms</a>
-              <a href="#eligibility" class="legal-nav-link">3. Eligibility</a>
-              <a href="#responsibilities" class="legal-nav-link">4. User Responsibilities</a>
-              <a href="#booking" class="legal-nav-link">5. Booking & Agreement</a>
-              <a href="#rules" class="legal-nav-link">6. Vehicle Usage Rules</a>
-              <a href="#damage" class="legal-nav-link">7. Damage & Verification</a>
-              <a href="#extension" class="legal-nav-link">8. Extensions & Cancels</a>
-              <a href="#refund" class="legal-nav-link">9. Refunds & Late Returns</a>
-              <a href="#liability" class="legal-nav-link">10. Limitation of Liability</a>
-              <a href="#governing" class="legal-nav-link">11. Governing Law</a>
-              <a href="#support" class="legal-nav-link">12. Contact Legal Support</a>
-            </nav>
-          </aside>
-
-          <!-- RIGHT COLUMN (Legal Text) -->
-          <div class="legal-content scroll-reveal">
+        <div class="terms-content">
             
-            <!-- Metadata & Download block -->
-            <div class="u-terms-and-conditions-1">
-              <div>Last Updated: <strong>July 2, 2026</strong></div>
-              <div class="u-terms-and-conditions-2">
-                <button type="button" class="btn btn--ghost btn--sm u-terms-and-conditions-3" onclick="window.print()">Print Document</button>
-                <button type="button" class="btn btn--secondary btn--sm u-terms-and-conditions-4">Download PDF</button>
-              </div>
-            </div>
+          <!-- Metadata block -->
+          <div class="terms-meta-strip">
+            <div>Last Updated: <strong>July 2, 2026</strong></div>
+          </div>
 
-            <!-- 1. Introduction -->
-            <section class="legal-sec" id="intro">
-              <h2 class="legal-sec__title">1. Introduction</h2>
+          <!-- 1. Introduction -->
+          <section class="terms-sec" id="intro">
+            <div class="terms-sec__header">
+              <h2 class="terms-sec__title">1. Introduction</h2>
+            </div>
+            <div class="terms-sec__body">
               <p>
                 Welcome to DriveElite. These Terms and Conditions ("Terms") govern your access to and use of the DriveElite website, mobile services, and vehicle rental systems. By utilizing our services, you agree to comply with and be bound by these Terms in full.
               </p>
-              <div class="legal-quote">
+              <div class="terms-quote">
                 "Our driver agreements represent mutual trust. We guarantee maintained, clean supercar ranges, and expect drivers to follow safety rules."
               </div>
-            </section>
+            </div>
+          </section>
 
-            <!-- 2. Acceptance of Terms -->
-            <section class="legal-sec" id="accept">
-              <h2 class="legal-sec__title">2. Acceptance of Terms</h2>
+          <!-- 2. Acceptance of Terms -->
+          <section class="terms-sec scroll-reveal" id="accept">
+            <div class="terms-sec__header">
+              <h2 class="terms-sec__title">2. Acceptance of Terms</h2>
+            </div>
+            <div class="terms-sec__body">
               <p>
                 By creating a DriveElite member account or submitting booking request files, you verify that you have read, understood, and agreed to these Terms. If you do not agree to any part of these Terms, you are prohibited from renting vehicles.
               </p>
-            </section>
+            </div>
+          </section>
 
-            <!-- 3. Eligibility -->
-            <section class="legal-sec" id="eligibility">
-              <h2 class="legal-sec__title">3. Eligibility</h2>
+          <!-- 3. Eligibility -->
+          <section class="terms-sec scroll-reveal" id="eligibility">
+            <div class="terms-sec__header">
+              <h2 class="terms-sec__title">3. Eligibility</h2>
+            </div>
+            <div class="terms-sec__body">
               <p>
                 To be eligible to rent and drive vehicles from our fleet collections, you must meet the following criteria:
               </p>
@@ -135,36 +118,48 @@
                 <li>Hold a physical original driving license valid in NY without active suspensions.</li>
                 <li>Submit valid credit cards with name matching your driver ID for security deposit authorizations.</li>
               </ul>
-            </section>
+            </div>
+          </section>
 
-            <!-- 4. User Responsibilities -->
-            <section class="legal-sec" id="responsibilities">
-              <h2 class="legal-sec__title">4. User Responsibilities</h2>
+          <!-- 4. User Responsibilities -->
+          <section class="terms-sec scroll-reveal" id="responsibilities">
+            <div class="terms-sec__header">
+              <h2 class="terms-sec__title">4. User Responsibilities</h2>
+            </div>
+            <div class="terms-sec__body">
               <p>
                 Drivers represent the sole custodian of the vehicle during active rental agreements. You are responsible for:
               </p>
-              <div class="legal-callout">
-                <h4 class="legal-callout__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span> Key Responsibilities Checklist:</h4>
-                <ol class="legal-callout__desc">
-                  <li>Observing local traffic codes, speed limits, and highway parking regulations.</li>
-                  <li>Paying all tolls, congestion fees, and traffic violation fines incurred during rental periods.</li>
-                  <li>Returning the vehicle with full tank of premium fuel (or equivalent charge level for electric models).</li>
-                  <li>Locking vehicles and retaining smart keys securely.</li>
-                </ol>
+              <div class="terms-card">
+                <h4 class="terms-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span> Key Responsibilities Checklist:</h4>
+                <ul class="terms-card__list">
+                  <li><span class="terms-card__list-bullet">•</span><div><strong>Observing Traffic Codes:</strong> Observing local traffic codes, speed limits, and highway parking regulations.</div></li>
+                  <li><span class="terms-card__list-bullet">•</span><div><strong>Tolls & Violations:</strong> Paying all tolls, congestion fees, and traffic violation fines incurred during rental periods.</div></li>
+                  <li><span class="terms-card__list-bullet">•</span><div><strong>Fueling & Charge:</strong> Returning the vehicle with full tank of premium fuel (or equivalent charge level for electric models).</div></li>
+                  <li><span class="terms-card__list-bullet">•</span><div><strong>Vehicle Security:</strong> Locking vehicles and retaining smart keys securely.</div></li>
+                </ul>
               </div>
-            </section>
+            </div>
+          </section>
 
-            <!-- 5. Booking & Agreement -->
-            <section class="legal-sec" id="booking">
-              <h2 class="legal-sec__title">5. Booking & Agreement Terms</h2>
+          <!-- 5. Booking & Agreement -->
+          <section class="terms-sec scroll-reveal" id="booking">
+            <div class="terms-sec__header">
+              <h2 class="terms-sec__title">5. Booking & Agreement Terms</h2>
+            </div>
+            <div class="terms-sec__body">
               <p>
                 Submitting requests queues the vehicle but does not finalize contracts. Rental durations are strictly defined on the booking preview. Exposing vehicles to unapproved drivers violates agreement clauses, leading to instant cancellation and deposit forfeitures.
               </p>
-            </section>
+            </div>
+          </section>
 
-            <!-- 6. Vehicle Usage Rules -->
-            <section class="legal-sec" id="rules">
-              <h2 class="legal-sec__title">6. Vehicle Usage Rules</h2>
+          <!-- 6. Vehicle Usage Rules -->
+          <section class="terms-sec scroll-reveal" id="rules">
+            <div class="terms-sec__header">
+              <h2 class="terms-sec__title">6. Vehicle Usage Rules</h2>
+            </div>
+            <div class="terms-sec__body">
               <p>
                 DriveElite vehicles are designed for luxury personal transit. Prohibited activities include:
               </p>
@@ -174,90 +169,154 @@
                 <li>Driving under influence of alcohol or narcotic substances.</li>
                 <li>Transporting pets or smoking inside cabins (fees apply for interior detailing).</li>
               </ul>
-            </section>
+            </div>
+          </section>
 
-            <!-- 7. Damage & Verification -->
-            <section class="legal-sec" id="damage">
-              <h2 class="legal-sec__title">7. Damage & Pre-Handover Verification</h2>
+          <!-- 7. Damage & Verification -->
+          <section class="terms-sec scroll-reveal" id="damage">
+            <div class="terms-sec__header">
+              <h2 class="terms-sec__title">7. Damage & Pre-Handover Verification</h2>
+            </div>
+            <div class="terms-sec__body">
               <p>
-                Every driver must complete the **Vehicle Camera Verification** at the showroom prior to driving. Failure to upload pre-rental pictures locks pickup approvals. Any unreported damages discovered on returns are presumed to have occurred during your active rental, making you liable for deductibles.
+                Every driver must complete the Vehicle Camera Verification at the showroom prior to driving. Failure to upload pre-rental pictures locks pickup approvals. Any unreported damages discovered on returns are presumed to have occurred during your active rental, making you liable for deductibles.
               </p>
-            </section>
+            </div>
+          </section>
 
-            <!-- 8. Extensions & Cancels -->
-            <section class="legal-sec" id="extension">
-              <h2 class="legal-sec__title">8. Rental Extensions & Cancellations</h2>
+          <!-- 8. Extensions & Cancels -->
+          <section class="terms-sec scroll-reveal" id="extension">
+            <div class="terms-sec__header">
+              <h2 class="terms-sec__title">8. Rental Extensions & Cancellations</h2>
+            </div>
+            <div class="terms-sec__body">
               <p>
                 Duration extensions must be submitted via the portal dashboard at least 12 hours before return times. Extensions are not guaranteed and will be declined if subsequent reserves are scheduled. Cancellations are free up to 24h prior to pickup.
               </p>
-            </section>
+            </div>
+          </section>
 
-            <!-- 9. Refunds & Late Returns -->
-            <section class="legal-sec" id="refund">
-              <h2 class="legal-sec__title">9. Refunds & Late Returns</h2>
+          <!-- 9. Refunds & Late Returns -->
+          <section class="terms-sec scroll-reveal" id="refund">
+            <div class="terms-sec__header">
+              <h2 class="terms-sec__title">9. Refunds & Late Returns</h2>
+            </div>
+            <div class="terms-sec__body">
               <p>
-                Late returns are granted a **59-minute grace period**. If exceeded, penalty rates apply at standard hourly rates. Security deposits ($200) are fully released on successful return inspections, with bank refunds taking 3 to 5 business days.
+                Late returns are granted a 59-minute grace period. If exceeded, penalty rates apply at standard hourly rates. Security deposits ($200) are fully released on successful return inspections, with bank refunds taking 3 to 5 business days.
               </p>
-            </section>
+            </div>
+          </section>
 
-            <!-- 10. Limitation of Liability -->
-            <section class="legal-sec" id="liability">
-              <h2 class="legal-sec__title">10. Limitation of Liability</h2>
+          <!-- 10. Limitation of Liability -->
+          <section class="terms-sec scroll-reveal" id="liability">
+            <div class="terms-sec__header">
+              <h2 class="terms-sec__title">10. Limitation of Liability</h2>
+            </div>
+            <div class="terms-sec__body">
               <p>
                 DriveElite is not liable for indirect, incidental, or consequential damages (including lost profits or business disruptions) arising from vehicle breakdowns, scheduling delays, or GPS issues.
               </p>
-            </section>
+            </div>
+          </section>
 
-            <!-- 11. Governing Law -->
-            <section class="legal-sec" id="governing">
-              <h2 class="legal-sec__title">11. Governing Law</h2>
+          <!-- 11. Governing Law -->
+          <section class="terms-sec scroll-reveal" id="governing">
+            <div class="terms-sec__header">
+              <h2 class="terms-sec__title">11. Governing Law</h2>
+            </div>
+            <div class="terms-sec__body">
               <p>
                 These Terms and driver agreements are governed by and construed in accordance with the laws of the State of New York, USA. Any dispute arising under these terms shall be subject to exclusive jurisdictions in New York county courts.
               </p>
-            </section>
-
-            <!-- Rental Policy Summary Grid -->
-            <h4 class="u-terms-and-conditions-5">Rental Policy Summaries:</h4>
-            <div class="legal-grid-3">
-              <div class="legal-card"><div class="legal-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-calendar"/></svg></span> Booking Policy</div><p class="legal-card__desc">Cancellations free up to 24 hours. Modified bookings allowed up to 12 hours prior.</p></div>
-              <div class="legal-card"><div class="legal-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span> Verification</div><p class="legal-card__desc">Pre-rental photo reports are mandatory. Protects drivers from damage liabilities.</p></div>
-              <div class="legal-card"><div class="legal-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span> Expiry & Returns</div><p class="legal-card__desc">59-minute return grace period. Extensions require 12-hour advanced notice.</p></div>
             </div>
+          </section>
 
-            <!-- 12. Contact Legal Support -->
-            <section class="legal-sec u-terms-and-conditions-6" id="support">
-              <h2 class="legal-sec__title">12. Contact Legal Support</h2>
+          <!-- Rental Policy Summary Grid -->
+          <div class="terms-highlights-grid scroll-reveal">
+            <div class="terms-highlight-card">
+              <div class="terms-highlight-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-calendar"/></svg></span></div>
+              <h4 class="terms-highlight-card__title">Booking Policy</h4>
+              <p class="terms-highlight-card__desc">Cancellations free up to 24 hours. Modified bookings allowed up to 12 hours prior.</p>
+            </div>
+            <div class="terms-highlight-card">
+              <div class="terms-highlight-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span></div>
+              <h4 class="terms-highlight-card__title">Verification</h4>
+              <p class="terms-highlight-card__desc">Pre-rental photo reports are mandatory. Protects drivers from damage liabilities.</p>
+            </div>
+            <div class="terms-highlight-card">
+              <div class="terms-highlight-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div>
+              <h4 class="terms-highlight-card__title">Expiry & Returns</h4>
+              <p class="terms-highlight-card__desc">59-minute return grace period. Extensions require 12-hour advanced notice.</p>
+            </div>
+          </div>
+
+          <!-- 12. Contact Legal Support -->
+          <section class="terms-sec scroll-reveal" id="support">
+            <div class="terms-sec__header">
+              <h2 class="terms-sec__title">12. Contact Legal Support</h2>
+            </div>
+            <div class="terms-sec__body">
               <p>
                 For questions regarding terms, contracts, or compliance agreements, contact our legal division:
               </p>
-              <div class="u-terms-and-conditions-7">
-                <div><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span> <strong>Legal compliance email:</strong> legal@driveelite.com</div>
-                <div><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span> <strong>Advisor Support:</strong> +1 (555) 123-4567 | <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span> <strong>Hours:</strong> Mon - Sat, 8AM - 8PM</div>
-                <div><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-info"/></svg></span> <strong>Helpline FAQs:</strong> <a class="u-terms-and-conditions-8" href="faq.html">Visit Help Center</a></div>
-              </div>
-            </section>
-
-            <!-- Related Legal Document links -->
-            <div class="u-terms-and-conditions-9">
-              <h4 class="u-terms-and-conditions-10">Related Legal Documents:</h4>
-              <div class="u-terms-and-conditions-11">
-                <a class="u-terms-and-conditions-12" href="privacy-policy.html">Privacy Policy →</a>
-                <a class="u-terms-and-conditions-13" href="faq.html">Showroom FAQs →</a>
-              </div>
-            </div>
-
-            <!-- Related Navigation Grid Quick Links -->
-            <div class="u-terms-and-conditions-14">
-              <h4 class="u-terms-and-conditions-15">Quick Portal Links:</h4>
-              <div class="related-nav-grid">
-                <a href="faq.html" class="related-nav-btn"><div class="related-nav-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-info"/></svg></span></div>Help Center</a>
-                <a href="contact.html" class="related-nav-btn"><div class="related-nav-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span></div>Support</a>
-                <a href="services.html" class="related-nav-btn"><div class="related-nav-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-wrench"/></svg></span></div>Services</a>
-                <a href="about.html" class="related-nav-btn"><div class="related-nav-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span></div>About Us</a>
-                <a href="dashboard.html" class="related-nav-btn"><div class="related-nav-btn__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-settings"/></svg></span></div>Dashboard</a>
+              <div class="terms-contact-box">
+                <div class="terms-contact-box__list">
+                  <div class="terms-contact-item">
+                    <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span>
+                    <span><strong>Legal compliance email:</strong> <a href="mailto:legal@driveelite.com">legal@driveelite.com</a></span>
+                  </div>
+                  <div class="terms-contact-item">
+                    <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span>
+                    <span><strong>Advisor Support:</strong> +1 (555) 123-4567</span>
+                  </div>
+                  <div class="terms-contact-item">
+                    <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span>
+                    <span><strong>Hours:</strong> Mon - Sat, 8AM - 8PM</span>
+                  </div>
+                  <div class="terms-contact-item">
+                    <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-info"/></svg></span>
+                    <span><strong>Helpline FAQs:</strong> <a href="faq.html">Visit Help Center</a></span>
+                  </div>
+                </div>
               </div>
             </div>
+          </section>
 
+          <!-- Related Legal Document links -->
+          <div class="terms-related-docs scroll-reveal">
+            <h4 class="terms-related-docs__title">Related Legal Documents:</h4>
+            <div class="terms-related-docs__links">
+              <a href="privacy-policy.html">Privacy Policy →</a>
+              <a href="faq.html">Showroom FAQs →</a>
+            </div>
+          </div>
+
+          <!-- Related Navigation Grid Quick Links -->
+          <div class="terms-portal-section scroll-reveal">
+            <h4 class="terms-portal-title">Quick Portal Links:</h4>
+            <div class="terms-portal-links">
+              <a href="faq.html" class="terms-portal-btn">
+                <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-info"/></svg></span>
+                Help Center
+              </a>
+              <a href="contact.html" class="terms-portal-btn">
+                <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span>
+                Support
+              </a>
+              <a href="services.html" class="terms-portal-btn">
+                <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-wrench"/></svg></span>
+                Services
+              </a>
+              <a href="about.html" class="terms-portal-btn">
+                <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span>
+                About Us
+              </a>
+              <a href="dashboard.html" class="terms-portal-btn">
+                <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-settings"/></svg></span>
+                Dashboard
+              </a>
+            </div>
           </div>
 
         </div>
@@ -292,30 +351,9 @@
   (function() {
     'use strict';
 
-    /* ---- Sticky Sidebar active nav link scroll listener ---- */
-    const sections = document.querySelectorAll('.legal-sec');
-    const navLinks = document.querySelectorAll('.legal-nav-link');
     const progressFill = document.getElementById('reading-progress');
 
     window.addEventListener('scroll', function() {
-      let currentSectionId = '';
-      
-      sections.forEach(sec => {
-        const top = sec.offsetTop - 120;
-        if (window.scrollY >= top) {
-          currentSectionId = sec.getAttribute('id');
-        }
-      });
-
-      if (currentSectionId) {
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${currentSectionId}`) {
-            link.classList.add('active');
-          }
-        });
-      }
-
       // Reading Progress Calculation
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       if (docHeight > 0) {

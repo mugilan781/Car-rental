@@ -14,8 +14,7 @@
   <link rel="stylesheet" href="assets/css/utilities.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="stylesheet" href="assets/css/pages/contact.css">
-</head>
-<body>
+</head><body class="contact-page">
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- NAVBAR -->
@@ -70,7 +69,7 @@
         <div class="section-header scroll-reveal">
           <div class="section-header__badge">Support Performance</div>
           <h2 class="section-header__title">Service You Can Rely On</h2>
-          <p class="section-header__desc">Responsive assistance backed by measurable service standards.</p>
+          <p class="section-header__subtitle">Responsive assistance backed by measurable service standards.</p>
         </div>
         <div class="metrics-grid scroll-reveal">
           <div class="metric-card">
@@ -90,7 +89,7 @@
           </div>
           <div class="metric-card">
             <div class="metric-card__icon"><span class="icon"><svg><use href="assets/icons/sprite.svg#icon-users"/></svg></span></div>
-            <div class="metric-card__val">24/7/365</div>
+            <div class="metric-card__val">24/7</div>
             <div class="metric-card__label">Support Availability</div>
           </div>
         </div>
@@ -100,6 +99,11 @@
     <!-- FORM & DETAILS SPLIT -->
     <section class="section contact-split-section">
       <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">Inquiries & Contact</div>
+          <h2 class="section-header__title">Get in Touch with Us</h2>
+          <p class="section-header__subtitle">Send us an inquiry or reach out to our dedicated support channels.</p>
+        </div>
         <div class="contact-split">
 
           <!-- LEFT COLUMN (Form & Upload) -->
@@ -108,7 +112,7 @@
             <div class="contact-card">
               <div class="contact-card__header">
                 <span class="contact-card__eyebrow">Get In Touch</span>
-                <h2 class="contact-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span> Send Us An Inquiry</h2>
+                <h3 class="contact-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span> Send Us An Inquiry</h3>
               </div>
               <form class="contact-form" id="support-inquiry-form" novalidate>
                 <div class="contact-form__row">
@@ -165,65 +169,28 @@
               </form>
             </div>
 
-            <!-- Branch Locations -->
+            <!-- Business Hours details -->
             <div class="contact-card">
               <div class="contact-card__header">
-                <span class="contact-card__eyebrow">Our Showrooms</span>
-                <h3 class="contact-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span> Showroom Branches</h3>
+                <span class="contact-card__eyebrow">Operations</span>
+                <h3 class="contact-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span> Office Business Hours</h3>
               </div>
-              <div class="branches-list">
-                <div class="branch-item">
-                  <h4 class="branch-item__title">Head Office Showroom</h4>
-                  <div class="branch-item__details">
-                    <div class="branch-detail">
-                      <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span>
-                      <span>123 Luxury Drive, Suite 100, New York, NY 10001</span>
-                    </div>
-                    <div class="branch-detail">
-                      <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span>
-                      <span>Phone: <a href="tel:+15551234567" class="branch-detail__link">+1 (555) 123-4567</a></span>
-                    </div>
-                    <div class="branch-detail">
-                      <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span>
-                      <span>Hours: Mon-Sat, 8:00 AM - 8:00 PM</span>
-                    </div>
-                  </div>
+              <div class="contact-kv-list">
+                <div class="contact-kv-item">
+                  <span class="contact-kv-label">Monday - Friday</span>
+                  <strong class="contact-kv-value">8:00 AM - 8:00 PM</strong>
                 </div>
-                
-                <div class="branch-item">
-                  <h4 class="branch-item__title">Downtown Manhattan Branch</h4>
-                  <div class="branch-item__details">
-                    <div class="branch-detail">
-                      <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span>
-                      <span>456 Broad Street, New York, NY 10004</span>
-                    </div>
-                    <div class="branch-detail">
-                      <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span>
-                      <span>Phone: <a href="tel:+15551234588" class="branch-detail__link">+1 (555) 123-4588</a></span>
-                    </div>
-                    <div class="branch-detail">
-                      <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span>
-                      <span>Hours: Mon-Sat, 8:00 AM - 8:00 PM</span>
-                    </div>
-                  </div>
+                <div class="contact-kv-item">
+                  <span class="contact-kv-label">Saturday</span>
+                  <strong class="contact-kv-value">9:00 AM - 6:00 PM</strong>
                 </div>
-
-                <div class="branch-item">
-                  <h4 class="branch-item__title">JFK Airport Terminal 4 Station</h4>
-                  <div class="branch-item__details">
-                    <div class="branch-detail">
-                      <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span>
-                      <span>Building 142, JFK International Airport, Jamaica, NY 11430</span>
-                    </div>
-                    <div class="branch-detail">
-                      <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span>
-                      <span>Phone: <a href="tel:+15551234599" class="branch-detail__link">+1 (555) 123-4599</a></span>
-                    </div>
-                    <div class="branch-detail">
-                      <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span>
-                      <span>Hours: 24/7/365</span>
-                    </div>
-                  </div>
+                <div class="contact-kv-item">
+                  <span class="contact-kv-label">Sunday</span>
+                  <strong class="contact-kv-value">10:00 AM - 4:00 PM</strong>
+                </div>
+                <div class="contact-kv-item">
+                  <span class="contact-kv-label">Holiday Hours</span>
+                  <span class="contact-kv-value">Showrooms Closed (Digital Only)</span>
                 </div>
               </div>
             </div>
@@ -234,11 +201,13 @@
           <div class="contact-column scroll-reveal">
             
             <!-- WhatsApp Support Card -->
-            <div class="whatsapp-card">
-              <div class="whatsapp-card__icon"><span class="icon icon--lg"><svg><use href="assets/icons/sprite.svg#icon-send"/></svg></span></div>
-              <h3 class="whatsapp-card__title">Chat On WhatsApp</h3>
+            <div class="contact-card whatsapp-card">
+              <div class="contact-card__header">
+                <span class="contact-card__eyebrow">Instant Chat</span>
+                <h3 class="contact-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-send"/></svg></span> Chat On WhatsApp</h3>
+              </div>
               <p class="whatsapp-card__desc">Get instant, direct answers from helpdesk advisors via WhatsApp chat.</p>
-              <a href="https://wa.me/15551234567" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--sm whatsapp-card__btn">Chat With Us (Available)</a>
+              <a href="https://wa.me/15551234567" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm whatsapp-card__btn">Chat With Us (Available)</a>
             </div>
 
             <!-- Phone Helplines Card -->
@@ -319,34 +288,77 @@
               </div>
             </div>
 
-            <!-- Business Hours details -->
-            <div class="contact-card">
-              <div class="contact-card__header">
-                <span class="contact-card__eyebrow">Operations</span>
-                <h3 class="contact-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span> Office Business Hours</h3>
-              </div>
-              <div class="contact-kv-list">
-                <div class="contact-kv-item">
-                  <span class="contact-kv-label">Monday - Friday</span>
-                  <strong class="contact-kv-value">8:00 AM - 8:00 PM</strong>
-                </div>
-                <div class="contact-kv-item">
-                  <span class="contact-kv-label">Saturday</span>
-                  <strong class="contact-kv-value">9:00 AM - 6:00 PM</strong>
-                </div>
-                <div class="contact-kv-item">
-                  <span class="contact-kv-label">Sunday</span>
-                  <strong class="contact-kv-value">10:00 AM - 4:00 PM</strong>
-                </div>
-                <div class="contact-kv-item">
-                  <span class="contact-kv-label">Holiday Hours</span>
-                  <span class="contact-kv-value">Showrooms Closed (Digital Only)</span>
-                </div>
-              </div>
-            </div>
-
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOWROOM BRANCHES SECTION -->
+    <section class="section branches-section" id="branches">
+      <div class="container">
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">Our Showrooms</div>
+          <h2 class="section-header__title">Showroom Branches</h2>
+          <p class="section-header__subtitle">Visit our physical locations to inspect vehicles and speak with sales advisors.</p>
+        </div>
+        <div class="branches-grid scroll-reveal">
+          <div class="contact-card branch-card">
+            <div class="branch-card__icon-box"><span class="icon icon--md"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span></div>
+            <h4 class="branch-card__title">Head Office Showroom</h4>
+            <div class="branch-card__details">
+              <div class="branch-detail">
+                <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span>
+                <span>123 Luxury Drive, Suite 100, New York, NY 10001</span>
+              </div>
+              <div class="branch-detail">
+                <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span>
+                <span>Phone: <a href="tel:+15551234567" class="branch-detail__link">+1 (555) 123-4567</a></span>
+              </div>
+              <div class="branch-detail">
+                <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span>
+                <span>Hours: Mon-Sat, 8:00 AM - 8:00 PM</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="contact-card branch-card">
+            <div class="branch-card__icon-box"><span class="icon icon--md"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span></div>
+            <h4 class="branch-card__title">Downtown Manhattan Branch</h4>
+            <div class="branch-card__details">
+              <div class="branch-detail">
+                <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span>
+                <span>456 Broad Street, New York, NY 10004</span>
+              </div>
+              <div class="branch-detail">
+                <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span>
+                <span>Phone: <a href="tel:+15551234588" class="branch-detail__link">+1 (555) 123-4588</a></span>
+              </div>
+              <div class="branch-detail">
+                <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span>
+                <span>Hours: Mon-Sat, 8:00 AM - 8:00 PM</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-card branch-card">
+            <div class="branch-card__icon-box"><span class="icon icon--md"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span></div>
+            <h4 class="branch-card__title">JFK Airport Terminal 4 Station</h4>
+            <div class="branch-card__details">
+              <div class="branch-detail">
+                <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span>
+                <span>Building 142, JFK International Airport, Jamaica, NY 11430</span>
+              </div>
+              <div class="branch-detail">
+                <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span>
+                <span>Phone: <a href="tel:+15551234599" class="branch-detail__link">+1 (555) 123-4599</a></span>
+              </div>
+              <div class="branch-detail">
+                <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span>
+                <span>Hours: 24/7/365</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -375,7 +387,7 @@
         <div class="section-header scroll-reveal">
           <div class="section-header__badge">Office Location</div>
           <h2 class="section-header__title">Visit Our Head Office</h2>
-          <p class="section-header__desc">Find our premium support center and connect with the Drive Elite team in person.</p>
+          <p class="section-header__subtitle">Find our premium support center and connect with the Drive Elite team in person.</p>
         </div>
         
         <div class="location-grid scroll-reveal">
@@ -408,15 +420,15 @@
           
           <!-- Map Visual/Iframe Container -->
           <div class="map-container-wrap">
-            <div class="map-visual">
-              <div class="map-visual__pin">
-                <span class="icon icon--lg"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span>
-                <div class="map-visual__tooltip">
-                  <strong>Drive Elite HQ</strong><br>
-                  123 Luxury Drive
-                </div>
-              </div>
-            </div>
+            <iframe 
+              src="https://maps.google.com/maps?q=123%20Luxury%20Drive,%20New%20York,%20NY%2010001&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+              width="100%" 
+              height="100%" 
+              style="border:0; display:block; border-radius:inherit;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
         </div>
       </div>
@@ -428,57 +440,48 @@
         <div class="section-header scroll-reveal">
           <div class="section-header__badge">Support Process</div>
           <h2 class="section-header__title">Our Support Process Lifecycle</h2>
-          <p class="section-header__desc">How we review, respond, and resolve customer inquiries.</p>
+          <p class="section-header__subtitle">How we review, respond, and resolve customer inquiries.</p>
         </div>
-        <div class="support-stepper scroll-reveal">
-          <div class="stepper-step">
-            <div class="stepper-step__header">
-              <div class="stepper-step__circle">1</div>
-              <div class="stepper-step__connector"></div>
+        <div class="process-grid scroll-reveal">
+          <div class="process-card">
+            <div class="process-card__number">01</div>
+            <div class="process-card__icon-box">
+              <span class="icon icon--md"><svg><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span>
             </div>
-            <div class="stepper-step__content">
-              <h4 class="stepper-step__title">Submit Enquiry</h4>
-              <p class="stepper-step__desc">Complete and submit our digital support inquiry form.</p>
-            </div>
+            <h4 class="process-card__title">Submit Enquiry</h4>
+            <p class="process-card__desc">Complete and submit our digital support inquiry form.</p>
           </div>
-          <div class="stepper-step">
-            <div class="stepper-step__header">
-              <div class="stepper-step__circle">2</div>
-              <div class="stepper-step__connector"></div>
+          <div class="process-card">
+            <div class="process-card__number">02</div>
+            <div class="process-card__icon-box">
+              <span class="icon icon--md"><svg><use href="assets/icons/sprite.svg#icon-shield-check"/></svg></span>
             </div>
-            <div class="stepper-step__content">
-              <h4 class="stepper-step__title">Support Review</h4>
-              <p class="stepper-step__desc">Our triage desk allocates the ticket to the correct department.</p>
-            </div>
+            <h4 class="process-card__title">Support Review</h4>
+            <p class="process-card__desc">Our triage desk allocates the ticket to the correct department.</p>
           </div>
-          <div class="stepper-step">
-            <div class="stepper-step__header">
-              <div class="stepper-step__circle">3</div>
-              <div class="stepper-step__connector"></div>
+          <div class="process-card">
+            <div class="process-card__number">03</div>
+            <div class="process-card__icon-box">
+              <span class="icon icon--md"><svg><use href="assets/icons/sprite.svg#icon-send"/></svg></span>
             </div>
-            <div class="stepper-step__content">
-              <h4 class="stepper-step__title">Advisor Response</h4>
-              <p class="stepper-step__desc">A specialist support agent replies with resolution details.</p>
-            </div>
+            <h4 class="process-card__title">Advisor Response</h4>
+            <p class="process-card__desc">A specialist support agent replies with response details.</p>
           </div>
-          <div class="stepper-step">
-            <div class="stepper-step__header">
-              <div class="stepper-step__circle">4</div>
-              <div class="stepper-step__connector"></div>
+          <div class="process-card">
+            <div class="process-card__number">04</div>
+            <div class="process-card__icon-box">
+              <span class="icon icon--md"><svg><use href="assets/icons/sprite.svg#icon-wrench"/></svg></span>
             </div>
-            <div class="stepper-step__content">
-              <h4 class="stepper-step__title">Issue Resolution</h4>
-              <p class="stepper-step__desc">We complete changes, process refunds, or update bookings.</p>
-            </div>
+            <h4 class="process-card__title">Issue Resolution</h4>
+            <p class="process-card__desc">We complete changes, process refunds, or update bookings.</p>
           </div>
-          <div class="stepper-step">
-            <div class="stepper-step__header">
-              <div class="stepper-step__circle">5</div>
+          <div class="process-card">
+            <div class="process-card__number">05</div>
+            <div class="process-card__icon-box">
+              <span class="icon icon--md"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span>
             </div>
-            <div class="stepper-step__content">
-              <h4 class="stepper-step__title">Customer Feedback</h4>
-              <p class="stepper-step__desc">Help us maintain standards by submitting rating surveys.</p>
-            </div>
+            <h4 class="process-card__title">Customer Feedback</h4>
+            <p class="process-card__desc">Help us maintain standards by submitting rating surveys.</p>
           </div>
         </div>
       </div>
@@ -490,7 +493,7 @@
         <div class="section-header scroll-reveal">
           <div class="section-header__badge">Quick Answers</div>
           <h2 class="section-header__title">FAQ Quick Links</h2>
-          <p class="section-header__desc">Find instant answers to common questions in our help documentation.</p>
+          <p class="section-header__subtitle">Find instant answers to common questions in our help documentation.</p>
         </div>
         <div class="faq-links-grid scroll-reveal">
           <a href="faq.html#booking" class="faq-link-card">
@@ -528,7 +531,7 @@
         <div class="section-header scroll-reveal">
           <div class="section-header__badge">Feedback</div>
           <h2 class="section-header__title">Recent Support Reviews</h2>
-          <p class="section-header__desc">See what our customers say about their experiences with our customer support teams.</p>
+          <p class="section-header__subtitle">See what our customers say about their experiences with our customer support teams.</p>
         </div>
         <div class="reviews-grid scroll-reveal">
           <div class="review-card">
@@ -594,23 +597,33 @@
         <div class="section-header scroll-reveal">
           <div class="section-header__badge">Connect</div>
           <h2 class="section-header__title">Follow Our Channels</h2>
-          <p class="section-header__desc">Stay updated on new luxury additions and support schedules.</p>
+          <p class="section-header__subtitle">Stay updated on new luxury additions and support schedules.</p>
         </div>
         <div class="social-channels-row scroll-reveal">
-          <a href="#" class="social-channel-btn" aria-label="Facebook">
-            <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-facebook"/></svg></span>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-channel-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
           </a>
-          <a href="#" class="social-channel-btn" aria-label="Instagram">
-            <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-instagram"/></svg></span>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-channel-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+            </svg>
           </a>
-          <a href="#" class="social-channel-btn" aria-label="LinkedIn">
-            <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-linkedin"/></svg></span>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-channel-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764.784.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
           </a>
-          <a href="#" class="social-channel-btn" aria-label="X / Twitter">
-            <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-x"/></svg></span>
+          <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="social-channel-btn" aria-label="X">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
           </a>
-          <a href="#" class="social-channel-btn" aria-label="YouTube">
-            <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-youtube"/></svg></span>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="social-channel-btn" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.507a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.507 9.388.507 9.388.507s7.518 0 9.388-.507a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
           </a>
         </div>
       </div>
