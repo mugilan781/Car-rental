@@ -25,6 +25,19 @@ const Anim = (() => {
       return;
     }
 
+    // Fallback if IntersectionObserver is not supported
+    if (!window.IntersectionObserver) {
+      elements.forEach(el => {
+        el.classList.add('revealed');
+      });
+      return;
+    }
+
+    // Check if we are on the FAQ page
+    const isFaqPage = window.location.pathname.includes('faq.html') || !!document.getElementById('faq-search-input');
+    const thresholdVal = isFaqPage ? 0.05 : 0.15;
+    const rootMarginVal = isFaqPage ? '0px 0px 15% 0px' : '0px 0px -40px 0px';
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -33,11 +46,26 @@ const Anim = (() => {
         }
       });
     }, {
-      threshold: 0.15,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: thresholdVal,
+      rootMargin: rootMarginVal
     });
 
-    elements.forEach(el => observer.observe(el));
+    elements.forEach(el => {
+      observer.observe(el);
+      // Fast scroll / initial load check: reveal immediately if already near viewport
+      if (isFaqPage) {
+        const rect = el.getBoundingClientRect();
+        const clientHeight = window.innerHeight || document.documentElement.clientHeight;
+        const isInViewport = (
+          rect.top < clientHeight * 1.15 &&
+          rect.bottom > 0
+        );
+        if (isInViewport) {
+          el.classList.add('revealed');
+          observer.unobserve(el);
+        }
+      }
+    });
   }
 
   /* ============================================================

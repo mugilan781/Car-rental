@@ -369,7 +369,7 @@
           <p class="section-header__subtitle">Please review the following policies before booking.</p>
         </div>
         <div class="terms-list scroll-reveal">
-          <div class="terms-item open">
+          <div class="terms-item">
             <button class="terms-item__question">Booking Policy <span class="terms-item__toggle">+</span></button>
             <div class="terms-item__answer"><p class="terms-item__answer-text">Bookings must be made at least 2 hours before the desired pickup time. A valid credit card is required at the time of booking. The full rental amount and security deposit will be charged upon approval. Same-day bookings are subject to vehicle availability.</p></div>
           </div>
@@ -603,7 +603,7 @@
           <h2 class="section-header__title">Frequently Asked Questions</h2>
         </div>
         <div class="terms-list scroll-reveal">
-          <div class="terms-item open">
+          <div class="terms-item">
             <button class="terms-item__question">What documents are required to rent this car? <span class="terms-item__toggle">+</span></button>
             <div class="terms-item__answer"><p class="terms-item__answer-text">You'll need a valid driver's license, a government-issued ID or passport, and a credit card for the security deposit. Renters must be at least 25 years old for this luxury vehicle.</p></div>
           </div>
@@ -691,38 +691,7 @@
   <script src="assets/js/animation.js"></script>
 
   <!-- Car Details page interactions -->
-  <script>
-  (function() {
-    'use strict';
-
-    /* ---- Thumbnail Gallery Click ---- */
-    document.querySelectorAll('.showcase__thumb').forEach(thumb => {
-      thumb.addEventListener('click', () => {
-        document.querySelectorAll('.showcase__thumb').forEach(t => t.classList.remove('active'));
-        thumb.classList.add('active');
-      });
-    });
-
-    /* ---- Booking Type Toggle ---- */
-    document.querySelectorAll('.booking-card__type-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.booking-card__type-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-      });
-    });
-
-    /* ---- Terms & FAQ Accordion ---- */
-    document.querySelectorAll('.terms-item__question').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.closest('.terms-item');
-        const parent = item.parentElement;
-        const wasOpen = item.classList.contains('open');
-        parent.querySelectorAll('.terms-item').forEach(i => i.classList.remove('open'));
-        if (!wasOpen) item.classList.add('open');
-      });
-    });
-
-  })();
-  </script>
+  <script src="assets/js/vehicles-data.js"></script>
+  <script src="assets/js/car-details.js"></script>
 </body>
 </html>

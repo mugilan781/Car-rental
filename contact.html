@@ -27,7 +27,7 @@
       </div>
       <div class="navbar__actions">
         <button class="navbar__search-btn" aria-label="Search" title="Search (Ctrl+K)"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
-<a href="login.html" class="btn btn--ghost btn--sm">Login</a>
+        <a href="login.html" class="btn btn--ghost btn--sm">Login</a>
         <a href="register.html" class="btn btn--primary btn--sm">Register</a>
       </div>
       <button class="navbar__toggle" aria-label="Toggle mobile menu"><span></span><span></span><span></span></button>
@@ -44,9 +44,9 @@
     <div class="cont-hero__overlay"></div>
     <div class="container">
       <div class="cont-hero__content scroll-reveal">
-        <div class="auth-hero__badge"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span> Support Center</div>
-        <h1 class="auth-hero__title">Contact <span class="highlight">DriveElite</span></h1>
-        <p class="auth-hero__desc">Need assistance with dynamic booking files, license verification workflows, or showroom locations? Let our advisor team resolve your inquiries.</p>
+        <div class="cont-hero__badge">Support Center</div>
+        <h1 class="cont-hero__title">Contact <span class="highlight">Drive Elite</span></h1>
+        <p class="cont-hero__desc">Connect with our support team for booking assistance, vehicle inquiries, account help, and premium rental support.</p>
       </div>
     </div>
   </section>
@@ -65,101 +65,164 @@
   <main id="main-content">
 
     <!-- CONTACT INFO STATS -->
-    <section class="section u-contact-1">
+    <section class="section metrics-section">
       <div class="container">
-        <div class="cont-grid-4 scroll-reveal">
-          <div class="info-card"><div class="info-card__val u-contact-2">12,500+</div><div class="rh-stat-card__label">Support Tickets Resolved</div></div>
-          <div class="info-card"><div class="info-card__val u-contact-3">&lt; 15 mins</div><div class="rh-stat-card__label">Average Response Time</div></div>
-          <div class="info-card"><div class="info-card__val u-contact-4">99.4%</div><div class="rh-stat-card__label">Customer Satisfaction</div></div>
-          <div class="info-card"><div class="info-card__val u-contact-5">24/7/365</div><div class="rh-stat-card__label">Support Availability</div></div>
+        <div class="section-header scroll-reveal">
+          <div class="section-header__badge">Support Performance</div>
+          <h2 class="section-header__title">Service You Can Rely On</h2>
+          <p class="section-header__desc">Responsive assistance backed by measurable service standards.</p>
+        </div>
+        <div class="metrics-grid scroll-reveal">
+          <div class="metric-card">
+            <div class="metric-card__icon"><span class="icon"><svg><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span></div>
+            <div class="metric-card__val">12,500+</div>
+            <div class="metric-card__label">Support Tickets Resolved</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-card__icon"><span class="icon"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div>
+            <div class="metric-card__val">&lt; 15m</div>
+            <div class="metric-card__label">Average Response Time</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-card__icon"><span class="icon"><svg><use href="assets/icons/sprite.svg#icon-check-circle"/></svg></span></div>
+            <div class="metric-card__val">99.4%</div>
+            <div class="metric-card__label">Customer Satisfaction</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-card__icon"><span class="icon"><svg><use href="assets/icons/sprite.svg#icon-users"/></svg></span></div>
+            <div class="metric-card__val">24/7/365</div>
+            <div class="metric-card__label">Support Availability</div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- FORM & DETAILS SPLIT -->
-    <section class="section">
+    <section class="section contact-split-section">
       <div class="container">
-        <div class="cont-split">
+        <div class="contact-split">
 
           <!-- LEFT COLUMN (Form & Upload) -->
-          <div class="prof-column scroll-reveal">
+          <div class="contact-column scroll-reveal">
             
-            <div class="cont-card">
-              <div class="prof-card__header">
-                <h2 class="prof-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span> Send Us An Inquiry</h2>
+            <div class="contact-card">
+              <div class="contact-card__header">
+                <span class="contact-card__eyebrow">Get In Touch</span>
+                <h2 class="contact-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span> Send Us An Inquiry</h2>
               </div>
-              <form class="cont-form-grid" id="support-inquiry-form" novalidate>
-                <div class="cont-field">
-                  <label for="user-name">Full Name <span class="u-contact-6">*</span></label>
-                  <input type="text" id="user-name" placeholder="John Doe" required autocomplete="name">
-                </div>
-                <div class="cont-field">
-                  <label for="user-email">Email Address <span class="u-contact-7">*</span></label>
-                  <input type="email" id="user-email" placeholder="john@example.com" required autocomplete="email">
-                </div>
-                <div class="cont-field">
-                  <label for="user-phone">Phone Number <span class="u-contact-8">*</span></label>
-                  <input type="tel" id="user-phone" placeholder="+1 (555) 123-4567" required autocomplete="tel">
-                </div>
-                <div class="cont-field">
-                  <label for="inq-dept">Department <span class="u-contact-9">*</span></label>
-                  <select id="inq-dept" required>
-                    <option selected>General Enquiry</option>
-                    <option>Booking Support</option>
-                    <option>Rental Information</option>
-                    <option>Corporate Services</option>
-                    <option>Technical Support</option>
-                    <option>Complaint</option>
-                  </select>
-                </div>
-                <div class="cont-field cont-form-grid--full">
-                  <label for="inq-subject">Subject <span class="u-contact-10">*</span></label>
-                  <input type="text" id="inq-subject" placeholder="Summary of your inquiry" required>
-                </div>
-                <div class="cont-field cont-form-grid--full">
-                  <label for="inq-message">Message <span class="u-contact-11">*</span></label>
-                  <textarea class="u-contact-12" id="inq-message" placeholder="Provide detailed specifications of your request..." required></textarea>
-                </div>
-                <!-- File upload placeholder -->
-                <div class="cont-field cont-form-grid--full">
-                  <label>Document Attachment</label>
-                  <div class="cont-file-placeholder">
-                    <span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-settings"/></svg></span></span>
-                    <span>Click to attach license images or booking summaries (Max 5MB)</span>
+              <form class="contact-form" id="support-inquiry-form" novalidate>
+                <div class="contact-form__row">
+                  <div class="contact-field">
+                    <label for="user-name">Full Name <span class="required-star">*</span></label>
+                    <input type="text" id="user-name" placeholder="John Doe" required autocomplete="name">
+                  </div>
+                  <div class="contact-field">
+                    <label for="user-email">Email Address <span class="required-star">*</span></label>
+                    <input type="email" id="user-email" placeholder="john@example.com" required autocomplete="email">
                   </div>
                 </div>
-                <div class="cont-form-grid--full u-contact-13">
-                  <button type="submit" class="btn btn--primary btn--md u-contact-14">Send Message</button>
-                  <button type="reset" class="btn btn--ghost btn--md u-contact-15">Reset</button>
+                <div class="contact-form__row">
+                  <div class="contact-field">
+                    <label for="user-phone">Phone Number <span class="required-star">*</span></label>
+                    <input type="tel" id="user-phone" placeholder="+1 (555) 123-4567" required autocomplete="tel">
+                  </div>
+                  <div class="contact-field">
+                    <label for="inq-dept">Department <span class="required-star">*</span></label>
+                    <div class="select-wrapper">
+                      <select id="inq-dept" required>
+                        <option value="" disabled selected>Select Department</option>
+                        <option>General Enquiry</option>
+                        <option>Booking Support</option>
+                        <option>Rental Information</option>
+                        <option>Corporate Services</option>
+                        <option>Technical Support</option>
+                        <option>Complaint</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="contact-field contact-field--full">
+                  <label for="inq-subject">Subject <span class="required-star">*</span></label>
+                  <input type="text" id="inq-subject" placeholder="Summary of your inquiry" required>
+                </div>
+                <div class="contact-field contact-field--full">
+                  <label for="inq-message">Message <span class="required-star">*</span></label>
+                  <textarea id="inq-message" placeholder="Provide detailed specifications of your request..." required></textarea>
+                </div>
+                <!-- File upload control -->
+                <div class="contact-field contact-field--full">
+                  <label>Document Attachment</label>
+                  <input type="file" id="document-attachment" class="hidden-file-input" accept="image/*,.pdf,.doc,.docx" style="display: none;">
+                  <div class="file-upload-box" id="file-upload-box">
+                    <span class="file-upload-icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-upload"/></svg></span></span>
+                    <span class="file-upload-text" id="file-upload-text">Click to attach license images or booking summaries (Max 5MB)</span>
+                  </div>
+                </div>
+                <div class="contact-form__actions">
+                  <button type="submit" class="btn btn--primary btn--md">Send Message</button>
+                  <button type="reset" class="btn btn--ghost btn--md">Reset</button>
                 </div>
               </form>
             </div>
 
             <!-- Branch Locations -->
-            <div class="cont-card">
-              <div class="prof-card__header">
-                <h3 class="prof-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span> Showroom Branches</h3>
+            <div class="contact-card">
+              <div class="contact-card__header">
+                <span class="contact-card__eyebrow">Our Showrooms</span>
+                <h3 class="contact-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span> Showroom Branches</h3>
               </div>
-              <div class="u-contact-16">
-                <div class="u-contact-17">
-                  <div class="u-contact-18">Head Office Showroom</div>
-                  <div class="u-contact-19">
-                    123 Luxury Drive, Suite 100, New York, NY 10001 <br>
-                    <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span> Phone: +1 (555) 123-4567 | <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span> Hours: Mon-Sat, 8AM - 8PM
+              <div class="branches-list">
+                <div class="branch-item">
+                  <h4 class="branch-item__title">Head Office Showroom</h4>
+                  <div class="branch-item__details">
+                    <div class="branch-detail">
+                      <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span>
+                      <span>123 Luxury Drive, Suite 100, New York, NY 10001</span>
+                    </div>
+                    <div class="branch-detail">
+                      <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span>
+                      <span>Phone: <a href="tel:+15551234567" class="branch-detail__link">+1 (555) 123-4567</a></span>
+                    </div>
+                    <div class="branch-detail">
+                      <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span>
+                      <span>Hours: Mon-Sat, 8:00 AM - 8:00 PM</span>
+                    </div>
                   </div>
                 </div>
-                <div class="u-contact-20">
-                  <div class="u-contact-21">Downtown Manhattan Branch</div>
-                  <div class="u-contact-22">
-                    456 Broad Street, New York, NY 10004 <br>
-                    <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span> Phone: +1 (555) 123-4588 | <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span> Hours: Mon-Sat, 8AM - 8PM
+                
+                <div class="branch-item">
+                  <h4 class="branch-item__title">Downtown Manhattan Branch</h4>
+                  <div class="branch-item__details">
+                    <div class="branch-detail">
+                      <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span>
+                      <span>456 Broad Street, New York, NY 10004</span>
+                    </div>
+                    <div class="branch-detail">
+                      <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span>
+                      <span>Phone: <a href="tel:+15551234588" class="branch-detail__link">+1 (555) 123-4588</a></span>
+                    </div>
+                    <div class="branch-detail">
+                      <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span>
+                      <span>Hours: Mon-Sat, 8:00 AM - 8:00 PM</span>
+                    </div>
                   </div>
                 </div>
-                <div class="u-contact-23">
-                  <div class="u-contact-24">JFK Airport Terminal 4 Station</div>
-                  <div class="u-contact-25">
-                    Building 142, JFK International Airport, Jamaica, NY 11430 <br>
-                    <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span> Phone: +1 (555) 123-4599 | <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span> Hours: 24/7/365
+
+                <div class="branch-item">
+                  <h4 class="branch-item__title">JFK Airport Terminal 4 Station</h4>
+                  <div class="branch-item__details">
+                    <div class="branch-detail">
+                      <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span>
+                      <span>Building 142, JFK International Airport, Jamaica, NY 11430</span>
+                    </div>
+                    <div class="branch-detail">
+                      <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span>
+                      <span>Phone: <a href="tel:+15551234599" class="branch-detail__link">+1 (555) 123-4599</a></span>
+                    </div>
+                    <div class="branch-detail">
+                      <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span>
+                      <span>Hours: 24/7/365</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -168,65 +231,117 @@
           </div>
 
           <!-- RIGHT COLUMN (Helplines & Department metrics) -->
-          <div class="prof-column scroll-reveal">
+          <div class="contact-column scroll-reveal">
             
             <!-- WhatsApp Support Card -->
-            <div class="wa-card">
-              <div class="wa-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span></div>
-              <h3 class="prof-card__title">Chat On WhatsApp</h3>
-              <p>Get instant, direct answers from helpdesk advisors via WhatsApp chat.</p>
-              <button type="button" class="btn btn--secondary btn--sm u-contact-26">Chat With Us (Available)</button>
+            <div class="whatsapp-card">
+              <div class="whatsapp-card__icon"><span class="icon icon--lg"><svg><use href="assets/icons/sprite.svg#icon-send"/></svg></span></div>
+              <h3 class="whatsapp-card__title">Chat On WhatsApp</h3>
+              <p class="whatsapp-card__desc">Get instant, direct answers from helpdesk advisors via WhatsApp chat.</p>
+              <a href="https://wa.me/15551234567" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--sm whatsapp-card__btn">Chat With Us (Available)</a>
             </div>
 
-            <!-- Contact Channels (Information Cards) -->
-            <div class="cont-card">
-              <div class="prof-card__header">
-                <h3 class="prof-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span> Phone Helplines</h3>
+            <!-- Phone Helplines Card -->
+            <div class="contact-card">
+              <div class="contact-card__header">
+                <span class="contact-card__eyebrow">Voice Support</span>
+                <h3 class="contact-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span> Phone Helplines</h3>
               </div>
-              <div class="rh-kv-list">
-                <div class="rh-kv-item"><span>Sales & Booking:</span><strong>+1 (555) 123-4567</strong></div>
-                <div class="rh-kv-item"><span>Corporate Solutions:</span><strong>+1 (555) 123-4568</strong></div>
-                <div class="rh-kv-item"><span>Technical Support:</span><strong>+1 (555) 123-4569</strong></div>
-                <div class="rh-kv-item"><span>24/7 Emergency Line:</span><strong class="u-contact-27">+1 (555) 123-4500 (Option 9)</strong></div>
+              <div class="contact-kv-list">
+                <div class="contact-kv-item">
+                  <span class="contact-kv-label">Sales & Booking:</span>
+                  <strong class="contact-kv-value"><a href="tel:+15551234567">+1 (555) 123-4567</a></strong>
+                </div>
+                <div class="contact-kv-item">
+                  <span class="contact-kv-label">Corporate Solutions:</span>
+                  <strong class="contact-kv-value"><a href="tel:+15551234568">+1 (555) 123-4568</a></strong>
+                </div>
+                <div class="contact-kv-item">
+                  <span class="contact-kv-label">Technical Support:</span>
+                  <strong class="contact-kv-value"><a href="tel:+15551234569">+1 (555) 123-4569</a></strong>
+                </div>
+                <div class="contact-kv-item">
+                  <span class="contact-kv-label">24/7 Emergency Line:</span>
+                  <strong class="contact-kv-value emergency-highlight"><a href="tel:+15551234500">+1 (555) 123-4500</a> (Option 9)</strong>
+                </div>
               </div>
             </div>
 
             <!-- Email Channels -->
-            <div class="cont-card">
-              <div class="prof-card__header">
-                <h3 class="prof-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span> Email Support</h3>
+            <div class="contact-card">
+              <div class="contact-card__header">
+                <span class="contact-card__eyebrow">Digital Inquiries</span>
+                <h3 class="contact-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span> Email Support</h3>
               </div>
-              <div class="rh-kv-list">
-                <div class="rh-kv-item"><span>General Enquiries:</span><strong>hello@driveelite.com</strong></div>
-                <div class="rh-kv-item"><span>Booking Assistance:</span><strong>bookings@driveelite.com</strong></div>
-                <div class="rh-kv-item"><span>Corporate Fleet:</span><strong>corporate@driveelite.com</strong></div>
-                <div class="rh-kv-item"><span>Technical Support:</span><strong>tech@driveelite.com</strong></div>
+              <div class="contact-kv-list">
+                <div class="contact-kv-item">
+                  <span class="contact-kv-label">General Enquiries:</span>
+                  <strong class="contact-kv-value"><a href="mailto:hello@driveelite.com">hello@driveelite.com</a></strong>
+                </div>
+                <div class="contact-kv-item">
+                  <span class="contact-kv-label">Booking Assistance:</span>
+                  <strong class="contact-kv-value"><a href="mailto:bookings@driveelite.com">bookings@driveelite.com</a></strong>
+                </div>
+                <div class="contact-kv-item">
+                  <span class="contact-kv-label">Corporate Fleet:</span>
+                  <strong class="contact-kv-value"><a href="mailto:corporate@driveelite.com">corporate@driveelite.com</a></strong>
+                </div>
+                <div class="contact-kv-item">
+                  <span class="contact-kv-label">Technical Support:</span>
+                  <strong class="contact-kv-value"><a href="mailto:tech@driveelite.com">tech@driveelite.com</a></strong>
+                </div>
               </div>
             </div>
 
             <!-- Department Response times -->
-            <div class="cont-card">
-              <div class="prof-card__header">
-                <h3 class="prof-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span> Department Response Metrics</h3>
+            <div class="contact-card">
+              <div class="contact-card__header">
+                <span class="contact-card__eyebrow">Service Levels</span>
+                <h3 class="contact-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span> Department Response Metrics</h3>
               </div>
-              <div class="rh-kv-list">
-                <div class="rh-kv-item"><span>Booking Team:</span><span class="u-contact-28">Within 10 Minutes</span></div>
-                <div class="rh-kv-item"><span>Corporate Team:</span><span>Within 30 Minutes</span></div>
-                <div class="rh-kv-item"><span>Technical Assistance:</span><span>Within 1 Hour</span></div>
-                <div class="rh-kv-item"><span>Emergency Desk:</span><span class="u-contact-29">Immediate (24/7)</span></div>
+              <div class="contact-kv-list">
+                <div class="contact-kv-item">
+                  <span class="contact-kv-label">Booking Team:</span>
+                  <span class="contact-kv-value text-success">Within 10 Minutes</span>
+                </div>
+                <div class="contact-kv-item">
+                  <span class="contact-kv-label">Corporate Team:</span>
+                  <span class="contact-kv-value">Within 30 Minutes</span>
+                </div>
+                <div class="contact-kv-item">
+                  <span class="contact-kv-label">Technical Assistance:</span>
+                  <span class="contact-kv-value">Within 1 Hour</span>
+                </div>
+                <div class="contact-kv-item">
+                  <span class="contact-kv-label">Emergency Desk:</span>
+                  <span class="contact-kv-value text-danger">Immediate (24/7)</span>
+                </div>
               </div>
             </div>
 
             <!-- Business Hours details -->
-            <div class="cont-card">
-              <div class="prof-card__header">
-                <h3 class="prof-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span> Office Business Hours</h3>
+            <div class="contact-card">
+              <div class="contact-card__header">
+                <span class="contact-card__eyebrow">Operations</span>
+                <h3 class="contact-card__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span> Office Business Hours</h3>
               </div>
-              <div class="hours-list">
-                <div class="hours-item"><span>Monday - Friday</span><strong>8:00 AM - 8:00 PM</strong></div>
-                <div class="hours-item"><span>Saturday</span><strong>9:00 AM - 6:00 PM</strong></div>
-                <div class="hours-item"><span>Sunday</span><strong>10:00 AM - 4:00 PM</strong></div>
-                <div class="hours-item"><span>Holiday Hours</span><span>Showrooms Closed (Digital Only)</span></div>
+              <div class="contact-kv-list">
+                <div class="contact-kv-item">
+                  <span class="contact-kv-label">Monday - Friday</span>
+                  <strong class="contact-kv-value">8:00 AM - 8:00 PM</strong>
+                </div>
+                <div class="contact-kv-item">
+                  <span class="contact-kv-label">Saturday</span>
+                  <strong class="contact-kv-value">9:00 AM - 6:00 PM</strong>
+                </div>
+                <div class="contact-kv-item">
+                  <span class="contact-kv-label">Sunday</span>
+                  <strong class="contact-kv-value">10:00 AM - 4:00 PM</strong>
+                </div>
+                <div class="contact-kv-item">
+                  <span class="contact-kv-label">Holiday Hours</span>
+                  <span class="contact-kv-value">Showrooms Closed (Digital Only)</span>
+                </div>
               </div>
             </div>
 
@@ -237,129 +352,279 @@
     </section>
 
     <!-- EMERGENCY ROADSIDE SUPPORT SECTION -->
-    <section class="section" id="emergency">
+    <section class="section emergency-section" id="emergency">
       <div class="container">
         <div class="emergency-strip scroll-reveal">
           <div class="emergency-strip__content">
-            <h2 class="emergency-strip__title"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-bell"/></svg></span> 24/7 Emergency Roadside Assistance</h2>
+            <div class="emergency-strip__badge"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-alert-triangle"/></svg></span> 24/7 Breakdown Assistance</div>
+            <h2 class="emergency-strip__title">Emergency Roadside Assistance</h2>
             <p class="emergency-strip__desc">
-              Flat tire, engine diagnostics alerts, or minor fender bender? DriveElite provides complimentary 24/7 roadside assist towing and emergency replacements nationwide.
+              Flat tire, engine diagnostics alerts, or minor fender bender? Drive Elite provides complimentary 24/7 roadside assist towing and emergency replacements nationwide.
             </p>
           </div>
-          <div>
-            <a href="tel:+15551234500" class="btn btn--accent btn--lg u-contact-30">Call Emergency Hotline</a>
+          <div class="emergency-strip__action">
+            <a href="tel:+15551234500" class="btn btn--accent btn--lg">Call Emergency Hotline</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- GOOGLE MAPS PLACEHOLDER -->
-    <section class="section" id="location">
+    <!-- GOOGLE MAPS SECTION -->
+    <section class="section office-location-section" id="location">
       <div class="container">
         <div class="section-header scroll-reveal">
           <div class="section-header__badge">Office Location</div>
-          <h2 class="section-header__title">Head Office Location</h2>
+          <h2 class="section-header__title">Visit Our Head Office</h2>
+          <p class="section-header__desc">Find our premium support center and connect with the Drive Elite team in person.</p>
         </div>
-        <div class="map-placeholder scroll-reveal">
-          <span class="u-contact-31"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-globe"/></svg></span></span>
-          <div class="u-contact-32">Office Location Map Placeholder</div>
-          <p class="u-contact-33">
-            123 Luxury Drive, Suite 100, New York, NY 10001
-          </p>
-          <a href="#" class="btn btn--primary btn--sm u-contact-34">Get Directions Placeholder</a>
+        
+        <div class="location-grid scroll-reveal">
+          <!-- Information Card -->
+          <div class="contact-card location-info-card">
+            <h3 class="location-info-card__title">Head Office</h3>
+            <p class="location-info-card__desc">Our flagship support center is conveniently located in midtown Manhattan.</p>
+            <div class="location-details">
+              <div class="branch-detail">
+                <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span>
+                <span>123 Luxury Drive, Suite 100, New York, NY 10001</span>
+              </div>
+              <div class="branch-detail">
+                <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-phone"/></svg></span>
+                <span>Phone: <a href="tel:+15551234567" class="branch-detail__link">+1 (555) 123-4567</a></span>
+              </div>
+              <div class="branch-detail">
+                <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-mail"/></svg></span>
+                <span>Email: <a href="mailto:hello@driveelite.com" class="branch-detail__link">hello@driveelite.com</a></span>
+              </div>
+              <div class="branch-detail">
+                <span class="icon icon--sm branch-detail__icon"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span>
+                <span>Hours: Mon-Sat, 8:00 AM - 8:00 PM</span>
+              </div>
+            </div>
+            <div class="location-info-card__action">
+              <a href="https://maps.google.com/?q=123+Luxury+Drive,+New+York,+NY" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--md">Get Directions</a>
+            </div>
+          </div>
+          
+          <!-- Map Visual/Iframe Container -->
+          <div class="map-container-wrap">
+            <div class="map-visual">
+              <div class="map-visual__pin">
+                <span class="icon icon--lg"><svg><use href="assets/icons/sprite.svg#icon-map-pin"/></svg></span>
+                <div class="map-visual__tooltip">
+                  <strong>Drive Elite HQ</strong><br>
+                  123 Luxury Drive
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- SUPPORT PROCESS TIMELINE -->
-    <section class="section" id="process">
+    <section class="section process-section" id="process">
       <div class="container">
         <div class="section-header scroll-reveal">
           <div class="section-header__badge">Support Process</div>
           <h2 class="section-header__title">Our Support Process Lifecycle</h2>
+          <p class="section-header__desc">How we review, respond, and resolve customer inquiries.</p>
         </div>
-        <div class="support-timeline scroll-reveal">
-          <div class="support-step"><div class="support-step__dot">1</div><h4 class="support-step__title">Submit Enquiry</h4></div>
-          <div class="support-step"><div class="support-step__dot">2</div><h4 class="support-step__title">Support Review</h4></div>
-          <div class="support-step"><div class="support-step__dot">3</div><h4 class="support-step__title">Advisor Response</h4></div>
-          <div class="support-step"><div class="support-step__dot">4</div><h4 class="support-step__title">Issue Resolution</h4></div>
-          <div class="support-step"><div class="support-step__dot">5</div><h4 class="support-step__title">Customer Feedback</h4></div>
+        <div class="support-stepper scroll-reveal">
+          <div class="stepper-step">
+            <div class="stepper-step__header">
+              <div class="stepper-step__circle">1</div>
+              <div class="stepper-step__connector"></div>
+            </div>
+            <div class="stepper-step__content">
+              <h4 class="stepper-step__title">Submit Enquiry</h4>
+              <p class="stepper-step__desc">Complete and submit our digital support inquiry form.</p>
+            </div>
+          </div>
+          <div class="stepper-step">
+            <div class="stepper-step__header">
+              <div class="stepper-step__circle">2</div>
+              <div class="stepper-step__connector"></div>
+            </div>
+            <div class="stepper-step__content">
+              <h4 class="stepper-step__title">Support Review</h4>
+              <p class="stepper-step__desc">Our triage desk allocates the ticket to the correct department.</p>
+            </div>
+          </div>
+          <div class="stepper-step">
+            <div class="stepper-step__header">
+              <div class="stepper-step__circle">3</div>
+              <div class="stepper-step__connector"></div>
+            </div>
+            <div class="stepper-step__content">
+              <h4 class="stepper-step__title">Advisor Response</h4>
+              <p class="stepper-step__desc">A specialist support agent replies with resolution details.</p>
+            </div>
+          </div>
+          <div class="stepper-step">
+            <div class="stepper-step__header">
+              <div class="stepper-step__circle">4</div>
+              <div class="stepper-step__connector"></div>
+            </div>
+            <div class="stepper-step__content">
+              <h4 class="stepper-step__title">Issue Resolution</h4>
+              <p class="stepper-step__desc">We complete changes, process refunds, or update bookings.</p>
+            </div>
+          </div>
+          <div class="stepper-step">
+            <div class="stepper-step__header">
+              <div class="stepper-step__circle">5</div>
+            </div>
+            <div class="stepper-step__content">
+              <h4 class="stepper-step__title">Customer Feedback</h4>
+              <p class="stepper-step__desc">Help us maintain standards by submitting rating surveys.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- FAQ QUICK LINKS -->
-    <section class="section" id="faq-links">
+    <section class="section faq-links-section" id="faq-links">
       <div class="container">
         <div class="section-header scroll-reveal">
           <div class="section-header__badge">Quick Answers</div>
           <h2 class="section-header__title">FAQ Quick Links</h2>
+          <p class="section-header__desc">Find instant answers to common questions in our help documentation.</p>
         </div>
-        <div class="cont-grid-5 scroll-reveal">
-          <div class="value-card"><div class="value-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span></div><div class="value-card__title"><a class="u-contact-35" href="faq.html">Booking Questions</a></div></div>
-          <div class="value-card"><div class="value-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div><div class="value-card__title"><a class="u-contact-36" href="faq.html">Rental Extension</a></div></div>
-          <div class="value-card"><div class="value-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span></div><div class="value-card__title"><a class="u-contact-37" href="faq.html">Vehicle Verification</a></div></div>
-          <div class="value-card"><div class="value-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-credit-card"/></svg></span></div><div class="value-card__title"><a class="u-contact-38" href="faq.html">Payments Details</a></div></div>
-          <div class="value-card"><div class="value-card__icon"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-shield-check"/></svg></span></div><div class="value-card__title"><a class="u-contact-39" href="faq.html">General Policies</a></div></div>
+        <div class="faq-links-grid scroll-reveal">
+          <a href="faq.html#booking" class="faq-link-card">
+            <div class="faq-link-card__icon"><span class="icon"><svg><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span></div>
+            <h4 class="faq-link-card__title">Booking Questions</h4>
+            <span class="faq-link-card__action">Read FAQ →</span>
+          </a>
+          <a href="faq.html#extension" class="faq-link-card">
+            <div class="faq-link-card__icon"><span class="icon"><svg><use href="assets/icons/sprite.svg#icon-clock"/></svg></span></div>
+            <h4 class="faq-link-card__title">Rental Extension</h4>
+            <span class="faq-link-card__action">Read FAQ →</span>
+          </a>
+          <a href="faq.html#verification" class="faq-link-card">
+            <div class="faq-link-card__icon"><span class="icon"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span></div>
+            <h4 class="faq-link-card__title">Vehicle Verification</h4>
+            <span class="faq-link-card__action">Read FAQ →</span>
+          </a>
+          <a href="faq.html#payments" class="faq-link-card">
+            <div class="faq-link-card__icon"><span class="icon"><svg><use href="assets/icons/sprite.svg#icon-credit-card"/></svg></span></div>
+            <h4 class="faq-link-card__title">Payments Details</h4>
+            <span class="faq-link-card__action">Read FAQ →</span>
+          </a>
+          <a href="faq.html#policies" class="faq-link-card">
+            <div class="faq-link-card__icon"><span class="icon"><svg><use href="assets/icons/sprite.svg#icon-shield-check"/></svg></span></div>
+            <h4 class="faq-link-card__title">General Policies</h4>
+            <span class="faq-link-card__action">Read FAQ →</span>
+          </a>
         </div>
       </div>
     </section>
 
     <!-- CUSTOMER FEEDBACK REVIEWS -->
-    <section class="section" id="feedback">
+    <section class="section feedback-section" id="feedback">
       <div class="container">
         <div class="section-header scroll-reveal">
           <div class="section-header__badge">Feedback</div>
           <h2 class="section-header__title">Recent Support Reviews</h2>
+          <p class="section-header__desc">See what our customers say about their experiences with our customer support teams.</p>
         </div>
-        <div class="testi-grid scroll-reveal">
-          <div class="testi-card">
-            <div class="testi-card__header"><div class="testi-card__avatar">JD</div><div><div class="u-contact-40">Jane Davis</div><div class="u-contact-41">Resolved: Return dispute</div></div></div>
-            <div class="testi-card__stars"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span></div>
-            <p class="testi-card__text">"Exceptional support. The customer care agent verified my pre-rental photo upload timeline and resolved the cleanup fee issue immediately."</p>
+        <div class="reviews-grid scroll-reveal">
+          <div class="review-card">
+            <div class="review-card__header">
+              <div class="review-card__avatar">JD</div>
+              <div>
+                <h4 class="review-card__author">Jane Davis</h4>
+                <span class="review-card__resolved">Resolved: Return dispute</span>
+              </div>
+            </div>
+            <div class="review-card__stars">
+              <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span>
+              <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span>
+              <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span>
+              <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span>
+              <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span>
+            </div>
+            <p class="review-card__text">"Exceptional support. The customer care agent verified my pre-rental photo upload timeline and resolved the cleanup fee issue immediately."</p>
           </div>
-          <div class="testi-card">
-            <div class="testi-card__header"><div class="testi-card__avatar">TL</div><div><div class="u-contact-42">Tom Loomis</div><div class="u-contact-43">Resolved: Late extension request</div></div></div>
-            <div class="testi-card__stars"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span></div>
-            <p class="testi-card__text">"My flight got delayed and I crossed return timelines. The tech support advisor extended the contract and updated booking statuses on phone within minutes."</p>
+          
+          <div class="review-card">
+            <div class="review-card__header">
+              <div class="review-card__avatar">TL</div>
+              <div>
+                <h4 class="review-card__author">Tom Loomis</h4>
+                <span class="review-card__resolved">Resolved: Late extension request</span>
+              </div>
+            </div>
+            <div class="review-card__stars">
+              <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span>
+              <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span>
+              <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span>
+              <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span>
+              <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span>
+            </div>
+            <p class="review-card__text">"My flight got delayed and I crossed return timelines. The tech support advisor extended the contract and updated booking statuses on phone within minutes."</p>
           </div>
-          <div class="testi-card">
-            <div class="testi-card__header"><div class="testi-card__avatar">MR</div><div><div class="u-contact-44">Mike Ross</div><div class="u-contact-45">Resolved: Roadside towing</div></div></div>
-            <div class="testi-card__stars"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span></div>
-            <p class="testi-card__text">"Engine temp warning popped up on highway. Roadside help towing was dispatched at Option 9, and replacement car arrived within an hour."</p>
+
+          <div class="review-card">
+            <div class="review-card__header">
+              <div class="review-card__avatar">MR</div>
+              <div>
+                <h4 class="review-card__author">Mike Ross</h4>
+                <span class="review-card__resolved">Resolved: Roadside towing</span>
+              </div>
+            </div>
+            <div class="review-card__stars">
+              <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span>
+              <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span>
+              <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span>
+              <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span>
+              <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span>
+            </div>
+            <p class="review-card__text">"Engine temp warning popped up on highway. Roadside help towing was dispatched at Option 9, and replacement car arrived within an hour."</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- SOCIAL MEDIA -->
-    <section class="section">
+    <section class="section social-channels-section">
       <div class="container">
         <div class="section-header scroll-reveal">
           <div class="section-header__badge">Connect</div>
           <h2 class="section-header__title">Follow Our Channels</h2>
+          <p class="section-header__desc">Stay updated on new luxury additions and support schedules.</p>
         </div>
-        <div class="socials-row scroll-reveal">
-          <a href="#" class="social-icon-btn" aria-label="Facebook">f</a>
-          <a href="#" class="social-icon-btn" aria-label="Instagram"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-camera"/></svg></span></a>
-          <a href="#" class="social-icon-btn" aria-label="LinkedIn">in</a>
-          <a href="#" class="social-icon-btn" aria-label="X / Twitter"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-x"/></svg></span></a>
-          <a href="#" class="social-icon-btn" aria-label="YouTube"><span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-youtube"/></svg></span></a>
+        <div class="social-channels-row scroll-reveal">
+          <a href="#" class="social-channel-btn" aria-label="Facebook">
+            <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-facebook"/></svg></span>
+          </a>
+          <a href="#" class="social-channel-btn" aria-label="Instagram">
+            <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-instagram"/></svg></span>
+          </a>
+          <a href="#" class="social-channel-btn" aria-label="LinkedIn">
+            <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-linkedin"/></svg></span>
+          </a>
+          <a href="#" class="social-channel-btn" aria-label="X / Twitter">
+            <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-x"/></svg></span>
+          </a>
+          <a href="#" class="social-channel-btn" aria-label="YouTube">
+            <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-social-youtube"/></svg></span>
+          </a>
         </div>
       </div>
     </section>
 
     <!-- CALL TO ACTION -->
-    <section class="cta-section" id="cta">
-      <div class="cta-section__overlay"></div>
+    <section class="home-cta" id="cta">
+      <div class="home-cta__pattern"></div>
       <div class="container">
-        <div class="cta-section__content scroll-reveal">
-          <h2 class="cta-section__title">Need Immediate Assistance?</h2>
-          <p class="cta-section__desc u-contact-46">Our advisor desks are active 24/7. Speak to general support or dial emergency assists option 9.</p>
-          <div class="u-contact-47">
-            <a href="cars.html" class="btn btn--accent btn--lg">Browse Cars</a>
-            <a href="tel:+15551234567" class="btn btn--accent btn--lg u-contact-48">Call Help Center</a>
-          </div>
+        <h2 class="home-cta__title scroll-reveal">Need Immediate Assistance?</h2>
+        <p class="home-cta__text scroll-reveal">Our advisor desks are active 24/7. Speak to general support or dial emergency assists option 9.</p>
+        <div class="home-cta__actions scroll-reveal">
+          <a href="cars.html" class="btn btn--accent btn--lg">Browse Cars</a>
+          <a href="tel:+15551234567" class="btn btn--ghost btn--lg">Call Help Center</a>
         </div>
       </div>
     </section>
@@ -391,32 +656,134 @@
   (function() {
     'use strict';
 
-    // Mock form validation and success toast alert
+    // File Upload Handler
+    const fileInput = document.getElementById('document-attachment');
+    const fileUploadBox = document.getElementById('file-upload-box');
+    const fileUploadText = document.getElementById('file-upload-text');
+
+    if (fileUploadBox && fileInput) {
+      fileUploadBox.addEventListener('click', function() {
+        fileInput.click();
+      });
+
+      fileInput.addEventListener('change', function() {
+        if (fileInput.files && fileInput.files.length > 0) {
+          const file = fileInput.files[0];
+          
+          // Validate size (5MB = 5 * 1024 * 1024 bytes)
+          if (file.size > 5 * 1024 * 1024) {
+            if (typeof UI !== 'undefined' && UI.showToast) {
+              UI.showToast({
+                title: 'Error',
+                message: 'File size exceeds 5MB limit.',
+                type: 'error',
+                duration: 5000
+              });
+            } else {
+              alert('File size exceeds 5MB limit.');
+            }
+            fileInput.value = '';
+            fileUploadText.textContent = 'Click to attach license images or booking summaries (Max 5MB)';
+            return;
+          }
+
+          fileUploadText.textContent = `Attached: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
+        } else {
+          fileUploadText.textContent = 'Click to attach license images or booking summaries (Max 5MB)';
+        }
+      });
+    }
+
+    // Form Submission & Validation Handler
     const form = document.getElementById('support-inquiry-form');
     if (form) {
       form.addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        const nameVal = document.getElementById('user-name').value.trim();
-        const emailVal = document.getElementById('user-email').value.trim();
-        const phoneVal = document.getElementById('user-phone').value.trim();
-        const subjectVal = document.getElementById('inq-subject').value.trim();
-        const messageVal = document.getElementById('inq-message').value.trim();
 
-        if (nameVal && emailVal && phoneVal && subjectVal && messageVal) {
+        const nameInput = document.getElementById('user-name');
+        const emailInput = document.getElementById('user-email');
+        const phoneInput = document.getElementById('user-phone');
+        const deptInput = document.getElementById('inq-dept');
+        const subjectInput = document.getElementById('inq-subject');
+        const messageInput = document.getElementById('inq-message');
+
+        const nameVal = nameInput.value.trim();
+        const emailVal = emailInput.value.trim();
+        const phoneVal = phoneInput.value.trim();
+        const deptVal = deptInput.value;
+        const subjectVal = subjectInput.value.trim();
+        const messageVal = messageInput.value.trim();
+
+        // Validation checks
+        if (!nameVal || !emailVal || !phoneVal || !deptVal || !subjectVal || !messageVal) {
           if (typeof UI !== 'undefined' && UI.showToast) {
             UI.showToast({
-              title: 'Success',
-              message: 'Inquiry submitted successfully. Support team will respond within 15 minutes.',
-              type: 'success',
+              title: 'Warning',
+              message: 'Please fill in all required fields.',
+              type: 'warning',
               duration: 5000
             });
           } else {
-            alert('Inquiry submitted successfully. Support team will respond within 15 minutes.');
+            alert('Please fill in all required fields.');
           }
-          
-          form.reset();
+          return;
         }
+
+        // Email validation regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailVal)) {
+          if (typeof UI !== 'undefined' && UI.showToast) {
+            UI.showToast({
+              title: 'Warning',
+              message: 'Please provide a valid email address.',
+              type: 'warning',
+              duration: 5000
+            });
+          } else {
+            alert('Please provide a valid email address.');
+          }
+          return;
+        }
+
+        // Phone validation regex (basic)
+        const phoneRegex = /^[\d\s()+-]{7,}$/;
+        if (!phoneRegex.test(phoneVal)) {
+          if (typeof UI !== 'undefined' && UI.showToast) {
+            UI.showToast({
+              title: 'Warning',
+              message: 'Please provide a valid phone number.',
+              type: 'warning',
+              duration: 5000
+            });
+          } else {
+            alert('Please provide a valid phone number.');
+          }
+          return;
+        }
+
+        // Success simulation
+        if (typeof UI !== 'undefined' && UI.showToast) {
+          UI.showToast({
+            title: 'Success',
+            message: 'Inquiry submitted successfully. Our support team will respond shortly.',
+            type: 'success',
+            duration: 5000
+          });
+        } else {
+          alert('Inquiry submitted successfully. Our support team will respond shortly.');
+        }
+
+        form.reset();
+        if (fileUploadText) {
+          fileUploadText.textContent = 'Click to attach license images or booking summaries (Max 5MB)';
+        }
+      });
+
+      form.addEventListener('reset', function() {
+        if (fileUploadText) {
+          fileUploadText.textContent = 'Click to attach license images or booking summaries (Max 5MB)';
+        }
+        // Let natural reset happen
       });
     }
 
