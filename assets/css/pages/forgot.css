@@ -64,14 +64,22 @@
   width: 36px;
   height: 36px;
   border-radius: var(--radius-md);
-  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-heading);
-  font-weight: var(--fw-bold);
-  color: #FFFFFF;
-  font-size: 0.95rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-logo-img {
+  position: absolute;
+  width: 135px;
+  height: 90px;
+  max-width: none;
+  left: -50px;
+  top: -25px;
+  display: block;
+  flex-shrink: 0;
 }
 
 .forgot-page .login-logo span {

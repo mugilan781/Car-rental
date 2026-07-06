@@ -17,7 +17,7 @@
   }
 
   .footer__grid {
-    grid-template-columns: 1.3fr repeat(4, 1fr);
+    grid-template-columns: 1.2fr 0.8fr 1.2fr 1.8fr;
     gap: var(--space-6);
   }
 
@@ -50,7 +50,6 @@
     display: flex;
   }
 
-  /* Footer */
   .footer__grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-8);
@@ -61,9 +60,13 @@
     grid-column: span 2;
   }
 
-  .footer__newsletter-wrap {
+  .footer__newsletter-column {
+    grid-column: span 2;
+  }
+
+  .footer__newsletter-form {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
   }
 
   /* Dashboard */
@@ -158,6 +161,10 @@
   }
 
   .footer__brand {
+    grid-column: span 1;
+  }
+
+  .footer__newsletter-column {
     grid-column: span 1;
   }
 

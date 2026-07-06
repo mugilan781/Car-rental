@@ -156,32 +156,63 @@ const App = (() => {
     });
   }
 
-  /* ---- Search Button (placeholder) ---- */
-  function initSearchButton() {
-    const searchBtns = document.querySelectorAll('.navbar__search-btn');
+  /* ---- Profile Dropdown Menu ---- */
+  function initProfileDropdown() {
+    const wrapper = document.querySelector('.navbar__profile-menu-wrapper');
+    const trigger = document.querySelector('.navbar__profile-btn');
+    const dropdown = document.querySelector('.profile-dropdown');
 
-    searchBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // Placeholder — will connect to backend search later
+    if (!trigger || !dropdown) return;
+
+    function openDropdown() {
+      trigger.setAttribute('aria-expanded', 'true');
+      dropdown.classList.add('open');
+    }
+
+    function closeDropdown() {
+      trigger.setAttribute('aria-expanded', 'false');
+      dropdown.classList.remove('open');
+    }
+
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dropdown.classList.contains('open');
+      if (isOpen) {
+        closeDropdown();
+      } else {
+        openDropdown();
+      }
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (dropdown.classList.contains('open') && !wrapper.contains(e.target)) {
+        closeDropdown();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && dropdown.classList.contains('open')) {
+        closeDropdown();
+      }
+    });
+
+    // Handle dashboard link placeholders
+    const placeholders = document.querySelectorAll('.dashboard-placeholder');
+    placeholders.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeDropdown();
         if (typeof UI !== 'undefined' && UI.showToast) {
           UI.showToast({
-            title: 'Search',
-            message: 'Search functionality will be available soon.',
+            title: 'Coming Soon',
+            message: 'Dashboard functionality is under construction.',
             type: 'info',
             duration: 3000
           });
         }
       });
-    });
-
-    // Keyboard shortcut: Ctrl+K or Cmd+K
-    document.addEventListener('keydown', (e) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-        e.preventDefault();
-        if (searchBtns.length > 0) {
-          searchBtns[0].click();
-        }
-      }
     });
   }
 
@@ -197,7 +228,7 @@ const App = (() => {
     initActiveNavLink();
     initSmoothScroll();
     initBackToTop();
-    initSearchButton();
+    initProfileDropdown();
     initPageTransition();
   }
 

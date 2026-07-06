@@ -16,6 +16,11 @@
     currentCar = window.vehiclesData[0]; // fallback
   }
 
+  // Update Rent Now buttons in details page to carry over the car ID
+  document.querySelectorAll('.showcase__actions a[href^="booking.html"], .booking-card a[href^="booking.html"]').forEach(btn => {
+    btn.setAttribute('href', `booking.html?id=${currentCar.id}`);
+  });
+
   // --- 2. Populate Page Metadata ---
   document.title = `${currentCar.brand} ${currentCar.name} — DriveElite`;
   const metaDescription = document.querySelector('meta[name="description"]');
