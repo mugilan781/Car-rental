@@ -221,6 +221,49 @@ const App = (() => {
     document.body.classList.add('page-transition');
   }
 
+  /* ---- Handle Removed Pages Navigation ---- */
+  function initRemovedPagesHandler() {
+    const removedPages = [
+      'dashboard.html',
+      'extend-rental.html',
+      'notifications.html',
+      'profile.html',
+      'rental-history.html',
+      'reset-password.html',
+      'upload-verification.html'
+    ];
+
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a');
+      if (!link) return;
+
+      const href = link.getAttribute('href');
+      if (!href) return;
+
+      const urlPath = href.split('#')[0].split('?')[0].trim();
+      if (removedPages.some(page => urlPath.endsWith(page))) {
+        e.preventDefault();
+        
+        // Close profile dropdown if open
+        const trigger = document.querySelector('.navbar__profile-btn');
+        const dropdown = document.querySelector('.profile-dropdown');
+        if (trigger && dropdown && dropdown.classList.contains('open')) {
+          trigger.setAttribute('aria-expanded', 'false');
+          dropdown.classList.remove('open');
+        }
+
+        if (typeof UI !== 'undefined' && UI.showToast) {
+          UI.showToast({
+            title: 'Coming Soon',
+            message: 'This feature will be available in a future update.',
+            type: 'info',
+            duration: 3000
+          });
+        }
+      }
+    });
+  }
+
   /* ---- Initialize ---- */
   function init() {
     initStickyNavbar();
@@ -229,6 +272,7 @@ const App = (() => {
     initSmoothScroll();
     initBackToTop();
     initProfileDropdown();
+    initRemovedPagesHandler();
     initPageTransition();
   }
 

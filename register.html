@@ -422,14 +422,14 @@
           if (typeof UI !== 'undefined' && UI.showToast) {
             UI.showToast({
               title: 'Success',
-              message: 'Account created successfully! Redirecting...',
+              message: 'Account created successfully! Redirecting to home page...',
               type: 'success',
               duration: 2000
             });
           }
 
           setTimeout(() => {
-            window.location.href = 'dashboard.html';
+            window.location.href = 'index.html';
           }, 1500);
         }
       });

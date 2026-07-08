@@ -203,18 +203,18 @@
         }
 
         if (isValid) {
-          // Trigger successful login feedback and redirect to dashboard
+          // Trigger successful login feedback and redirect to home page
           if (typeof UI !== 'undefined' && UI.showToast) {
             UI.showToast({
               title: 'Success',
-              message: 'Signing in to your DriveElite dashboard...',
+              message: 'Signing in successfully. Dashboard coming soon!',
               type: 'success',
               duration: 2000
             });
           }
           
           setTimeout(() => {
-            window.location.href = 'dashboard.html';
+            window.location.href = 'index.html';
           }, 1500);
         }
       });
