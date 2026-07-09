@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DriveElite — Admin Dashboard. Manage fleet, bookings, users, revenue, and system operations.">
+  <title>Admin Dashboard — DriveElite</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/sprite.svg#icon-car">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- DriveElite Core Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <!-- Dashboard Styles -->
+  <link rel="stylesheet" href="assets/css/user-dashboard.css">
+  <link rel="stylesheet" href="assets/css/admin-dashboard.css">
+</head>
+<body class="db-layout">
+
+  <!-- Skip Link -->
+  <a href="#dashboard-content" class="skip-link">Skip to dashboard content</a>
+
+  <!-- ============================================================
+       SIDEBAR
+       ============================================================ -->
+  <aside class="db-sidebar db-sidebar--admin" id="db-sidebar" role="navigation" aria-label="Admin navigation">
+
+    <!-- Sidebar Header -->
+    <div class="db-sidebar__header">
+      <a href="index.html" class="db-sidebar__logo" aria-label="DriveElite Home">
+        <div class="db-sidebar__logo-icon">
+          <img src="assets/images/logo/logo.png" alt="DriveElite Logo" class="db-sidebar__logo-img">
+        </div>
+        <span class="db-sidebar__logo-text">Drive<span>Elite</span></span>
+      </a>
+      <button class="db-sidebar__collapse-btn" id="db-sidebar-collapse" aria-label="Collapse sidebar" title="Collapse sidebar">
+        <span class="icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#icon-chevron-left"/></svg></span>
+      </button>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <div class="db-sidebar__nav-wrapper">
+
+      <!-- Main -->
+      <div class="db-sidebar__nav-label">Main</div>
+      <nav class="db-sidebar__nav" aria-label="Admin main navigation">
+        <button class="db-sidebar__link active" data-module="overview" aria-current="page">
+          <span class="icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#icon-grid"/></svg></span>
+          <span class="db-sidebar__link-text">Dashboard</span>
+        </button>
+        <button class="db-sidebar__link" data-module="fleet">
+          <span class="icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#icon-car"/></svg></span>
+          <span class="db-sidebar__link-text">Fleet Management</span>
+          <span class="db-sidebar__link-badge">8</span>
+        </button>
+        <button class="db-sidebar__link" data-module="bookings">
+          <span class="icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span>
+          <span class="db-sidebar__link-text">Bookings</span>
+          <span class="db-sidebar__link-badge">3</span>
+        </button>
+        <button class="db-sidebar__link" data-module="prebookings">
+          <span class="icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#icon-clipboard"/></svg></span>
+          <span class="db-sidebar__link-text">Pre-bookings</span>
+        </button>
+        <button class="db-sidebar__link" data-module="users">
+          <span class="icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#icon-users"/></svg></span>
+          <span class="db-sidebar__link-text">Customers</span>
+        </button>
+      </nav>
+
+      <!-- Operations -->
+      <div class="db-sidebar__nav-label">Operations</div>
+      <nav class="db-sidebar__nav" aria-label="Admin operations navigation">
+        <button class="db-sidebar__link" data-module="extensions">
+          <span class="icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#icon-rotate-ccw"/></svg></span>
+          <span class="db-sidebar__link-text">Rental Extensions</span>
+        </button>
+        <button class="db-sidebar__link" data-module="notifications">
+          <span class="icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#icon-bell"/></svg></span>
+          <span class="db-sidebar__link-text">Notifications</span>
+        </button>
+        <button class="db-sidebar__link" data-module="reports">
+          <span class="icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#icon-file-text"/></svg></span>
+          <span class="db-sidebar__link-text">Reports</span>
+        </button>
+        <button class="db-sidebar__link" data-module="settings">
+          <span class="icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#icon-settings"/></svg></span>
+          <span class="db-sidebar__link-text">Settings</span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Sidebar Footer / Admin Profile -->
+    <div class="db-sidebar__footer">
+      <div class="db-sidebar__profile" tabindex="0" role="link" aria-label="Go to admin profile">
+        <div class="db-sidebar__profile-avatar" aria-hidden="true">JH</div>
+        <div class="db-sidebar__profile-info">
+          <div class="db-sidebar__profile-name">James Henderson <span class="db-sidebar__role-badge">Admin</span></div>
+          <div class="db-sidebar__profile-role">Super Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sidebar Overlay (mobile) -->
+  <div class="db-sidebar__overlay" id="db-sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       MAIN WRAPPER
+       ============================================================ -->
+  <div class="db-main-wrapper">
+
+    <!-- ============================================================
+         HEADER
+         ============================================================ -->
+    <header class="db-header" role="banner">
+
+      <!-- Mobile Menu Toggle -->
+      <button class="db-header__menu-btn" id="db-header-menu" aria-label="Open menu">
+        <span class="icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#icon-menu"/></svg></span>
+      </button>
+
+      <!-- Page Title -->
+      <div class="db-header__title-area">
+        <span class="db-header__greeting" id="db-header-greeting">Good morning, James</span>
+        <h1 class="db-header__title" id="db-header-title">Dashboard</h1>
+      </div>
+
+      <!-- Search -->
+      <div class="db-header__search" role="search">
+        <span class="icon db-header__search-icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#icon-search"/></svg></span>
+        <input
+          type="search"
+          class="db-header__search-input"
+          id="db-header-search"
+          placeholder="Search fleet, bookings, users..."
+          aria-label="Search admin dashboard"
+          autocomplete="off"
+        >
+        <div class="db-header__search-results" id="db-header-search-results" role="listbox" aria-label="Search results"></div>
+      </div>
+
+      <!-- Actions -->
+      <div class="db-header__actions">
+
+        <!-- System Status -->
+        <div class="db-status-indicator db-status-indicator--online hide-mobile" title="System Online">
+          <span class="db-status-indicator__dot"></span>
+          <span>Online</span>
+        </div>
+
+        <!-- Notification Bell -->
+        <div style="position: relative;">
+          <button class="db-header__notification-btn" id="db-notification-btn" aria-label="Notifications" aria-haspopup="true">
+            <span class="icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#icon-bell"/></svg></span>
+            <span class="db-header__notification-badge" id="db-notification-badge">3</span>
+          </button>
+
+          <!-- Notification Panel -->
+          <div class="db-notification-panel" id="db-notification-panel" role="dialog" aria-label="Admin notifications">
+            <div class="db-notification-panel__header">
+              <h2 class="db-notification-panel__title">Notifications</h2>
+              <button class="btn btn--ghost btn--sm" data-action="mark-all-read">Mark all read</button>
+            </div>
+            <div class="db-notification-panel__body">
+              <!-- Populated by JS -->
+            </div>
+            <div class="db-notification-panel__footer">
+              <a href="#" onclick="AdminDashboard.navigateTo('system'); return false;">View All Notifications</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Admin Profile -->
+        <div class="db-header__profile-wrapper" id="db-profile-wrapper">
+          <button class="db-header__profile-btn" id="db-profile-btn" aria-label="Admin account menu" aria-expanded="false" aria-haspopup="true">
+            <div class="db-header__profile-avatar" aria-hidden="true">JH</div>
+            <div class="db-header__profile-info hide-tablet">
+              <span class="db-header__profile-name">James H.</span>
+              <span class="db-header__profile-role">Super Admin</span>
+            </div>
+            <span class="icon db-header__profile-chevron hide-tablet"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#icon-chevron-down"/></svg></span>
+          </button>
+
+          <!-- Profile Dropdown -->
+          <div class="db-header__dropdown" id="db-profile-dropdown" role="menu" aria-label="Admin account menu">
+            <div class="db-header__dropdown-header">
+              <div class="db-header__dropdown-avatar" aria-hidden="true">JH</div>
+              <div>
+                <div class="db-header__dropdown-name">James Henderson</div>
+                <div class="db-header__dropdown-email">james.henderson@driveelite.com</div>
+              </div>
+            </div>
+            <div class="db-header__dropdown-body">
+              <button class="db-header__dropdown-link" role="menuitem" onclick="AdminDashboard.navigateTo('settings')">
+                <span class="icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#icon-user"/></svg></span>
+                My Profile
+              </button>
+              <button class="db-header__dropdown-link" role="menuitem" onclick="AdminDashboard.navigateTo('settings')">
+                <span class="icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#icon-settings"/></svg></span>
+                Settings
+              </button>
+              <button class="db-header__dropdown-link" role="menuitem" onclick="AdminDashboard.navigateTo('system')">
+                <span class="icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#icon-bell"/></svg></span>
+                Notifications
+              </button>
+              <button class="db-header__dropdown-link" role="menuitem">
+                <span class="icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#icon-info"/></svg></span>
+                Help Center
+              </button>
+              <div class="db-header__dropdown-divider"></div>
+              <button class="db-header__dropdown-link db-header__dropdown-link--danger" role="menuitem" data-action="logout">
+                <span class="icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#icon-log-out"/></svg></span>
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============================================================
+         MAIN CONTENT
+         ============================================================ -->
+    <main class="db-main" id="main-content">
+      <div id="dashboard-content" aria-live="polite">
+        <!-- Admin dashboard modules rendered by JS -->
+      </div>
+    </main>
+  </div>
+
+  <!-- ============================================================
+       SHARED MODALS
+       ============================================================ -->
+
+  <!-- Modal Backdrop -->
+  <div class="db-modal-backdrop" id="db-modal-backdrop" aria-hidden="true"></div>
+
+  <!-- Confirm Modal -->
+  <div class="db-modal" id="db-confirm-modal" role="dialog" aria-modal="true" aria-labelledby="db-confirm-modal-title">
+    <div class="db-modal__header">
+      <h3 class="db-modal__title" id="db-confirm-modal-title">Confirm Action</h3>
+      <button class="db-modal__close" aria-label="Close dialog" onclick="AdminDashboard.modal.close()">
+        <span class="icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#icon-close"/></svg></span>
+      </button>
+    </div>
+    <div class="db-modal__body">
+      <div class="db-modal__icon db-modal__icon--warning">
+        <span class="icon"><svg aria-hidden="true"><use href="assets/icons/sprite.svg#icon-alert-triangle"/></svg></span>
+      </div>
+      <p class="db-modal__message">Are you sure you want to proceed?</p>
+    </div>
+    <div class="db-modal__footer">
+      <button class="btn btn--ghost btn--sm" data-action="cancel">Cancel</button>
+      <button class="btn btn--primary btn--sm" data-action="confirm">Confirm</button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <!-- DriveElite Core (for toast system) -->
+  <script src="assets/js/ui.js"></script>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <!-- Admin Dashboard -->
+  <script src="assets/js/admin-dashboard.js"></script>
+
+</body>
+</html>
