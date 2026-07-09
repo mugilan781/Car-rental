@@ -4743,5 +4743,865 @@ input.db-filter-bar__search-input {
   }
 }
 
+/* ============================================================
+   USER DASHBOARD RESPONSIVENESS OVERRIDES (MOBILE & TABLET ONLY)
+   ============================================================ */
 
+/* 1. TABLET & MOBILE RESPONSIVE OVERRIDES (max-width: 1023px) */
+@media (max-width: 1023px) {
+  /* Hide the desktop-only collapse button on tablet/mobile */
+  .db-sidebar__collapse-btn {
+    display: none !important;
+  }
+
+  /* --- Welcome Back Hero Card Centering --- */
+  .db-hero {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: var(--space-6) !important;
+  }
+
+  .db-hero__content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .db-hero__greeting {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .db-hero__name {
+    text-align: center !important;
+  }
+
+  .db-hero__text {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .db-hero__actions {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: var(--space-3) !important;
+  }
+
+  .db-hero__actions .btn {
+    flex: none !important;
+    justify-content: center !important;
+  }
+
+  .db-hero__badge {
+    align-self: center !important;
+    margin: var(--space-4) auto 0 auto !important;
+  }
+
+  /* --- Current Rental Action Buttons Consistency --- */
+  .db-current-rental__actions {
+    display: flex !important;
+    flex-direction: column !important; /* Stack vertically to guarantee equal width */
+    align-items: stretch !important;
+    width: 100% !important;
+    gap: var(--space-3) !important; /* Equal spacing */
+    margin-top: var(--space-4) !important;
+  }
+
+  .db-current-rental__actions .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: 40px !important; /* Equal height */
+    padding: var(--space-2) var(--space-4) !important; /* Equal padding */
+    border-radius: var(--radius-md) !important; /* Equal border radius */
+    font-size: var(--fs-xs) !important;
+    font-weight: var(--fw-semibold) !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    white-space: normal !important; /* Prevent text truncation or clipping */
+    word-break: keep-all !important;
+    overflow: visible !important;
+  }
+
+  /* --- Rental History: Preserve Desktop Table Layout --- */
+  #history-list .hide-tablet {
+    display: block !important; /* Force show table wrapper on mobile/tablet */
+  }
+  #history-list .hide-desktop {
+    display: none !important; /* Force hide mobile card grid on mobile/tablet */
+  }
+
+  #history-list .db-table-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    margin: 0 !important;
+    border-radius: var(--radius-md) !important;
+    border: 1px solid var(--color-border-light) !important;
+  }
+  
+  #history-list .db-table {
+    width: 100% !important;
+    min-width: 1290px !important; /* Prevent column compression */
+    table-layout: auto !important;
+  }
+
+  #history-list .db-table th,
+  #history-list .db-table td {
+    padding: var(--space-4) var(--space-5) !important; /* Increase cell padding */
+    white-space: nowrap !important; /* Prevent text wrapping and collision */
+  }
+
+  #history-list .db-table th:nth-child(1),
+  #history-list .db-table td:nth-child(1) {
+    min-width: 250px !important; /* Vehicle column independent width */
+  }
+  #history-list .db-table th:nth-child(2),
+  #history-list .db-table td:nth-child(2) {
+    min-width: 140px !important; /* Booking ID column */
+  }
+  #history-list .db-table th:nth-child(3),
+  #history-list .db-table td:nth-child(3) {
+    min-width: 100px !important; /* Type column */
+  }
+  #history-list .db-table th:nth-child(4),
+  #history-list .db-table td:nth-child(4) {
+    min-width: 200px !important; /* Dates column */
+  }
+  #history-list .db-table th:nth-child(5),
+  #history-list .db-table td:nth-child(5) {
+    min-width: 100px !important; /* Duration column */
+  }
+  #history-list .db-table th:nth-child(6),
+  #history-list .db-table td:nth-child(6) {
+    min-width: 120px !important; /* Total Cost column */
+  }
+  #history-list .db-table th:nth-child(7),
+  #history-list .db-table td:nth-child(7) {
+    min-width: 120px !important; /* Status column */
+  }
+  #history-list .db-table th:nth-child(8),
+  #history-list .db-table td:nth-child(8) {
+    min-width: 260px !important; /* Actions column */
+  }
+
+  /* --- Extensions: Extension Request History formatting --- */
+  #eligible-extensions ~ .db-section-card .db-table-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    margin: 0 !important;
+    border-radius: var(--radius-md) !important;
+    border: 1px solid var(--color-border-light) !important;
+  }
+
+  #eligible-extensions ~ .db-section-card .db-table {
+    width: 100% !important;
+    min-width: 1060px !important; /* Prevent columns collapsing/compressing */
+    table-layout: auto !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+  }
+
+  #eligible-extensions ~ .db-section-card .db-table th,
+  #eligible-extensions ~ .db-section-card .db-table td {
+    padding: var(--space-4) var(--space-5) !important; /* Increase horizontal padding */
+    text-align: left !important;
+    vertical-align: middle !important;
+    white-space: nowrap !important; /* Prevent text collision */
+  }
+
+  #eligible-extensions ~ .db-section-card .db-table th:nth-child(1),
+  #eligible-extensions ~ .db-section-card .db-table td:nth-child(1) {
+    min-width: 220px !important; /* Vehicle column */
+  }
+  #eligible-extensions ~ .db-section-card .db-table th:nth-child(2),
+  #eligible-extensions ~ .db-section-card .db-table td:nth-child(2) {
+    min-width: 240px !important; /* Request Details column */
+  }
+  #eligible-extensions ~ .db-section-card .db-table th:nth-child(3),
+  #eligible-extensions ~ .db-section-card .db-table td:nth-child(3) {
+    min-width: 160px !important; /* Original Return column */
+  }
+  #eligible-extensions ~ .db-section-card .db-table th:nth-child(4),
+  #eligible-extensions ~ .db-section-card .db-table td:nth-child(4) {
+    min-width: 160px !important; /* New Return column */
+  }
+  #eligible-extensions ~ .db-section-card .db-table th:nth-child(5),
+  #eligible-extensions ~ .db-section-card .db-table td:nth-child(5) {
+    min-width: 130px !important; /* Estimated Cost column */
+  }
+  #eligible-extensions ~ .db-section-card .db-table th:nth-child(6),
+  #eligible-extensions ~ .db-section-card .db-table td:nth-child(6) {
+    min-width: 150px !important; /* Status column */
+  }
+
+  #eligible-extensions ~ .db-section-card .db-table tbody tr {
+    height: 56px !important;
+  }
+
+  /* --- Profile & Account Settings: Tab Scroll discoverability --- */
+  .db-tabs {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: var(--color-secondary) var(--color-border-light) !important;
+    padding-bottom: 6px !important;
+    background: var(--color-surface) !important;
+    border-bottom: 1.5px solid var(--color-border-light) !important;
+    
+    /* Elegant right-side fade indicator for scrollable tabs to improve discoverability */
+    mask-image: linear-gradient(to right, #000 88%, transparent 100%) !important;
+    -webkit-mask-image: linear-gradient(to right, #000 88%, transparent 100%) !important;
+  }
+
+  .db-tabs::-webkit-scrollbar {
+    display: block !important;
+    height: 4px !important;
+  }
+
+  .db-tabs::-webkit-scrollbar-track {
+    background: var(--color-border-light) !important;
+    border-radius: var(--radius-full) !important;
+  }
+
+  .db-tabs::-webkit-scrollbar-thumb {
+    background: var(--color-secondary) !important;
+    border-radius: var(--radius-full) !important;
+  }
+
+  .db-tab {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    padding: var(--space-3) var(--space-4) !important;
+    font-size: var(--fs-xs) !important;
+    transition: all var(--transition-base) !important;
+  }
+
+  /* Restructure stats card columns on tablet viewports */
+  .db-stats-grid,
+  .db-stats-grid[style*="repeat(3, 1fr)"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: var(--space-4) !important;
+  }
+
+  /* Support ticketing and payments split grids overrides */
+  .db-main div[style*="grid-template-columns: 1fr 3fr"],
+  .db-main div[style*="grid-template-columns: 3fr 2fr"],
+  .db-main div[style*="grid-template-columns: 2fr 3fr"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  /* Ensure verification photo uploads stack to 2 columns on tablet */
+  .db-rentals-grid[style*="repeat(3, 1fr)"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: var(--space-4) !important;
+  }
+
+  /* Ensure search bar stays visible and resizes gracefully */
+  .db-header__search {
+    display: block !important;
+    max-width: 220px !important;
+    margin-left: auto !important;
+  }
+}
+
+/* 2. MOBILE ONLY RESPONSIVE OVERRIDES (max-width: 767px) */
+@media (max-width: 767px) {
+  /* --- Global Header Alignment & No Overflow --- */
+  .db-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: var(--space-2) !important;
+    padding: 0 var(--space-3) !important;
+    height: 60px !important;
+    min-width: 0 !important;
+  }
+
+  .db-header__menu-btn {
+    display: flex !important;
+    flex-shrink: 0 !important;
+  }
+
+  .db-header__title-area {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+
+  .db-header__greeting {
+    display: none !important; /* Hide greeting subtext to save space */
+  }
+
+  .db-header__title {
+    font-size: var(--fs-small) !important;
+    font-weight: var(--fw-bold) !important;
+    color: var(--color-dark-text) !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Make Search Icon Container exactly like the Notification Icon */
+  .db-header__search {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    max-width: 40px !important;
+    border-radius: var(--radius-full) !important;
+    border: 1px solid var(--color-border) !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative !important;
+    flex-shrink: 0 !important;
+    cursor: pointer !important;
+  }
+
+  .db-header__search:hover {
+    background: var(--color-secondary-50) !important;
+    border-color: var(--color-primary) !important;
+    color: var(--color-primary) !important;
+  }
+
+  .db-header__search:hover .db-header__search-icon {
+    color: var(--color-primary) !important;
+  }
+
+  .db-header__search-input,
+  .db-header__search-results {
+    display: none !important; /* Hide input text box and results wrapper on mobile */
+  }
+
+  .db-layout .db-header__search-icon {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 20px !important;
+    height: 20px !important;
+    color: var(--color-light-text) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+    box-sizing: border-box !important;
+  }
+
+  .db-header__search-icon svg {
+    width: 20px !important;
+    height: 20px !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .db-header__actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    flex-shrink: 0 !important;
+  }
+
+  .db-header__notification-btn {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    max-width: 40px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .db-header__profile-wrapper {
+    flex-shrink: 0 !important;
+  }
+
+  .db-header__profile-btn {
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .db-header__profile-avatar {
+    width: 36px !important;
+    height: 36px !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* --- 2. My Rentals - Card Actions Row Layout (No Text wrap & No Font reduction) --- */
+  .db-rental-card__actions {
+    display: flex !important;
+    flex-direction: row !important; /* Keep aligned on one row */
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    gap: var(--space-2) !important; /* Equal spacing */
+  }
+
+  .db-rental-card__actions .btn {
+    flex: 1 1 auto !important; /* Allow proportional resize */
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: 38px !important; /* Equal heights */
+    padding: 0 var(--space-2) !important; /* Compact padding to increase available width */
+    font-size: var(--fs-xs) !important; /* Do NOT reduce font size */
+    font-weight: var(--fw-semibold) !important;
+    white-space: nowrap !important; /* Ensure single line, no wrapping */
+    text-align: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  /* Reduce card padding slightly on mobile to increase available button group width */
+  .db-rentals-grid .db-rental-card {
+    padding: var(--space-3) !important;
+  }
+
+  /* Hide button icons on narrow mobile viewports to prevent overflow & wrapping */
+  @media (max-width: 480px) {
+    .db-rental-card__actions .btn .icon {
+      display: none !important;
+    }
+  }
+
+  /* --- 3. Pre-Bookings - Card Actions Stack (No Font size reductions) --- */
+  .db-pb-card__actions,
+  .db-pb-card__actions-row {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: var(--space-2) !important;
+    align-items: stretch !important;
+  }
+
+  .db-pb-card__actions .btn,
+  .db-pb-card__actions-row .btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: 38px !important;
+    padding: var(--space-2) var(--space-3) !important;
+    font-size: var(--fs-xs) !important;
+    white-space: normal !important;
+    text-align: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+  /* --- 4. Rental History - Table button formatting --- */
+  #history-list .db-table .btn {
+    height: 32px !important;
+    padding: 0 var(--space-3) !important;
+    font-size: var(--fs-xs) !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+  /* --- 5. Notifications Page - Scroll list horizontally as a single container on mobile --- */
+  #notifications-list {
+    display: block !important; /* Stack rows vertically exactly like desktop */
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: var(--color-secondary) var(--color-border-light) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    background: var(--color-surface) !important;
+  }
+
+  #notifications-list::-webkit-scrollbar {
+    display: block !important;
+    height: 4px !important;
+  }
+
+  #notifications-list::-webkit-scrollbar-track {
+    background: var(--color-border-light) !important;
+    border-radius: var(--radius-full) !important;
+  }
+
+  #notifications-list::-webkit-scrollbar-thumb {
+    background: var(--color-secondary) !important;
+    border-radius: var(--radius-full) !important;
+  }
+
+  #notifications-list .db-notification-preview {
+    min-width: 900px !important; /* Prevent column compression and preserve horizontal space */
+    display: flex !important;
+    flex-direction: row !important; /* Row layout with details left, delete right */
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: var(--space-5) var(--space-6) !important;
+    border-bottom: 1px solid var(--color-border-light) !important;
+    border-right: none !important;
+    box-sizing: border-box !important;
+  }
+
+  #notifications-list .db-notification-preview * {
+    white-space: nowrap !important; /* Do not wrap text */
+  }
+
+  /* --- Other Mobile Adjustments --- */
+  .db-stats-grid,
+  .db-stats-grid[style*="repeat(3, 1fr)"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .db-rental-detail__grid[style*="grid-template-columns: repeat(2, 1fr)"],
+  .db-rental-detail__grid[style*="repeat(2, 1fr)"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .db-rental-detail__item[style*="grid-column: span 2"] {
+    grid-column: span 1 !important;
+  }
+
+  .db-main div[style*="grid-template-columns: 1fr 3fr"],
+  .db-main div[style*="grid-template-columns: 3fr 2fr"],
+  .db-main div[style*="grid-template-columns: 2fr 3fr"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .db-main div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .db-rentals-grid[style*="repeat(3, 1fr)"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: var(--space-4) !important;
+  }
+
+  .db-main div[style*="justify-content:space-between; align-items:center; position:relative; max-width:800px"] span[style*="white-space:nowrap"] {
+    white-space: normal !important;
+    max-width: 65px !important;
+    text-align: center !important;
+    font-size: 8px !important;
+  }
+
+  .db-header__dropdown,
+  .db-notification-panel {
+    position: fixed !important;
+    top: var(--db-header-height) !important;
+    right: var(--space-4) !important;
+    left: var(--space-4) !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  .db-notification-panel {
+    max-height: calc(100vh - var(--db-header-height) - var(--space-6)) !important;
+  }
+
+  .db-header__dropdown-email,
+  .db-header__dropdown-name {
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    white-space: normal !important;
+  }
+
+  .db-hero__actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .db-hero__actions .btn {
+    width: 100% !important;
+  }
+}
+
+/* ============================================================
+   USER DASHBOARD VEHICLE IMAGES TABLET OPTIMIZATIONS (768px - 1023px)
+   ============================================================ */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* --- 1. Vehicle Images: Prevent aggressive cover cropping or distortion --- */
+  .db-layout .db-current-rental__image,
+  .db-layout .db-rental-card__image,
+  .db-layout .db-pb-card__image,
+  .db-layout .db-pb-card__rec-img,
+  .db-layout .db-pb-card__alt-vehicle-img,
+  .db-layout .db-rental-detail__image,
+  .db-layout .db-rental-card__image-wrap img,
+  .db-layout .db-pb-card__image-wrap img,
+  .db-layout .db-rental-card__image img,
+  .db-layout .db-pb-card__image img {
+    object-fit: contain !important;
+    object-position: center !important;
+    background: transparent !important;
+    transform: none !important;
+    transition: none !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* Table small images keep dimensions but preserve object-fit contain */
+  .db-layout .db-table td img,
+  .db-layout .db-table img {
+    object-fit: contain !important;
+    background: transparent !important;
+  }
+
+  /* --- 2. Rental History Page: Spacious Columns & Scrolling --- */
+  .db-layout #history-list .db-table {
+    width: 100% !important;
+    min-width: 1350px !important; /* Spacious column width */
+    table-layout: auto !important;
+  }
+
+  .db-layout #history-list .db-table th,
+  .db-layout #history-list .db-table td {
+    padding: var(--space-4) var(--space-5) !important; /* Increase cell padding */
+    white-space: nowrap !important; /* Prevent overlapping & text collision */
+  }
+
+  /* --- 3. Extensions Page: spacious column formatting --- */
+  .db-layout #eligible-extensions ~ .db-section-card .db-table {
+    width: 100% !important;
+    min-width: 1100px !important; /* Spacious column spacing */
+    table-layout: auto !important;
+  }
+
+  .db-layout #eligible-extensions ~ .db-section-card .db-table th,
+  .db-layout #eligible-extensions ~ .db-section-card .db-table td {
+    padding: var(--space-4) var(--space-5) !important; /* Increase cell padding */
+    white-space: nowrap !important; /* Prevent text overlap */
+    text-align: left !important;
+  }
+
+  /* --- 4. Profile Page: Remove horizontal scrolling on Tablet --- */
+  .db-layout .db-tabs {
+    overflow-x: visible !important;
+    flex-wrap: nowrap !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+    padding-bottom: 0 !important;
+    display: flex !important;
+    justify-content: space-between !important; /* Distribute evenly in a single visible row */
+    width: 100% !important;
+    scrollbar-width: none !important;
+  }
+
+  .db-layout .db-tabs::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .db-layout .db-tab {
+    flex: 1 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    padding: var(--space-3) var(--space-2) !important;
+  }
+}
+
+/* ============================================================
+   USER DASHBOARD LAPTOP RESPONSIVE OPTIMIZATIONS (1024px - 1439px)
+   ============================================================ */
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  /* Prevent flex layout blowout and page overflow on Laptop screen widths */
+  .db-main-wrapper {
+    min-width: 0 !important;
+  }
+
+  .db-main {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .db-section-card {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Current Rental layout adjustments when sidebar is expanded */
+  .db-sidebar:not(.collapsed) ~ .db-main-wrapper .db-current-rental {
+    flex-direction: column !important;
+  }
+  .db-sidebar:not(.collapsed) ~ .db-main-wrapper .db-current-rental__image-wrap {
+    width: 100% !important;
+  }
+  .db-sidebar:not(.collapsed) ~ .db-main-wrapper .db-current-rental__image {
+    height: 180px !important;
+  }
+  .db-sidebar:not(.collapsed) ~ .db-main-wrapper .db-current-rental__actions {
+    flex-wrap: wrap !important;
+    gap: var(--space-2) !important;
+  }
+  .db-sidebar:not(.collapsed) ~ .db-main-wrapper .db-current-rental__actions .btn {
+    flex: 1 1 auto !important;
+    min-width: 120px !important;
+  }
+
+  /* Rental History table scroll adjustments on laptop */
+  .db-layout #history-list .db-table-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    margin: 0 !important;
+    border-radius: var(--radius-md) !important;
+    border: 1px solid var(--color-border-light) !important;
+  }
+  .db-layout #history-list .db-table {
+    width: 100% !important;
+    min-width: 1290px !important; /* Prevent column compression */
+    table-layout: auto !important;
+  }
+  .db-layout #history-list .db-table th,
+  .db-layout #history-list .db-table td {
+    padding: var(--space-4) var(--space-5) !important; /* Increase cell padding */
+    white-space: nowrap !important; /* Prevent overlapping & text collision */
+  }
+  .db-layout #history-list .db-table th:nth-child(1),
+  .db-layout #history-list .db-table td:nth-child(1) {
+    min-width: 250px !important;
+  }
+  .db-layout #history-list .db-table th:nth-child(2),
+  .db-layout #history-list .db-table td:nth-child(2) {
+    min-width: 140px !important;
+  }
+  .db-layout #history-list .db-table th:nth-child(3),
+  .db-layout #history-list .db-table td:nth-child(3) {
+    min-width: 100px !important;
+  }
+  .db-layout #history-list .db-table th:nth-child(4),
+  .db-layout #history-list .db-table td:nth-child(4) {
+    min-width: 200px !important;
+  }
+  .db-layout #history-list .db-table th:nth-child(5),
+  .db-layout #history-list .db-table td:nth-child(5) {
+    min-width: 100px !important;
+  }
+  .db-layout #history-list .db-table th:nth-child(6),
+  .db-layout #history-list .db-table td:nth-child(6) {
+    min-width: 120px !important;
+  }
+  .db-layout #history-list .db-table th:nth-child(7),
+  .db-layout #history-list .db-table td:nth-child(7) {
+    min-width: 120px !important;
+  }
+  .db-layout #history-list .db-table th:nth-child(8),
+  .db-layout #history-list .db-table td:nth-child(8) {
+    min-width: 260px !important;
+  }
+
+  /* Extensions table scroll adjustments on laptop */
+  .db-layout #eligible-extensions ~ .db-section-card .db-table-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    margin: 0 !important;
+    border-radius: var(--radius-md) !important;
+    border: 1px solid var(--color-border-light) !important;
+  }
+  .db-layout #eligible-extensions ~ .db-section-card .db-table {
+    width: 100% !important;
+    min-width: 1060px !important; /* Prevent column compression */
+    table-layout: auto !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+  }
+  .db-layout #eligible-extensions ~ .db-section-card .db-table th,
+  .db-layout #eligible-extensions ~ .db-section-card .db-table td {
+    padding: var(--space-4) var(--space-5) !important; /* Increase cell padding */
+    text-align: left !important;
+    vertical-align: middle !important;
+    white-space: nowrap !important; /* Prevent text collision */
+  }
+  .db-layout #eligible-extensions ~ .db-section-card .db-table th:nth-child(1),
+  .db-layout #eligible-extensions ~ .db-section-card .db-table td:nth-child(1) {
+    min-width: 220px !important;
+  }
+  .db-layout #eligible-extensions ~ .db-section-card .db-table th:nth-child(2),
+  .db-layout #eligible-extensions ~ .db-section-card .db-table td:nth-child(2) {
+    min-width: 240px !important;
+  }
+  .db-layout #eligible-extensions ~ .db-section-card .db-table th:nth-child(3),
+  .db-layout #eligible-extensions ~ .db-section-card .db-table td:nth-child(3) {
+    min-width: 160px !important;
+  }
+  .db-layout #eligible-extensions ~ .db-section-card .db-table th:nth-child(4),
+  .db-layout #eligible-extensions ~ .db-section-card .db-table td:nth-child(4) {
+    min-width: 160px !important;
+  }
+  .db-layout #eligible-extensions ~ .db-section-card .db-table th:nth-child(5),
+  .db-layout #eligible-extensions ~ .db-section-card .db-table td:nth-child(5) {
+    min-width: 130px !important;
+  }
+  .db-layout #eligible-extensions ~ .db-section-card .db-table th:nth-child(6),
+  .db-layout #eligible-extensions ~ .db-section-card .db-table td:nth-child(6) {
+    min-width: 150px !important;
+  }
+  .db-layout #eligible-extensions ~ .db-section-card .db-table tbody tr {
+    height: 56px !important;
+  }
+
+  /* Profile page layout stacking when sidebar is expanded */
+  .db-sidebar:not(.collapsed) ~ .db-main-wrapper div[style*="grid-template-columns: 1fr 3fr"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .db-sidebar:not(.collapsed) ~ .db-main-wrapper div[style*="grid-template-columns: 1fr 3fr"] div[style*="position: sticky"] {
+    position: static !important;
+  }
+
+  /* Profile tabs: remove scrolling and gradient overlay on Laptop */
+  .db-layout .db-tabs {
+    overflow-x: visible !important;
+    flex-wrap: nowrap !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+    padding-bottom: 0 !important;
+    display: flex !important;
+    justify-content: space-between !important; /* Spread evenly in a single row */
+    width: 100% !important;
+    scrollbar-width: none !important;
+  }
+  .db-layout .db-tabs::-webkit-scrollbar {
+    display: none !important;
+  }
+  .db-layout .db-tab {
+    flex: 1 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    padding: var(--space-3) var(--space-2) !important;
+  }
+}
 
