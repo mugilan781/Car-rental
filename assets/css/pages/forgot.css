@@ -1,5 +1,5 @@
 /* ============================================================
-   DRIVEELITE — FORGOT PASSWORD PAGE SPECIFIC STYLES
+   JET CABS — FORGOT PASSWORD PAGE SPECIFIC STYLES
    All rules scoped strictly under .forgot-page to prevent pollution.
    ============================================================ */
 
@@ -83,7 +83,11 @@
 }
 
 .forgot-page .login-logo span {
-  color: var(--color-secondary);
+  color: var(--color-primary);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
 }
 
 /* 4. Heading & Subtitle */

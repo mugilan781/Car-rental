@@ -768,7 +768,7 @@
    12. BOOKING CTA
    ============================================================ */
 .cars-cta {
-  background: linear-gradient(135deg, #1E4D40 0%, #102E26 100%);
+  background: linear-gradient(135deg, var(--color-primary), #2E5B82);
   padding: var(--space-16) 0;
   text-align: center;
   color: #fff;

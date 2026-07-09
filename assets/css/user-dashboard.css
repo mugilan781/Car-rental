@@ -1,7 +1,7 @@
 /* ============================================================
-   DRIVEELITE — DASHBOARD FOUNDATION
+   JET CABS — DASHBOARD FOUNDATION
    Shared Layout + Component Library
-   Reuses all DriveElite design tokens from style.css
+   Reuses all JET CABS design tokens from style.css
    ============================================================ */
 
 /* ============================================================
@@ -134,7 +134,7 @@
 }
 
 .db-sidebar__logo-text span {
-  color: var(--color-secondary);
+  color: var(--color-primary-light);
 }
 
 /* — Collapse Button — */

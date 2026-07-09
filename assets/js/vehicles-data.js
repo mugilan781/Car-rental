@@ -1,5 +1,5 @@
 /**
- * Centralized Vehicle Data Source for DriveElite
+ * Centralized Vehicle Data Source for JET CABS
  * This file serves as the database of all 12 available cars in the fleet.
  */
 
@@ -71,7 +71,7 @@ window.vehiclesData = [
         date: "Jun 2026",
         duration: "Rented: 3 Days",
         stars: 5,
-        text: "Absolutely stunning car. The AMG GT 63 S was in immaculate condition — every detail was perfect. The 630HP engine is incredible on the highway. Interior quality is just out of this world. DriveElite made the whole process seamless."
+        text: "Absolutely stunning car. The AMG GT 63 S was in immaculate condition — every detail was perfect. The 630HP engine is incredible on the highway. Interior quality is just out of this world. JET CABS made the whole process seamless."
       },
       {
         name: "Sarah Mitchell",
@@ -340,7 +340,7 @@ window.vehiclesData = [
         date: "Apr 2026",
         duration: "Rented: 1 Day",
         stars: 5,
-        text: "Perfect rental. Car was clean, exhaust sounds incredible. DriveElite was quick with handoffs."
+        text: "Perfect rental. Car was clean, exhaust sounds incredible. JET CABS was quick with handoffs."
       }
     ]
   },
@@ -510,7 +510,7 @@ window.vehiclesData = [
         date: "Apr 2026",
         duration: "Rented: 5 Days",
         stars: 4,
-        text: "Luxury meets speed. Handles mountain roads with complete ease. DriveElite customer service was outstanding."
+        text: "Luxury meets speed. Handles mountain roads with complete ease. JET CABS customer service was outstanding."
       }
     ]
   },
@@ -935,7 +935,7 @@ window.vehiclesData = [
         date: "Apr 2026",
         duration: "Rented: 1 Day",
         stars: 5,
-        text: "Easy handling, great price. DriveElite is top notch for rental convenience."
+        text: "Easy handling, great price. JET CABS is top notch for rental convenience."
       }
     ]
   },

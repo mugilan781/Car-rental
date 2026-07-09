@@ -1,5 +1,5 @@
 /* ============================================================
-   DRIVEELITE — USER DASHBOARD JS
+   JET CABS — USER DASHBOARD JS
    Phase 3: Completed User Dashboard Modules
    Overview, Rentals, Pre-Bookings, History, Extensions,
    Verification, Payments, Profile, Notifications, Support, Settings
@@ -58,10 +58,10 @@ const UserDashboard = (() => {
         rentalType: 'Daily',
         pickupDate: '2026-07-05',
         pickupTime: '10:00 AM',
-        pickupLocation: 'DriveElite Downtown Hub',
+        pickupLocation: 'JET CABS Downtown Hub',
         returnDate: '2026-07-12',
         returnTime: '10:00 AM',
-        returnLocation: 'DriveElite Downtown Hub',
+        returnLocation: 'JET CABS Downtown Hub',
         status: 'active',
         dailyRate: 520,
         totalDays: 7,
@@ -88,10 +88,10 @@ const UserDashboard = (() => {
         rentalType: 'Daily',
         pickupDate: '2026-07-15',
         pickupTime: '09:00 AM',
-        pickupLocation: 'DriveElite Airport Lounge',
+        pickupLocation: 'JET CABS Airport Lounge',
         returnDate: '2026-07-18',
         returnTime: '09:00 AM',
-        returnLocation: 'DriveElite Airport Lounge',
+        returnLocation: 'JET CABS Airport Lounge',
         status: 'upcoming',
         dailyRate: 420,
         totalDays: 3,
@@ -118,10 +118,10 @@ const UserDashboard = (() => {
         rentalType: 'Hourly',
         pickupDate: '2026-06-28',
         pickupTime: '02:00 PM',
-        pickupLocation: 'DriveElite Marina Point',
+        pickupLocation: 'JET CABS Marina Point',
         returnDate: '2026-06-28',
         returnTime: '08:00 PM',
-        returnLocation: 'DriveElite Marina Point',
+        returnLocation: 'JET CABS Marina Point',
         status: 'completed',
         dailyRate: 120,
         totalDays: 1,
@@ -148,10 +148,10 @@ const UserDashboard = (() => {
         rentalType: 'Daily',
         pickupDate: '2026-06-15',
         pickupTime: '11:00 AM',
-        pickupLocation: 'DriveElite City Center',
+        pickupLocation: 'JET CABS City Center',
         returnDate: '2026-06-20',
         returnTime: '11:00 AM',
-        returnLocation: 'DriveElite City Center',
+        returnLocation: 'JET CABS City Center',
         status: 'completed',
         dailyRate: 480,
         totalDays: 5,
@@ -178,10 +178,10 @@ const UserDashboard = (() => {
         rentalType: 'Daily',
         pickupDate: '2026-06-01',
         pickupTime: '09:00 AM',
-        pickupLocation: 'DriveElite Downtown Hub',
+        pickupLocation: 'JET CABS Downtown Hub',
         returnDate: '2026-06-04',
         returnTime: '09:00 AM',
-        returnLocation: 'DriveElite Downtown Hub',
+        returnLocation: 'JET CABS Downtown Hub',
         status: 'returned',
         dailyRate: 580,
         totalDays: 3,
@@ -208,10 +208,10 @@ const UserDashboard = (() => {
         rentalType: 'Daily',
         pickupDate: '2026-05-20',
         pickupTime: '10:00 AM',
-        pickupLocation: 'DriveElite Airport Lounge',
+        pickupLocation: 'JET CABS Airport Lounge',
         returnDate: '2026-05-23',
         returnTime: '10:00 AM',
-        returnLocation: 'DriveElite Airport Lounge',
+        returnLocation: 'JET CABS Airport Lounge',
         status: 'cancelled',
         dailyRate: 350,
         totalDays: 3,
@@ -240,7 +240,7 @@ const UserDashboard = (() => {
         requestedDates: 'Jul 20 – Jul 25, 2026',
         pickupDate: '2026-07-20',
         returnDate: '2026-07-25',
-        pickupLocation: 'DriveElite Downtown Hub',
+        pickupLocation: 'JET CABS Downtown Hub',
         status: 'pending',
         requestedOn: '2026-07-06',
         estimatedCost: 2600,
@@ -255,7 +255,7 @@ const UserDashboard = (() => {
         requestedDates: 'Aug 1 – Aug 5, 2026',
         pickupDate: '2026-08-01',
         returnDate: '2026-08-05',
-        pickupLocation: 'DriveElite City Center',
+        pickupLocation: 'JET CABS City Center',
         status: 'approved',
         requestedOn: '2026-07-02',
         estimatedCost: 1920,
@@ -270,7 +270,7 @@ const UserDashboard = (() => {
         requestedDates: 'Aug 10 – Aug 12, 2026',
         pickupDate: '2026-08-10',
         returnDate: '2026-08-12',
-        pickupLocation: 'DriveElite Marina Point',
+        pickupLocation: 'JET CABS Marina Point',
         status: 'rejected',
         requestedOn: '2026-06-28',
         estimatedCost: 1500,
@@ -286,7 +286,7 @@ const UserDashboard = (() => {
         requestedDates: 'Aug 15 – Aug 20, 2026',
         pickupDate: '2026-08-15',
         returnDate: '2026-08-20',
-        pickupLocation: 'DriveElite Airport Lounge',
+        pickupLocation: 'JET CABS Airport Lounge',
         status: 'alternative',
         requestedOn: '2026-07-01',
         estimatedCost: 2100,
@@ -320,7 +320,7 @@ const UserDashboard = (() => {
         requestedDates: 'Jun 1 – Jun 5, 2026',
         pickupDate: '2026-06-01',
         returnDate: '2026-06-05',
-        pickupLocation: 'DriveElite Downtown Hub',
+        pickupLocation: 'JET CABS Downtown Hub',
         status: 'expired',
         requestedOn: '2026-05-15',
         estimatedCost: 2320,
@@ -336,7 +336,7 @@ const UserDashboard = (() => {
       { id: 'N-05', type: 'danger', category: 'Approval', title: 'Booking Rejected', text: 'Your Porsche 911 Turbo S pre-booking was rejected due to maintenance.', time: '3 days ago', read: true, priority: 'high' },
       { id: 'N-06', type: 'success', category: 'Vehicle', title: 'Vehicle Ready', text: 'Your Porsche 911 Turbo S verification is complete and ready.', time: '5 days ago', read: true, priority: 'normal' },
       { id: 'N-07', type: 'warning', category: 'Vehicle', title: 'Verification Pending', text: 'Please complete your photo condition uploads for your active rental.', time: '6 days ago', read: true, priority: 'high' },
-      { id: 'N-08', type: 'info', category: 'System', title: 'System Update', text: 'DriveElite terms of service have been updated for Phase 3.', time: '1 week ago', read: true, priority: 'normal' },
+      { id: 'N-08', type: 'info', category: 'System', title: 'System Update', text: 'JET CABS terms of service have been updated for Phase 3.', time: '1 week ago', read: true, priority: 'normal' },
     ],
 
     extensionsData: [
@@ -551,7 +551,7 @@ const UserDashboard = (() => {
      3. STORAGE HELPER
      ============================================================ */
   const StorageHelper = {
-    prefix: 'driveelite_user_',
+    prefix: 'jetcabs_user_',
     get(key) { try { const r = localStorage.getItem(this.prefix + key); return r ? JSON.parse(r) : null; } catch { return null; } },
     set(key, value) { try { localStorage.setItem(this.prefix + key, JSON.stringify(value)); } catch {} },
     remove(key) { try { localStorage.removeItem(this.prefix + key); } catch {} }
@@ -2731,10 +2731,10 @@ const UserDashboard = (() => {
         </a>
 
         <!-- Email Support -->
-        <a href="mailto:concierge@driveelite.com" class="db-support-card-item">
+        <a href="mailto:concierge@jetcabs.com" class="db-support-card-item">
           <div style="color: var(--color-secondary); font-size: 1.75rem; margin-bottom: var(--space-2);">${Utils.icon('icon-mail')}</div>
           <div style="font-weight: var(--fw-semibold); color: var(--color-dark-text); font-size: var(--fs-small); margin-bottom: 2px;">Email Support</div>
-          <div style="font-size: 11px; color: var(--color-light-text);">concierge@driveelite.com</div>
+          <div style="font-size: 11px; color: var(--color-light-text);">concierge@jetcabs.com</div>
         </a>
 
         <!-- Live Chat (Coming Soon) -->

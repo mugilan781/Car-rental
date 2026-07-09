@@ -1,5 +1,5 @@
 /* ============================================================
-   DRIVEELITE — REGISTER PAGE SPECIFIC STYLES
+   JET CABS — REGISTER PAGE SPECIFIC STYLES
    All rules scoped strictly under .register-page to prevent pollution.
    ============================================================ */
 
@@ -83,7 +83,11 @@
 }
 
 .register-page .login-logo span {
-  color: var(--color-secondary);
+  color: var(--color-primary);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
 }
 
 /* 4. Centered Welcome Area */

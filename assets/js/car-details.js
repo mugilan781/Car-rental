@@ -1,5 +1,5 @@
 /**
- * Dynamic Car Details Populator for DriveElite
+ * Dynamic Car Details Populator for JET CABS
  * Reads selected vehicle ID from query parameters and populates the UI.
  */
 
@@ -22,7 +22,7 @@
   });
 
   // --- 2. Populate Page Metadata ---
-  document.title = `${currentCar.brand} ${currentCar.name} — DriveElite`;
+  document.title = `${currentCar.brand} ${currentCar.name} — JET CABS`;
   const metaDescription = document.querySelector('meta[name="description"]');
   if (metaDescription) {
     metaDescription.setAttribute('content', `${currentCar.brand} ${currentCar.name} — ${currentCar.description}`);

@@ -694,7 +694,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-8);
-  background: linear-gradient(135deg, #1E4D40 0%, #102E26 100%);
+  background: linear-gradient(135deg, #1B3B5F 0%, #0F2233 100%);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: var(--shadow-lg);}
 
@@ -936,7 +936,7 @@
    13. CARS CTA
    ============================================================ */
 .cars-cta {
-  background: linear-gradient(135deg, #1E4D40 0%, #102E26 100%);
+  background: linear-gradient(135deg, var(--color-primary), #2E5B82);
   padding: var(--space-16) 0;
   text-align: center;
   color: #fff;

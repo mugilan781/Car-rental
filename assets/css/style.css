@@ -1,5 +1,5 @@
 /* ============================================================
-   DRIVEELITE — PREMIUM CAR RENTAL
+   JET CABS — PREMIUM CAR RENTAL
    Master Design System + Global Component Styles
    ============================================================ */
 
@@ -12,6 +12,7 @@
 :root {
   /* — Colors (Premium Light Luxury Theme) — */
   --color-primary:       #1B3B5F;   /* Deep premium navy blue — primary brand, CTAs */
+  --color-primary-light: #3A82C4;   /* Brighter premium blue for dark backgrounds */
   --color-secondary:     #C6A962;   /* Champagne gold — accent, highlights */
   --color-accent:        #D4AF37;   /* Old gold — hover states, emphasis */
   --color-success:       #16A34A;
@@ -322,6 +323,7 @@ p {
 .login-logo-text {
   display: inline-flex;
   align-items: center;
+  gap: 2px;
   color: var(--color-dark-text);
 }
 
@@ -2187,6 +2189,7 @@ p {
   font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: var(--fw-extrabold);
+  letter-spacing: -0.02em;
   margin-bottom: var(--space-5);
   text-decoration: none;
 }
@@ -2217,11 +2220,12 @@ p {
 .footer__logo-text {
   display: inline-flex;
   align-items: center;
+  gap: 2px;
   color: #FFFFFF;
 }
 
 .footer__logo-text span {
-  color: var(--color-secondary);
+  color: var(--color-primary-light);
 }
 
 .footer__description {
