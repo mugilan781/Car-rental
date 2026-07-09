@@ -1194,6 +1194,34 @@
   .contact-page .contact-card {
     padding: var(--space-5);
   }
+  .contact-page .contact-kv-item {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: var(--space-1) !important;
+  }
+  .contact-page .contact-kv-value {
+    text-align: left !important;
+    width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+  }
+  .contact-page .contact-form__actions {
+    flex-direction: column !important;
+    gap: var(--space-3) !important;
+  }
+  .contact-page .contact-form__actions .btn {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  .contact-page .file-upload-text {
+    flex: 1 !important;
+    min-width: 0 !important;
+    overflow-wrap: break-word !important;
+  }
+  .contact-page .whatsapp-card__btn {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
 }
 
 /* ---- Contact CTA Responsive ---- */

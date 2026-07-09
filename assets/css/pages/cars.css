@@ -1017,25 +1017,28 @@
 }
 
 @media (max-width: 992px) {
-  .cars-layout { grid-template-columns: 1fr;}
+  .cars-layout { grid-template-columns: minmax(0, 1fr);}
 
   .filter-sidebar {
     position: static;
     max-height: none;
-    display: none;}
+    display: none;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;}
 
   .filter-sidebar.show {
     display: block;}
 
   .filter-toggle-mobile { display: flex; align-items: center; justify-content: center; gap: var(--space-2);}
 
-  .vehicle-grid { grid-template-columns: repeat(2, 1fr);}
-  .mini-reviews { grid-template-columns: 1fr;}
+  .vehicle-grid { grid-template-columns: repeat(2, minmax(0, 1fr));}
+  .mini-reviews { grid-template-columns: minmax(0, 1fr);}
 }
 
 @media (max-width: 768px) {
-  .vehicle-grid { grid-template-columns: 1fr;}
-  .why-rent-grid { grid-template-columns: repeat(2, 1fr);}
+  .vehicle-grid { grid-template-columns: minmax(0, 1fr);}
+  .why-rent-grid { grid-template-columns: repeat(2, minmax(0, 1fr));}
 
   .cars-search__row {
     flex-direction: column;}
@@ -1050,7 +1053,10 @@
 
   .promo-banner {
     flex-direction: column;
-    text-align: center;}
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;}
 
   .pagination { flex-wrap: wrap;}
 }
@@ -1197,9 +1203,51 @@
 }
 
 @media (max-width: 576px) {
-  .why-rent-grid { grid-template-columns: 1fr;}
+  .why-rent-grid { grid-template-columns: minmax(0, 1fr);}
   .cars-search__actions { width: 100%;}
   .cars-search__actions .btn { flex: 1;}
+
+  /* Mobile search card padding fix */
+  .cars-search__card {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  /* Mobile vehicles grid & layout adjustments */
+  .cars-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .vehicle-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Filter sidebar sizing */
+  .filter-sidebar {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Promo banner padding & fit */
+  .promo-banner {
+    padding: var(--space-6) var(--space-4);
+    gap: var(--space-4);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Mobile toolbar sort and view toggle controls */
+  .cars-toolbar__controls {
+    gap: var(--space-3);
+  }
+  .cars-toolbar__sort select {
+    min-width: 120px;
+    padding: var(--space-2) var(--space-3);
+  }
+  .view-btn {
+    width: 34px;
+    height: 34px;
+  }
 }
 
 /* ============================================================

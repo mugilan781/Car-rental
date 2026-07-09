@@ -1138,7 +1138,7 @@
 
 @media (max-width: 768px) {
   .review-groups-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: minmax(0, 1fr) !important;
   }
 }
 
@@ -1448,6 +1448,283 @@ main#main-content .section:nth-of-type(odd) {
 @media (max-width: 576px) {
   .photo-upload-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Form section mobile paddings and container overflow prevention */
+  .form-section {
+    padding: var(--space-5) var(--space-4) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Form grid stacking on mobile */
+  .form-grid, .form-grid--3 {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: var(--space-4) !important;
+  }
+  .form-group--full {
+    grid-column: span 1 !important;
+  }
+
+  /* Booking summary card responsive fit */
+  .booking-summary {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .booking-summary__title {
+    padding: var(--space-4) var(--space-3) var(--space-3) !important;
+  }
+  .booking-summary__vehicle-showcase {
+    padding: var(--space-3) var(--space-3) 0 var(--space-3) !important;
+  }
+  .booking-summary__info-header {
+    padding: var(--space-4) var(--space-3) var(--space-2) !important;
+  }
+  .booking-summary__specs {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    padding: var(--space-2) var(--space-3) var(--space-3) var(--space-3) !important;
+    gap: var(--space-2) !important;
+  }
+  .booking-summary__rates {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    padding: 0 var(--space-3) var(--space-3) var(--space-3) !important;
+    gap: var(--space-2) !important;
+  }
+  .booking-summary__body {
+    padding: 0 var(--space-3) var(--space-3) !important;
+  }
+  .booking-summary__cta {
+    padding: 0 var(--space-3) var(--space-3) !important;
+  }
+  .booking-summary__secure {
+    padding: var(--space-3) var(--space-3) var(--space-4) !important;
+  }
+
+  /* Progress card fit */
+  .progress-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Progress steps fonts/spacing adjustments on mobile */
+  .progress-step {
+    font-size: var(--fs-xs) !important;
+    gap: var(--space-1) !important;
+  }
+  .progress-step__title {
+    font-size: 11px !important;
+  }
+  .progress-step__subtitle {
+    font-size: 9px !important;
+  }
+
+  /* Rental type toggle optimization */
+  .rental-type-toggle {
+    gap: var(--space-2) !important;
+  }
+  .rental-type-option label.rental-type-label {
+    padding: var(--space-4) var(--space-2) !important;
+    font-size: var(--fs-small) !important;
+  }
+  .rental-type-label__desc {
+    display: none !important;
+  }
+
+  /* Selector card padding */
+  .selector-flow-card {
+    padding: var(--space-5) !important;
+  }
+  .selector-flow-card__badge {
+    position: static !important;
+    display: inline-block !important;
+    margin-bottom: var(--space-4) !important;
+  }
+
+  /* Stack grid layouts inside review step cards */
+  .review-card-group {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .review-card-group > div:nth-of-type(2) {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: var(--space-3) !important;
+  }
+  #review-vehicle-specs {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  #review-photos-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  /* Payment order summary stacked on mobile (replaces fragile attribute selector) */
+  #payment-form-container h4 + div {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: var(--space-2) !important;
+  }
+
+  /* Payment methods grid sizing */
+  .payment-methods-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: var(--space-2) !important;
+  }
+  .payment-method-card {
+    padding: var(--space-3) var(--space-2) !important;
+  }
+
+  /* Premium upload grid sizing */
+  .premium-upload-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  /* KYC status container responsive padding */
+  #kyc-processing-container, #kyc-verified-container {
+    padding: var(--space-4) !important;
+  }
+
+  /* Confirmation card styling and padding on mobile */
+  .confirmation-card {
+    padding: var(--space-5) var(--space-4) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Stacking details grid in confirmation cards (replaces fragile attribute selector) */
+  .confirmation-card > div:nth-of-type(2) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  /* Actions list stacked vertically on mobile */
+  .confirmation-card__actions {
+    flex-direction: column !important;
+    gap: var(--space-3) !important;
+    width: 100% !important;
+  }
+  .confirmation-card__actions .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Timeline container width */
+  .status-timeline {
+    max-width: 100% !important;
+  }
+
+  /* Alternative offer comparison responsive layout stack (replaces fragile attribute selectors) */
+  .alternative-offer-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: var(--space-3) !important;
+  }
+  .alternative-offer-box h4 + div,
+  .alternative-offer-box > div:last-child > div:last-child {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: var(--space-4) !important;
+  }
+  .alternative-offer-box h4 + div > div:first-child {
+    border-right: none !important;
+    border-bottom: 1px solid var(--color-border-light) !important;
+    padding-right: 0 !important;
+    padding-bottom: var(--space-4) !important;
+  }
+
+  /* Estimated Pricing card badge overlap fix */
+  .estimated-pricing-card .pricing-card-badge {
+    position: static !important;
+    display: inline-block !important;
+    margin-bottom: var(--space-2) !important;
+  }
+
+  /* Modal detailed receipt popup responsive */
+  .modal-content {
+    width: 95% !important;
+    padding: var(--space-4) !important;
+  }
+
+  /* Stacking next/back navigation buttons vertically on mobile to prevent overflow */
+  .form-nav {
+    flex-direction: column-reverse !important;
+    gap: var(--space-3) !important;
+  }
+  .form-nav .btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    justify-content: center !important;
+  }
+
+  /* Flexible terms text and overflow break safety */
+  .terms-check__text {
+    flex: 1 !important;
+    min-width: 0 !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Word break safety overrides for all dynamic/review values */
+  .review-card-group span, 
+  .review-card-group div,
+  .review-card-group strong,
+  .pre-review-car-name,
+  .estimated-pricing-card span,
+  .estimated-pricing-card div,
+  .confirmation-card span,
+  .confirmation-card div,
+  .confirmation-card strong,
+  .alternative-offer-box span,
+  .alternative-offer-box div,
+  .alternative-offer-box strong {
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+  }
+
+  /* Sidebar spec item ellipsis/shrink flexbox layout fix */
+  .booking-summary__spec-item {
+    min-width: 0 !important;
+  }
+  .booking-summary__spec-val {
+    min-width: 0 !important;
+    flex: 1 !important;
+  }
+  .booking-summary__row-value {
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    min-width: 0 !important;
+  }
+
+  /* Verification/Success state buttons and card safety */
+  #payment-success-container .btn,
+  #kyc-verified-container .btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    justify-content: center !important;
+  }
+
+  /* Form padding reduction on mobile */
+  .payment-methods-grid + div {
+    padding: var(--space-4) !important;
+  }
+
+  /* Security note text wrap */
+  #step-3-direct .icon + div {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  /* Button white-space wrap safety */
+  .btn {
+    white-space: normal !important;
+    text-align: center !important;
+  }
+
+  /* Status logs console container fit */
+  .payment-status-logs, .kyc-status-logs {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 }
 
@@ -1868,10 +2145,10 @@ main#main-content .section:nth-of-type(odd) {
 /* ---- Booking Page Additional Responsive ---- */
 @media (max-width: 480px) {
   .booking-layout { gap: var(--space-4) !important;}
-  .booking-form-section { padding: var(--space-4) !important;}
-  .booking-summary { padding: var(--space-4) !important;}
-  .wiz-steps { gap: var(--space-2);}
-  .wiz-step { font-size: var(--fs-xs);}
+  .form-section { padding: var(--space-4) !important;}
+  .booking-summary { padding: 0 !important;}
+  .progress-steps { gap: var(--space-2) !important;}
+  .progress-step { font-size: var(--fs-xs) !important;}
   .confirmation-card { max-width: 100%;}
   .empty-state-card { padding: var(--space-6) var(--space-4) !important;}
   .direct-car-card__body { padding: var(--space-3) !important;}

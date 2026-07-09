@@ -1354,20 +1354,32 @@
   .timeline {
     flex-direction: column;
     gap: var(--space-6);
-    align-items: flex-start;
-    padding-left: 50px;}
+    align-items: stretch;
+    max-width: 550px;
+    margin: 0 auto;
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+  }
   .timeline::before {
     width: 2px;
     height: 100%;
     top: 0;
-    left: 27px;
-    right: auto;}
+    left: calc(var(--space-6) + 27px);
+    right: auto;
+  }
   .timeline__step {
     flex-direction: row;
     text-align: left;
     max-width: 100%;
-    gap: var(--space-4);}
-  .timeline__number { flex-shrink: 0;}
+    gap: var(--space-4);
+  }
+  .timeline__number {
+    flex-shrink: 0;
+  }
+  .timeline__content {
+    flex: 1;
+    min-width: 0;
+  }
 
   .offers-grid { grid-template-columns: 1fr;}
   .app-grid { grid-template-columns: 1fr; text-align: center;}
@@ -1403,6 +1415,44 @@
   .home-hero__stats { flex-direction: column; align-items: center; gap: var(--space-4);}
   .stats-grid { grid-template-columns: 1fr;}
   .app-buttons { flex-direction: column; align-items: center;}
+
+  /* Mobile Only - Hero background car position and scaling */
+  .home-hero__bg img {
+    object-fit: contain;
+    object-position: center 35%;
+    opacity: 0.16;
+  }
+
+  /* Mobile Only - Booking card layout fixes */
+  .booking-widget__card {
+    padding: var(--space-6) var(--space-5);
+  }
+  .booking-widget__header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-4);
+  }
+  .booking-widget__rental-type {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+  .booking-widget__type-btn {
+    text-align: center;
+    padding: var(--space-2) var(--space-3);
+  }
+  .booking-widget__fields {
+    width: 100%;
+  }
+  .booking-widget__field {
+    width: 100%;
+    min-width: 0;
+  }
+  .booking-widget__field .form-input {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1411,8 +1461,13 @@
   .home-hero__desc { font-size: var(--fs-small);}
   .home-hero__badge { font-size: 0.5625rem; padding: var(--space-1) var(--space-3);}
 
-  .booking-widget { padding: var(--space-5);}
+  .booking-widget { padding: var(--space-5) 0;}
+  .booking-widget__card { padding: var(--space-5) var(--space-4);}
   .booking-widget__fields { gap: var(--space-3);}
+  .booking-widget__field .form-input {
+    padding: var(--space-3) var(--space-3);
+    font-size: var(--fs-small);
+  }
 
   .categories-grid { grid-template-columns: 1fr; gap: var(--space-3);}
 
