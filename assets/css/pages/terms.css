@@ -192,7 +192,7 @@
 
 /* Premium informational card callouts */
 .terms-page .terms-card {
-  background: linear-gradient(to bottom, var(--color-card), rgba(27, 77, 62, 0.01));
+  background: linear-gradient(to bottom, var(--color-card), rgba(27, 59, 95, 0.01));
   border: 1px solid var(--color-border);
   border-top: 3px solid var(--color-secondary);
   border-radius: var(--radius-xl);

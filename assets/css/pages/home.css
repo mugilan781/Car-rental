@@ -626,10 +626,10 @@
   box-shadow: var(--shadow-card-hover);
   border-color: var(--color-secondary-300);}
 
-/* Card 1: Deep Forest Green & Champagne Gold Accent */
+/* Card 1: Deep Premium Navy Blue & Champagne Gold Accent */
 .offer-card--1 {
-  background: linear-gradient(135deg, #1B4D3E 0%, #0F2D24 100%);
-  border-color: rgba(27, 77, 62, 0.2);
+  background: linear-gradient(135deg, #1B3B5F 0%, #0F2233 100%);
+  border-color: rgba(27, 59, 95, 0.2);
 }
 .offer-card--1 .offer-card__discount { color: #C6A962; }
 .offer-card--1 .offer-card__title { color: #FFFFFF; }
@@ -1270,7 +1270,7 @@
    16. HOMEPAGE CTA
    ============================================================ */
 .home-cta {
-  background: linear-gradient(135deg, var(--color-primary), #2D6A5A);
+  background: linear-gradient(135deg, var(--color-primary), #2E5B82);
   padding: var(--space-16) 0;
   text-align: center;
   color: #fff;
@@ -1403,4 +1403,27 @@
   .home-hero__stats { flex-direction: column; align-items: center; gap: var(--space-4);}
   .stats-grid { grid-template-columns: 1fr;}
   .app-buttons { flex-direction: column; align-items: center;}
+}
+
+@media (max-width: 480px) {
+  .home-hero__grid { padding: 100px 0 140px;}
+  .home-hero__title { font-size: clamp(2rem, 6vw, 3rem);}
+  .home-hero__desc { font-size: var(--fs-small);}
+  .home-hero__badge { font-size: 0.5625rem; padding: var(--space-1) var(--space-3);}
+
+  .booking-widget { padding: var(--space-5);}
+  .booking-widget__fields { gap: var(--space-3);}
+
+  .categories-grid { grid-template-columns: 1fr; gap: var(--space-3);}
+
+  .home-cta { padding: var(--space-10) 0;}
+  .home-cta__title { font-size: clamp(1.25rem, 5vw, 1.5rem);}
+  .home-cta__text { font-size: var(--fs-xs); max-width: 100%;}
+  .home-cta__actions { flex-direction: column; align-items: center; gap: var(--space-3);}
+  .home-cta__actions .btn { width: 100%; max-width: 280px;}
+
+  .app-mockup__phone { width: 180px; height: 360px;}
+  .app-content__text { font-size: var(--fs-small);}
+
+  .testimonial-card { flex: 0 0 calc(100% - var(--space-2));}
 }

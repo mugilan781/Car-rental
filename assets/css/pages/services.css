@@ -258,7 +258,7 @@
   border-color: var(--color-primary);
   color: #FFFFFF;
   transform: scale(1.1) rotate(-5deg);
-  box-shadow: 0 4px 12px rgba(27,77,62,0.25);}
+  box-shadow: 0 4px 12px rgba(27,59,95,0.25);}
 
 .serv-card__title {
   font-family: var(--font-heading);
@@ -395,7 +395,7 @@
   background: var(--color-primary);
   color: #fff;
   transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(27,77,62,0.25);}
+  box-shadow: 0 4px 12px rgba(27,59,95,0.25);}
 
 .process-node__title {
   font-family: var(--font-heading);
@@ -771,7 +771,7 @@
    10. CALL TO ACTION (Identical to Homepage/Details CTA)
    ============================================================ */
 .cta-section {
-  background: linear-gradient(135deg, var(--color-primary), #2D6A5A);
+  background: linear-gradient(135deg, var(--color-primary), #2E5B82);
   padding: var(--space-16) 0;
   text-align: center;
   color: #fff;
@@ -842,7 +842,7 @@
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(27,77,62,0.02) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(27,59,95,0.02) 0%, transparent 70%);
   bottom: 0;
   right: -20%;
   z-index: 1;
@@ -991,3 +991,23 @@
   margin: 0 auto;}
 .u-services-43 {
   margin: 0 auto var(--space-6);}
+
+/* ---- Services Responsive Additions ---- */
+@media (max-width: 768px) {
+  .serv-split-grid,
+  .serv-split-grid.visual-left { grid-template-columns: 1fr;}
+  .serv-split-grid__visual { height: 300px;}
+  .serv-split__visual { height: 280px;}
+  .serv-split-grid__cards { grid-template-columns: 1fr;}
+  .cta-section__actions { flex-direction: column; align-items: center; gap: var(--space-3);}
+  .cta-section__actions .btn { width: 100%; max-width: 300px;}
+}
+
+@media (max-width: 576px) {
+  .cta-section { padding: var(--space-10) 0;}
+  .cta-section__title { font-size: clamp(1.375rem, 4vw, 1.75rem);}
+  .cta-section__desc { font-size: var(--fs-small);}
+  .serv-split-grid__visual { height: 220px;}
+  .serv-split__visual { height: 200px;}
+}
+

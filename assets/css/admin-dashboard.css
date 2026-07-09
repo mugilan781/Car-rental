@@ -7,11 +7,11 @@
    1. ADMIN-SPECIFIC SIDEBAR ACCENTS
    ============================================================ */
 .db-sidebar--admin {
-  border-right-color: rgba(27,77,62,0.15);
+  border-right-color: rgba(27,59,95,0.15);
 }
 
 .db-sidebar--admin .db-sidebar__header {
-  border-bottom-color: rgba(27,77,62,0.1);
+  border-bottom-color: rgba(27,59,95,0.1);
 }
 
 /* Admin role indicator */
@@ -406,7 +406,7 @@ input:checked + .slider:before {
 }
 
 .db-notification-panel__item.unread {
-  background: rgba(27,77,62,0.03);
+  background: rgba(27,59,95,0.03);
   border-left: 3px solid var(--color-secondary) !important;
 }
 
@@ -863,4 +863,117 @@ input:checked + .slider:before {
   border-top: none !important;
 }
 
+/* ============================================================
+   ADDITIONAL RESPONSIVE REFINEMENTS — ADMIN DASHBOARD
+   ============================================================ */
+
+/* ---- Tablet (≤ 992px) ---- */
+@media (max-width: 992px) {
+  .db-stats-grid--admin {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .db-quick-actions {
+    flex-wrap: wrap;
+  }
+}
+
+/* ---- Mobile Landscape (≤ 768px) ---- */
+@media (max-width: 768px) {
+  .db-stats-grid--admin {
+    grid-template-columns: 1fr;
+  }
+
+  .db-quick-actions {
+    padding: var(--space-3) var(--space-4);
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  /* Admin page header actions */
+  .db-page-header__actions {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .db-page-header__actions .btn {
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* Filter bars stack */
+  .db-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .db-filter-bar__search {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/* ---- Mobile (≤ 576px) ---- */
+@media (max-width: 576px) {
+  .db-quick-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .db-quick-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Table cells more compact */
+  .db-layout .db-table th,
+  .db-layout .db-table td {
+    padding: var(--space-2) var(--space-3) !important;
+    font-size: var(--fs-xs) !important;
+  }
+
+  /* Notification spacing */
+  .db-notification-panel__item {
+    padding: var(--space-3);
+  }
+
+  /* Section card compact */
+  .db-section-card__header {
+    padding: var(--space-4);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .db-section-card__body {
+    padding: var(--space-3);
+  }
+
+  /* Admin customers and extensions containers */
+  #customers-card-container,
+  #extensions-card-container,
+  #notifications-card-container {
+    padding: var(--space-4) !important;
+  }
+}
+
+/* ---- Small Phones (≤ 480px) ---- */
+@media (max-width: 480px) {
+  /* Admin role badge hidden in header */
+  .db-sidebar__role-badge {
+    display: none;
+  }
+
+  /* Even more compact table */
+  .db-layout .db-table th,
+  .db-layout .db-table td {
+    padding: var(--space-2) !important;
+    font-size: 0.6875rem !important;
+  }
+
+  .db-layout .db-table img {
+    width: 40px !important;
+    height: 28px !important;
+  }
+}
 

@@ -29,7 +29,7 @@
       overflow: hidden;
     }
 
-    /* Ambient Gold/Green Lighting */
+    /* Ambient Gold/Blue Lighting */
     .glow-bg {
       position: absolute;
       inset: 0;
@@ -49,13 +49,13 @@
       animation: float-slow 15s ease-in-out infinite alternate;
     }
 
-    .glow-circle-green {
+    .glow-circle-blue {
       position: absolute;
       bottom: 25%;
       right: 20%;
       width: 500px;
       height: 500px;
-      background: radial-gradient(circle, rgba(27, 77, 62, 0.03) 0%, rgba(27, 77, 62, 0) 70%);
+      background: radial-gradient(circle, rgba(27, 59, 95, 0.03) 0%, rgba(27, 59, 95, 0) 70%);
       filter: blur(120px);
       animation: float-slow-reverse 18s ease-in-out infinite alternate;
     }
@@ -130,10 +130,10 @@
       font-size: clamp(8rem, 20vw, 12rem);
       line-height: 0.85;
       font-weight: var(--fw-regular);
-      color: var(--color-primary); /* Dark green */
+      color: var(--color-primary); /* Premium blue */
       margin: 0 0 var(--space-8) 0;
       letter-spacing: -0.01em;
-      text-shadow: 0 15px 35px rgba(27, 77, 62, 0.03);
+      text-shadow: 0 15px 35px rgba(27, 59, 95, 0.03);
     }
 
     .error-content .section-header__title {
@@ -223,7 +223,7 @@
   <!-- Ambient Luxury Blur Circles -->
   <div class="glow-bg">
     <div class="glow-circle-gold"></div>
-    <div class="glow-circle-green"></div>
+    <div class="glow-circle-blue"></div>
   </div>
   
   <div class="glow-hero-center"></div>

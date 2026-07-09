@@ -11,7 +11,7 @@
    ============================================================ */
 :root {
   /* — Colors (Premium Light Luxury Theme) — */
-  --color-primary:       #1B4D3E;   /* Deep forest green — primary brand, CTAs */
+  --color-primary:       #1B3B5F;   /* Deep premium navy blue — primary brand, CTAs */
   --color-secondary:     #C6A962;   /* Champagne gold — accent, highlights */
   --color-accent:        #D4AF37;   /* Old gold — hover states, emphasis */
   --color-success:       #16A34A;
@@ -24,13 +24,13 @@
   --color-border:        rgba(0,0,0,0.08);
   --color-border-light:  rgba(0,0,0,0.04);
 
-  /* — Primary tints (Green) — */
-  --color-secondary-50:  rgba(27,77,62,0.05);
-  --color-secondary-100: rgba(27,77,62,0.10);
-  --color-secondary-200: rgba(27,77,62,0.15);
-  --color-secondary-600: #15503A;
-  --color-secondary-700: #0F3D2C;
-  --color-secondary-800: #0A2B1F;
+  /* — Primary tints (Blue) — */
+  --color-secondary-50:  rgba(27,59,95,0.05);
+  --color-secondary-100: rgba(27,59,95,0.10);
+  --color-secondary-200: rgba(27,59,95,0.15);
+  --color-secondary-600: #153E60;
+  --color-secondary-700: #0F2E4A;
+  --color-secondary-800: #0A2033;
 
   /* — Accent tints (Gold) — */
   --color-accent-50:     rgba(198,169,98,0.08);
@@ -103,7 +103,7 @@
   --shadow-2xl:          0 25px 50px -12px rgba(0,0,0,0.15);
   --shadow-card:         0 1px 3px rgba(0,0,0,0.05), 0 10px 30px rgba(0,0,0,0.06);
   --shadow-card-hover:   0 20px 40px rgba(0,0,0,0.10), 0 1px 3px rgba(0,0,0,0.05);
-  --shadow-glow:         0 0 40px rgba(27,77,62,0.12);
+  --shadow-glow:         0 0 40px rgba(27,59,95,0.12);
   --shadow-gold:         0 0 30px rgba(198,169,98,0.20);
 
   /* — Glass — */
@@ -297,7 +297,7 @@ p {
   position: relative;
   overflow: hidden;
   transition: transform var(--transition-smooth);
-  box-shadow: 0 2px 10px rgba(27,77,62,0.3);
+  box-shadow: 0 2px 10px rgba(27,59,95,0.3);
 }
 
 .navbar__logo-img {
@@ -871,13 +871,13 @@ p {
   background: var(--color-primary);
   color: #FFFFFF;
   border-color: var(--color-primary);
-  box-shadow: 0 4px 15px rgba(27,77,62,0.25);
+  box-shadow: 0 4px 15px rgba(27,59,95,0.25);
 }
 
 .btn--primary:hover {
   background: var(--color-secondary-600);
   border-color: var(--color-secondary-600);
-  box-shadow: 0 8px 25px rgba(27,77,62,0.35);
+  box-shadow: 0 8px 25px rgba(27,59,95,0.35);
   transform: translateY(-2px);
 }
 
@@ -906,7 +906,7 @@ p {
   background: var(--color-primary);
   color: #FFFFFF;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(27,77,62,0.25);
+  box-shadow: 0 8px 25px rgba(27,59,95,0.25);
 }
 
 /* Ghost */

@@ -418,7 +418,7 @@
 .booking-card__type-btn.active {
   background: var(--color-primary);
   color: #fff;
-  box-shadow: 0 2px 8px rgba(27,77,62,0.25);}
+  box-shadow: 0 2px 8px rgba(27,59,95,0.25);}
 
 .booking-card__row {
   display: flex;
@@ -582,7 +582,7 @@
   transition: background var(--transition-base);}
 
 .gallery-item:hover .gallery-item__overlay {
-  background: rgba(27, 77, 62, 0.4); /* Forest green overlay instead of simple black */}
+  background: rgba(27, 59, 95, 0.4); /* Forest blue overlay instead of simple black */}
 
 .gallery-item__zoom {
   font-size: 1.5rem;
@@ -950,7 +950,7 @@
    14. DETAIL CTA (Premium Gradient unified with Homepage)
    ============================================================ */
 .detail-cta {
-  background: linear-gradient(135deg, var(--color-primary), #2D6A5A);
+  background: linear-gradient(135deg, var(--color-primary), #2E5B82);
   padding: var(--space-16) 0;
   text-align: center;
   color: #fff;
@@ -1142,3 +1142,20 @@
   width: 100%;}
 .u-car-details-10 {
   width: 100%;}
+
+/* ---- Car Details CTA Responsive ---- */
+@media (max-width: 576px) {
+  .cta-section { padding: var(--space-10) 0;}
+  .cta-section__title { font-size: clamp(1.375rem, 4vw, 1.75rem);}
+  .cta-section__desc { font-size: var(--fs-small);}
+  .cta-section__actions { flex-direction: column; align-items: center; gap: var(--space-3);}
+  .cta-section__actions .btn { width: 100%; max-width: 280px;}
+}
+
+@media (max-width: 480px) {
+  .showcase__thumbs { grid-template-columns: repeat(3, 1fr); gap: var(--space-2);}
+  .showcase__actions .btn { width: 100%; font-size: var(--fs-xs);}
+  .cta-section { padding: var(--space-8) 0;}
+  .cta-section__title { font-size: clamp(1.125rem, 5vw, 1.375rem);}
+}
+

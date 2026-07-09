@@ -4808,7 +4808,7 @@ const AdminDashboard = (() => {
         <button class="db-modal__close" data-action="close-modal" aria-label="Close">${Utils.icon('icon-close')}</button>
       </div>
       <div class="db-modal__body" style="padding-top:0;">
-        <div style="display:flex; align-items:center; gap:var(--space-4); margin-bottom:var(--space-5); background:linear-gradient(135deg, rgba(27,77,62,0.05), rgba(198,169,98,0.1)); padding:var(--space-4); border-radius:var(--radius-lg);">
+        <div style="display:flex; align-items:center; gap:var(--space-4); margin-bottom:var(--space-5); background:linear-gradient(135deg, rgba(27,59,95,0.05), rgba(198,169,98,0.1)); padding:var(--space-4); border-radius:var(--radius-lg);">
           <div class="db-sidebar__profile-avatar" style="width:60px; height:60px; font-size:1.5rem; margin:0; line-height:60px; text-align:center;">${initial}</div>
           <div>
             <h4 style="font-family:var(--font-heading); font-size:var(--fs-h4); color:var(--color-dark-text); margin-bottom:2px;">${Utils.escapeHtml(u.name)}</h4>

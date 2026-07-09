@@ -1,16 +1,31 @@
 /* ============================================================
-   CAR RENTAL SYSTEM — RESPONSIVE STYLESHEET
-   Breakpoints: 1440 / 1200 / 992 / 768 / 576
+   DRIVEELITE — COMPREHENSIVE RESPONSIVE STYLESHEET
+   Breakpoints: 1440 / 1200 / 992 / 768 / 576 / 480
+   Desktop layout is untouched — all rules are max-width only.
    ============================================================ */
 
-/* ---- Extra Large (≤ 1440px) ---- */
+/* ---- Prevent overflow (always active) ---- */
+html, body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================================================
+   EXTRA LARGE (≤ 1440px)
+   ============================================================ */
 @media (max-width: 1440px) {
   :root {
     --container-max: 1200px;
   }
 }
 
-/* ---- Large (≤ 1200px) ---- */
+/* ============================================================
+   LARGE / SMALL LAPTOP (≤ 1200px)
+   ============================================================ */
 @media (max-width: 1200px) {
   :root {
     --container-max: 960px;
@@ -21,19 +36,22 @@
     gap: var(--space-6);
   }
 
-  .dashboard-layout {
-    grid-template-columns: 240px 1fr;
-    gap: var(--space-6);
+  /* Profile dropdown overflow safety */
+  .profile-dropdown {
+    right: 0;
+    left: auto;
   }
 }
 
-/* ---- Medium / Tablet (≤ 992px) ---- */
+/* ============================================================
+   MEDIUM / TABLET (≤ 992px)
+   ============================================================ */
 @media (max-width: 992px) {
   :root {
     --container-max: 720px;
   }
 
-  /* Navbar */
+  /* —— Navbar —— */
   .navbar__links {
     display: none;
   }
@@ -42,14 +60,18 @@
     display: none;
   }
 
-  .navbar__search-btn {
-    display: none;
-  }
-
   .navbar__toggle {
     display: flex;
   }
 
+  /* Profile dropdown — position right-aligned */
+  .profile-dropdown {
+    right: 0;
+    left: auto;
+    width: 220px;
+  }
+
+  /* —— Footer —— */
   .footer__grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-8);
@@ -69,32 +91,12 @@
     align-items: stretch;
   }
 
-  /* Dashboard */
-  .dashboard-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .dashboard-sidebar {
-    position: static;
-  }
-
-  .sidebar__nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-  }
-
-  .sidebar__link {
-    padding: var(--space-2) var(--space-3);
-    font-size: var(--fs-xs);
-  }
-
-  /* Grid utility overrides */
+  /* —— Grid utility overrides —— */
   .grid-4 {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Hero */
+  /* —— Hero —— */
   .hero {
     min-height: 420px;
   }
@@ -103,19 +105,27 @@
     min-height: 300px;
   }
 
-  /* Stats cards */
+  /* —— Stats cards —— */
   .stats-card__number {
     font-size: 2rem;
   }
+
+  /* —— Section headers —— */
+  .section__header {
+    max-width: 100%;
+    padding: 0 var(--space-4);
+  }
 }
 
-/* ---- Small / Mobile Landscape (≤ 768px) ---- */
+/* ============================================================
+   SMALL / MOBILE LANDSCAPE (≤ 768px)
+   ============================================================ */
 @media (max-width: 768px) {
   :root {
     --container-padding: 1.25rem;
   }
 
-  /* Hero */
+  /* —— Hero —— */
   .hero {
     min-height: 380px;
     padding: calc(70px + var(--space-12)) 0 var(--space-12);
@@ -140,7 +150,7 @@
     width: 100%;
   }
 
-  /* Sections */
+  /* —— Sections —— */
   .section {
     padding: var(--space-12) 0;
   }
@@ -149,12 +159,12 @@
     padding: var(--space-16) 0;
   }
 
-  /* Grid utility overrides */
+  /* —— Grid utility overrides —— */
   .grid-3 {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Footer */
+  /* —— Footer —— */
   .footer__grid {
     grid-template-columns: 1fr;
     gap: var(--space-8);
@@ -179,12 +189,41 @@
     justify-content: center;
   }
 
-  /* CTA Section */
+  /* —— CTA Sections (global) —— */
   .cta-section {
     padding: var(--space-12) 0;
   }
 
-  /* Pagination */
+  .cta-section__actions,
+  .home-cta__actions,
+  .cars-cta__actions,
+  .cta-section .hero__actions {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .cta-section__actions .btn,
+  .home-cta__actions .btn,
+  .cars-cta__actions .btn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  .cta-section__title,
+  .home-cta__title,
+  .cars-cta__title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .cta-section__desc,
+  .home-cta__text,
+  .cars-cta__text {
+    font-size: var(--fs-small);
+  }
+
+  /* —— Pagination —— */
   .pagination {
     gap: var(--space-1);
   }
@@ -195,12 +234,12 @@
     font-size: var(--fs-xs);
   }
 
-  /* Auth */
+  /* —— Auth —— */
   .auth-card {
     padding: var(--space-8);
   }
 
-  /* Toast */
+  /* —— Toast —— */
   .toast-container {
     left: var(--space-4);
     right: var(--space-4);
@@ -212,44 +251,91 @@
     width: 100%;
   }
 
-  /* Modal */
+  /* —— Modal —— */
   .modal {
     width: 95%;
   }
 
-  /* Newsletter */
+  /* —— Newsletter —— */
   .footer__newsletter-form {
     flex-direction: column;
   }
 
-  /* Social login */
+  /* —— Social login —— */
   .social-login {
     flex-direction: column;
   }
 
-  /* Dashboard */
-  .sidebar__user {
-    flex-direction: column;
-    text-align: center;
+  /* —— Profile Dropdown —— */
+  .profile-dropdown {
+    width: 200px;
+    right: 0;
   }
 
-  .sidebar__nav {
-    justify-content: center;
+  /* —— Table wrapper overflow safety —— */
+  .table-wrapper,
+  .db-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+
+  /* —— Cards reduce padding —— */
+  .card__body {
+    padding: var(--space-4);
+  }
+
+  .card__footer {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .feature-card {
+    padding: var(--space-6);
+  }
+
+  .service-card {
+    padding: var(--space-6);
+  }
+
+  .stats-card {
+    padding: var(--space-6);
+  }
+
+  /* —— CTA Card —— */
+  .cta-card {
+    padding: var(--space-8) var(--space-6);
+  }
+
+  /* —— Forms —— */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group--half {
+    grid-column: span 1;
+  }
+
+  /* —— Buttons in sections —— */
+  .btn--cta {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--fs-btn);
   }
 }
 
-/* ---- Extra Small / Mobile (≤ 576px) ---- */
+/* ============================================================
+   EXTRA SMALL / MOBILE (≤ 576px)
+   ============================================================ */
 @media (max-width: 576px) {
   :root {
     --container-padding: 1rem;
   }
 
-  /* Typography scale down */
+  /* —— Typography scale down —— */
   body {
     font-size: 0.9375rem;
   }
 
-  /* Hero */
+  /* —— Hero —— */
   .hero {
     min-height: 340px;
   }
@@ -258,7 +344,12 @@
     font-size: 0.625rem;
   }
 
-  /* Grid utility overrides */
+  .hero__title,
+  .hero h1 {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+  }
+
+  /* —— Grid utility overrides —— */
   .grid-3,
   .grid-2 {
     grid-template-columns: 1fr;
@@ -268,13 +359,13 @@
     grid-template-columns: 1fr;
   }
 
-  /* Car card specs */
+  /* —— Car card specs —— */
   .car-card__specs {
     flex-wrap: wrap;
     gap: var(--space-3);
   }
 
-  /* Auth */
+  /* —— Auth —— */
   .auth-layout {
     padding: var(--space-4) 0 var(--space-8);
   }
@@ -284,17 +375,26 @@
     border-radius: var(--radius-xl);
   }
 
-  /* Tabs scroll */
+  /* —— Tabs scroll —— */
   .tabs {
     gap: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+  }
+
+  .tabs::-webkit-scrollbar {
+    display: none;
   }
 
   .tab {
     padding: var(--space-3) var(--space-4);
     font-size: var(--fs-xs);
+    flex-shrink: 0;
   }
 
-  /* Accordion */
+  /* —— Accordion —— */
   .accordion__header {
     padding: var(--space-4) var(--space-5);
     font-size: var(--fs-small);
@@ -304,7 +404,7 @@
     padding: 0 var(--space-5) var(--space-5);
   }
 
-  /* Back to top */
+  /* —— Back to top —— */
   .back-to-top {
     bottom: var(--space-5);
     right: var(--space-5);
@@ -313,13 +413,13 @@
     font-size: 1rem;
   }
 
-  /* Mobile menu */
+  /* —— Mobile menu —— */
   .navbar__mobile {
     width: 100%;
     max-width: 100vw;
   }
 
-  /* Empty state */
+  /* —— Empty state —— */
   .empty-state {
     padding: var(--space-10) var(--space-4);
   }
@@ -330,7 +430,7 @@
     font-size: 1.5rem;
   }
 
-  /* Notification card */
+  /* —— Notification card —— */
   .notification-card {
     flex-direction: column;
     gap: var(--space-3);
@@ -340,33 +440,168 @@
     align-self: flex-start;
   }
 
-  /* Page header */
+  /* —— Page header —— */
   .page-header {
     padding: var(--space-8) 0 var(--space-6);
   }
 
-  /* Stats */
+  /* —— Stats —— */
   .stats-card__number {
     font-size: 1.75rem;
   }
 
-  /* Section */
+  /* —— Section header —— */
   .section__header {
     margin-bottom: var(--space-8);
   }
+
+  /* —— Section titles —— */
+  .section__title {
+    font-size: clamp(1.375rem, 4vw, 1.75rem);
+  }
+
+  /* —— Buttons full width when in hero/CTA —— */
+  .hero__actions .btn,
+  .cta-section__actions .btn {
+    width: 100%;
+  }
+
+  /* —— Profile dropdown —— */
+  .profile-dropdown {
+    width: 190px;
+    font-size: var(--fs-small);
+  }
+
+  /* —— Cards compact —— */
+  .card__body {
+    padding: var(--space-4);
+  }
+
+  .feature-card {
+    padding: var(--space-5);
+  }
+
+  .feature-card__icon {
+    width: 52px;
+    height: 52px;
+    font-size: 1.25rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .service-card {
+    padding: var(--space-5);
+  }
+
+  /* —— Car card price —— */
+  .car-card__price {
+    font-size: 1.1rem;
+  }
+
+  /* —— Profile card —— */
+  .profile-card {
+    padding: var(--space-6);
+  }
+
+  .profile-card__avatar {
+    width: 72px;
+    height: 72px;
+  }
+
+  /* —— Navbar logo —— */
+  .navbar__logo {
+    font-size: 1.25rem;
+  }
 }
 
-/* ---- Prevent overflow ---- */
-html, body {
-  overflow-x: hidden;
+/* ============================================================
+   EXTRA EXTRA SMALL / SMALL PHONES (≤ 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 0.875rem;
+  }
+
+  /* —— Navbar —— */
+  .navbar__logo {
+    font-size: 1.125rem;
+    gap: var(--space-2);
+  }
+
+  .navbar__logo-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  /* —— Hero further compact —— */
+  .hero {
+    min-height: 300px;
+    padding-top: calc(60px + var(--space-8));
+  }
+
+  .hero--inner {
+    min-height: 220px;
+    padding-top: calc(60px + var(--space-6));
+  }
+
+  /* —— Buttons compact —— */
+  .btn--cta {
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--fs-small);
+  }
+
+  .btn--lg {
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--fs-btn);
+  }
+
+  /* —— Auth extra compact —— */
+  .auth-card {
+    padding: var(--space-5);
+    border-radius: var(--radius-lg);
+  }
+
+  /* —— Section compact —— */
+  .section {
+    padding: var(--space-10) 0;
+  }
+
+  .section--lg {
+    padding: var(--space-12) 0;
+  }
+
+  /* —— Footer compact —— */
+  .footer {
+    padding-top: var(--space-10);
+  }
+
+  /* —— CTA sections extra compact —— */
+  .cta-section__title,
+  .home-cta__title,
+  .cars-cta__title {
+    font-size: clamp(1.25rem, 5vw, 1.625rem);
+  }
+
+  .cta-section__desc,
+  .home-cta__text,
+  .cars-cta__text {
+    font-size: var(--fs-xs);
+  }
+
+  /* —— Stats card tiny —— */
+  .stats-card__number {
+    font-size: 1.5rem;
+  }
+
+  /* —— Modal full width —— */
+  .modal {
+    width: 98%;
+    margin: var(--space-3);
+  }
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* ---- Responsive visibility ---- */
+/* ============================================================
+   RESPONSIVE VISIBILITY UTILITIES
+   ============================================================ */
 .hide-mobile {
   display: block;
 }

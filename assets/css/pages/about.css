@@ -426,7 +426,7 @@
   background: var(--color-primary);
   color: #FFFFFF;
   transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(27,77,62,0.25);}
+  box-shadow: 0 4px 12px rgba(27,59,95,0.25);}
 
 .process-step__title {
   font-family: var(--font-heading);
@@ -871,7 +871,7 @@
    12. CALL TO ACTION (THEME NORMALIZED OVERRIDES)
    ============================================================ */
 .cta-section {
-  background: linear-gradient(135deg, var(--color-primary), #2D6A5A);
+  background: linear-gradient(135deg, var(--color-primary), #2E5B82);
   padding: var(--space-16) 0;
   text-align: center;
   color: #FFFFFF;
@@ -932,3 +932,19 @@
   outline: 2px solid #FFFFFF;
   outline-offset: 4px;
   border-radius: var(--radius-sm);}
+
+/* ---- CTA Responsive ---- */
+@media (max-width: 576px) {
+  .cta-section { padding: var(--space-10) 0;}
+  .cta-section__title { font-size: clamp(1.375rem, 4vw, 1.75rem);}
+  .cta-section__desc { font-size: var(--fs-small);}
+  .cta-section__actions { flex-direction: column; align-items: center; gap: var(--space-3);}
+  .cta-section__actions .btn { width: 100%; max-width: 280px;}
+}
+
+@media (max-width: 480px) {
+  .cta-section { padding: var(--space-8) 0;}
+  .cta-section__title { font-size: clamp(1.125rem, 5vw, 1.375rem);}
+  .cta-section__desc { font-size: var(--fs-xs);}
+}
+

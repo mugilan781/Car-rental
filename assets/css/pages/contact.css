@@ -150,7 +150,7 @@
 }
 
 .contact-page .metric-card {
-  background: linear-gradient(to bottom, var(--color-card), rgba(27, 77, 62, 0.02));
+  background: linear-gradient(to bottom, var(--color-card), rgba(27, 59, 95, 0.02));
   border: 1px solid var(--color-border);
   border-top: 3px solid var(--color-secondary);
   border-radius: var(--radius-xl);
@@ -175,8 +175,8 @@
   width: 56px;
   height: 56px;
   border-radius: var(--radius-full);
-  background: rgba(27, 77, 62, 0.06);
-  border: 1px solid rgba(27, 77, 62, 0.12);
+  background: rgba(27, 59, 95, 0.06);
+  border: 1px solid rgba(27, 59, 95, 0.12);
   color: var(--color-primary);
   display: flex;
   align-items: center;
@@ -395,7 +395,7 @@
    ============================================================ */
 .contact-page .whatsapp-card {
   background: var(--color-primary-50);
-  border-color: rgba(27, 77, 62, 0.15);
+  border-color: rgba(27, 59, 95, 0.15);
 }
 
 .contact-page .whatsapp-card__desc {
@@ -716,7 +716,7 @@
 
 .contact-page .process-card {
   position: relative;
-  background: linear-gradient(to bottom, var(--color-card), rgba(27, 77, 62, 0.01));
+  background: linear-gradient(to bottom, var(--color-card), rgba(27, 59, 95, 0.01));
   border: 1px solid var(--color-border);
   border-top: 3px solid var(--color-secondary);
   border-radius: var(--radius-xl);
@@ -740,7 +740,7 @@
   width: 32px;
   height: 32px;
   border-radius: var(--radius-full);
-  background: rgba(27, 77, 62, 0.08);
+  background: rgba(27, 59, 95, 0.08);
   color: var(--color-primary);
   font-size: var(--fs-xs);
   font-weight: var(--fw-bold);
@@ -1068,7 +1068,7 @@
    14. FINAL CALL TO ACTION (CTA MATCHING HOME PAGE)
    ============================================================ */
 .contact-page .home-cta {
-  background: linear-gradient(135deg, var(--color-primary), #2D6A5A);
+  background: linear-gradient(135deg, var(--color-primary), #2E5B82);
   padding: var(--space-16) 0;
   text-align: center;
   color: #fff;
@@ -1194,4 +1194,15 @@
   .contact-page .contact-card {
     padding: var(--space-5);
   }
+}
+
+/* ---- Contact CTA Responsive ---- */
+@media (max-width: 480px) {
+  .contact-page .home-cta { padding: var(--space-8) 0;}
+  .contact-page .home-cta__title { font-size: clamp(1.125rem, 5vw, 1.375rem);}
+  .contact-page .home-cta__text { font-size: var(--fs-xs);}
+  .contact-page .home-cta__actions { flex-direction: column; align-items: center; gap: var(--space-3);}
+  .contact-page .home-cta__actions .btn { width: 100%; max-width: 280px;}
+  .contact-page .contact-card { padding: var(--space-4);}
+  .contact-page .contact-map { height: 250px;}
 }

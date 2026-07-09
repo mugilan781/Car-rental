@@ -109,7 +109,7 @@
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
-  box-shadow: 0 2px 10px rgba(27,77,62,0.3);
+  box-shadow: 0 2px 10px rgba(27,59,95,0.3);
 }
 
 .db-sidebar__logo-img {
@@ -2412,7 +2412,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-6);
-  background: linear-gradient(135deg, var(--color-primary) 0%, #0d2e24 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #0d2233 100%);
   border-radius: var(--db-card-radius);
   padding: var(--space-4) var(--space-6);
   margin-bottom: var(--db-section-gap);
@@ -3759,7 +3759,7 @@
 
 /* 1. Dashboard Hero Section Card Refinements */
 .db-layout .db-hero {
-  background: linear-gradient(135deg, #0f1c18 0%, #152c24 100%) !important; /* Premium dark forest green */
+  background: linear-gradient(135deg, #0f172A 0%, #1E293B 100%) !important; /* Premium dark slate/navy blue */
   border: 1px solid rgba(198, 169, 98, 0.15) !important;
   box-shadow: var(--shadow-sm) !important;
   color: rgba(255, 255, 255, 0.8) !important;
@@ -4399,6 +4399,349 @@ input.db-filter-bar__search-input {
 }
 
 
+/* ============================================================
+   ADDITIONAL RESPONSIVE REFINEMENTS — USER DASHBOARD
+   Appended to fill remaining gaps without modifying desktop.
+   ============================================================ */
+
+/* ---- Tablet (≤ 992px) ---- */
+@media (max-width: 992px) {
+  /* Sidebar overlay correct z-index */
+  .db-sidebar__overlay {
+    z-index: calc(var(--db-z-sidebar) - 1);
+  }
+
+  /* Main wrapper fills full width */
+  .db-main-wrapper {
+    width: 100%;
+    margin-left: 0 !important;
+  }
+
+  /* Dashboard hero wraps on tablet */
+  .db-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .db-hero__badge {
+    align-self: flex-start;
+  }
+
+  /* Header search hidden */
+  .db-header__search {
+    display: none;
+  }
+
+  /* Section grids stack */
+  .db-section-grid,
+  .db-section-grid--2,
+  .db-section-grid--3 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Tabs become scrollable */
+  .db-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+  }
+
+  .db-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .db-tab {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+
+/* ---- Mobile Landscape (≤ 768px) ---- */
+@media (max-width: 768px) {
+  /* Page header stacks */
+  .db-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .db-page-header__actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .db-page-header__actions .btn {
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* Filter bar stacks */
+  .db-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-3);
+  }
+
+  .db-filter-bar__search {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .db-filter-bar__actions {
+    margin-left: 0;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  /* Stats grid single column */
+  .db-stats-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  /* Form rows single column */
+  .db-form-row,
+  .db-form-row--3,
+  .db-form-row--2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Notification panel full width */
+  .db-notification-panel {
+    position: fixed;
+    top: var(--db-header-height);
+    right: 0;
+    left: 0;
+    width: 100%;
+    max-height: calc(100vh - var(--db-header-height));
+    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  }
+
+  /* Pagination stacks */
+  .db-pagination {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  /* Hero actions stack on narrow tablet */
+  .db-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .db-hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Header dropdown mobile safe */
+  .db-header__dropdown {
+    right: 0;
+    width: 260px;
+  }
+}
+
+/* ---- Mobile (≤ 576px) ---- */
+@media (max-width: 576px) {
+  :root {
+    --db-main-padding: var(--space-4);
+  }
+
+  /* Stat card compact */
+  .db-stat-card {
+    padding: var(--space-4);
+  }
+
+  .db-stat-card__value {
+    font-size: 1.5rem;
+  }
+
+  .db-stat-card__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Section card compact */
+  .db-section-card__header {
+    padding: var(--space-4) var(--space-5);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .db-section-card__body {
+    padding: var(--space-4);
+  }
+
+  .db-section-card__footer {
+    padding: var(--space-3) var(--space-4);
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  /* Tabs smaller */
+  .db-tabs {
+    padding: 0 var(--space-4);
+  }
+
+  .db-tab {
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--fs-xs);
+  }
+
+  /* Modal full width */
+  .db-modal {
+    width: 95%;
+    max-width: 95%;
+  }
+
+  /* Profile form stacking */
+  .db-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .db-profile-sidebar {
+    order: -1;
+  }
+
+  /* Hero text smaller */
+  .db-hero__name {
+    font-size: clamp(1.25rem, 4vw, 1.625rem);
+  }
+
+  .db-hero__text {
+    font-size: var(--fs-xs);
+    margin-bottom: var(--space-4);
+  }
+
+  /* Section card title smaller */
+  .db-section-card__title {
+    font-size: 1rem;
+  }
+
+  /* Page header title */
+  .db-page-header__title {
+    font-size: clamp(1.25rem, 4vw, 1.625rem);
+  }
+
+  /* Header compact */
+  .db-header {
+    padding: 0 var(--space-4);
+    gap: var(--space-3);
+  }
+
+  .db-header__title-area .db-header__title {
+    font-size: 1rem;
+  }
+
+  /* Header dropdown */
+  .db-header__dropdown {
+    width: calc(100vw - var(--space-8));
+    right: calc(-1 * var(--space-4));
+  }
+
+  /* Notification badge shrink */
+  .db-header__notification-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Support grid */
+  .db-support-grid-rebuilt {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- Small Phones (≤ 480px) ---- */
+@media (max-width: 480px) {
+  :root {
+    --db-main-padding: var(--space-3);
+    --db-header-height: 56px;
+  }
+
+  /* Hide greeting subtext */
+  .db-header__greeting {
+    display: none;
+  }
+
+  .db-header__title {
+    font-size: 0.9375rem;
+  }
+
+  /* Sidebar narrower on tiny screens */
+  .db-sidebar {
+    width: 260px;
+  }
+
+  .db-sidebar.collapsed {
+    width: 260px;
+  }
+
+  /* Hero even more compact */
+  .db-hero {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .db-hero__name {
+    font-size: 1.125rem;
+  }
+
+  .db-hero__greeting {
+    font-size: var(--fs-xs);
+  }
+
+  /* Stat card micro */
+  .db-stat-card {
+    padding: var(--space-3);
+    gap: var(--space-3);
+  }
+
+  .db-stat-card__value {
+    font-size: 1.25rem;
+  }
+
+  .db-stat-card__label {
+    font-size: 0.6875rem;
+  }
+
+  /* Section card body micro padding */
+  .db-section-card__body {
+    padding: var(--space-3);
+  }
+
+  /* Current rental action buttons stack fully */
+  .db-current-rental__actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .db-current-rental__actions .btn {
+    max-width: 100% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* Rental card actions */
+  .db-rental-card__actions .btn {
+    flex: 1 !important;
+    min-width: 0 !important;
+    font-size: 10px !important;
+    padding: 4px 8px !important;
+    height: 30px !important;
+  }
+
+  /* Pre-booking card action row */
+  .db-pb-card__actions-row .btn {
+    min-width: 0 !important;
+    flex: 1 !important;
+    font-size: 11px !important;
+    height: 34px !important;
+  }
+}
 
 
 
