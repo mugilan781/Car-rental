@@ -954,7 +954,7 @@ const AdminDashboard = (() => {
       fleetSeatsFilter: 'all',
       fleetSort: 'newest',
       fleetCurrentPage: 1,
-      fleetItemsPerPage: 5,
+      fleetItemsPerPage: 6,
       // Bookings preferences
       bookingsActiveTab: 'standard', // standard, prebooking, extensions
       bookingsSearch: '',
@@ -994,7 +994,7 @@ const AdminDashboard = (() => {
       reportsStartDate: '',
       reportsEndDate: '',
       // Settings preferences
-      settingsActiveTab: 'business', // business, policies, email, notifications, system
+      settingsActiveTab: 'business', // business, policies, notifications, system
     }
   };
 
@@ -1079,15 +1079,17 @@ const AdminDashboard = (() => {
   const StorageHelper = {
     prefix: 'driveelite_admin_',
     get(key) { try { const r = localStorage.getItem(this.prefix + key); return r ? JSON.parse(r) : null; } catch { return null; } },
-    set(key, value) { try { localStorage.setItem(this.prefix + key, JSON.stringify(value)); } catch {} }
+    set(key, value) { try { localStorage.setItem(this.prefix + key, JSON.stringify(value)); } catch {} },
+    remove(key) { try { localStorage.removeItem(this.prefix + key); } catch {} }
   };
 
   function restoreUiState() {
-    const saved = StorageHelper.get('ui_state');
-    if (saved) Object.assign(AdminState.uiState, saved);
+    StorageHelper.remove('ui_state');
+    StorageHelper.remove('sidebar_collapsed');
+    AdminState.uiState.fleetItemsPerPage = 6;
   }
   function saveUiState() {
-    StorageHelper.set('ui_state', AdminState.uiState);
+    // UI state persistence disabled - reset to default on fresh loads
   }
 
 
@@ -1106,8 +1108,7 @@ const AdminDashboard = (() => {
       this.menuBtn = document.getElementById('db-header-menu');
       if (!this.sidebar) return;
 
-      const saved = StorageHelper.get('sidebar_collapsed');
-      if (saved && window.innerWidth > 992) { this.isCollapsed = true; this.sidebar.classList.add('collapsed'); }
+      // Sidebar collapse state persistence disabled - starts expanded on load
 
       if (this.collapseBtn) this.collapseBtn.addEventListener('click', () => this.toggle());
       if (this.menuBtn) this.menuBtn.addEventListener('click', () => this.toggleMobile());
@@ -1139,7 +1140,6 @@ const AdminDashboard = (() => {
       if (window.innerWidth <= 992) { this.closeMobile(); return; }
       this.isCollapsed = !this.isCollapsed;
       this.sidebar.classList.toggle('collapsed', this.isCollapsed);
-      StorageHelper.set('sidebar_collapsed', this.isCollapsed);
     },
     toggleMobile() { this.isMobileOpen ? this.closeMobile() : this.openMobile(); },
     openMobile() { this.isMobileOpen = true; this.sidebar.classList.add('mobile-open'); if (this.overlay) this.overlay.classList.add('open'); document.body.style.overflow = 'hidden'; },
@@ -1988,11 +1988,11 @@ const AdminDashboard = (() => {
   }
 
   function _renderEmptyState(icon, title, text, btnText, btnHref) {
-    return `<div class="db-empty-state" style="padding:var(--space-8); text-align:center; color:var(--color-light-text);">
-      <div class="db-empty-state__icon" style="font-size:2rem; margin-bottom:var(--space-2);">${Utils.icon(icon)}</div>
-      <h3 class="db-empty-state__title" style="font-weight:var(--fw-medium); color:var(--color-dark-text); margin-bottom:var(--space-1);">${title}</h3>
-      <p class="db-empty-state__text" style="font-size:var(--fs-xs); color:var(--color-light-text);">${text}</p>
-      ${btnText ? `<a href="${btnHref || '#'}" class="btn btn--primary btn--sm" style="margin-top:var(--space-3);">${btnText}</a>` : ''}
+    return `<div class="db-empty-state">
+      <div class="db-empty-state__icon">${Utils.icon(icon)}</div>
+      <h3 class="db-empty-state__title">${title}</h3>
+      <p class="db-empty-state__text">${text}</p>
+      ${btnText ? `<a href="${btnHref || '#'}" class="btn btn--primary btn--sm">${btnText}</a>` : ''}
     </div>`;
   }
 
@@ -2274,7 +2274,7 @@ const AdminDashboard = (() => {
         ${_statCard('icon-clock', 'warning', 'Reserved Vehicles', AdminState.fleetData.filter(v => v.status === 'reserved').length, 'Booked ahead')}
         ${_statCard('icon-steering', 'info', 'Currently Rented', AdminState.fleetData.filter(v => v.status === 'rented').length, 'On active hire')}
         ${_statCard('icon-wrench', 'danger', 'Maintenance Status', AdminState.fleetData.filter(v => v.status === 'maintenance').length, 'Awaiting workshop')}
-        ${_statCard('icon-close', 'inactive', 'Inactive / Archived', AdminState.fleetData.filter(v => v.status === 'inactive' || v.status === 'archived').length, 'Decommissioned')}
+        ${_statCard('icon-archive', 'inactive', 'Inactive / Archived', AdminState.fleetData.filter(v => v.status === 'inactive' || v.status === 'archived').length, 'Decommissioned')}
         ${_statCard('icon-dollar', 'gold', 'Avg Daily Rate', Utils.formatCurrency(rates.avgDaily), 'Calculation matrix')}
         ${_statCard('icon-clock', 'gold', 'Avg Hourly Rate', Utils.formatCurrency(rates.avgHourly), 'Calculation matrix')}
       </div>
@@ -2283,7 +2283,6 @@ const AdminDashboard = (() => {
       <div class="db-section-card db-animate-in">
         <div class="db-filter-bar">
           <div class="db-filter-bar__search" style="max-width: 260px;">
-            <span class="icon db-filter-bar__search-icon">${Utils.icon('icon-search')}</span>
             <input type="text" class="db-filter-bar__search-input" id="fleet-search" placeholder="Search by name, plate, VIN..." value="${Utils.escapeHtml(state.fleetSearch || '')}">
           </div>
 
@@ -2432,6 +2431,9 @@ const AdminDashboard = (() => {
     if (data.length === 0) {
       container.innerHTML = _renderEmptyState('icon-car', 'No Vehicles Found', 'There are no active or registered vehicles matching the current query filters.');
       pagination.innerHTML = '';
+      if (typeof lucide !== 'undefined') {
+        try { lucide.createIcons(); } catch(e) {}
+      }
       return;
     }
 
@@ -3235,7 +3237,6 @@ const AdminDashboard = (() => {
       <div class="db-section-card db-animate-in" style="margin-bottom: var(--space-6);">
         <div class="db-filter-bar">
           <div class="db-filter-bar__search" style="max-width: 240px;">
-            <span class="icon db-filter-bar__search-icon">${Utils.icon('icon-search')}</span>
             <input type="text" class="db-filter-bar__search-input" id="bookings-search" placeholder="Search by ID, name, email..." value="${Utils.escapeHtml(state.bookingsSearch || '')}">
           </div>
 
@@ -3255,7 +3256,7 @@ const AdminDashboard = (() => {
           </select>
 
           <!-- Quick Filters Buttons -->
-          <div style="display:flex; gap:var(--space-2); margin-left:var(--space-3);" class="db-quick-filter-buttons">
+          <div style="display:flex; flex-wrap:wrap; gap:var(--space-2); margin-left:var(--space-3);" class="db-quick-filter-buttons">
             <button class="btn btn--outline btn--sm ${state.bookingsQuickFilter === 'all' ? 'btn--secondary' : ''}" onclick="AdminDashboard.setBookingsQuickFilter('all')">All</button>
             <button class="btn btn--outline btn--sm ${state.bookingsQuickFilter === 'pending' ? 'btn--secondary' : ''}" onclick="AdminDashboard.setBookingsQuickFilter('pending')">Pending</button>
             <button class="btn btn--outline btn--sm ${state.bookingsQuickFilter === 'pickups' ? 'btn--secondary' : ''}" onclick="AdminDashboard.setBookingsQuickFilter('pickups')">Today's Pickups</button>
@@ -3331,6 +3332,9 @@ const AdminDashboard = (() => {
     if (data.length === 0) {
       tableContainer.innerHTML = _renderEmptyState('icon-clipboard', 'No Bookings Found', 'No bookings matched your filter guidelines.');
       pagination.innerHTML = '';
+      if (typeof lucide !== 'undefined') {
+        try { lucide.createIcons(); } catch(e) {}
+      }
       return;
     }
 
@@ -3378,7 +3382,7 @@ const AdminDashboard = (() => {
                   <div style="font-size:9px; color:var(--color-light-text);">Payment: <span style="font-weight:var(--fw-bold);">${b.paymentStatus}</span></div>
                 </td>
                 <td>
-                  <div style="display:flex; gap:var(--space-2);">
+                  <div style="display:flex; gap:var(--space-2); flex-wrap:wrap; max-width:220px;">
                     <button class="btn btn--outline btn--sm" style="padding:4px 8px; font-size:10px;" onclick="AdminDashboard.showBookingDetails('${b.id}')">View</button>
                     ${b.status === 'pending' ? `
                       <button class="btn btn--primary btn--sm" style="padding:4px 8px; font-size:10px;" onclick="AdminDashboard.approveBookingModal('${b.id}')">Approve</button>
@@ -3440,7 +3444,6 @@ const AdminDashboard = (() => {
       <div class="db-section-card db-animate-in" style="margin-bottom: var(--space-6);">
         <div class="db-filter-bar">
           <div class="db-filter-bar__search" style="max-width: 240px;">
-            <span class="icon db-filter-bar__search-icon">${Utils.icon('icon-search')}</span>
             <input type="text" class="db-filter-bar__search-input" id="pb-search" placeholder="Search reference, name..." value="${Utils.escapeHtml(state.pbSearch || '')}">
           </div>
 
@@ -3503,6 +3506,9 @@ const AdminDashboard = (() => {
     if (data.length === 0) {
       container.innerHTML = _renderEmptyState('icon-clipboard', 'No Pre-Bookings Found', 'No pre-booking requests matched your queries.');
       pagination.innerHTML = '';
+      if (typeof lucide !== 'undefined') {
+        try { lucide.createIcons(); } catch(e) {}
+      }
       return;
     }
 
@@ -3546,7 +3552,7 @@ const AdminDashboard = (() => {
                 </td>
                 <td><span class="db-badge db-badge--${statusBadgeMap[p.status]}">${statusLabelMap[p.status]}</span></td>
                 <td>
-                  <div style="display:flex; gap:var(--space-2);">
+                  <div style="display:flex; gap:var(--space-2); flex-wrap:wrap; max-width:220px;">
                     <button class="btn btn--outline btn--sm" style="padding:4px 8px; font-size:10px;" onclick="AdminDashboard.showPreBookingDetails('${p.id}')">View</button>
                     ${p.status === 'pending' ? `
                       <button class="btn btn--primary btn--sm" style="padding:4px 8px; font-size:10px;" onclick="AdminDashboard.approvePreBooking('${p.id}')">Approve</button>
@@ -4241,7 +4247,7 @@ const AdminDashboard = (() => {
         ${_statCard('icon-alert-triangle', 'info', 'Expired Requests', countExpired, 'No action taken')}
       </div>
 
-      <div class="db-section-card db-animate-in" style="margin-bottom: var(--space-6);">
+      <div class="db-section-card db-animate-in" id="extensions-card-container" style="margin-bottom: var(--space-6);">
         <div class="db-filter-bar">
           <div style="font-weight:var(--fw-semibold); font-size:var(--fs-small); color:var(--color-dark-text);">
             Filter Extension Requests:
@@ -4304,14 +4310,15 @@ const AdminDashboard = (() => {
     if (list.length === 0) {
       tbody.innerHTML = `
         <tr>
-          <td colspan="8" style="text-align:center; padding:var(--space-8) 0;">
-            <div style="font-size:2rem; color:var(--color-light-text); margin-bottom:var(--space-2);">${Utils.icon('icon-alert-triangle')}</div>
-            <div style="font-weight:var(--fw-medium); color:var(--color-dark-text);">No Extension Requests Found</div>
-            <div style="font-size:var(--fs-xs); color:var(--color-light-text);">There are no extension requests currently matching this status.</div>
+          <td colspan="8" style="text-align:center;">
+            ${_renderEmptyState('icon-alert-triangle', 'No Extension Requests Found', 'There are no extension requests currently matching this status.')}
           </td>
         </tr>
       `;
       if (footer) footer.innerHTML = '';
+      if (typeof lucide !== 'undefined') {
+        try { lucide.createIcons(); } catch(e) {}
+      }
       return;
     }
 
@@ -4539,10 +4546,9 @@ const AdminDashboard = (() => {
       </div>
 
       <!-- Filters Panel -->
-      <div class="db-section-card db-animate-in" style="margin-bottom: var(--space-6);">
+      <div class="db-section-card db-animate-in" id="customers-card-container" style="margin-bottom: var(--space-6);">
         <div class="db-filter-bar">
           <div class="db-filter-bar__search" style="max-width: 260px;">
-            <span class="icon db-filter-bar__search-icon">${Utils.icon('icon-search')}</span>
             <input type="text" class="db-filter-bar__search-input" id="users-search" placeholder="Search ID, name, DL, email..." value="${Utils.escapeHtml(state.usersSearch || '')}">
           </div>
 
@@ -4660,14 +4666,15 @@ const AdminDashboard = (() => {
     if (list.length === 0) {
       tbody.innerHTML = `
         <tr>
-          <td colspan="9" style="text-align:center; padding:var(--space-8) 0;">
-            <div style="font-size:2rem; color:var(--color-light-text); margin-bottom:var(--space-2);">${Utils.icon('icon-users')}</div>
-            <div style="font-weight:var(--fw-medium); color:var(--color-dark-text);">No Customers Match Filters</div>
-            <div style="font-size:var(--fs-xs); color:var(--color-light-text);">Try adjusting your search query or filter settings.</div>
+          <td colspan="9" style="text-align:center;">
+            ${_renderEmptyState('icon-users', 'No Customers Match Filters', 'Try adjusting your search query or filter settings.')}
           </td>
         </tr>
       `;
       if (footer) footer.innerHTML = '';
+      if (typeof lucide !== 'undefined') {
+        try { lucide.createIcons(); } catch(e) {}
+      }
       return;
     }
 
@@ -4974,10 +4981,9 @@ const AdminDashboard = (() => {
         </div>
 
         <!-- Alerts Stream -->
-        <div class="db-section-card">
+        <div class="db-section-card" id="notifications-card-container">
           <div class="db-filter-bar" style="border-bottom:1px solid var(--color-border-light); padding-bottom:var(--space-3); margin-bottom:var(--space-4);">
             <div class="db-filter-bar__search" style="max-width: 240px;">
-              <span class="icon db-filter-bar__search-icon">${Utils.icon('icon-search')}</span>
               <input type="text" class="db-filter-bar__search-input" id="notif-search" placeholder="Search alerts..." value="${Utils.escapeHtml(state.notificationsSearch || '')}">
             </div>
             
@@ -5054,14 +5060,11 @@ const AdminDashboard = (() => {
     }
 
     if (list.length === 0) {
-      listContainer.innerHTML = `
-        <div style="text-align:center; padding:var(--space-8) 0; color:var(--color-light-text);">
-          <div style="font-size:2rem; margin-bottom:var(--space-2);">${Utils.icon('icon-bell')}</div>
-          <div style="font-weight:var(--fw-medium); color:var(--color-dark-text);">No Notifications Found</div>
-          <div style="font-size:var(--fs-xs);">There are no system events matching your filters.</div>
-        </div>
-      `;
+      listContainer.innerHTML = _renderEmptyState('icon-bell', 'No Notifications Found', 'There are no system events matching your filters.');
       if (pagination) pagination.innerHTML = '';
+      if (typeof lucide !== 'undefined') {
+        try { lucide.createIcons(); } catch(e) {}
+      }
       return;
     }
 
@@ -5300,6 +5303,9 @@ const AdminDashboard = (() => {
         </div>
       </div>
     `;
+    if (typeof lucide !== 'undefined') {
+      try { lucide.createIcons(); } catch(e) {}
+    }
   }
 
   function setReportsPeriod(p) {
@@ -5329,6 +5335,9 @@ const AdminDashboard = (() => {
       message: `Compiling dashboard metrics and downloading ${format} report spreadsheet...`,
       type: 'success'
     });
+    if (typeof lucide !== 'undefined') {
+      try { lucide.createIcons(); } catch(e) {}
+    }
   }
 
 
@@ -5337,7 +5346,7 @@ const AdminDashboard = (() => {
      ============================================================ */
   function RenderSettings() {
     const state = AdminState.uiState;
-    if (!['business', 'pricing', 'policies', 'notifications', 'email'].includes(state.settingsActiveTab)) {
+    if (!['business', 'policies', 'notifications', 'system'].includes(state.settingsActiveTab)) {
       state.settingsActiveTab = 'business';
     }
     const d = AdminState.settingsData;
@@ -5345,20 +5354,17 @@ const AdminDashboard = (() => {
     DashboardRenderer.contentArea.innerHTML = `
       <div class="db-page-header db-animate-in">
         <div class="db-page-header__left">
-          <h2 class="db-page-header__title">Platform Settings & Policies</h2>
-          <p class="db-page-header__subtitle">Manage global business profiles, pricing schedules, policy controls, notification alerts, and email connections</p>
+          <h2 class="db-page-header__title">Platform Settings</h2>
+          <p class="db-page-header__subtitle">Manage global corporate configurations, rental policy rules, system preferences, and notification channels</p>
         </div>
       </div>
 
       <!-- Settings Layout -->
-      <div style="display:grid; grid-template-columns: 220px 1fr; gap:var(--space-6);" class="db-animate-in">
+      <div style="display:grid; grid-template-columns: 240px 1fr; gap:var(--space-6);" class="db-animate-in">
         <!-- Shortcuts Sidebar Menu -->
         <div style="display:flex; flex-direction:column; gap:8px; position:sticky; top:20px; align-self:start;">
           <button id="btn-set-shortcut-business" class="btn ${state.settingsActiveTab === 'business' ? 'btn--primary' : 'btn--ghost'}" style="justify-content:flex-start; font-size:var(--fs-xs); font-weight:var(--fw-semibold);" onclick="AdminDashboard.setSettingsTab('business')">
             <span class="icon" style="margin-right:8px; display:inline-flex; align-items:center;">${Utils.icon('icon-briefcase')}</span> Business Info
-          </button>
-          <button id="btn-set-shortcut-pricing" class="btn ${state.settingsActiveTab === 'pricing' ? 'btn--primary' : 'btn--ghost'}" style="justify-content:flex-start; font-size:var(--fs-xs); font-weight:var(--fw-semibold);" onclick="AdminDashboard.setSettingsTab('pricing')">
-            <span class="icon" style="margin-right:8px; display:inline-flex; align-items:center;">${Utils.icon('icon-dollar-sign')}</span> Rental Pricing
           </button>
           <button id="btn-set-shortcut-policies" class="btn ${state.settingsActiveTab === 'policies' ? 'btn--primary' : 'btn--ghost'}" style="justify-content:flex-start; font-size:var(--fs-xs); font-weight:var(--fw-semibold);" onclick="AdminDashboard.setSettingsTab('policies')">
             <span class="icon" style="margin-right:8px; display:inline-flex; align-items:center;">${Utils.icon('icon-shield')}</span> Rental Policies
@@ -5366,8 +5372,8 @@ const AdminDashboard = (() => {
           <button id="btn-set-shortcut-notifications" class="btn ${state.settingsActiveTab === 'notifications' ? 'btn--primary' : 'btn--ghost'}" style="justify-content:flex-start; font-size:var(--fs-xs); font-weight:var(--fw-semibold);" onclick="AdminDashboard.setSettingsTab('notifications')">
             <span class="icon" style="margin-right:8px; display:inline-flex; align-items:center;">${Utils.icon('icon-bell')}</span> Notifications
           </button>
-          <button id="btn-set-shortcut-email" class="btn ${state.settingsActiveTab === 'email' ? 'btn--primary' : 'btn--ghost'}" style="justify-content:flex-start; font-size:var(--fs-xs); font-weight:var(--fw-semibold);" onclick="AdminDashboard.setSettingsTab('email')">
-            <span class="icon" style="margin-right:8px; display:inline-flex; align-items:center;">${Utils.icon('icon-mail')}</span> Email SMTP Config
+          <button id="btn-set-shortcut-system" class="btn ${state.settingsActiveTab === 'system' ? 'btn--primary' : 'btn--ghost'}" style="justify-content:flex-start; font-size:var(--fs-xs); font-weight:var(--fw-semibold);" onclick="AdminDashboard.setSettingsTab('system')">
+            <span class="icon" style="margin-right:8px; display:inline-flex; align-items:center;">${Utils.icon('icon-settings')}</span> System Preferences
           </button>
         </div>
 
@@ -5375,157 +5381,137 @@ const AdminDashboard = (() => {
         <div style="display:flex; flex-direction:column; gap:var(--space-6);">
           
           <!-- SECTION 1: Business Information -->
-          <div id="settings-section-business" class="db-section-card" style="padding:var(--space-5); transition: box-shadow 0.3s ease; border-radius:var(--radius-lg); background:var(--color-surface); border:1px solid var(--color-border-light);">
-            <div style="display:flex; align-items:center; gap:var(--space-2); margin-bottom:var(--space-4); border-bottom:1px solid var(--color-border-light); padding-bottom:var(--space-2);">
+          <div id="settings-section-business" class="db-section-card" style="padding:var(--space-6); transition: box-shadow 0.3s ease; border-radius:var(--radius-lg); background:var(--color-surface); border:1px solid var(--color-border-light);">
+            <div style="display:flex; align-items:center; gap:var(--space-2); margin-bottom:var(--space-5); border-bottom:1px solid var(--color-border-light); padding-bottom:var(--space-3);">
               <span class="icon" style="color:var(--color-primary); display:inline-flex; align-items:center;">${Utils.icon('icon-briefcase')}</span>
               <h3 style="font-family:var(--font-heading); font-size:var(--fs-h3); color:var(--color-primary); margin:0;">Business Information</h3>
             </div>
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:var(--space-4);">
-              <div style="display:flex; flex-direction:column; gap:4px; grid-column: span 2;">
-                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold);">Company Name</label>
-                <input type="text" class="db-filter-bar__search-input" id="set-bus-name" style="width:100%; height:38px; padding:0 var(--space-3); border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text);" value="${Utils.escapeHtml(d.business.name)}">
+              <div style="display:flex; flex-direction:column; gap:6px; grid-column: span 2;">
+                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold); letter-spacing:0.5px;">Company Name</label>
+                <input type="text" class="db-filter-bar__search-input" id="set-bus-name" style="width:100%; height:40px; padding:0 var(--space-3); border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text);" value="${Utils.escapeHtml(d.business.name)}">
               </div>
-              <div style="display:flex; flex-direction:column; gap:4px;">
-                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold);">Support Email</label>
-                <input type="email" class="db-filter-bar__search-input" id="set-bus-email" style="width:100%; height:38px; padding:0 var(--space-3); border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text);" value="${Utils.escapeHtml(d.business.email)}">
+              <div style="display:flex; flex-direction:column; gap:6px;">
+                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold); letter-spacing:0.5px;">Contact Email</label>
+                <input type="email" class="db-filter-bar__search-input" id="set-bus-email" style="width:100%; height:40px; padding:0 var(--space-3); border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text);" value="${Utils.escapeHtml(d.business.email)}">
               </div>
-              <div style="display:flex; flex-direction:column; gap:4px;">
-                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold);">Phone</label>
-                <input type="text" class="db-filter-bar__search-input" id="set-bus-phone" style="width:100%; height:38px; padding:0 var(--space-3); border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text);" value="${Utils.escapeHtml(d.business.phone)}">
+              <div style="display:flex; flex-direction:column; gap:6px;">
+                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold); letter-spacing:0.5px;">Phone</label>
+                <input type="text" class="db-filter-bar__search-input" id="set-bus-phone" style="width:100%; height:40px; padding:0 var(--space-3); border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text);" value="${Utils.escapeHtml(d.business.phone)}">
               </div>
-              <div style="display:flex; flex-direction:column; gap:4px; grid-column: span 2;">
-                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold);">Address</label>
-                <input type="text" class="db-filter-bar__search-input" id="set-bus-address" style="width:100%; height:38px; padding:0 var(--space-3); border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text);" value="${Utils.escapeHtml(d.business.address)}">
-              </div>
-              <div style="display:flex; flex-direction:column; gap:4px; grid-column: span 2;">
-                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold);">Business Hours</label>
-                <input type="text" class="db-filter-bar__search-input" id="set-bus-hours" style="width:100%; height:38px; padding:0 var(--space-3); border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text);" value="${Utils.escapeHtml(d.business.hours)}">
+              <div style="display:flex; flex-direction:column; gap:6px; grid-column: span 2;">
+                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold); letter-spacing:0.5px;">Address</label>
+                <input type="text" class="db-filter-bar__search-input" id="set-bus-address" style="width:100%; height:40px; padding:0 var(--space-3); border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text);" value="${Utils.escapeHtml(d.business.address)}">
               </div>
             </div>
           </div>
 
-          <!-- SECTION 2: Rental Pricing -->
-          <div id="settings-section-pricing" class="db-section-card" style="padding:var(--space-5); transition: box-shadow 0.3s ease; border-radius:var(--radius-lg); background:var(--color-surface); border:1px solid var(--color-border-light);">
-            <div style="display:flex; align-items:center; gap:var(--space-2); margin-bottom:var(--space-4); border-bottom:1px solid var(--color-border-light); padding-bottom:var(--space-2);">
-              <span class="icon" style="color:var(--color-primary); display:inline-flex; align-items:center;">${Utils.icon('icon-dollar-sign')}</span>
-              <h3 style="font-family:var(--font-heading); font-size:var(--fs-h3); color:var(--color-primary); margin:0;">Rental Pricing</h3>
-            </div>
-            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:var(--space-4);">
-              <div style="display:flex; flex-direction:column; gap:4px;">
-                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold);">Minimum Daily Rate ($)</label>
-                <input type="number" class="db-filter-bar__search-input" id="set-prc-min" style="width:100%; height:38px; padding:0 var(--space-3); border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text);" value="${d.policies.dailyRateMin}">
-              </div>
-              <div style="display:flex; flex-direction:column; gap:4px;">
-                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold);">Late Return Fee ($/hr)</label>
-                <input type="number" class="db-filter-bar__search-input" id="set-prc-late" style="width:100%; height:38px; padding:0 var(--space-3); border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text);" value="${d.policies.lateFeeHourly}">
-              </div>
-              <div style="display:flex; flex-direction:column; gap:4px;">
-                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold);">Security Deposit ($)</label>
-                <input type="number" class="db-filter-bar__search-input" id="set-prc-deposit" style="width:100%; height:38px; padding:0 var(--space-3); border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text);" value="${d.policies.securityDepositDefault}">
-              </div>
-              <div style="display:flex; flex-direction:column; gap:4px;">
-                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold);">Cancellation Fee ($)</label>
-                <input type="number" class="db-filter-bar__search-input" id="set-prc-cancel" style="width:100%; height:38px; padding:0 var(--space-3); border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text);" value="${d.policies.cancellationFee}">
-              </div>
-            </div>
-          </div>
-
-          <!-- SECTION 3: Rental Policies -->
-          <div id="settings-section-policies" class="db-section-card" style="padding:var(--space-5); transition: box-shadow 0.3s ease; border-radius:var(--radius-lg); background:var(--color-surface); border:1px solid var(--color-border-light);">
-            <div style="display:flex; align-items:center; gap:var(--space-2); margin-bottom:var(--space-4); border-bottom:1px solid var(--color-border-light); padding-bottom:var(--space-2);">
+          <!-- SECTION 2: Rental Policies -->
+          <div id="settings-section-policies" class="db-section-card" style="padding:var(--space-6); transition: box-shadow 0.3s ease; border-radius:var(--radius-lg); background:var(--color-surface); border:1px solid var(--color-border-light);">
+            <div style="display:flex; align-items:center; gap:var(--space-2); margin-bottom:var(--space-5); border-bottom:1px solid var(--color-border-light); padding-bottom:var(--space-3);">
               <span class="icon" style="color:var(--color-primary); display:inline-flex; align-items:center;">${Utils.icon('icon-shield')}</span>
               <h3 style="font-family:var(--font-heading); font-size:var(--fs-h3); color:var(--color-primary); margin:0;">Rental Policies</h3>
             </div>
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:var(--space-4);">
-              <div style="display:flex; flex-direction:column; gap:4px; grid-column: span 2;">
-                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold);">Cancellation Window</label>
-                <select class="db-filter-bar__select" id="set-pol-window" style="width:100%; height:38px; border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text); padding:0 var(--space-2);">
+              <div style="display:flex; flex-direction:column; gap:6px;">
+                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold); letter-spacing:0.5px;">Security Deposit ($)</label>
+                <input type="number" class="db-filter-bar__search-input" id="set-prc-deposit" style="width:100%; height:40px; padding:0 var(--space-3); border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text);" value="${d.policies.securityDepositDefault}">
+              </div>
+              <div style="display:flex; flex-direction:column; gap:6px;">
+                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold); letter-spacing:0.5px;">Late Return Fee ($/hr)</label>
+                <input type="number" class="db-filter-bar__search-input" id="set-prc-late" style="width:100%; height:40px; padding:0 var(--space-3); border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text);" value="${d.policies.lateFeeHourly}">
+              </div>
+              <div style="display:flex; flex-direction:column; gap:6px; grid-column: span 2;">
+                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold); letter-spacing:0.5px;">Cancellation Window</label>
+                <select class="db-filter-bar__select" id="set-pol-window" style="width:100%; height:40px; border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text); padding:0 var(--space-3); font-size:var(--fs-xs);">
                   <option value="flexible" ${d.policies.cancellationPolicy==='flexible'?'selected':''}>Flexible (Free cancellation up to 24 hrs prior)</option>
                   <option value="moderate" ${d.policies.cancellationPolicy==='moderate'?'selected':''}>Moderate (Free cancellation up to 5 days prior)</option>
                   <option value="strict" ${d.policies.cancellationPolicy==='strict'?'selected':''}>Strict (No cancellation refunds)</option>
                 </select>
               </div>
-              <div style="display:flex; flex-direction:column; gap:4px;">
-                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold);">Maximum Extension Days</label>
-                <input type="number" class="db-filter-bar__search-input" id="set-pol-ext" style="width:100%; height:38px; padding:0 var(--space-3); border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text);" value="${d.policies.maxExtensionDays || 7}">
-              </div>
-              <div style="display:flex; align-items:center; gap:var(--space-2); margin-top:var(--space-4);">
-                <input type="checkbox" id="set-pol-hourly" style="width:18px; height:18px; accent-color:var(--color-secondary); cursor:pointer;" ${d.policies.hourlyEnabled ? 'checked' : ''}>
-                <label for="set-pol-hourly" style="font-size:var(--fs-xs); color:var(--color-dark-text); cursor:pointer; font-weight:var(--fw-medium);">Hourly Rental Toggle</label>
-              </div>
             </div>
           </div>
 
-          <!-- SECTION 4: Notification Settings -->
-          <div id="settings-section-notifications" class="db-section-card" style="padding:var(--space-5); transition: box-shadow 0.3s ease; border-radius:var(--radius-lg); background:var(--color-surface); border:1px solid var(--color-border-light);">
-            <div style="display:flex; align-items:center; gap:var(--space-2); margin-bottom:var(--space-4); border-bottom:1px solid var(--color-border-light); padding-bottom:var(--space-2);">
+          <!-- SECTION 3: Notification Preferences -->
+          <div id="settings-section-notifications" class="db-section-card" style="padding:var(--space-6); transition: box-shadow 0.3s ease; border-radius:var(--radius-lg); background:var(--color-surface); border:1px solid var(--color-border-light);">
+            <div style="display:flex; align-items:center; gap:var(--space-2); margin-bottom:var(--space-5); border-bottom:1px solid var(--color-border-light); padding-bottom:var(--space-3);">
               <span class="icon" style="color:var(--color-primary); display:inline-flex; align-items:center;">${Utils.icon('icon-bell')}</span>
-              <h3 style="font-family:var(--font-heading); font-size:var(--fs-h3); color:var(--color-primary); margin:0;">Notification Settings</h3>
+              <h3 style="font-family:var(--font-heading); font-size:var(--fs-h3); color:var(--color-primary); margin:0;">Notification Preferences</h3>
             </div>
-            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:var(--space-4); padding-top:var(--space-2);">
+            <div style="display:flex; flex-direction:column; gap:var(--space-4); padding-top:var(--space-2);">
               <div style="display:flex; align-items:center; gap:var(--space-3);">
-                <input type="checkbox" id="set-notif-email" style="width:18px; height:18px; accent-color:var(--color-secondary); cursor:pointer;" ${d.notifications.bookings ? 'checked' : ''}>
+                <input type="checkbox" id="set-notif-email" style="width:18px; height:18px; accent-color:var(--color-primary); cursor:pointer;" ${d.notifications.bookings ? 'checked' : ''}>
                 <label for="set-notif-email" style="font-size:var(--fs-xs); color:var(--color-dark-text); cursor:pointer; font-weight:var(--fw-medium);">Email Notifications</label>
               </div>
               <div style="display:flex; align-items:center; gap:var(--space-3);">
-                <input type="checkbox" id="set-notif-browser" style="width:18px; height:18px; accent-color:var(--color-secondary); cursor:pointer;" ${d.notifications.browser ? 'checked' : ''}>
-                <label for="set-notif-browser" style="font-size:var(--fs-xs); color:var(--color-dark-text); cursor:pointer; font-weight:var(--fw-medium);">Browser Notifications</label>
-              </div>
-              <div style="display:flex; align-items:center; gap:var(--space-3);">
-                <input type="checkbox" id="set-notif-alerts" style="width:18px; height:18px; accent-color:var(--color-secondary); cursor:pointer;" ${d.notifications.verifications ? 'checked' : ''}>
+                <input type="checkbox" id="set-notif-alerts" style="width:18px; height:18px; accent-color:var(--color-primary); cursor:pointer;" ${d.notifications.verifications ? 'checked' : ''}>
                 <label for="set-notif-alerts" style="font-size:var(--fs-xs); color:var(--color-dark-text); cursor:pointer; font-weight:var(--fw-medium);">Admin Alerts</label>
               </div>
               <div style="display:flex; align-items:center; gap:var(--space-3);">
-                <input type="checkbox" id="set-notif-reminders" style="width:18px; height:18px; accent-color:var(--color-secondary); cursor:pointer;" ${d.notifications.reminders ? 'checked' : ''}>
-                <label for="set-notif-reminders" style="font-size:var(--fs-xs); color:var(--color-dark-text); cursor:pointer; font-weight:var(--fw-medium);">Reminder Notifications</label>
+                <input type="checkbox" id="set-notif-browser" style="width:18px; height:18px; accent-color:var(--color-primary); cursor:pointer;" ${d.notifications.browser ? 'checked' : ''}>
+                <label for="set-notif-browser" style="font-size:var(--fs-xs); color:var(--color-dark-text); cursor:pointer; font-weight:var(--fw-medium);">Browser Notifications</label>
               </div>
             </div>
           </div>
 
-          <!-- SECTION 5: Email Configuration -->
-          <div id="settings-section-email" class="db-section-card" style="padding:var(--space-5); transition: box-shadow 0.3s ease; border-radius:var(--radius-lg); background:var(--color-surface); border:1px solid var(--color-border-light);">
-            <div style="display:flex; align-items:center; gap:var(--space-2); margin-bottom:var(--space-4); border-bottom:1px solid var(--color-border-light); padding-bottom:var(--space-2);">
-              <span class="icon" style="color:var(--color-primary); display:inline-flex; align-items:center;">${Utils.icon('icon-mail')}</span>
-              <h3 style="font-family:var(--font-heading); font-size:var(--fs-h3); color:var(--color-primary); margin:0;">Email Configuration</h3>
+          <!-- SECTION 4: System Preferences -->
+          <div id="settings-section-system" class="db-section-card" style="padding:var(--space-6); transition: box-shadow 0.3s ease; border-radius:var(--radius-lg); background:var(--color-surface); border:1px solid var(--color-border-light);">
+            <div style="display:flex; align-items:center; gap:var(--space-2); margin-bottom:var(--space-5); border-bottom:1px solid var(--color-border-light); padding-bottom:var(--space-3);">
+              <span class="icon" style="color:var(--color-primary); display:inline-flex; align-items:center;">${Utils.icon('icon-settings')}</span>
+              <h3 style="font-family:var(--font-heading); font-size:var(--fs-h3); color:var(--color-primary); margin:0;">System Preferences</h3>
             </div>
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:var(--space-4);">
-              <div style="display:flex; flex-direction:column; gap:4px;">
-                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold);">SMTP Host</label>
-                <input type="text" class="db-filter-bar__search-input" id="set-mail-host" style="width:100%; height:38px; padding:0 var(--space-3); border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text);" value="${Utils.escapeHtml(d.email.smtpHost)}">
-              </div>
-              <div style="display:flex; flex-direction:column; gap:4px;">
-                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold);">SMTP Port</label>
-                <input type="text" class="db-filter-bar__search-input" id="set-mail-port" style="width:100%; height:38px; padding:0 var(--space-3); border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text);" value="${Utils.escapeHtml(d.email.smtpPort)}">
-              </div>
-              <div style="display:flex; flex-direction:column; gap:4px;">
-                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold);">Sender Email</label>
-                <input type="email" class="db-filter-bar__search-input" id="set-mail-email" style="width:100%; height:38px; padding:0 var(--space-3); border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text);" value="${Utils.escapeHtml(d.email.senderEmail)}">
-              </div>
-              <div style="display:flex; flex-direction:column; gap:4px;">
-                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold);">Sender Name</label>
-                <input type="text" class="db-filter-bar__search-input" id="set-mail-name" style="width:100%; height:38px; padding:0 var(--space-3); border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text);" value="${Utils.escapeHtml(d.email.senderName)}">
-              </div>
-              <div style="display:flex; flex-direction:column; gap:4px; grid-column: span 2;">
-                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold);">Encryption</label>
-                <select class="db-filter-bar__select" id="set-mail-enc" style="width:100%; height:38px; border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text); padding:0 var(--space-2);">
-                  <option value="ssl" ${d.email.encryption==='ssl'?'selected':''}>SSL Encryption</option>
-                  <option value="tls" ${d.email.encryption==='tls'?'selected':''}>TLS Encryption</option>
-                  <option value="none" ${d.email.encryption==='none'?'selected':''}>None (Insecure)</option>
+              <div style="display:flex; flex-direction:column; gap:6px;">
+                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold); letter-spacing:0.5px;">Time Zone</label>
+                <select class="db-filter-bar__select" id="set-sys-timezone" style="width:100%; height:40px; border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text); padding:0 var(--space-3); font-size:var(--fs-xs);">
+                  <option value="UTC-8" ${d.system.timezone==='UTC-8'?'selected':''}>Pacific Time (US & Canada) - GMT-8</option>
+                  <option value="UTC-5" ${d.system.timezone==='UTC-5'?'selected':''}>Eastern Time (US & Canada) - GMT-5</option>
+                  <option value="UTC+0" ${d.system.timezone==='UTC+0'?'selected':''}>GMT / Coordinated Universal Time</option>
+                  <option value="UTC+1" ${d.system.timezone==='UTC+1'?'selected':''}>Central European Time - GMT+1</option>
+                  <option value="UTC+5.5" ${d.system.timezone==='UTC+5.5'?'selected':''}>Indian Standard Time - GMT+5:30</option>
                 </select>
               </div>
-              
-              <div style="background:rgba(27,77,62,0.05); border:1px solid rgba(27,77,62,0.1); border-radius:var(--radius-md); padding:var(--space-3) var(--space-4); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:var(--space-2); grid-column: span 2; margin-top:var(--space-2);">
-                <div>
-                  <div style="font-weight:var(--fw-bold); font-size:var(--fs-xs); color:var(--color-primary);">SMTP Test Module</div>
-                  <div style="font-size:10px; color:var(--color-light-text);">Check connection to SMTP gateway using these credentials.</div>
-                </div>
-                <button class="btn btn--outline btn--sm" onclick="AdminDashboard.testSmtpConnection()">Test Connection</button>
+              <div style="display:flex; flex-direction:column; gap:6px;">
+                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold); letter-spacing:0.5px;">Currency</label>
+                <select class="db-filter-bar__select" id="set-sys-currency" style="width:100%; height:40px; border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text); padding:0 var(--space-3); font-size:var(--fs-xs);">
+                  <option value="USD" ${d.system.currency==='USD'?'selected':''}>USD ($) - United States Dollar</option>
+                  <option value="EUR" ${d.system.currency==='EUR'?'selected':''}>EUR (€) - Euro</option>
+                  <option value="GBP" ${d.system.currency==='GBP'?'selected':''}>GBP (£) - British Pound</option>
+                  <option value="INR" ${d.system.currency==='INR'?'selected':''}>INR (₹) - Indian Rupee</option>
+                </select>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:6px; grid-column: span 2;">
+                <label style="font-size:var(--fs-xxs); text-transform:uppercase; color:var(--color-light-text); font-weight:var(--fw-bold); letter-spacing:0.5px;">Date Format</label>
+                <select class="db-filter-bar__select" id="set-sys-dateformat" style="width:100%; height:40px; border-radius:var(--radius-md); border:1px solid var(--color-border-light); background:var(--color-surface); color:var(--color-dark-text); padding:0 var(--space-3); font-size:var(--fs-xs);">
+                  <option value="YYYY-MM-DD" ${d.system.dateFormat==='YYYY-MM-DD'?'selected':''}>YYYY-MM-DD (e.g. 2026-07-09)</option>
+                  <option value="MM/DD/YYYY" ${d.system.dateFormat==='MM/DD/YYYY'?'selected':''}>MM/DD/YYYY (e.g. 07/09/2026)</option>
+                  <option value="DD-MM-YYYY" ${d.system.dateFormat==='DD-MM-YYYY'?'selected':''}>DD-MM-YYYY (e.g. 09-07-2026)</option>
+                </select>
               </div>
             </div>
+          </div>
+
+          <!-- HIDDEN ELEMENTS to prevent JS runtime errors on unsaved legacy configurations -->
+          <div style="display:none;">
+            <input type="text" id="set-bus-hours" value="${Utils.escapeHtml(d.business.hours || '08:00 AM - 10:00 PM')}">
+            <input type="number" id="set-prc-min" value="${d.policies.dailyRateMin || 150}">
+            <input type="number" id="set-prc-cancel" value="${d.policies.cancellationFee || 100}">
+            <input type="number" id="set-pol-ext" value="${d.policies.maxExtensionDays || 7}">
+            <input type="checkbox" id="set-pol-hourly" ${d.policies.hourlyEnabled ? 'checked' : ''}>
+            <input type="checkbox" id="set-notif-reminders" ${d.notifications.reminders ? 'checked' : ''}>
+            <input type="text" id="set-mail-host" value="${Utils.escapeHtml(d.email.smtpHost || '')}">
+            <input type="text" id="set-mail-port" value="${Utils.escapeHtml(d.email.smtpPort || '')}">
+            <input type="email" id="set-mail-email" value="${Utils.escapeHtml(d.email.senderEmail || '')}">
+            <input type="text" id="set-mail-name" value="${Utils.escapeHtml(d.email.senderName || '')}">
+            <select id="set-mail-enc">
+              <option value="ssl" ${d.email.encryption==='ssl'?'selected':''}>ssl</option>
+              <option value="tls" ${d.email.encryption==='tls'?'selected':''}>tls</option>
+              <option value="none" ${d.email.encryption==='none'?'selected':''}>none</option>
+            </select>
           </div>
 
           <!-- Bottom Actions Bar -->
-          <div style="border-top:1px solid var(--color-border-light); padding-top:var(--space-4); display:flex; justify-content:flex-end; gap:var(--space-3);">
+          <div style="border-top:1px solid var(--color-border-light); padding-top:var(--space-4); display:flex; justify-content:flex-end; gap:var(--space-3); margin-top:var(--space-2);">
             <button class="btn btn--ghost btn--sm" onclick="AdminDashboard.resetSettings()">Reset Default</button>
             <button class="btn btn--outline btn--sm" onclick="AdminDashboard.navigateTo('overview')">Cancel</button>
             <button class="btn btn--primary btn--sm" onclick="AdminDashboard.saveSettingsChanges()">Save Changes</button>
@@ -5572,30 +5558,32 @@ const AdminDashboard = (() => {
     d.business.address = document.getElementById('set-bus-address').value;
     d.business.hours = document.getElementById('set-bus-hours').value;
 
-    // 2. Rental Pricing
-    d.policies.dailyRateMin = parseInt(document.getElementById('set-prc-min').value) || 0;
-    d.policies.lateFeeHourly = parseInt(document.getElementById('set-prc-late').value) || 0;
+    // 2. Rental Policies
     d.policies.securityDepositDefault = parseInt(document.getElementById('set-prc-deposit').value) || 0;
-    d.policies.cancellationFee = parseInt(document.getElementById('set-prc-cancel').value) || 0;
-
-    // 3. Rental Policies
+    d.policies.lateFeeHourly = parseInt(document.getElementById('set-prc-late').value) || 0;
     d.policies.cancellationPolicy = document.getElementById('set-pol-window').value;
+    d.policies.dailyRateMin = parseInt(document.getElementById('set-prc-min').value) || 0;
+    d.policies.cancellationFee = parseInt(document.getElementById('set-prc-cancel').value) || 0;
     d.policies.hourlyEnabled = document.getElementById('set-pol-hourly').checked;
     d.policies.maxExtensionDays = parseInt(document.getElementById('set-pol-ext').value) || 7;
 
-    // 4. Notification Settings
+    // 3. Notification Settings
     d.notifications.bookings = document.getElementById('set-notif-email').checked;
-    d.notifications.browser = document.getElementById('set-notif-browser').checked;
     d.notifications.verifications = document.getElementById('set-notif-alerts').checked;
-    d.notifications.extensions = document.getElementById('set-notif-alerts').checked;
+    d.notifications.browser = document.getElementById('set-notif-browser').checked;
     d.notifications.reminders = document.getElementById('set-notif-reminders').checked;
 
-    // 5. Email Configuration
+    // 4. Email Configuration (Retained for system integrity)
     d.email.smtpHost = document.getElementById('set-mail-host').value;
     d.email.smtpPort = document.getElementById('set-mail-port').value;
     d.email.senderEmail = document.getElementById('set-mail-email').value;
     d.email.senderName = document.getElementById('set-mail-name').value;
     d.email.encryption = document.getElementById('set-mail-enc').value;
+
+    // 6. System Preferences
+    d.system.timezone = document.getElementById('set-sys-timezone').value;
+    d.system.currency = document.getElementById('set-sys-currency').value;
+    d.system.dateFormat = document.getElementById('set-sys-dateformat').value;
 
     ToastController.show({
       title: 'Settings Saved',

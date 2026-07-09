@@ -104,11 +104,26 @@
   }
 
   // --- 6. Populate Gallery ---
-  const VEHICLE_PLACEHOLDER_SVG = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%239CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="background:%23F3F4F6;width:100%;height:100%;padding:20px;"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 1 13v3c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>`;
+  const VEHICLE_PLACEHOLDER_SVG = `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOUNBM0FGIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHlsZT0iYmFja2dyb3VuZDojRjNGNEY2O3dpZHRoOjEwMCU7aGVpZ2h0OjEwMCU7cGFkZGluZzoyMHB4OyI+PHBhdGggZD0iTTE5IDE3aDJjLjYgMCAxLS40IDEtMXYtM2MwLS45LS43LTEuNy0xLjUtMS45QzE4LjcgMTAuNiAxNiAxMCAxNiAxMHMtMS4zLTEuNC0yLjItMi4zYy0uNS0uNC0xLjEtLjctMS44LS43SDVjLS42IDAtMS4xLjQtMS40LjlsLTEuNCAyLjlBMy43IDMuNyAwIDAgMCAxIDEzdjNjMCAuNi40IDEgMSAxaDIiLz48Y2lyY2xlIGN4PSI3IiBjeT0iMTciIHI9IjIiLz48cGF0aCBkPSJNOSAxN2g2Ii8+PGNpcmNsZSBjeD0iMTciIGN5PSIxNyIgcj0iMiIvPjwvc3ZnPg==`;
 
   const mainImageContainer = document.getElementById('main-image');
   if (mainImageContainer) {
-    mainImageContainer.innerHTML = `<img src="${currentCar.heroImage || VEHICLE_PLACEHOLDER_SVG}" alt="${currentCar.brand} ${currentCar.name} Main View" style="width:100%; height:100%; object-fit:cover; transition: transform var(--transition-smooth);" onerror="this.src='${VEHICLE_PLACEHOLDER_SVG}'; this.onerror=null;">`;
+    const mainImg = document.createElement('img');
+    mainImg.src = currentCar.heroImage || VEHICLE_PLACEHOLDER_SVG;
+    mainImg.alt = `${currentCar.brand} ${currentCar.name} Main View`;
+    mainImg.style.width = '100%';
+    mainImg.style.height = '100%';
+    mainImg.style.objectFit = 'cover';
+    mainImg.style.transition = 'transform var(--transition-smooth)';
+
+    const handleMainErr = function() {
+      mainImg.src = VEHICLE_PLACEHOLDER_SVG;
+      mainImg.removeEventListener('error', handleMainErr);
+    };
+    mainImg.addEventListener('error', handleMainErr);
+
+    mainImageContainer.innerHTML = '';
+    mainImageContainer.appendChild(mainImg);
   }
 
   const thumbElements = document.querySelectorAll('.showcase__thumb');
@@ -116,7 +131,20 @@
     const thumbImgUrl = currentCar.galleryImages[index % currentCar.galleryImages.length];
     const placeholder = thumb.querySelector('.showcase__thumb-placeholder');
     if (placeholder) {
-      placeholder.innerHTML = `<img src="${thumbImgUrl}" alt="${currentCar.brand} ${currentCar.name} Thumb ${index + 1}" style="width:100%; height:100%; object-fit:cover;">`;
+      placeholder.innerHTML = '';
+      const thumbImg = document.createElement('img');
+      thumbImg.src = thumbImgUrl;
+      thumbImg.alt = `${currentCar.brand} ${currentCar.name} Thumb ${index + 1}`;
+      thumbImg.style.width = '100%';
+      thumbImg.style.height = '100%';
+      thumbImg.style.objectFit = 'cover';
+
+      const handleThumbErr = function() {
+        thumbImg.src = VEHICLE_PLACEHOLDER_SVG;
+        thumbImg.removeEventListener('error', handleThumbErr);
+      };
+      thumbImg.addEventListener('error', handleThumbErr);
+      placeholder.appendChild(thumbImg);
     }
 
     // Set active class back to index 0
@@ -130,8 +158,13 @@
     thumb.addEventListener('click', () => {
       thumbElements.forEach(t => t.classList.remove('active'));
       thumb.classList.add('active');
-      const mainImg = mainImageContainer.querySelector('img');
+      const mainImg = mainImageContainer ? mainImageContainer.querySelector('img') : null;
       if (mainImg) {
+        const handleErr = function() {
+          mainImg.src = VEHICLE_PLACEHOLDER_SVG;
+          mainImg.removeEventListener('error', handleErr);
+        };
+        mainImg.addEventListener('error', handleErr);
         mainImg.src = thumbImgUrl;
       }
     });
@@ -345,22 +378,39 @@
     relatedSubset.forEach(rc => {
       const card = document.createElement('div');
       card.className = 'related-card';
-      card.innerHTML = `
-        <div class="related-card__image">
-          <img src="${rc.heroImage || VEHICLE_PLACEHOLDER_SVG}" alt="${rc.brand} ${rc.name}" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='${VEHICLE_PLACEHOLDER_SVG}'; this.onerror=null;">
+
+      const imgWrapper = document.createElement('div');
+      imgWrapper.className = 'related-card__image';
+
+      const rcImg = document.createElement('img');
+      rcImg.src = rc.heroImage || VEHICLE_PLACEHOLDER_SVG;
+      rcImg.alt = `${rc.brand} ${rc.name}`;
+      rcImg.style.width = '100%';
+      rcImg.style.height = '100%';
+      rcImg.style.objectFit = 'cover';
+
+      const handleRcErr = function() {
+        rcImg.src = VEHICLE_PLACEHOLDER_SVG;
+        rcImg.removeEventListener('error', handleRcErr);
+      };
+      rcImg.addEventListener('error', handleRcErr);
+      imgWrapper.appendChild(rcImg);
+      card.appendChild(imgWrapper);
+
+      const body = document.createElement('div');
+      body.className = 'related-card__body';
+      body.innerHTML = `
+        <div class="related-card__brand">${rc.brand}</div>
+        <h3 class="related-card__name">${rc.name}</h3>
+        <div class="related-card__footer">
+          <span class="related-card__price">$${rc.hourlyPrice}<span class="related-card__price-unit">/hr</span></span>
+          <span class="related-card__rating">
+            <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span> ${rc.rating}
+          </span>
         </div>
-        <div class="related-card__body">
-          <div class="related-card__brand">${rc.brand}</div>
-          <h3 class="related-card__name">${rc.name}</h3>
-          <div class="related-card__footer">
-            <span class="related-card__price">$${rc.hourlyPrice}<span class="related-card__price-unit">/hr</span></span>
-            <span class="related-card__rating">
-              <span class="icon icon--sm"><svg><use href="assets/icons/sprite.svg#icon-star"/></svg></span> ${rc.rating}
-            </span>
-          </div>
-          <a href="car-details.html?id=${rc.id}" class="btn btn--outline btn--sm">View Details</a>
-        </div>
+        <a href="car-details.html?id=${rc.id}" class="btn btn--outline btn--sm">View Details</a>
       `;
+      card.appendChild(body);
       relatedGrid.appendChild(card);
     });
   }

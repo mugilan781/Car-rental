@@ -204,13 +204,21 @@ const App = (() => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         closeDropdown();
-        if (typeof UI !== 'undefined' && UI.showToast) {
-          UI.showToast({
-            title: 'Coming Soon',
-            message: 'Dashboard functionality is under construction.',
-            type: 'info',
-            duration: 3000
-          });
+
+        const text = link.textContent.toLowerCase();
+        if (text.includes('admin')) {
+          window.location.href = 'admin-dashboard.html';
+        } else if (text.includes('user')) {
+          window.location.href = 'user-dashboard.html';
+        } else {
+          if (typeof UI !== 'undefined' && UI.showToast) {
+            UI.showToast({
+              title: 'Coming Soon',
+              message: 'Dashboard functionality is under construction.',
+              type: 'info',
+              duration: 3000
+            });
+          }
         }
       });
     });

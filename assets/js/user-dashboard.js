@@ -558,11 +558,11 @@ const UserDashboard = (() => {
   };
 
   function restoreUiState() {
-    const saved = StorageHelper.get('ui_state');
-    if (saved) Object.assign(DashboardState.uiState, saved);
+    StorageHelper.remove('ui_state');
+    StorageHelper.remove('sidebar_collapsed');
   }
   function saveUiState() {
-    StorageHelper.set('ui_state', DashboardState.uiState);
+    // UI state persistence disabled - reset to default on fresh loads
   }
 
 
@@ -580,8 +580,7 @@ const UserDashboard = (() => {
       this.menuBtn = document.getElementById('db-header-menu');
       if (!this.sidebar) return;
 
-      const saved = StorageHelper.get('sidebar_collapsed');
-      if (saved && window.innerWidth > 992) { this.isCollapsed = true; this.sidebar.classList.add('collapsed'); }
+      // Sidebar collapse state persistence disabled - starts expanded on load
 
       if (this.collapseBtn) this.collapseBtn.addEventListener('click', () => this.toggle());
       if (this.menuBtn) this.menuBtn.addEventListener('click', () => this.toggleMobile());
@@ -602,7 +601,6 @@ const UserDashboard = (() => {
       if (window.innerWidth <= 992) { this.closeMobile(); return; }
       this.isCollapsed = !this.isCollapsed;
       this.sidebar.classList.toggle('collapsed', this.isCollapsed);
-      StorageHelper.set('sidebar_collapsed', this.isCollapsed);
     },
     toggleMobile() { this.isMobileOpen ? this.closeMobile() : this.openMobile(); },
     openMobile() { this.isMobileOpen = true; this.sidebar.classList.add('mobile-open'); if (this.overlay) this.overlay.classList.add('open'); document.body.style.overflow = 'hidden'; },
