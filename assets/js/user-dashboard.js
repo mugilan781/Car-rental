@@ -594,7 +594,10 @@ const UserDashboard = (() => {
       });
 
       document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && this.isMobileOpen) this.closeMobile(); });
-      window.addEventListener('resize', Utils.debounce(() => { if (window.innerWidth > 992 && this.isMobileOpen) this.closeMobile(); }, 200));
+      window.addEventListener('resize', Utils.debounce(() => {
+        if (window.innerWidth > 992 && this.isMobileOpen) this.closeMobile();
+        HeaderController.syncHeader();
+      }, 100));
     },
 
     toggle() {
@@ -603,8 +606,8 @@ const UserDashboard = (() => {
       this.sidebar.classList.toggle('collapsed', this.isCollapsed);
     },
     toggleMobile() { this.isMobileOpen ? this.closeMobile() : this.openMobile(); },
-    openMobile() { this.isMobileOpen = true; this.sidebar.classList.add('mobile-open'); if (this.overlay) this.overlay.classList.add('open'); document.body.style.overflow = 'hidden'; },
-    closeMobile() { this.isMobileOpen = false; this.sidebar.classList.remove('mobile-open'); if (this.overlay) this.overlay.classList.remove('open'); document.body.style.overflow = ''; },
+    openMobile() { this.isMobileOpen = true; this.sidebar.classList.add('mobile-open'); if (this.overlay) this.overlay.classList.add('open'); document.body.style.overflow = 'hidden'; HeaderController.syncHeader(); },
+    closeMobile() { this.isMobileOpen = false; this.sidebar.classList.remove('mobile-open'); if (this.overlay) this.overlay.classList.remove('open'); document.body.style.overflow = ''; HeaderController.syncHeader(); },
 
     handleNavClick(e, link) {
       this.sidebar.querySelectorAll('.db-sidebar__link').forEach(l => { l.classList.remove('active'); l.removeAttribute('aria-current'); });
@@ -635,8 +638,34 @@ const UserDashboard = (() => {
       this.greetingEl = document.getElementById('db-header-greeting');
       if (this.greetingEl) this.greetingEl.textContent = `${Utils.getTimeGreeting()}, ${DashboardState.userData.firstName}`;
       this.initSearch();
+
+      // Viewport change resize listener to force complete header repaints
+      window.addEventListener('resize', Utils.debounce(() => {
+        this.syncHeader();
+      }, 100));
     },
     updateTitle(title) { if (this.titleEl) this.titleEl.textContent = title; },
+    syncHeader() {
+      const header = document.querySelector('.db-header');
+      if (!header) return;
+
+      // Force chrome/browser repaint & layout reflow to cure intermittent blank header display bugs
+      const originalDisplay = header.style.display;
+      header.style.display = 'none';
+      header.offsetHeight; // Force reflow
+      header.style.display = originalDisplay || '';
+
+      // Reset style bindings to default responsive states
+      header.style.position = '';
+      header.style.top = '';
+      header.style.visibility = 'visible';
+      header.style.opacity = '1';
+      header.style.transform = 'none';
+
+      if (this.greetingEl) {
+        this.greetingEl.textContent = `${Utils.getTimeGreeting()}, ${DashboardState.userData.firstName}`;
+      }
+    },
     initSearch() {
       const searchInput = document.getElementById('db-header-search');
       const searchResults = document.getElementById('db-header-search-results');
