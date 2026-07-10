@@ -83,6 +83,24 @@ const App = (() => {
         closeMenu();
       }
     });
+
+    // Reset navigation state when crossing responsive breakpoints
+    let lastBreakpoint = getBreakpoint();
+
+    function getBreakpoint() {
+      const width = window.innerWidth;
+      if (width <= 767) return 'mobile';
+      if (width <= 1024) return 'tablet';
+      return 'desktop';
+    }
+
+    window.addEventListener('resize', () => {
+      const currentBreakpoint = getBreakpoint();
+      if (currentBreakpoint !== lastBreakpoint) {
+        lastBreakpoint = currentBreakpoint;
+        closeMenu();
+      }
+    });
   }
 
   /* ---- Active Nav Link ---- */
