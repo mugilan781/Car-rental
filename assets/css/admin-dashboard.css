@@ -520,7 +520,7 @@ input:checked + .slider:before {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .db-stats-grid--admin {
     grid-template-columns: 1fr;
   }
@@ -878,8 +878,8 @@ input:checked + .slider:before {
   }
 }
 
-/* ---- Mobile Landscape (≤ 768px) ---- */
-@media (max-width: 768px) {
+/* ---- Mobile Landscape (≤ 767px) ---- */
+@media (max-width: 767px) {
   .db-stats-grid--admin {
     grid-template-columns: 1fr;
   }
@@ -974,6 +974,553 @@ input:checked + .slider:before {
   .db-layout .db-table img {
     width: 40px !important;
     height: 28px !important;
+  }
+}
+
+/* ============================================================
+   ADMIN DASHBOARD RESPONSIVE ALIGNMENTS & WRAPPER SCROLL OVERRIDES
+   ============================================================ */
+
+/* Global container constraints to prevent layout blowout */
+.db-main-wrapper {
+  min-width: 0 !important;
+}
+
+.db-main {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+.db-section-card {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* Base scrollable table wrapper rules */
+.db-layout .db-table-wrapper {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  margin: 0 !important;
+}
+
+/* Laptop breakpoint overrides */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .db-layout .db-table {
+    min-width: 1200px !important;
+    table-layout: auto !important;
+  }
+  .db-layout .db-table th,
+  .db-layout .db-table td {
+    padding: var(--space-4) var(--space-5) !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* Tablet breakpoint overrides */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .db-layout .db-table {
+    min-width: 1200px !important;
+    table-layout: auto !important;
+  }
+  .db-layout .db-table th,
+  .db-layout .db-table td {
+    padding: var(--space-4) var(--space-5) !important;
+    white-space: nowrap !important;
+  }
+
+  /* Stack dashboard widgets vertically */
+  .db-section-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-4) !important;
+  }
+
+  /* Wrap select controls cleanly in rows of two */
+  .db-filter-bar {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-3) !important;
+    padding: var(--space-4) !important;
+  }
+
+  .db-filter-bar__search {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .db-filter-bar__select {
+    flex: 1 1 calc(50% - var(--space-2)) !important;
+    min-width: 140px !important;
+    height: 40px !important;
+  }
+
+  .db-filter-bar__actions {
+    width: 100% !important;
+    margin-left: 0 !important;
+    justify-content: flex-end !important;
+  }
+
+  /* Fleet Management page specific tablet filter overrides */
+  #fleet-category-filter,
+  #fleet-status-filter,
+  #fleet-fuel-filter {
+    flex: 1 1 calc(33.333% - var(--space-2)) !important;
+    min-width: 140px !important;
+  }
+
+  #fleet-trans-filter,
+  #fleet-seats-filter,
+  #fleet-sort {
+    flex: 1 1 calc(22% - var(--space-2)) !important;
+    min-width: 120px !important;
+  }
+
+  .db-layout .db-filter-bar #fleet-sort ~ .db-filter-bar__actions {
+    flex: 1 1 calc(34% - var(--space-2)) !important;
+    width: auto !important;
+    margin-left: 0 !important;
+    justify-content: flex-end !important;
+    display: inline-flex !important;
+  }
+
+  /* Customers page specific tablet filter overrides */
+  #users-status-filter,
+  #users-membership-filter {
+    flex: 1 1 calc(50% - var(--space-2)) !important;
+    min-width: 140px !important;
+  }
+
+  #users-verification-filter {
+    flex: 1 1 100% !important;
+    min-width: 140px !important;
+  }
+
+  /* Prevent Dashboard tables from compressing */
+  .db-section-card__body .db-table {
+    min-width: 800px !important;
+  }
+
+  /* Force bookings page quick filter buttons to wrap to a new line and center-align */
+  .db-quick-filter-buttons {
+    flex: 1 1 100% !important;
+    margin-left: 0 !important;
+    margin-top: var(--space-2) !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-2) !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+}
+
+/* Mobile breakpoint overrides */
+@media (max-width: 767px) {
+  .db-layout .db-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: var(--space-2) !important;
+    padding: 0 var(--space-3) !important;
+    height: 60px !important;
+    min-width: 0 !important;
+  }
+
+  .db-header__search-input,
+  .db-header__search-results {
+    display: none !important;
+  }
+
+  .db-header__search {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    max-width: 40px !important;
+    border-radius: var(--radius-full) !important;
+    border: 1px solid var(--color-border) !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative !important;
+    flex-shrink: 0 !important;
+    cursor: pointer !important;
+  }
+
+  .db-layout .db-header__search-icon {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 20px !important;
+    height: 20px !important;
+    color: var(--color-light-text) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+    box-sizing: border-box !important;
+  }
+
+  .db-layout .db-header__search-icon svg,
+  .db-layout .db-header__search-icon i {
+    width: 20px !important;
+    height: 20px !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .db-layout .db-table {
+    min-width: 1100px !important;
+    table-layout: auto !important;
+  }
+  .db-layout .db-table th,
+  .db-layout .db-table td {
+    padding: var(--space-3) var(--space-4) !important;
+    white-space: nowrap !important;
+  }
+
+  /* Stack dashboard widgets vertically */
+  .db-section-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-4) !important;
+  }
+
+  /* Wrap select controls cleanly in rows of two */
+  .db-filter-bar {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-3) !important;
+    padding: var(--space-4) !important;
+  }
+
+  .db-filter-bar__search {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .db-filter-bar__select {
+    flex: 1 1 calc(50% - var(--space-2)) !important;
+    min-width: 140px !important;
+    height: 40px !important;
+  }
+
+  .db-filter-bar__actions {
+    width: 100% !important;
+    margin-left: 0 !important;
+    justify-content: flex-end !important;
+  }
+
+  /* Force bookings page quick filter buttons to wrap to a new line and center-align */
+  .db-quick-filter-buttons {
+    flex: 1 1 100% !important;
+    margin-left: 0 !important;
+    margin-top: var(--space-2) !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-2) !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  /* Prevent Dashboard tables from compressing */
+  .db-section-card__body .db-table {
+    min-width: 800px !important;
+  }
+
+  /* Prevent buttons text from clipping and wrap them cleanly */
+  .db-page-header__actions {
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    gap: var(--space-2) !important;
+  }
+
+  .db-page-header__actions .btn {
+    flex: 1 1 auto !important;
+    min-width: max-content !important;
+    white-space: nowrap !important;
+    padding: 0 var(--space-3) !important;
+  }
+
+  /* Stack recent customers card content cleanly to avoid alignment breakage */
+  #recent-customers-list .db-rental-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: var(--space-3) !important;
+  }
+
+  #recent-customers-list .db-rental-card .btn {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* Stacking select dropdowns in single column on small screen phones */
+@media (max-width: 480px) {
+  .db-filter-bar__select {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+  }
+}
+
+/* Mobile-only additional alignments and stacking rules */
+@media (max-width: 767px) {
+  /* 1. Center pagination sections */
+  #users-pagination,
+  #extensions-pagination {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: var(--space-2) !important;
+    padding: var(--space-4) !important;
+  }
+
+  #users-pagination .db-pagination-controls,
+  #extensions-pagination .db-pagination-controls {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  /* 2. Notifications Page Mobile styling */
+  /* Categories panel grid stack & flex row wrapping buttons */
+  .db-layout div[style*="grid-template-columns: 200px 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-4) !important;
+  }
+
+  .db-layout div[style*="grid-template-columns: 200px 1fr"] > div:first-child > div:last-child {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)) !important;
+    gap: var(--space-2) !important;
+    width: 100% !important;
+  }
+
+  .db-layout div[style*="grid-template-columns: 200px 1fr"] > div:first-child > div:last-child .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    font-size: 11px !important;
+    padding: var(--space-2) var(--space-1) !important;
+    white-space: nowrap !important;
+  }
+
+  /* Notifications Card Filters block stack */
+  #notifications-card-container .db-filter-bar {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-2) !important;
+    align-items: center !important;
+  }
+
+  #notifications-card-container .db-filter-bar__search {
+    flex: 0 1 auto !important;
+    min-width: 200px !important;
+  }
+
+  #notifications-card-container .db-filter-bar > div:last-child {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: var(--space-2) !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  #notifications-card-container #notif-status-filter {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 40px !important;
+    box-sizing: border-box !important;
+    flex: 1 1 100% !important;
+  }
+
+  #notifications-card-container .db-filter-bar > div:last-child button {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 40px !important;
+    box-sizing: border-box !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex: 1 1 100% !important;
+    margin-left: 0 !important;
+  }
+
+  /* 3. Reports Page Mobile refinements */
+  /* Period buttons and Date inputs container stacking */
+  .db-layout .db-section-card div[style*="justify-content:space-between; align-items:center; flex-wrap:wrap"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: var(--space-4) !important;
+  }
+
+  .db-layout .db-section-card div[style*="justify-content:space-between; align-items:center; flex-wrap:wrap"] > div {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: var(--space-2) !important;
+    width: 100% !important;
+  }
+
+  .db-layout .db-section-card div[style*="justify-content:space-between; align-items:center; flex-wrap:wrap"] button,
+  .db-layout .db-section-card div[style*="justify-content:space-between; align-items:center; flex-wrap:wrap"] input {
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Period selection buttons group wrap and grow */
+  .db-layout .db-section-card div[style*="justify-content:space-between; align-items:center; flex-wrap:wrap"] > div > div[style*="display:flex; gap:4px;"],
+  .db-layout .db-section-card div[style*="justify-content:space-between; align-items:center; flex-wrap:wrap"] > div > div[style*="display:flex; gap:4px"] {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-2) !important;
+    width: 100% !important;
+  }
+  
+  .db-layout .db-section-card div[style*="justify-content:space-between; align-items:center; flex-wrap:wrap"] > div > div[style*="display:flex; gap:4px;"] .btn,
+  .db-layout .db-section-card div[style*="justify-content:space-between; align-items:center; flex-wrap:wrap"] > div > div[style*="display:flex; gap:4px"] .btn {
+    flex: 1 1 calc(50% - var(--space-1)) !important;
+    min-width: max-content !important;
+    white-space: nowrap !important;
+    justify-content: center !important;
+    height: 36px !important;
+    font-size: 11px !important;
+  }
+
+  /* Custom Range date inputs wrapping and styling */
+  .db-layout .db-section-card div[style*="justify-content:space-between; align-items:center; flex-wrap:wrap"] > div:last-child {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: var(--space-2) !important;
+    width: 100% !important;
+  }
+
+  .db-layout .db-section-card div[style*="justify-content:space-between; align-items:center; flex-wrap:wrap"] > div:last-child > span {
+    display: none !important; /* Hide the word 'to' for compact layout */
+  }
+
+  .db-layout .db-section-card div[style*="justify-content:space-between; align-items:center; flex-wrap:wrap"] > div:last-child input {
+    flex: 1 1 calc(50% - var(--space-1)) !important;
+    width: auto !important;
+    height: 38px !important;
+    box-sizing: border-box !important;
+  }
+
+  .db-layout .db-section-card div[style*="justify-content:space-between; align-items:center; flex-wrap:wrap"] > div:last-child button {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    height: 38px !important;
+    margin-top: var(--space-1) !important;
+  }
+
+  /* Enforce canvas responsive scaling */
+  .db-layout canvas {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Force report tables to maintain layout and enable scroll */
+  .db-layout .db-section-card .db-table {
+    min-width: 600px !important;
+  }
+
+  /* 4. Settings Page Mobile refinements */
+  /* Stack Settings layout grid */
+  .db-layout div[style*="grid-template-columns: 240px 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-4) !important;
+  }
+
+  /* Convert settings vertical menu to horizontal wrapping layout */
+  .db-layout div[style*="grid-template-columns: 240px 1fr"] > div:first-child {
+    position: static !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-2) !important;
+    width: 100% !important;
+  }
+
+  .db-layout div[style*="grid-template-columns: 240px 1fr"] > div:first-child .btn {
+    flex: 1 1 auto !important;
+    justify-content: center !important;
+    font-size: 10px !important;
+    padding: var(--space-2) var(--space-3) !important;
+  }
+
+  /* Stack Settings form fields */
+  .db-layout div[id^="settings-section-"] div[style*="grid-template-columns: 1fr 1fr"],
+  .db-layout div[id^="settings-section-"] div[style*="grid-template-columns: 1fr 1fr;"] {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-3) !important;
+  }
+
+  .db-layout div[id^="settings-section-"] div[style*="grid-column: span 2"] {
+    grid-column: span 1 !important;
+  }
+}
+
+/* Stacks alert panel items on small screens */
+@media (max-width: 576px) {
+  .db-layout #notifications-list-container .db-notification-panel__item {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: var(--space-3) !important;
+    padding: var(--space-3) var(--space-4) !important;
+  }
+
+  .db-layout #notifications-list-container .db-notification-panel__item > div:first-child {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: var(--space-3) !important;
+  }
+
+  .db-layout #notifications-list-container .db-notification-panel__item > div:last-child {
+    margin-left: 0 !important;
+    justify-content: flex-end !important;
+    display: flex !important;
+    gap: var(--space-2) !important;
+  }
+  
+  .db-layout #notifications-list-container .db-notification-panel__item .btn {
+    padding: var(--space-2) var(--space-4) !important;
+    min-width: 40px !important;
+    height: 36px !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+
+/* Stacks Save/Cancel actions row buttons on small phones */
+@media (max-width: 480px) {
+  .db-layout div[style*="justify-content:flex-end; gap:var(--space-3)"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: var(--space-2) !important;
+    margin-top: var(--space-3) !important;
+  }
+
+  .db-layout div[style*="justify-content:flex-end; gap:var(--space-3)"] .btn {
+    width: 100% !important;
+    justify-content: center !important;
   }
 }
 
