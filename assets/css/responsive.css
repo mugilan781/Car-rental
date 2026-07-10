@@ -135,10 +135,11 @@ img {
 
   /* —— Footer —— */
   .footer__grid {
-    grid-template-columns: 1fr 1fr !important;
-    gap: var(--space-8) !important;
-    max-width: 680px !important;
-    margin: 0 auto !important;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    max-width: 800px;
+    margin: 0 auto;
+    justify-content: center;
   }
 
   .footer__brand {
@@ -182,9 +183,9 @@ img {
 }
 
 /* ============================================================
-   SMALL / MOBILE LANDSCAPE (≤ 768px)
+   SMALL / MOBILE LANDSCAPE (≤ 767px)
    ============================================================ */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   :root {
     --container-padding: 1.25rem;
   }
@@ -230,18 +231,16 @@ img {
 
   /* —— Footer —— */
   .footer__grid {
-    grid-template-columns: 1fr !important;
-    gap: var(--space-8) !important;
-    max-width: 100% !important;
-    margin: 0 !important;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
   }
 
   .footer__brand {
-    grid-column: span 1 !important;
+    grid-column: span 1;
   }
 
   .footer__newsletter-column {
-    grid-column: span 1 !important;
+    grid-column: span 1;
   }
 
   .footer__bottom {
@@ -663,6 +662,79 @@ img {
     width: 98%;
     margin: var(--space-3);
   }
+
+  /* —— Disable button interaction-based movement/lift/scaling for Mobile and Tablet —— */
+  .btn,
+  .btn:hover,
+  .btn:active,
+  .btn:focus,
+  button,
+  button:hover,
+  button:active,
+  button:focus,
+  input[type="button"],
+  input[type="button"]:hover,
+  input[type="button"]:active,
+  input[type="submit"],
+  input[type="submit"]:hover,
+  input[type="submit"]:active,
+  .navbar__search-btn,
+  .navbar__search-btn:hover,
+  .navbar__search-btn:active,
+  .navbar__profile-btn,
+  .navbar__profile-btn:hover,
+  .navbar__profile-btn:active,
+  .back-to-top,
+  .back-to-top:hover,
+  .back-to-top:active,
+  .testimonials-btn,
+  .testimonials-btn:hover,
+  .testimonials-btn:active,
+  .tab-btn,
+  .tab-btn:hover,
+  .tab-btn:active,
+  .filter-btn,
+  .filter-btn:hover,
+  .filter-btn:active,
+  .pagination-btn,
+  .pagination-btn:hover,
+  .pagination-btn:active,
+  .db-quick-filter-buttons .btn,
+  .db-quick-filter-buttons .btn:hover,
+  .db-quick-filter-buttons .btn:active,
+  .db-filter-bar__actions .btn,
+  .db-filter-bar__actions .btn:hover,
+  .db-filter-bar__actions .btn:active,
+  .db-pagination .btn,
+  .db-pagination .btn:hover,
+  .db-pagination .btn:active {
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .btn--primary:hover,
+  .btn--primary:active,
+  .btn--primary:focus {
+    box-shadow: 0 4px 15px rgba(27,59,95,0.25) !important;
+  }
+
+  .btn--accent:hover,
+  .btn--accent:active,
+  .btn--accent:focus {
+    box-shadow: 0 4px 15px rgba(198,169,98,0.3) !important;
+  }
+
+  .btn--secondary:hover,
+  .btn--secondary:active,
+  .btn--secondary:focus,
+  .btn--outline:hover,
+  .btn--outline:active,
+  .btn--outline:focus,
+  .btn--ghost:hover,
+  .btn--ghost:active,
+  .btn--ghost:focus {
+    box-shadow: none !important;
+  }
 }
 
 /* ============================================================
@@ -676,7 +748,7 @@ img {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .hide-mobile {
     display: none !important;
   }
