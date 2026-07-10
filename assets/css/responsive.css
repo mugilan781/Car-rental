@@ -5,7 +5,8 @@
    ============================================================ */
 
 /* ---- Prevent overflow (always active) ---- */
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
@@ -715,13 +716,13 @@ img {
   .btn--primary:hover,
   .btn--primary:active,
   .btn--primary:focus {
-    box-shadow: 0 4px 15px rgba(27,59,95,0.25) !important;
+    box-shadow: 0 4px 15px rgba(27, 59, 95, 0.25) !important;
   }
 
   .btn--accent:hover,
   .btn--accent:active,
   .btn--accent:focus {
-    box-shadow: 0 4px 15px rgba(198,169,98,0.3) !important;
+    box-shadow: 0 4px 15px rgba(198, 169, 98, 0.3) !important;
   }
 
   .btn--secondary:hover,
