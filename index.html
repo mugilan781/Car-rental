@@ -17,8 +17,6 @@
 </head>
 <body>
 
-  <!-- Skip Link -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
@@ -108,55 +106,63 @@
           </div>
         </div>
         <div class="home-hero__visual scroll-reveal" style="--delay:.3s">
-          <div class="hero-showcase-card">
-            <img src="assets/images/hero/hero-car.png" alt="Luxury sports car showcase" class="home-hero__car-img">
-          </div>
-          
-          <!-- Card 1: Top Left -->
-          <div class="hero-float-card hero-float-card--top-left">
-            <div class="hero-float-card__header">
-              <span class="hero-float-card__icon hero-float-card__icon--gold">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              </span>
-              <span>Customer Rating</span>
+          <!-- Featured Luxury Vehicle Card -->
+          <div class="hero-product-card">
+            <div class="hero-product-card__image-container">
+              <img src="assets/images/hero/hero-car.png" alt="Featured Porsche 911 GT3 RS" class="hero-product-card__image">
             </div>
-            <div class="hero-float-card__value">★★★★★ 4.9</div>
-            <div class="hero-float-card__footer">Rated by 2,500+ luxury travellers</div>
-          </div>
-
-          <!-- Card 2: Top Right -->
-          <div class="hero-float-card hero-float-card--top-right">
-            <div class="hero-float-card__header">
-              <span class="hero-float-card__icon hero-float-card__icon--blue">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-              </span>
-              <span>Instant Booking</span>
+            <div class="hero-product-card__details">
+              <div class="hero-product-card__meta">
+                <span class="hero-product-card__category">Ultra Performance</span>
+              </div>
+              <h3 class="hero-product-card__title">Porsche 911 GT3 RS</h3>
+              <p class="hero-product-card__desc">Uncompromising track precision engineered for the ultimate high-performance driving experience.</p>
+              <div class="hero-product-card__footer">
+                <div class="hero-product-card__rating">
+                  <svg class="hero-product-card__star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <span>4.9 (2.5K+ reviews)</span>
+                </div>
+                <div class="hero-product-card__price">
+                  <span class="label">From</span>
+                  <span class="value">$299</span>
+                  <span class="unit">/day</span>
+                </div>
+              </div>
             </div>
-            <div class="hero-float-card__value">✓ Confirmed in under 2 mins</div>
           </div>
 
-          <!-- Card 3: Bottom Left -->
-          <div class="hero-float-card hero-float-card--bottom-left">
-            <div class="hero-float-card__header">
-              <span class="hero-float-card__icon hero-float-card__icon--blue">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </span>
-              <span>Premium Protection</span>
+          <!-- Compact Floating Badges -->
+          <!-- Badge 1: Top Right -->
+          <div class="hero-mini-badge hero-mini-badge--top-right">
+            <div class="hero-mini-badge__icon hero-mini-badge__icon--blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             </div>
-            <div class="hero-float-card__value">Fully Insured</div>
-            <div class="hero-float-card__footer">24/7 Roadside Assistance</div>
+            <div class="hero-mini-badge__text">
+              <div class="hero-mini-badge__title">Instant Booking</div>
+              <div class="hero-mini-badge__desc">Confirmed in &lt; 2 mins</div>
+            </div>
           </div>
 
-          <!-- Card 4: Bottom Right -->
-          <div class="hero-float-card hero-float-card--bottom-right">
-            <div class="hero-float-card__header">
-              <span class="hero-float-card__icon hero-float-card__icon--gold">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-              </span>
-              <span>Premium Fleet</span>
+          <!-- Badge 2: Bottom Left -->
+          <div class="hero-mini-badge hero-mini-badge--bottom-left">
+            <div class="hero-mini-badge__icon hero-mini-badge__icon--blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
-            <div class="hero-float-card__value">200+ Luxury Vehicles</div>
-            <div class="hero-float-card__footer">15+ Premium Brands</div>
+            <div class="hero-mini-badge__text">
+              <div class="hero-mini-badge__title">Fully Insured</div>
+              <div class="hero-mini-badge__desc">24/7 Roadside Assist</div>
+            </div>
+          </div>
+
+          <!-- Badge 3: Bottom Right -->
+          <div class="hero-mini-badge hero-mini-badge--bottom-right">
+            <div class="hero-mini-badge__icon hero-mini-badge__icon--gold">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <div class="hero-mini-badge__text">
+              <div class="hero-mini-badge__title">Premium Fleet</div>
+              <div class="hero-mini-badge__desc">200+ Luxury Cars</div>
+            </div>
           </div>
         </div>
       </div>

@@ -1484,187 +1484,362 @@
 }
 
 /* ============================================================
-   HOME HERO SHOWCASE CONTAINER & FLOATING CARDS
+   HOME HERO PRODUCT CARD & FLOATING BADGES (REBUILT)
    ============================================================ */
-.hero-showcase-card {
+.home-hero__visual {
   position: relative;
-  max-width: 470px !important;
-  width: 100% !important;
-  aspect-ratio: 1.6 / 1 !important;
-  border-radius: 30px !important;
-  background: radial-gradient(circle at center, rgba(198, 169, 98, 0.14) 0%, rgba(27, 59, 95, 0.05) 60%, rgba(255, 255, 255, 0.9) 100%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.45) !important;
-  box-shadow: 0 25px 60px rgba(27, 59, 95, 0.1) !important;
-  padding: var(--space-6) !important;
-  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100% !important;
+  max-width: 480px !important;
+  height: 480px !important;
+  margin: 0 auto;
   overflow: visible;
 }
 
-.home-hero__car-img {
-  width: 100% !important;
-  max-width: 100% !important;
-  height: auto !important;
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.12)) !important;
-  transform: scale(1.12) !important;
-  animation: float 6s ease-in-out infinite !important;
-}
-
-.hero-float-card {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.85) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
-  border-radius: 18px !important;
-  padding: var(--space-3) var(--space-4) !important;
-  box-shadow: 0 12px 35px rgba(27, 59, 95, 0.08), 0 2px 4px rgba(27, 59, 95, 0.02) !important;
-  width: 200px;
+/* Feature Luxury Vehicle Product Card */
+.hero-product-card {
+  position: relative;
+  width: 290px !important;
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+  border-radius: 28px !important;
+  padding: var(--space-4) !important;
+  box-shadow: 0 30px 70px rgba(27, 59, 95, 0.12) !important;
   box-sizing: border-box;
-  z-index: 10;
-  pointer-events: none;
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
+  gap: var(--space-3);
+  z-index: 5;
+  transition: transform var(--transition-smooth);
 }
 
-.hero-float-card__header {
+.hero-product-card__image-container {
+  position: relative !important;
+  width: 100% !important;
+  aspect-ratio: 1.6 / 1 !important;
+  border-radius: 20px !important;
+  background: radial-gradient(circle at center, rgba(198, 169, 98, 0.1) 0%, rgba(27, 59, 95, 0.04) 60%, rgba(255, 255, 255, 0.1) 100%) !important;
+  border: 1px solid rgba(27, 59, 95, 0.08) !important;
+  background-clip: padding-box !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  padding: var(--space-2) !important;
+  box-sizing: border-box !important;
+  z-index: 1 !important;
+  transform: translate3d(0, 0, 0) !important;
+  -webkit-transform: translate3d(0, 0, 0) !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+}
+
+.hero-product-card__image {
+  width: 90% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.08)) !important;
+  transform: scale(1.08);
+  transition: transform var(--transition-smooth);
+}
+
+
+.hero-product-card__details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+
+.hero-product-card__meta {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  font-size: 0.6875rem;
+}
+
+.hero-product-card__category {
+  font-size: 0.625rem;
   font-weight: var(--fw-bold);
-  color: var(--color-primary-light);
+  color: var(--color-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
-.hero-float-card__icon {
-  display: inline-flex;
+.hero-product-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.125rem !important;
+  font-weight: var(--fw-bold);
+  color: var(--color-primary) !important;
+  margin: 2px 0 0 !important;
+  line-height: 1.3;
+}
+
+.hero-product-card__desc {
+  font-size: 0.6875rem !important;
+  color: var(--color-light-text) !important;
+  line-height: 1.4 !important;
+  margin: 4px 0 0 !important;
+}
+
+.hero-product-card__footer {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-3);
+  margin-top: var(--space-1);
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
 }
 
-.hero-float-card__icon svg {
-  width: 100%;
-  height: 100%;
-}
-
-.hero-float-card__icon--gold {
-  color: #c6a962;
-}
-
-.hero-float-card__icon--blue {
+.hero-product-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.6875rem;
+  font-weight: var(--fw-semibold);
   color: var(--color-primary);
 }
 
-.hero-float-card__value {
+.hero-product-card__star {
+  width: 12px;
+  height: 12px;
+  color: #c6a962;
+  fill: currentColor;
+}
+
+.hero-product-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.hero-product-card__price .label {
+  font-size: 0.625rem;
+  color: var(--color-light-text);
+  margin-right: 2px;
+}
+
+.hero-product-card__price .value {
   font-family: var(--font-heading);
   font-size: 1.125rem;
   font-weight: var(--fw-bold);
   color: var(--color-primary);
 }
 
-.hero-float-card__footer {
-  font-size: 0.625rem;
+.hero-product-card__price .unit {
+  font-size: 0.6875rem;
   color: var(--color-light-text);
+}
+
+/* Compact Floating Badges style (rebuilt like Sweet Delights) */
+.hero-mini-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 10px 16px !important;
+  background: rgba(255, 255, 255, 0.82) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 10px 30px rgba(27, 59, 95, 0.08) !important;
+  z-index: 10;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.hero-mini-badge__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.hero-mini-badge__icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.hero-mini-badge__icon--blue {
+  background: rgba(27, 59, 95, 0.06);
+  color: var(--color-primary);
+}
+
+.hero-mini-badge__icon--gold {
+  background: rgba(198, 169, 98, 0.1);
+  color: var(--color-secondary);
+}
+
+.hero-mini-badge__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  text-align: left;
+}
+
+.hero-mini-badge__title {
+  font-size: 0.6875rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.hero-mini-badge__desc {
+  font-size: 0.5625rem;
   font-weight: var(--fw-medium);
+  color: var(--color-light-text);
+  line-height: 1.2;
 }
 
-/* Redesigned Card positions wrapping the showcase card */
-.hero-float-card--top-left {
-  top: -12%;
-  left: -10%;
-  animation: floatCard1 8s ease-in-out infinite;
-}
-
-.hero-float-card--top-right {
-  top: 6%;
-  right: -12%;
-  animation: floatCard2 9s ease-in-out infinite;
-}
-
-.hero-float-card--bottom-left {
-  bottom: 6%;
-  left: -14%;
-  animation: floatCard3 7s ease-in-out infinite;
-}
-
-.hero-float-card--bottom-right {
-  bottom: -10%;
+/* Badges Coordinates wrapping the main vehicle card */
+.hero-mini-badge--top-right {
+  top: 8%;
   right: -8%;
-  animation: floatCard4 10s ease-in-out infinite;
+  animation: floatBooking 6s ease-in-out infinite !important;
+  animation-delay: 0.2s !important;
 }
 
-/* Floating Animations Keyframes */
-@keyframes floatCard1 {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-4px, -10px); }
+.hero-mini-badge--bottom-left {
+  bottom: 12%;
+  left: -12%;
+  animation: floatInsured 7s ease-in-out infinite !important;
+  animation-delay: 1.2s !important;
 }
 
-@keyframes floatCard2 {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(6px, -8px); }
+.hero-mini-badge--bottom-right {
+  bottom: -4%;
+  right: -4%;
+  animation: floatFleet 8s ease-in-out infinite !important;
+  animation-delay: 2.2s !important;
 }
 
-@keyframes floatCard3 {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-8px, 6px); }
+/* Keyframe Animations for mini badges */
+@keyframes floatBooking {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
-@keyframes floatCard4 {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(8px, 10px); }
+@keyframes floatInsured {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
 }
 
-/* Responsive overlays adjustment for laptop screens */
+@keyframes floatFleet {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Responsive adjustment for Laptops */
 @media (min-width: 1025px) and (max-width: 1439px) {
-  .hero-float-card {
-    transform-origin: center;
+  .hero-mini-badge {
     scale: 0.85;
   }
-  .hero-float-card--top-left {
+  .hero-mini-badge--top-right {
+    right: -2%;
+  }
+  .hero-mini-badge--bottom-left {
     left: -4%;
   }
-  .hero-float-card--top-right {
-    right: -4%;
-  }
-  .hero-float-card--bottom-left {
-    left: -6%;
-  }
-  .hero-float-card--bottom-right {
-    right: -3%;
+  .hero-mini-badge--bottom-right {
+    right: -1%;
   }
 }
 
 /* Responsive adjustment for Tablet: display only Rating + Premium Fleet */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .hero-float-card--top-right,
-  .hero-float-card--bottom-left {
+  .hero-mini-badge--top-right {
     display: none !important;
   }
-  .hero-float-card {
+  .hero-mini-badge {
     scale: 0.8;
   }
-  .hero-float-card--top-left {
-    top: -5%;
-    left: -2%;
+  .hero-mini-badge--bottom-left {
+    bottom: 5%;
+    left: 2%;
   }
-  .hero-float-card--bottom-right {
-    bottom: -5%;
-    right: -2%;
+  .hero-mini-badge--bottom-right {
+    bottom: -2%;
+    right: 2%;
   }
 }
 
 /* Responsive adjustment for Mobile: hide completely */
 @media (max-width: 767px) {
-  .hero-float-card {
+  .hero-mini-badge {
     display: none !important;
+  }
+  .home-hero__visual {
+    height: 380px !important;
+  }
+}
+
+/* Hide floating elements on Tablet & Mobile viewports (<1024px) */
+@media (max-width: 1023.98px) {
+  .home-hero {
+    min-height: auto !important;
+    height: auto !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .home-hero__grid {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+    justify-items: center !important;
+    min-height: auto !important;
+    height: auto !important;
+    padding-top: 120px !important;
+    padding-bottom: 60px !important;
+  }
+
+  .home-hero__content {
+    max-width: 560px !important;
+    margin: 0 auto !important;
+  }
+
+  .home-hero__actions {
+    justify-content: center !important;
+  }
+
+  .home-hero__stats {
+    justify-content: center !important;
+  }
+
+  .home-hero__visual {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .booking-widget {
+    margin-top: 0 !important;
+  }
+
+  .hero-product-card,
+  .hero-mini-badge,
+  .hero-showcase-card,
+  .hero-float-card,
+  .hero-floating-card,
+  .hero-floating-badge,
+  .hero-rating-card,
+  .hero-booking-card,
+  .hero-insurance-card,
+  .hero-fleet-card {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
   }
 }
 
